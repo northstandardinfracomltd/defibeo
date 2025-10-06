@@ -302,10 +302,11 @@ margin: 0 auto;
 
 .highlight {
       font-weight: 100 !important;
-        font-family: 'DefibeoMain', sans-serif;
+        font-family: 'DefibeoTitle', sans-serif;
         letter-spacing: -0.1px;
-  color: #ffffff !important;
-  background-color: #ffffff1b; /* jaune semi-transparent */
+color: #3f1368 !important;
+letter-spacing: -1px !important;
+    background-color: #ffffff;
   padding: 5px 10px 3px 10px; /* un petit padding pour que le fond dépasse légèrement le texte */
   border-radius: 4px; /* optionnel : coins légèrement arrondis */
 }
@@ -503,6 +504,68 @@ background: #f23047 !important;
             .alexsla {
 background: #226eb4 !important;
     }
+
+    /* Bouton WhatsApp sticky bas-droite */
+.whatsapp-float {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  width: auto ;
+  padding-left: 20px;
+  padding-right: 20px;
+    padding-top: 2px;
+  padding-bottom: 2px;
+  height: 40px;
+  line-height: 43px;
+  border-radius: 12px;
+  z-index: 9999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+
+    background: rgba(0, 0, 0, 0.202);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border: 0px solid rgba(162, 162, 162, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(104, 104, 104, 0.25);
+}
+
+.whatsapp-float:hover {
+  text-decoration: none;
+
+}
+
+/* Pour les écrans mobiles */
+@media (max-width: 600px) {
+  .whatsapp-float {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  width: auto ;
+  padding-left: 20px;
+  padding-right: 20px;
+    padding-top: 2px;
+  padding-bottom: 2px;
+  height: 40px;
+  }
+
+  .highlight {
+        letter-spacing: 0px !important;
+}
+
+}
+
+  .icono {
+ width: 23px;
+ margin-right: auto;
+ margin-bottom: 6px;
+}
   </style>
 </head>
 <body>
@@ -513,7 +576,7 @@ background: #226eb4 !important;
       <div class="musika">
             <img class="defibeologo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs+WHITE.svg" alt="Logo Defibeo" class="logo">
  <h1>
-  Le premier <span class="highlight">logiciel</span> à personnaliser, de pilotage et de maintenances pour les <span class="highlight">défibrillateurs!</span>
+  Le premier <span class="highlight">Logiciel</span> à personnaliser, de pilotage et de maintenances pour les <span class="highlight">Défibrillateurs</span>
 </h1>
 
         <p>Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
@@ -524,7 +587,9 @@ background: #226eb4 !important;
       </div>
     </div>
   </section>
-
+<a href="https://wa.me/447723501018" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
+Écrivez-nous sur WhatsApp
+</a>
   <!-- Atouts -->
   <section>
     <div class="container">
@@ -542,7 +607,7 @@ background: #226eb4 !important;
           <a class="okazu3" href="#kontact">Nous contacter</a>
         </div>
         <div class="card zus">
-          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/red+illsutration+defibeo.svg" alt="Infogérance">
+          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/tabledefibeo.svg" alt="Infogérance">
           <h3 class="okazu">Infogérance & GMAO</h3>
           <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
           <a class="okazu3" href="#kontact">Nous contacter</a>
@@ -551,87 +616,108 @@ background: #226eb4 !important;
     </div>
   </section>
 
+  
   <!-- Fonctionnalités -->
   <section class="container">
-    <h2 class="okazu4" >Zoom sur l'essentiel des <span class="highlight2">fonctionnalités</span></h2>
+    <h2 class="okazu4" >Zoom sur l'essentiel des fonctionnalités</h2>
     <div class="features">
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">GMAO</h3>
         <p class="okazu7">Défibeo est un logiciel permettant d'assurer la maintenance des défibrillateurs.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Défibrillateurs</h3>
         <p class="okazu7">Enregistrement des informations et des pièces des appareils.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Clients</h3>
         <p class="okazu7">Gestion et suivi des informations clients.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">CRM</h3>
         <p class="okazu7">Relations clients et assistance via un système de tickets intégré.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Contrats</h3>
         <p class="okazu7">Rédaction de modèles (entretien, location) et signature électronique.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Map</h3>
         <p class="okazu7">Visualisation des défibrillateurs avec code couleur selon le statut.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Rapport PDF</h3>
         <p class="okazu7">Génération de rapports personnalisés avec preuves photos.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Envoi Automatique</h3>
         <p class="okazu7">Transmission par e-mail au client après validation interne.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Rapports Interventions</h3>
         <p class="okazu7">Complétion dématérialisée depuis tablette ou smartphone.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Techniciens</h3>
         <p class="okazu7">Enregistrement des intervenants internes ou externes.</p>
       </div>
       <div class="feature-card okazu5">
+         <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Stocks & Pièces</h3>
         <p class="okazu7">Gestion des pièces, accessoires et défibrillateurs.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Agenda</h3>
         <p class="okazu7">Planification des tournées et maintenances, avec vues par département et technicien.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Tournées</h3>
         <p class="okazu7">Organisation de maintenances en lot pour planifier plusieurs interventions en une seule fois.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Planification</h3>
         <p class="okazu7">Gestion d’une maintenance à l’unité pour des cas spécifiques.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Itinéraires</h3>
         <p class="okazu7">Génération d’un trajet optimisé avec Google Maps afin de réduire les déplacements inutiles.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Mini Référence</h3>
         <p class="okazu7">Identifiant court pour faciliter la sélection par le technicien, le client ou l’utilisateur.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Suivi Comptable</h3>
         <p class="okazu7">Suivi des interventions avec génération des remontées adaptées selon les contrats.</p>
       </div>
             <div class="feature-card okazu5">
+              <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Rappels Fabricants</h3>
         <p class="okazu7">Défibeo assure une veille sur les rappels des fabricants et les partage avec les distributeurs-mainteneurs. Réservé aux membres d’Azur.</p>
       </div>
      <div class="feature-card okazu5">
+      <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Documenter & Archiver</h3>
         <p class="okazu7">Tous les événements, rapports, interventions, incidents, fiches et autres sont documentés et archivés, garantissant ainsi la protection juridique du distributeur-mainteneur ainsi que du client final.</p>
       </div>
       <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
         <h3 class="okazu6">Mesurer & Analyser</h3>
         <p class="okazu7">Exploitez vos données pour prendre des décisions éclairées et mieux comprendre les problématiques.</p>
       </div>
@@ -641,7 +727,7 @@ background: #226eb4 !important;
   <!-- Pricing -->
   <section>
     <div class="container">
-    <h2 class="okazu4" >Une <span class="highlight2">offre</span> pour chaque <span class="highlight2">dimension</span></h2>
+    <h2 class="okazu4" >Une offre pour chaque dimension</h2>
       <div class="pricing">
         <div class="okazu9 pricing-plan">
           <h3 class="okazu10">Logiciel Propriétaire<br><br><span class="fgh">Indépendant</span></h3>
@@ -678,7 +764,7 @@ background: #226eb4 !important;
 
   <div class="contact-status-uniX">
     <span class="contact-status-dot-uniX"></span>
-    <span class="contact-status-text-uniX">Ligne disponible</span>
+    <span class="contact-status-text-uniX">Disponible de 8h à 18h</span>
   </div>
 </div>
 
@@ -693,13 +779,13 @@ font-size: 13px !important;
 }
 
   .fgh {
-color:#44e3d6 !important;
+color:#fff !important;
 font-size: 24px !important;
 white-space: nowrap;
 
     font-weight: 100 !important;
     white-space: nowrap;
-    background-color: #c4fcff1f;
+    background-color: #f23047;
     padding: 8px 12px 7px 12px;
     border-radius: 0px;
 }
@@ -798,7 +884,7 @@ margin: auto;
   font-family: 'DefibeoMain', sans-serif;
   align-items: center;
   font-size: 16px;
-  color: #15e08f;
+  color: #1abbae;
   padding-bottom: 5px;
   cursor: default;
 }
@@ -809,7 +895,7 @@ margin: auto;
   margin-top: 5px !important;
   width: 10px;
   height: 10px;
-  background: #15e08f;
+  background: #1abbae;
   border-radius: 50%;
   display: inline-block;
   margin-right: 3px;
@@ -823,7 +909,7 @@ margin: auto;
 <div class="infoplus">
 
   <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Custom+Defibeo.svg" alt="Logo Defibeo" >
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/10.svg" alt="Logo Defibeo" >
    <p class="infoplusTXT">Opter pour le logiciel Défibeo, c’est choisir un outil flexible, qui s’adapte à l’activité de votre entreprise afin de soutenir vos collaborateurs et générer une véritable valeur ajoutée.</p>
    </div>
 </div>
@@ -831,7 +917,7 @@ margin: auto;
 <div class="infoplus">
   
   <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Browser+Defibeo.svg" alt="Logo Defibeo" >
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/11.svg" alt="Logo Defibeo" >
 <p class="infoplusTXT">Le logiciel de Défibeo, incluant les modules de gestion des maintenances utilisés par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il reste pratique à utiliser aussi bien sur ordinateur, tablette que smartphone.</p>
   </div>
 </div>
@@ -839,7 +925,7 @@ margin: auto;
 <div class="infoplus">
   
   <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Datacenter+Defibeo+AWS.svg" alt="Logo Defibeo" >
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/12.svg" alt="Logo Defibeo" >
 <p class="infoplusTXT">Les données de production sont gérées avec AWS (France : Datacenter Paris et/ou Marseille), le service cloud d’Amazon, leader du stockage de données. Pour assurer la redondance, Défibeo dispose également d’un datacenter indépendant et physique NVIDIA dans ses locaux de Civilprom.</p>
   </div>
 </div>
@@ -848,7 +934,7 @@ margin: auto;
 
 <!-- Défibeo Azur — deux colonnes responsive (sans JS) -->
 <div class="azur-root">
-<h2 class="comparetil okazu4">Vous êtes invité à <span class="highlight2">intégrer</span> notre programme <span class="highlight2">azur</span></h2>
+<h2 class="comparetil okazu4">Intégrez notre programme Azur</h2>
 
   <div class="azur-columns">
     <article class="azur-column azur-left">
@@ -987,7 +1073,7 @@ margin: auto;
 </style>
 <br><br><br>
 
-    <h2 class="comparetil okazu4" ><span class="highlight2">Comparez-nous</span> aux autres logiciels <span class="highlight2">GMAO</span> pour les défibrillateurs</h2>
+    <h2 class="comparetil okazu4" >Comparez-nous aux autres logiciels GMAO pour les défibrillateurs</h2>
 <div class="simple-table-container">
   <table class="simple-table">
     <tr>
@@ -1144,8 +1230,8 @@ font-family: 'DefibeoMain', sans-serif !important;
       font-weight: 100 !important ;
       background: #cccccc25;
     }
-    .yes { color: #14e08f; font-weight: bold; }
-    .no  { color: #e32427; font-weight: bold; }
+    .yes { color: #1abbae; font-weight: bold; }
+    .no  { color: #f23047; font-weight: bold; }
   </style>
 
 <style>
@@ -1273,9 +1359,9 @@ font-family: 'DefibeoTitle', sans-serif;
 font-weight: 100 !important;
     font-family: 'DefibeoTitle', sans-serif;
     letter-spacing: -1px;
-    color: #000000 !important;
+    color: #fff !important;
     white-space: nowrap;
-    background-color: #e7d236;
+    background-color: #f23047;
     padding: 05px 8px 3px 8px;
     border-radius: 4px;
 }
@@ -1321,7 +1407,7 @@ color: #33e3d4;
 
   <!-- Investors -->
   <section class="mol1 investors">
-    <h2 class="aro1">Nous hébergons <span class="ouecgreg">+120k</span> défibrillateurs dans 3 pays!</h2>
+    <h2 class="aro1">Nous hébergeons <span class="ouecgreg">+120k</span> défibrillateurs dans 3 pays!</h2>
     <p class="aro2">Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs-distributeurs de défibrillateurs exerçant dans trois pays ; Royaume-Uni, Allemagne et France. En 2025, Défibeo est devenu le logiciel recommandé par le ↗<a class="faj2 civilprom" href="https://www.england.nhs.uk/about/">NHS</a> pour la traçabilité de la maintenance des défibrillateurs.</p>
  <br> </section>
 
