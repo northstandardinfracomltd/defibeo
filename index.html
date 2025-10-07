@@ -507,10 +507,24 @@ background: #226eb4 !important;
 
     /* Bouton WhatsApp sticky bas-droite */
 .whatsapp-float {
-display: none !important;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+
+    position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  z-index: 9999;
+
   color: white;
   font-size: 16px;
   text-align: center;
@@ -520,11 +534,6 @@ display: none !important;
     padding-top: 2px;
   padding-bottom: 2px;
   height: 40px;
-  line-height: 43px;
-  border-radius: 12px;
-  z-index: 9999;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none;
 
     background: rgba(0, 0, 0, 0.202);
   backdrop-filter: blur(10px) saturate(180%);
@@ -542,10 +551,16 @@ display: none !important;
 /* Pour les écrans mobiles */
 @media (max-width: 600px) {
   .whatsapp-float {
-    display: none !important;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+      position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  z-index: 9999;
+
   color: white;
   font-size: 16px;
   text-align: center;
@@ -589,8 +604,8 @@ display: none !important;
       </div>
     </div>
   </section>
-<a href="https://wa.me/447723501018" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
-Écrivez-nous sur WhatsApp
+<a href="https://defibeo-com-reserver-un-appel.youcanbook.me" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
+Réservez un appel
 </a>
   <!-- Atouts -->
   <section>
