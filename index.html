@@ -646,6 +646,128 @@ background: #226eb4 !important;
   </style>
 </head>
 <body>
+<!-- BOUTON -->
+<button id="openBtn-registerpay" class="btn-registerpay">Contactez-nous</button>
+
+<!-- POPUP -->
+<div class="popup-overlay-registerpay" id="popup-registerpay">
+  <div class="popup-content-registerpay">
+    <span class="close-btn-registerpay" id="closeBtn-registerpay">&times;</span>
+    <h2 class="title-registerpay">Formulaire de contact</h2>
+    <form class="form-registerpay">
+      <label for="name-registerpay">Nom :</label>
+      <input type="text" id="name-registerpay" name="name" required>
+
+      <label for="email-registerpay">Email :</label>
+      <input type="email" id="email-registerpay" name="email" required>
+
+      <label for="message-registerpay">Message :</label>
+      <textarea id="message-registerpay" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="submit-registerpay">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+<!-- STYLE -->
+<style>
+.btn-registerpay {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+.btn-registerpay:hover {
+  background: #0056b3;
+}
+
+.popup-overlay-registerpay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content-registerpay {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  position: relative;
+  animation: fadeIn-registerpay 0.3s ease-in-out;
+}
+
+@keyframes fadeIn-registerpay {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.close-btn-registerpay {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.form-registerpay {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-registerpay input,
+.form-registerpay textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.submit-registerpay {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.submit-registerpay:hover {
+  background: #1e7e34;
+}
+</style>
+
+<!-- SCRIPT -->
+<script>
+const openBtnRegister = document.getElementById('openBtn-registerpay');
+const closeBtnRegister = document.getElementById('closeBtn-registerpay');
+const popupRegister = document.getElementById('popup-registerpay');
+
+openBtnRegister.addEventListener('click', () => {
+  popupRegister.style.display = 'flex';
+});
+
+closeBtnRegister.addEventListener('click', () => {
+  popupRegister.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === popupRegister) {
+    popupRegister.style.display = 'none';
+  }
+});
+</script>
 
   <!-- Hero -->
   <section class="hero">
