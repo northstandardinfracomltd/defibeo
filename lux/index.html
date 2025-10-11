@@ -646,6 +646,60 @@ background: #226eb4 !important;
   </style>
 </head>
 <body>
+<!-- Badge Product Hunt fixe en bas à gauche -->
+<div class="ph-badge-wrapper">
+  <a
+    href="https://www.producthunt.com/products/saasduo/reviews?utm_source=badge-product_rating&utm_medium=badge&utm_source=badge-saasduo"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Voir les avis Product Hunt pour Défibeo"
+  >
+    <img
+      src="https://api.producthunt.com/widgets/embed-image/v1/product_rating.svg?product_id=586086&theme=dark"
+      alt="D&#0233;fibeo - Infog&#0233;rance&#0044;&#0032;tra&#0231;abilit&#0233;&#0032;et&#0032;maintenances&#0032;des&#0032;d&#0233;fibrillateurs | Product Hunt"
+    />
+  </a>
+</div>
+
+<style>
+/* ===== Badge Product Hunt ===== */
+.ph-badge-wrapper {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  width: 150px;
+  max-width: 150px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 6px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ph-badge-wrapper a {
+  display: block;
+  line-height: 0;
+}
+
+.ph-badge-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Ajustement sur mobile */
+@media (max-width: 480px) {
+  .ph-badge-wrapper {
+    left: 10px;
+    bottom: 10px;
+    width: 120px;
+    padding: 4px;
+  }
+}
+</style>
 
   <!-- Hero -->
   <section class="hero">
@@ -1377,7 +1431,7 @@ color: #33e3d4;
 
   <footer>
      <img class="defibeologoF" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs+WHITE.svg" alt="Logo Defibeo" >
-    <p class="footertxt">&copy; 2025 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom.</a><br><br>↗<a class="civilprom faj" href="https://cgvfr1.civilprom.com/">CGV Standard</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">English</a> ↗<a class="civilprom faj" href="https://defibeo.com/">Français</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutsch</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
+    <p class="footertxt">&copy; 2025 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a><br><br>↗<a class="civilprom faj" href="https://cgvfr1.civilprom.com/">CGV Standard</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">English</a> ↗<a class="civilprom faj" href="https://defibeo.com/">Français</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutsch</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
   </footer>
 
   <!-- Footer SEO Links -->
