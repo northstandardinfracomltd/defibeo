@@ -499,6 +499,10 @@ font-size: 22px;
 
     .ffka {
 margin-right: 10px;
+    font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100 !important;
+    border: none !important;
+    padding: 10px 20px;
     }
 
         .derekpalacios {
@@ -641,66 +645,29 @@ background: #226eb4 !important;
     color: #fff !important;
         letter-spacing: -0.4px !important;
 }
+.gogo {
+width: 90%;
+max-width: 270px;
+margin-bottom: -5px;
+margin-right: auto;
+margin-top: -38px;
+margin-left: -10px;
+}
 
+.goxap {
+z-index: 999;
+text-align: left;
+}
 
+.restezen {
+font-size: 12px !important;
+opacity: 0.5 !important;
+margin-top: -5px !important;
+line-height: 18px !important;
+}
   </style>
 </head>
 <body>
-
-  <!-- Badge Product Hunt fixe en bas à gauche -->
-<div class="ph-badge-wrapper">
-  <a
-    href="https://www.producthunt.com/products/saasduo/reviews?utm_source=badge-product_rating&utm_medium=badge&utm_source=badge-saasduo"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="Voir les avis Product Hunt pour Défibeo"
-  >
-    <img
-      src="https://api.producthunt.com/widgets/embed-image/v1/product_rating.svg?product_id=586086&theme=dark"
-      alt="D&#0233;fibeo - Infog&#0233;rance&#0044;&#0032;tra&#0231;abilit&#0233;&#0032;et&#0032;maintenances&#0032;des&#0032;d&#0233;fibrillateurs | Product Hunt"
-    />
-  </a>
-</div>
-
-<style>
-/* ===== Badge Product Hunt ===== */
-.ph-badge-wrapper {
-  position: fixed;
-  left: 16px;
-  bottom: 16px;
-  z-index: 9999;
-  width: 150px;
-  max-width: 150px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  padding: 6px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.ph-badge-wrapper a {
-  display: block;
-  line-height: 0;
-}
-
-.ph-badge-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-}
-
-/* Ajustement sur mobile */
-@media (max-width: 480px) {
-  .ph-badge-wrapper {
-    left: 10px;
-    bottom: 10px;
-    width: 120px;
-    padding: 4px;
-  }
-}
-</style>
 
   <!-- Hero -->
   <section class="hero">
@@ -716,7 +683,587 @@ background: #226eb4 !important;
 <br><br>Défibeo intègre les propriétés de tous les modèles de défibrillateurs.
         </p>
                <img class="defibslogo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs.svg" alt="Marques défibrillateurs">
-<br><a href="https://config.defibeo.com/" class="ffka defibeocontact">Créer mon logiciel</a>
+<br>
+
+<!-- BOUTON D'OUVERTURE -->
+ <div class="goxap" id="gogogo">
+   <img class="gogo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/FAGK.svg" alt="Créer mon logiciel">
+ </div>
+<button id="openBtn-registerpay" class="ffka defibeocontact">Créer mon logiciel</button>
+<p class="restezen" >Après votre inscription, vous serez guidé pas à pas pour la prise en main.</p>
+
+<!-- POPUP -->
+<div class="popup-overlay-registerpay" id="popup-registerpay" aria-hidden="true">
+  <div class="popup-content-registerpay" role="dialog" aria-modal="true" aria-labelledby="title-registerpay">
+
+    <!-- ETAPE 1 : FORMULAIRE -->
+    <div class="step-form-registerpay" id="step-form-registerpay">
+         <button class="closerback close-btn-registerpay" id="closeBtn-registerpay" aria-label="Fermer la fenêtre">Annuler</button> <h2 id="title-registerpay" class="bigaboutabout title-registerpay">Achat Logiciel Défibeo.</h2>
+
+      <div class="order-details-registerpay">
+        <p class="aboutabout">Licence à durée illimitée avec support standard gratuit. Vous devrez souscrire à l’hébergement pour 35€ par mois dans les 30 jours (1 mois est offert). Aucune carte de crédit n’est nécessaire pour finaliser votre achat. Prix (TVA 0%): 1100.00€.</p>
+      </div>
+
+      <form id="form-registerpay" class="form-registerpay" autocomplete="on">
+        <div class="promo-row-registerpay">
+<input class="codecoupon" type="text" id="promo-registerpay" name="promo" placeholder="Entrez le code promo" aria-describedby="promoHelp-registerpay">
+          <button type="button" id="applyPromo-registerpay" class="apply-btn-registerpay">Appliquer</button>
+        </div>
+        <div id="promoMessage-registerpay" class="inforeduc promo-message-registerpay" aria-live="polite"></div>
+
+        <input class="fieldhonor" type="email" id="email-registerpay" name="email" placeholder="Mail" required>
+                <input class="fieldhonor" type="tel" id="phone-registerpay" name="phone" placeholder="Tél" required>
+
+
+        <input class="fieldhonor" type="text" id="company-registerpay" name="company" placeholder="Dénomination Entreprise (Ex: Dupont SARL)" required>
+
+        <input class="fieldhonor" type="text" id="siret-registerpay" name="siret" placeholder="Numéro Entreprise (Ex: SIRET, CRN, BCE ou RCS)">
+
+
+        <div class="order-cta-registerpay">
+          <button type="submit" id="orderBtn-registerpay" class="order-btn-registerpay">Commander pour <span id="price-display-registerpay">1100.00</span>€</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ETAPE 2 : PAIEMENT PAR VIREMENT -->
+    <div class="step-payment-registerpay" id="step-payment-registerpay" hidden>
+        <button class="closerback close-btn-registerpay" id="closeBtn-registerpay" aria-label="Fermer la fenêtre">Annuler</button>
+      <h3 class="bigaboutabout title-small-registerpay">Paiement par virement.</h3>
+
+      <div class="payment-infos-registerpay">
+        <p class="aboutabout">Pour activer votre logiciel et payer votre commande, veuillez envoyer un virement de <span id="payment-amount-registerpay">1100.00</span>€ à Défibeo en utilisant les références ci-dessous. Vous recevrez aujourd'hui ou le prochain jour ouvré votre facture au format PDF. À l'inverse, si vous souhaitez un paiement sur présentation de facture, veuillez nous contacter à contact@defibeo.com :</p>
+
+<pre class="ibanX iban-registerpay">IBAN: BE69 9671 9723 1678
+Titulaire : CIVILPROM LTD
+Objet ou référence : 000217DEFIBEO</pre>
+
+      </div>
+
+      <label class="checkbox-wrap-registerpay">
+        <input type="checkbox" id="confirmPaid-registerpay" />
+        <span class="checkbox-custom-registerpay"></span>
+        <span class="kirikou checkbox-label-registerpay">Je confirme avoir envoyé mon paiement.</span>
+      </label>
+
+      <div class="payment-cta-registerpay">
+        <button id="continueBtn-registerpay" class="continue-btn-registerpay" disabled>Valider</button>
+      </div>
+    </div>
+
+    <!-- ETAPE 3 : CONFIRMATION -->
+    <div class="step-confirm-registerpay" id="step-confirm-registerpay" hidden>
+      <h3 class="bigaboutabout title-small-registerpay">Merci! Traitement en cours.</h3>
+      <p class="aboutabout">Nous vérifions votre paiement et traitons votre commande. Vous serez notifié par email et SMS lorsque votre compte est prêt. En cas de doute, veuillez nous contacter au +33 6 51 51 70 65 ou à contact@defibeo.com. Bon à savoir : votre logiciel est disponible 24h après la réception du virement.</p>
+
+      <div class="confirm-cta-registerpay">
+        <button id="closeConfirmBtn-registerpay" class="close-confirm-btn-registerpay">Quitter l'inscription</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STYLE -->
+<style>
+    
+  .closerback {
+        position: unset !important;
+font-family: 'DefibeoMain', sans-serif;
+font-weight: 100 !important;
+font-size: 14px !important;
+line-height: 22px !important;
+    margin-bottom: 10px;
+    padding: 0px !important;
+color: #f23047 !important;
+    cursor: default !important;
+    text-align: left !important;
+    margin-right: auto !important;
+    margin-bottom: 20px !important;
+    cursor: pointer !important;
+}
+   .closerback:hover {
+text-decoration: underline !important;    cursor: pointer !important;
+}
+  
+  .kirikou {
+font-family: 'DefibeoMain', sans-serif;
+font-weight: 100 !important;
+font-size: 16px !important;
+line-height: 22px !important;
+color: #000 !important;
+    cursor: default !important;
+}
+  
+      .ibanX {
+font-family: 'DefibeoMain', sans-serif;
+font-weight: 100 !important;
+font-size: 16px !important;
+line-height: 22px !important;
+color: #000 !important;
+    cursor: default !important;
+}
+  
+    .inforeduc {
+font-family: 'DefibeoMain', sans-serif;
+font-weight: 100 !important;
+font-size: 16px !important;
+line-height: 22px !important;
+color: #000 !important;
+    cursor: default !important;
+}
+  
+  
+  .aboutabout {
+font-family: 'DefibeoMain', sans-serif;
+font-weight: 100 !important;
+font-size: 16px !important;
+line-height: 22px !important;
+color: #000 !important;
+    cursor: default !important;
+    margin-bottom: 40px !important;
+}
+  
+    .bigaboutabout {
+      text-align: left;
+font-family: 'DefibeoMain', sans-serif;
+font-weight: 100 !important;
+font-size: 19px !important;
+line-height: 24px important;
+color: #000 !important;
+          cursor: default !important;
+
+}
+  
+      .aboutcoust {
+font-family: 'DefibeoMain', sans-serif;
+font-weight: 100 !important;
+font-size: 16px !important;
+line-height: 22px !important;
+color: #000 !important;
+            cursor: default !important;
+
+}
+  
+  
+  
+  
+  .form-registerpay input:focus,
+.form-registerpay textarea:focus {
+  outline: none;              /* enlève le halo bleu */
+  box-shadow: none;           /* supprime tout effet d’ombre ajouté par certains navigateurs */
+  border-color: #007BFF;      /* facultatif : couleur de focus personnalisée */
+}
+  .form-registerpay input::placeholder,
+.form-registerpay textarea::placeholder {
+  color: #000000af;          /* Couleur du placeholder */
+}
+  
+  
+    .codecoupon  { 
+        font-family: 'DefibeoMain', sans-serif;
+      font-weight: 100 !important;
+      text-decoration: none;
+    color: #000 !important ;
+    font-size: 16px !important ;
+    text-align: left !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    height: 42px !important;
+    background: #fff !important;
+    border: 1px solid #eee !important;
+    border-radius: 12px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  
+  .fieldhonor  { 
+        font-family: 'DefibeoMain', sans-serif;
+      font-weight: 100 !important;
+      text-decoration: none;
+    color: #000 !important ;
+    font-size: 16px !important ;
+    text-align: left !important;
+    width: auto !important ;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    height: 45px !important;
+    background: #fff !important;
+    border: 1px solid #eee !important;
+    border-radius: 12px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  
+/* Basique & responsive */
+.btn-registerpay { background:#007BFF; color:#fff; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; font-size:15px; }
+.popup-overlay-registerpay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);   /* léger voile clair, quasi invisible */
+  backdrop-filter: blur(10px);             /* ✅ flou de l’arrière-plan */
+  -webkit-backdrop-filter: blur(10px);     /* ✅ compatibilité Safari */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+/* Le contenu reste net au-dessus du blur */
+.popup-content-registerpay {
+  background: #fff;   /* léger fond blanc translucide */
+  padding: 22px;
+  width: 93%;
+  max-width: 500px;
+  position: relative;
+  max-height: 90%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+  
+  border: 1px solid #eee;
+    border-radius: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+
+/* Close btn */
+.close-btn-registerpay { position:absolute; top:10px; right:12px; font-size:24px; border:none; background:transparent; cursor:pointer; }
+
+/* Titles */
+.title-registerpay { margin:0 0 12px 0; font-size:20px; }
+.title-small-registerpay { margin:0 0 10px 0; font-size:18px; }
+
+/* Form */
+.form-registerpay { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+.form-registerpay label { font-weight:600; font-size:14px; }
+.form-registerpay input[type="text"],
+.form-registerpay input[type="email"],
+.form-registerpay input[type="tel"],
+.form-registerpay textarea,
+.promo-row-registerpay input[type="text"] {
+  width:100%; padding:8px 10px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;
+  font-size:14px;
+}
+.promo-row-registerpay { display:flex; gap:8px; align-items:center; }
+.apply-btn-registerpay { 
+      font-family: 'DefibeoMain', sans-serif;
+      font-weight: 100 !important; 
+      text-decoration: none;
+    z-index: 9999;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    height: 42px;
+    background: #4f2775;
+    border: 1px solid #634085;
+    border-radius: 12px;
+  cursor: pointer;
+      margin-bottom: 10px;
+  }
+
+  .apply-btn-registerpay:hover { 
+    box-shadow: 0 0 0px 6px #6f8cff29;
+   transition-duration: 0s;
+  }
+  
+  
+/* Price & buttons */
+.order-cta-registerpay { margin-top:8px; }
+.order-btn-registerpay { 
+      font-family: 'DefibeoMain', sans-serif;
+      font-weight: 100 !important;
+      text-decoration: none;
+    z-index: 9999;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 40px;
+    background: #4f2775;
+    border: 1px solid #634085;
+    border-radius: 12px;
+  cursor: pointer;
+  }
+  
+ .order-btn-registerpay:hover {
+    box-shadow: 0 0 0px 6px #6f8cff29;
+   transition-duration: 0s;
+}
+  
+.order-btn-registerpay:disabled { opacity:0.6; cursor:not-allowed; }
+
+.promo-message-registerpay { font-size:13px; margin-top:4px; min-height:18px; color:#d9534f; }
+
+/* Payment */
+.payment-infos-registerpay pre.iban-registerpay { 
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px !important;
+  }
+.checkbox-wrap-registerpay { display:flex; align-items:center; gap:10px; margin-top:12px; cursor:pointer; user-select:none; }
+.checkbox-wrap-registerpay input[type="checkbox"] { display:none; }
+.checkbox-custom-registerpay {
+  width:18px; height:18px; border:2.5px solid #44238a; border-radius:4px; display:inline-block; position:relative;
+}
+.checkbox-wrap-registerpay input[type="checkbox"]:checked + .checkbox-custom-registerpay::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    width: 5px;
+    height: 12px;
+    border: solid #44238a;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+}
+.checkbox-label-registerpay { font-size:14px; }
+
+/* Continue button */
+    
+  .continue-btn-registerpay:hover { 
+    box-shadow: 0 0 0px 6px #6f8cff29;
+   transition-duration: 0s;
+  }
+.continue-btn-registerpay { 
+  
+  font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100 !important;
+    text-decoration: none;
+    z-index: 9999;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 40px;
+    background: #4f2775;
+    border: 1px solid #634085;
+    border-radius: 12px;
+    cursor: pointer;
+  margin-top: 20px !important;
+  }
+.continue-btn-registerpay:disabled { opacity:0.6; cursor:not-allowed; }
+
+/* Confirmation */
+.confirm-cta-registerpay { margin-top:14px; text-align:right; }
+.close-confirm-btn-registerpay { 
+        font-family: 'DefibeoMain', sans-serif;
+      font-weight: 100 !important;
+      text-decoration: none;
+    z-index: 9999;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    height: 40px;
+    background: #4f2775;
+    border: 1px solid #634085;
+    border-radius: 12px;
+  cursor: pointer;
+  }
+  
+  .close-confirm-btn-registerpay:hover { 
+    box-shadow: 0 0 0px 6px #6f8cff29;
+   transition-duration: 0s;
+  }
+  
+
+/* Responsive tweaks */
+@media (max-width:480px) {
+  .popup-content-registerpay { padding:16px; }
+  .promo-row-registerpay { flex-direction:column; align-items:stretch; }
+}
+</style>
+
+<!-- SCRIPT -->
+<script>
+(function(){
+  // Elements
+  const openBtn = document.getElementById('openBtn-registerpay');
+  const popup = document.getElementById('popup-registerpay');
+  const closeBtn = document.getElementById('closeBtn-registerpay');
+
+  const stepForm = document.getElementById('step-form-registerpay');
+  const stepPayment = document.getElementById('step-payment-registerpay');
+  const stepConfirm = document.getElementById('step-confirm-registerpay');
+
+  const form = document.getElementById('form-registerpay');
+  const promoInput = document.getElementById('promo-registerpay');
+  const applyPromoBtn = document.getElementById('applyPromo-registerpay');
+  const promoMsg = document.getElementById('promoMessage-registerpay');
+
+  const priceDisplay = document.getElementById('price-display-registerpay');
+  const paymentAmount = document.getElementById('payment-amount-registerpay');
+  const orderBtn = document.getElementById('orderBtn-registerpay');
+
+  const confirmCheckbox = document.getElementById('confirmPaid-registerpay');
+  const continueBtn = document.getElementById('continueBtn-registerpay');
+
+  const closeConfirmBtn = document.getElementById('closeConfirmBtn-registerpay');
+
+  // Prices
+  const BASE_PRICE = 1100.00;
+  const PROMO_PRICE = 700.00;
+  const VALID_PROMO = 'OCT30'; // strict match
+
+  let currentPrice = BASE_PRICE;
+  let promoApplied = false;
+
+  // Helper to format price with 2 decimals
+  function fmt(val){
+    return Number(val).toFixed(2);
+  }
+
+  // Open / close popup
+  openBtn.addEventListener('click', () => {
+    popup.style.display = 'flex';
+    popup.setAttribute('aria-hidden', 'false');
+    // reset to initial step when opened
+    showStep('form');
+  });
+
+  closeBtn.addEventListener('click', closeAll);
+  closeConfirmBtn && closeConfirmBtn.addEventListener('click', closeAll);
+
+  // Close when clicking outside content
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) closeAll();
+  });
+
+  function closeAll(){
+    popup.style.display = 'none';
+    popup.setAttribute('aria-hidden', 'true');
+    // reset form state
+    resetAll();
+  }
+
+  function resetAll(){
+    // Reset visual steps
+    showStep('form');
+    // Reset fields
+    form.reset();
+    promoMsg.textContent = '';
+    promoApplied = false;
+    currentPrice = BASE_PRICE;
+    updatePriceDisplays();
+    confirmCheckbox.checked = false;
+    continueBtn.disabled = true;
+  }
+
+  function showStep(step){
+    stepForm.hidden = step !== 'form';
+    stepPayment.hidden = step !== 'payment';
+    stepConfirm.hidden = step !== 'confirm';
+  }
+
+  function updatePriceDisplays(){
+    priceDisplay.textContent = fmt(currentPrice);
+    paymentAmount.textContent = fmt(currentPrice);
+    // update order button aria/label/value
+    orderBtn.innerHTML = 'Commander pour <span id="price-display-registerpay">' + fmt(currentPrice) + '</span>€';
+  }
+
+  // Apply promo function
+  function applyPromo(){
+    const code = (promoInput.value || '').trim();
+    if(code === VALID_PROMO){
+      promoApplied = true;
+      currentPrice = PROMO_PRICE;
+      promoMsg.style.color = '#28a745';
+      promoMsg.textContent = 'Coupon de 30% appliqué, soit désormais: ' + fmt(currentPrice) + '€';
+    } else if (code === ''){
+      promoApplied = false;
+      currentPrice = BASE_PRICE;
+      promoMsg.style.color = '#d9534f';
+      promoMsg.textContent = '';
+    } else {
+      promoApplied = false;
+      currentPrice = BASE_PRICE;
+      promoMsg.style.color = '#d9534f';
+      promoMsg.textContent = 'Code promo invalide.';
+    }
+    updatePriceDisplays();
+  }
+
+  applyPromoBtn.addEventListener('click', applyPromo);
+  // Also update on Enter in promo field
+  promoInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter'){ e.preventDefault(); applyPromo(); }
+  });
+
+  // Form submit => show payment step
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Basic validation: email required (browser already enforces)
+    // You can add more checks here if desired.
+
+    // Ensure promo is applied if typed but not clicked
+    applyPromo();
+
+    // Move to payment step and show amount
+    paymentAmount.textContent = fmt(currentPrice);
+    showStep('payment');
+
+    // Ensure continue button disabled until box checked
+    continueBtn.disabled = !confirmCheckbox.checked;
+  });
+
+  // Checkbox enables continue
+  confirmCheckbox.addEventListener('change', () => {
+    continueBtn.disabled = !confirmCheckbox.checked;
+  });
+
+  // Continue => show confirmation
+  continueBtn.addEventListener('click', () => {
+    // In a real flow you might record the confirmation server-side.
+    showStep('confirm');
+  });
+
+  // Initialize displays
+  updatePriceDisplays();
+
+  // Accessibility: trap focus inside popup when opened (simple)
+  document.addEventListener('keydown', function(e){
+    if(popup.style.display === 'flex' && e.key === 'Escape'){
+      // Close on Escape
+      closeAll();
+    }
+  });
+
+})();
+</script>
+
+
+
     </div>
   </section>
 <a href="https://defibeo-com-reserver-un-appel.youcanbook.me" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
@@ -731,19 +1278,19 @@ Réservez un appel
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/purple+illustration+defibeo.svg" alt="Mobilité">
           <h3 class="okazu">Mobilité</h3>
           <p class="okazu2">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout grâce à son accessibilité sur mobile.</p>
-          <a class="okazu3" href="https://config.defibeo.com/">Créer mon logiciel</a>
+          <a href="#message" class="idgo okazu3">Contactez-nous</a>
         </div>
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/blue+illustration+defibeo.svg" alt="Assistance">
           <h3 class="okazu">Assistance</h3>
           <p class="okazu2">Interagissez avec vos clients et assurez le lien avec les alertes sur les défibrillateurs et consommables.</p>
-          <a class="okazu3" href="https://config.defibeo.com/">Créer mon logiciel</a>
+          <a href="#message" class="idgo okazu3">Contactez-nous</a>
         </div>
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/tabledefibeo.svg" alt="Infogérance">
           <h3 class="okazu">Infogérance & GMAO</h3>
           <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
-          <a class="okazu3" href="https://config.defibeo.com/">Créer mon logiciel</a>
+          <a href="#message" class="idgo okazu3">Contactez-nous</a>
         </div>
       </div>
     </div>
@@ -854,6 +1401,11 @@ Réservez un appel
         <h3 class="okazu6">Mesurer & Analyser</h3>
         <p class="okazu7">Exploitez vos données pour prendre des décisions éclairées et mieux comprendre les problématiques.</p>
       </div>
+            <div class="feature-card okazu5">
+        <img class="icono" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono.svg" alt="Defibeo" >
+        <h3 class="okazu6">IDE No-Code</h3>
+        <p class="okazu7">Modifiez le logiciel à souhait grâce à l’éditeur sans code, et contactez-nous si vous avez besoin d’aide.</p>
+      </div>
     </div>
   </section>
 
@@ -865,7 +1417,7 @@ Réservez un appel
         <div class="okazu9 pricing-plan">
           <h3 class="okazu10 castrate"><span class="fgh">-30% en Octobre</span><br><br><br>Prix régulier de 1100€, utilisez le code <span class="ff"> OCT30</span> pour bénéficier de 30% de réduction en Octobre.</h3>      
           <p class="price okazu11">770<span class="liza">€ une fois<br></p> <p class="iris">Créez votre compte et commencez aujourd’hui.</p>          <p class="okazu12">Le support standard est offert à vie. Vous bénéficiez également de 10 heures gratuites pour des développements personnalisés supplémentaires. Vous recevrez un accès prêt à l’utilisation pour les utilisateurs, ainsi qu’un accès à l’éditeur no-code simplifié, vous permettant de modifier le logiciel en toute autonomie. Vous devrez souscrire dans les 30 jours au service cloud (35 €/mois) pour l’hébergement de votre logiciel. L’achat du logiciel n’est pas soumis à la TVA (0 %).</p>
-          <div class="oklm"><a href="https://config.defibeo.com/" class="okazu13 cta">Créer mon logiciel</a></div>
+          <div class="oklm"><a href="#gogogo" class="okazu13 cta">Commencer</a></div>
         </div>
 
       </div>
@@ -873,11 +1425,11 @@ Réservez un appel
   </section>
 <div class="divider"></div>
 
-<div class="contact-block-uniX" id="kontact">
+<div class="contact-block-uniX" >
   <img class="pikolo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/glasses.svg" alt="Vidéo Présentation">
   <p class="contact-text-uniX">Vous souhaitez en savoir plus sur le logiciel : Veuillez nous contacter pour recevoir la vidéo de présentation du logiciel, et organiser une réunion par écran partagé.</p>
   
-  <div class="contact-links-uniX">
+  <div class="contact-links-uniX" id="message">
         <a href="mailto:fr@defibeo.com" class="VID btncontact contact-btn-uniX" >Mail: fr@defibeo.com</a>
     <a href="tel:+33651517065" class="btncontact contact-btn-uniX">Tél: +33 6 51 51 70 65</a>
   </div>
@@ -889,6 +1441,20 @@ Réservez un appel
 </div>
 
 <style>
+
+  .idgo  {
+    font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100 !important;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none; 
+    background: #3f1368;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 20px; 
+}
 .barre {
 font-size: 13px !important;
     font-weight: 100 !important;
@@ -1032,6 +1598,60 @@ margin: auto;
   border-radius: 50%;
   display: inline-block;
   margin-right: 3px;
+}
+</style>
+<!-- Badge Product Hunt fixe en bas à gauche -->
+<div class="ph-badge-wrapper">
+  <a
+    href="https://www.producthunt.com/products/saasduo/reviews?utm_source=badge-product_rating&utm_medium=badge&utm_source=badge-saasduo"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Voir les avis Product Hunt pour Défibeo"
+  >
+    <img
+      src="https://api.producthunt.com/widgets/embed-image/v1/product_rating.svg?product_id=586086&theme=dark"
+      alt="D&#0233;fibeo - Infog&#0233;rance&#0044;&#0032;tra&#0231;abilit&#0233;&#0032;et&#0032;maintenances&#0032;des&#0032;d&#0233;fibrillateurs | Product Hunt"
+    />
+  </a>
+</div>
+
+<style>
+/* ===== Badge Product Hunt ===== */
+.ph-badge-wrapper {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  width: 150px;
+  max-width: 150px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 6px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ph-badge-wrapper a {
+  display: block;
+  line-height: 0;
+}
+
+.ph-badge-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Ajustement sur mobile */
+@media (max-width: 480px) {
+  .ph-badge-wrapper {
+    left: 10px;
+    bottom: 10px;
+    width: 120px;
+    padding: 4px;
+  }
 }
 </style>
 
