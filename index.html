@@ -645,8 +645,24 @@ background: #226eb4 !important;
     color: #fff !important;
         letter-spacing: -0.4px !important;
 }
+.gogo {
+width: 90%;
+max-width: 270px;
+margin-bottom: -5px;
+margin-right: auto;
+margin-top: -38px;
+}
 
+.goxap {
+z-index: 999;
+text-align: left;
+}
 
+.restezen {
+font-size: 12px !important;
+opacity: 0.5 !important;
+margin-top: -12px !important;
+}
   </style>
 </head>
 <body>
@@ -668,8 +684,11 @@ background: #226eb4 !important;
 <br>
 
 <!-- BOUTON D'OUVERTURE -->
- <div id="gogogo"></div>
+ <div class="goxap" id="gogogo">
+   <img class="gogo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/FAGK.svg" alt="Créer mon logiciel">
+ </div>
 <button id="openBtn-registerpay" class="ffka defibeocontact">Créer mon logiciel</button>
+<p class="restezen" >Après votre inscription, vous serez guidé pas à pas pour la prise en main.</p>
 
 <!-- POPUP -->
 <div class="popup-overlay-registerpay" id="popup-registerpay" aria-hidden="true">
@@ -713,9 +732,9 @@ background: #226eb4 !important;
       <div class="payment-infos-registerpay">
         <p class="aboutabout">Pour activer votre logiciel et payer votre commande, veuillez envoyer un virement de <span id="payment-amount-registerpay">1100.00</span>€ à Défibeo en utilisant les références ci-dessous. Vous recevrez aujourd'hui ou le prochain jour ouvré votre facture au format PDF. À l'inverse, si vous souhaitez un paiement sur présentation de facture, veuillez nous contacter à contact@defibeo.com :</p>
 
-<pre class="ibanX iban-registerpay">IBAN: BE68 5390 0754 7035.
-Titulaire : CIVILPROM LTD.
-Objet ou référence : 000217DEFIBEO.</pre>
+<pre class="ibanX iban-registerpay">IBAN: BE69 9671 9723 1678
+Titulaire : CIVILPROM LTD
+Objet ou référence : 000217DEFIBEO</pre>
 
       </div>
 
@@ -733,7 +752,7 @@ Objet ou référence : 000217DEFIBEO.</pre>
     <!-- ETAPE 3 : CONFIRMATION -->
     <div class="step-confirm-registerpay" id="step-confirm-registerpay" hidden>
       <h3 class="bigaboutabout title-small-registerpay">Merci! Traitement en cours.</h3>
-      <p class="aboutabout">Nous vérifions votre paiement et traitons votre commande. Vous serez notifié par email et SMS lorsque votre compte est prêt. En cas de doute, veuillez nous contacter. Bon à savoir : votre logiciel est disponible 24h après la réception du virement.</p>
+      <p class="aboutabout">Nous vérifions votre paiement et traitons votre commande. Vous serez notifié par email et SMS lorsque votre compte est prêt. En cas de doute, veuillez nous contacter au +33 6 51 51 70 65 ou à contact@defibeo.com. Bon à savoir : votre logiciel est disponible 24h après la réception du virement.</p>
 
       <div class="confirm-cta-registerpay">
         <button id="closeConfirmBtn-registerpay" class="close-confirm-btn-registerpay">Quitter l'inscription</button>
