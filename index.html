@@ -654,7 +654,7 @@ background: #226eb4 !important;
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="musika" id="gogogo">
+      <div class="musika">
             <img class="defibeologo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs+WHITE.svg" alt="Logo Defibeo" class="logo">
  <h1>
   Le premier <span class="VVW highlight">logiciel</span> français d'infogérance à personnaliser, pour la traçabilité et les maintenances des <span class="VVW highlight">défibrillateurs</span>
@@ -668,6 +668,7 @@ background: #226eb4 !important;
 <br>
 
 <!-- BOUTON D'OUVERTURE -->
+ <div id="gogogo"></div>
 <button id="openBtn-registerpay" class="ffka defibeocontact">Créer mon logiciel</button>
 
 <!-- POPUP -->
@@ -679,8 +680,7 @@ background: #226eb4 !important;
          <button class="closerback close-btn-registerpay" id="closeBtn-registerpay" aria-label="Fermer la fenêtre">Annuler</button> <h2 id="title-registerpay" class="bigaboutabout title-registerpay">Achat Logiciel Défibeo.</h2>
 
       <div class="order-details-registerpay">
-        <p class="aboutabout">Licence à durée illimitée avec support standard gratuit. Vous devrez souscrire à l’hébergement pour 35€ par mois dans les 30 jours (1 mois est offert). Aucune carte de crédit n’est nécessaire pour finaliser votre achat.</p>
-        <p class="aboutcoust">Prix (TVA 0%): <span class="aboutcoust price-original-registerpay">1100.00€</span></p>
+        <p class="aboutabout">Licence à durée illimitée avec support standard gratuit. Vous devrez souscrire à l’hébergement pour 35€ par mois dans les 30 jours (1 mois est offert). Aucune carte de crédit n’est nécessaire pour finaliser votre achat. Prix (TVA 0%): 1100.00€.</p>
       </div>
 
       <form id="form-registerpay" class="form-registerpay" autocomplete="on">
@@ -713,10 +713,9 @@ background: #226eb4 !important;
       <div class="payment-infos-registerpay">
         <p class="aboutabout">Pour activer votre logiciel et payer votre commande, veuillez envoyer un virement de <span id="payment-amount-registerpay">1100.00</span>€ à Défibeo en utilisant les références ci-dessous. Vous recevrez aujourd'hui ou le prochain jour ouvré votre facture au format PDF. À l'inverse, si vous souhaitez un paiement sur présentation de facture, veuillez nous contacter à contact@defibeo.com :</p>
 
-        <pre class="ibanX iban-registerpay">IBAN: BE68 5390 0754 7035
-Titulaire : CIVILPROM LTD
-Adresse : 124 City Road, London, England, EC1V 2NX
-Objet ou référence : 000217DEFIBEO</pre>
+<pre class="ibanX iban-registerpay">IBAN: BE68 5390 0754 7035.
+Titulaire : CIVILPROM LTD.
+Objet ou référence : 000217DEFIBEO.</pre>
 
       </div>
 
@@ -804,6 +803,7 @@ color: #000 !important;
 }
   
     .bigaboutabout {
+      text-align: left;
 font-family: 'DefibeoMain', sans-serif;
 font-weight: 100 !important;
 font-size: 19px !important;
@@ -834,7 +834,7 @@ color: #000 !important;
 }
   .form-registerpay input::placeholder,
 .form-registerpay textarea::placeholder {
-  color: #000;          /* Couleur du placeholder */
+  color: #000000af;          /* Couleur du placeholder */
 }
   
   
@@ -903,7 +903,7 @@ color: #000 !important;
   width: 93%;
   max-width: 500px;
   position: relative;
-  max-height: 90vh;
+  max-height: 90%;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
