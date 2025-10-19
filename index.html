@@ -1322,6 +1322,14 @@ color: #000 !important;
   });
 
 })();
+
+
+
+  // Vérifie si la page est chargée en HTTP
+  if (window.location.protocol === 'http:') {
+    // Redirige immédiatement vers la version HTTPS
+    window.location.href = 'https://' + window.location.host + window.location.pathname + window.location.search;
+  }
 </script>
 
 
