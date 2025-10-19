@@ -665,6 +665,7 @@ text-align: left;
 .restezen {
 font-size: 12px !important;
 opacity: 0.5;
+    max-width: 500px;
 margin-top: -5px !important;
 line-height: 22px !important;
 }
@@ -672,32 +673,36 @@ line-height: 22px !important;
 .OUCARD {
     font-size: 12px !important;
     opacity: 1 !important;
-    margin-top: 12px !important;
     line-height: 18px !important;
     margin-left: 1px;
     color: #000;
     margin-bottom: 18px !important;
+    margin-top: -40px;
+    max-width: 300px;
 }
 
 
 .OUBTN {
-    font-family: 'DefibeoMain', sans-serif;
+font-family: 'DefibeoMain', sans-serif;
     font-weight: 100 !important;
     text-decoration: none;
     z-index: 9999;
     color: white;
     font-size: 16px;
     text-align: center;
-    width: auto;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 115px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 40px !important;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    height: 27px !important;
     background: #4f2775;
     border: 1px solid #634085;
     border-radius: 12px;
     cursor: pointer;
+
 }
 
 .OUBTN:hover {
@@ -724,7 +729,7 @@ padding-bottom: 2px !important;
       <div class="musika">
             <img class="defibeologo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs+WHITE.svg" alt="Logo Defibeo" class="logo">
  <h1>
-  Le premier <span class="VVW highlight">logiciel</span> français d'infogérance à personnaliser, pour la traçabilité et les maintenances des <span class="VVW highlight">défibrillateurs</span>
+  Le premier <span class="VVW highlight">logiciel</span> du Canada d'infogérance à personnaliser, pour la traçabilité et les maintenances des <span class="VVW highlight">défibrillateurs</span>
 </h1>
 
         <p>Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
@@ -1317,6 +1322,14 @@ color: #000 !important;
   });
 
 })();
+
+
+
+  // Vérifie si la page est chargée en HTTP
+  if (window.location.protocol === 'http:') {
+    // Redirige immédiatement vers la version HTTPS
+    window.location.href = 'https://' + window.location.host + window.location.pathname + window.location.search;
+  }
 </script>
 
 
@@ -2103,17 +2116,17 @@ color: #33e3d4;
 
 /* Classes fortement préfixées/complexes pour éviter conflits */
 .dog-7f3a2_logoBlock__k9xL {
-      flex-direction: column;
+flex-direction: column;
     align-items: flex-start;
-width: 100%;
-  background: #f23047;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  gap: 16px; /* espace entre logo et texte */
-  margin: 0; /* s'intègre sans forcer le layout parent */
-  padding: 30px;;
-  box-sizing: border-box;
+    width: 100%;
+    background: #310f55;
+    text-align: center;
+    display: flex;    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    padding-top: 40px;
 }
 
 .dog-7f3a2_logoBlock__k9xL--img {
@@ -2125,15 +2138,16 @@ width: 100%;
 }
 
 .dog-7f3a2_logoBlock__k9xL--text {
-  font-size: 13px;
-  max-width: 900px;
-  margin: auto;
-  color: #fff;
-  line-height: 1.8;
-  font-family: 'DefibeoMain', sans-serif;
-  flex: 1 1 auto; /* texte prend l'espace restant */
-  word-break: break-word;
-  margin-bottom: 50px;
+    font-size: 13px;
+    max-width: 500px;
+    margin: auto;
+    color: #fff;
+    line-height: 1.8;
+    font-family: 'DefibeoMain', sans-serif;
+    flex: 1 1 auto;
+    word-break: break-word;
+    margin-bottom: 50px;
+    cursor: default;
 }
 
   .defibeodeg {
@@ -2157,13 +2171,13 @@ width: 300px !important;
     height="40"
   />
   <p class="dog-7f3a2_logoBlock__k9xL--text dog-namespace-unique-4bR--text">
-    Défibeo est un logiciel qui est le fruit d’améliorations continues par ses utilisateurs mainteneurs et distributeurs. Il poursuit sont développement au quotidien que ce soit via les recommandations des fabricants des défibrillateurs, des institutions publiques et des utilisateurs eux-mêmes.
+Défibeo est un logiciel en constante évolution, façonné par l’expérience et les retours de ses utilisateurs, mainteneurs et distributeurs. Son développement se poursuit chaque jour, en partenariat avec Zoho pour l'infrastructure (et sa recherche Défibeo Lab), guidé par les recommandations des fabricants de défibrillateurs, des institutions publiques et des utilisateurs eux-mêmes.
   </p>
 </div>
 
   <footer>
      <img class="defibeologoF" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs+WHITE.svg" alt="Logo Defibeo" >
-    <p class="footertxt">&copy; 2025 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom Cloud</a><br><br>↗<a class="civilprom faj" href="https://cgvfr.defibeo.com/">Convention Expresse</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">English</a> ↗<a class="civilprom faj" href="https://defibeo.com/">Français</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutsch</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
+    <p class="footertxt">&copy; 2025 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom Cloud</a><br><br>↗<a class="civilprom faj" href="https://cgvfr.defibeo.com/">Convention Expresse</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">UK</a> ↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutschland</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
   </footer>
 
   <!-- Footer SEO Links -->

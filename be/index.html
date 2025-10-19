@@ -34,11 +34,14 @@
   <meta name="twitter:image" content="https://civilpromaws.s3.eu-north-1.amazonaws.com/SE+PREVIEW+IMG+DEFIBEO.png">
 
   <!-- Hreflang (anticipation multi-langues) -->
-  <link rel="alternate" hreflang="fr" href="https://defibeo.com/">
-  <link rel="alternate" hreflang="en" href="https://defibeo.com/eng">
-  <link rel="alternate" hreflang="de" href="https://defibeo.com/de">
-  <link rel="alternate" hreflang="pt" href="https://defibeo.com/pt">
-  <link rel="alternate" hreflang="es" href="https://defibeo.com/es">
+<link rel="alternate" hreflang="fr" href="https://defibeo.com/">
+<link rel="alternate" hreflang="en" href="https://defibeo.com/eng">
+<link rel="alternate" hreflang="de" href="https://defibeo.com/de">
+<link rel="alternate" hreflang="pt" href="https://defibeo.com/pt">
+<link rel="alternate" hreflang="es" href="https://defibeo.com/es">
+<link rel="alternate" hreflang="be" href="https://defibeo.com/be">
+<link rel="alternate" hreflang="lu" href="https://defibeo.com/lux">
+<link rel="alternate" hreflang="ch" href="https://defibeo.com/ch">
 
   <!-- Favicon -->
   <link rel="icon" href="https://civilpromaws.s3.eu-north-1.amazonaws.com/FAVICON+SEO+DEFIBEO+GOOGLE.png" type="image/png">
@@ -661,45 +664,60 @@ text-align: left;
 
 .restezen {
 font-size: 12px !important;
-opacity: 0.5 !important;
+opacity: 0.5;
+    max-width: 500px;
 margin-top: -5px !important;
-line-height: 18px !important;
+line-height: 22px !important;
 }
 
 .OUCARD {
     font-size: 12px !important;
     opacity: 1 !important;
-    margin-top: 12px !important;
     line-height: 18px !important;
     margin-left: 1px;
     color: #000;
     margin-bottom: 18px !important;
+    margin-top: -40px;
+    max-width: 300px;
 }
 
 
 .OUBTN {
-    font-family: 'DefibeoMain', sans-serif;
+font-family: 'DefibeoMain', sans-serif;
     font-weight: 100 !important;
     text-decoration: none;
     z-index: 9999;
     color: white;
     font-size: 16px;
     text-align: center;
-    width: auto;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 115px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 40px !important;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    height: 27px !important;
     background: #4f2775;
     border: 1px solid #634085;
     border-radius: 12px;
     cursor: pointer;
+
 }
 
 .OUBTN:hover {
     box-shadow: 0 0 0px 6px #6f8cff29;
     transition-duration: 0s;
+}
+.clearclear {
+opacity: 1 !important;
+color: #3e1b53 !important; 
+text-decoration: none !important;
+background-color: #ffffff !important;
+padding-left: 5px !important;
+padding-right: 5px !important;
+padding-top: 2px !important;
+padding-bottom: 2px !important;
 }
   </style>
 </head>
@@ -726,7 +744,11 @@ line-height: 18px !important;
    <img class="gogo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/FAGK.svg" alt="Créer mon logiciel">
  </div>
 <button id="openBtn-registerpay" class="ffka defibeocontact">Créer mon logiciel</button>
-<p class="restezen" >Après votre inscription, vous serez guidé pas à pas pour la prise en main.</p>
+<p class="restezen">Après votre achat, vous serez guidé pas à pas pour la prise en main. Défibeo vous délivre un logiciel <span class="clearclear">prêt à l'utilisation</span> dont vous êtes propriétaire. Nous pouvons apporter des <span class="clearclear">modifications gratuites</span> à la demande.
+  Essayez-nous sans risque! Avec 
+ <span class="clearclear">1 mois de Cloud offert</span> et une <span class="clearclear">rétractation possible jusqu'à 30 jours</span>
+</p>
+
 
 <!-- POPUP -->
 <div class="popup-overlay-registerpay" id="popup-registerpay" aria-hidden="true">
@@ -747,6 +769,9 @@ line-height: 18px !important;
         </div>
         <div id="promoMessage-registerpay" class="inforeduc promo-message-registerpay" aria-live="polite"></div>
 
+<p class="OUCARD">Paiement par carte bancaire (des frais s'appliquent), ou paiement par virement SEPA (aucun frais).</p>
+          <a href="https://payment-links.mollie.com/payment/PsC4dsfGhNUCaSTfXeSA4" class="OUBTN">Payer par carte</a>
+
         <input class="fieldhonor" type="email" id="email-registerpay" name="email" placeholder="Mail" required>
                 <input class="fieldhonor" type="tel" id="phone-registerpay" name="phone" placeholder="Tél" required>
 
@@ -758,8 +783,6 @@ line-height: 18px !important;
 
         <div class="order-cta-registerpay">
           <button type="submit" id="orderBtn-registerpay" class="order-btn-registerpay">Payer par virement SEPA <span id="price-display-registerpay">1100.00</span>€</button>
-        <p class="OUCARD">Paiement par virement SEPA (aucun frais), ou optez pour le paiement par carte bancaire (frais: +1,80% & 0,25€) :</p>
-          <a href="https://payment-links.mollie.com/payment/PsC4dsfGhNUCaSTfXeSA4" class="OUBTN">Payer par carte</a>
           <br> <br>
         </div>
       </form>
@@ -1228,7 +1251,7 @@ color: #000 !important;
     priceDisplay.textContent = fmt(currentPrice);
     paymentAmount.textContent = fmt(currentPrice);
     // update order button aria/label/value
-    orderBtn.innerHTML = 'Commander pour <span id="price-display-registerpay">' + fmt(currentPrice) + '</span>€';
+    orderBtn.innerHTML = 'Payer <span id="price-display-registerpay">' + fmt(currentPrice) + '</span>€ par virement';
   }
 
   // Apply promo function
@@ -1299,6 +1322,14 @@ color: #000 !important;
   });
 
 })();
+
+
+
+  // Vérifie si la page est chargée en HTTP
+  if (window.location.protocol === 'http:') {
+    // Redirige immédiatement vers la version HTTPS
+    window.location.href = 'https://' + window.location.host + window.location.pathname + window.location.search;
+  }
 </script>
 
 
@@ -2082,6 +2113,47 @@ color: #33e3d4;
 text-decoration: underline; 
 color: #33e3d4;
 }
+
+/* Classes fortement préfixées/complexes pour éviter conflits */
+.dog-7f3a2_logoBlock__k9xL {
+flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background: #310f55;
+    text-align: center;
+    display: flex;    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+
+.dog-7f3a2_logoBlock__k9xL--img {
+  display: block;
+  margin: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+    margin-top: 50px;
+}
+
+.dog-7f3a2_logoBlock__k9xL--text {
+    font-size: 13px;
+    max-width: 500px;
+    margin: auto;
+    color: #fff;
+    line-height: 1.8;
+    font-family: 'DefibeoMain', sans-serif;
+    flex: 1 1 auto;
+    word-break: break-word;
+    margin-bottom: 50px;
+    cursor: default;
+}
+
+  .defibeodeg {
+width: 300px !important;
+  }
+
 </style>
   <!-- Investors -->
   <section class="mol1 investors">
@@ -2089,9 +2161,23 @@ color: #33e3d4;
     <p class="aro2">Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs-distributeurs de défibrillateurs exerçant ces pays ; Royaume-Uni (~55%), Allemagne (~15%), France (~10%), Belgique (~10%), Suisse (~5%) et Luxembourg (~5%).</p>
  <br> </section>
 
+ <div class="dog-7f3a2_logoBlock__k9xL dog-namespace-unique-4bR">
+  <img
+    class="defibeodeg"
+    src="https://civilpromaws.s3.eu-north-1.amazonaws.com/WHITE+RESEARCH.svg"
+    alt="Logo Défibeo"
+    loading="lazy"
+    width="120"
+    height="40"
+  />
+  <p class="dog-7f3a2_logoBlock__k9xL--text dog-namespace-unique-4bR--text">
+Défibeo est un logiciel en constante évolution, façonné par l’expérience et les retours de ses utilisateurs, mainteneurs et distributeurs. Son développement se poursuit chaque jour, en partenariat avec Zoho pour l'infrastructure (et sa recherche Défibeo Lab), guidé par les recommandations des fabricants de défibrillateurs, des institutions publiques et des utilisateurs eux-mêmes.
+  </p>
+</div>
+
   <footer>
      <img class="defibeologoF" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs+WHITE.svg" alt="Logo Defibeo" >
-    <p class="footertxt">&copy; 2025 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom Cloud</a><br><br>↗<a class="civilprom faj" href="https://cgvfr1.civilprom.com/">CGV Standard</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">English</a> ↗<a class="civilprom faj" href="https://defibeo.com/">Français</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutsch</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
+    <p class="footertxt">&copy; 2025 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom Cloud</a><br><br>↗<a class="civilprom faj" href="https://cgvfr.defibeo.com/">Convention Expresse</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">UK</a> ↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutschland</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
   </footer>
 
   <!-- Footer SEO Links -->
