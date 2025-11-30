@@ -1385,13 +1385,17 @@ Réservez un appel
 .dfb-browser-url { flex:1; background:white; border-radius:6px; padding:6px 10px; text-align:center; font-size:14px; border:1px solid #dcdcdc; color:#666; }
 .dfb-container { display:flex; width:100%; min-height:520px; }
 .dfb-menu { width:420px; background:#fafafa; border-right:1px solid #e1e1e1; padding:22px; }
+.dfb-logo { display:flex; align-items:center; margin-bottom:20px; }
+.dfb-logo-img { width:50px; height:50px; border:2px solid purple; border-radius:18%; padding:2px; margin-right:10px; object-fit:cover; }
+.dfb-logo-text { font-size:18px; font-weight:bold; color:#222; }
 .dfb-parent { margin-bottom:20px; }
 .dfb-parent-title { font-size:15px; font-weight:bold; margin-bottom:10px; color:#222; }
 .dfb-cloud { display:flex; flex-wrap:wrap; gap:8px; }
 .dfb-item { background:#e9e9e9; padding:6px 14px; border-radius:20px; font-size:13px; cursor:pointer; transition:0.2s ease; border:1px solid transparent; }
 .dfb-item:hover { background:#dcdcdc; }
 .dfb-item.active { background:#356dff; color:white; border-color:#2a5ae0; }
-.dfb-text-panel { flex:1; display:flex; align-items:center; justify-content:center; padding:40px; font-size:17px; text-align:center; color:#444; }
+.dfb-text-panel { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px; font-size:17px; text-align:center; color:#444; }
+.dfb-text-icon { width:20px; height:20px; margin-bottom:10px; }
 @media(max-width:900px){.dfb-container{flex-direction:column;}.dfb-menu{width:100%;}}
 </style>
 
@@ -1407,16 +1411,115 @@ Réservez un appel
 
     <div class="dfb-container">
         <div class="dfb-menu">
+            <div class="dfb-logo">
+                <img class="dfb-logo-img" src="URL_LOGO" alt="Logo">
+                <div class="dfb-logo-text">VotreLogiciel</div>
+            </div>
+
+            <!-- Défibrillateurs -->
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Défibrillateurs</div>
                 <div class="dfb-cloud">
                     <div class="dfb-item" data-dfb-text="Le parc des défibrillateurs éligibles aux maintenances.">Avec Maintenance</div>
                     <div class="dfb-item" data-dfb-text="Le parc des défibrillateurs non éligibles aux maintenances.">Sans Maintenance</div>
                     <div class="dfb-item" data-dfb-text="Visualisez vos défibrillateurs sur une carte interactive.">Map</div>
+                    <div class="dfb-item" data-dfb-text="Des chiffres clés pour prendre de meilleures décisions.">Indicateurs</div>
+                    <div class="dfb-item" data-dfb-text="Un agenda prévisionnel lisible sur un an.">Prévisionnel</div>
+                    <div class="dfb-item" data-dfb-text="Les défibrillateurs prêtés pour dépannage.">Prêts</div>
+                    <div class="dfb-item" data-dfb-text="Traçabilité des défibrillateurs repris.">Reprises</div>
+                    <div class="dfb-item" data-dfb-text="Défibrillateurs inutilisés dans votre stock.">Stockés</div>
+                    <div class="dfb-item" data-dfb-text="Veille sur les défibrillateurs obsolètes.">Archivés</div>
+                    <div class="dfb-item" data-dfb-text="Suivi comptable pour ne manquer aucun consommable.">Suivi Comptable</div>
+                    <div class="dfb-item" data-dfb-text="Organisation et suivi des déclarations GEO DAE.">Traitement GEO DAE</div>
+                </div>
+            </div>
+
+            <!-- Maintenances -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Maintenances</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Organisation des tournées technicien.">Tournées</div>
+                    <div class="dfb-item" data-dfb-text="Téléchargez ou renvoyez les PDF de maintenance.">Reçus</div>
+                </div>
+            </div>
+
+            <!-- CRM Tickets -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">CRM Tickets</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Un système simple pour ne manquer aucune demande client.">Tickets</div>
+                </div>
+            </div>
+
+            <!-- Registres -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Registres</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Enregistrez les informations de vos clients.">Clients</div>
+                    <div class="dfb-item" data-dfb-text="Gérez et faites signer vos contrats.">Contrats</div>
+                    <div class="dfb-item" data-dfb-text="Profils de techniciens internes ou externes.">Techniciens</div>
+                    <div class="dfb-item" data-dfb-text="Informations de vos fournisseurs.">Fournisseurs</div>
+                    <div class="dfb-item" data-dfb-text="Profils commerciaux.">Commerciaux</div>
+                </div>
+            </div>
+
+            <!-- Commandes & Stocks -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Commandes & Stocks</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Enregistrez les commandes fournisseur.">Commandes</div>
+                    <div class="dfb-item" data-dfb-text="Enregistrez les pièces du stock.">Stocks</div>
+                </div>
+            </div>
+
+            <!-- Factures & Devis -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Factures & Devis</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Veille des factures et devis liés aux clients.">Factures / Devis</div>
+                </div>
+            </div>
+
+            <!-- Variables -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Variables</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Gérez les labels des modèles de défibrillateurs.">Modèles</div>
+                    <div class="dfb-item" data-dfb-text="Gérez les modèles de contrats.">Contrats</div>
+                    <div class="dfb-item" data-dfb-text="Gérez les modèles de boîtiers.">Boîtiers</div>
+                    <div class="dfb-item" data-dfb-text="Gérez les modèles de pièces.">Pièces</div>
+                </div>
+            </div>
+
+            <!-- Rappels & Sécurité -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Rappels & Sécurité</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Communications fabricants et ANSM.">Infos Sécurité</div>
+                </div>
+            </div>
+
+            <!-- Aide Défibeo -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Aide Défibeo</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Support Defibeo 24/7.">Support</div>
+                </div>
+            </div>
+
+            <!-- Partager -->
+            <div class="dfb-parent">
+                <div class="dfb-parent-title">Partager</div>
+                <div class="dfb-cloud">
+                    <div class="dfb-item" data-dfb-text="Partagez le formulaire CRM via lien ou QR code.">Partager</div>
                 </div>
             </div>
         </div>
-        <div class="dfb-text-panel">Survolez ou cliquez un élément pour afficher l'information.</div>
+
+        <div class="dfb-text-panel">
+            <img class="dfb-text-icon" src="URL_ICONE" alt="Icône">
+            Survolez ou cliquez un élément pour afficher l'information.
+        </div>
     </div>
 </div>
 
@@ -1428,18 +1531,17 @@ Réservez un appel
 
     items.forEach(item => {
         item.addEventListener('mouseenter', () => {
-            textPanel.textContent = item.getAttribute('data-dfb-text');
+            textPanel.lastChild.textContent = item.getAttribute('data-dfb-text');
         });
         item.addEventListener('click', () => {
             items.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
-            textPanel.textContent = item.getAttribute('data-dfb-text');
+            textPanel.lastChild.textContent = item.getAttribute('data-dfb-text');
         });
     });
 })();
 </script>
 </div>
-
   
   <!-- Fonctionnalités -->
   <section class="container">
