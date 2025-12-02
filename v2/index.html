@@ -1554,7 +1554,7 @@ Réservez une démo
 
         <div class="dfb-text-panel">
             <img class="dfb-text-icon" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/RESPONDER.svg" alt="Icône">
-            <span>Survolez ou cliquez un composant pour afficher le commentaire.</span>
+            <span>Cliquez sur un composant pour afficher le commentaire.</span>
         </div>
     </div>
 </div>
@@ -1566,9 +1566,6 @@ Réservez une démo
     const items = wrapper.querySelectorAll('.dfb-item');
 
     items.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            textPanel.textContent = item.getAttribute('data-dfb-text');
-        });
         item.addEventListener('click', () => {
             items.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
