@@ -802,6 +802,11 @@ font-weight: 100 !important;
     opacity: 1;
         text-decoration: none;
   }
+
+  ::selection {
+  background: #ff91e72e; /* couleur du fond lors de la sélection */
+}
+
 </style>
 
 <script>
@@ -841,7 +846,7 @@ font-weight: 100 !important;
          <button class="closerback close-btn-registerpay" id="closeBtn-registerpay" aria-label="Fermer la fenêtre">Fermer</button> <h2 id="title-registerpay" class="bigaboutabout title-registerpay">Votre interlocuteur Défibeo France</h2>
 
       <div class="order-details-registerpay">
-        <p class="aboutabout">Appelez le +33 6 51 51 70 65 ou envoyez un email à fr@defibeo.com pour contacter Ronan, qui vous accompagne dans l'aquisition et la prise en main de votre logiciel Défibeo.</p>
+        <p class="aboutabout">Appelez le +33 6 51 51 70 65 ou envoyez un email à fr@defibeo.com pour contacter Ronan, qui vous accompagne dans l'acquisition et la prise en main de votre logiciel Défibeo.</p>
       </div>
     </div>
 
@@ -1449,16 +1454,17 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Défibrillateurs</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Le parc des défibrillateurs éligibles aux maintenances.">Avec Maintenance</div>
-                    <div class="dfb-item" data-dfb-text="Le parc des défibrillateurs non éligibles aux maintenances.">Action Requise 3 Mois</div>
-                    <div class="dfb-item" data-dfb-text="Le parc des défibrillateurs non éligibles aux maintenances.">Sans Maintenance</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez éligibles aux maintenances et aux tournées.">Avec Maintenance</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action est nécessaire dans les 3 prochains mois, par exemple une date de péremption.">Action Requise 3 Mois</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action nécessaire est passée, par exemple une date de péremption.">Action Requise Expirée</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez non éligibles aux maintenances et aux tournées.">Sans Maintenance</div>
                     <div class="dfb-item" data-dfb-text="Visualisez vos défibrillateurs sur une carte interactive.">Map</div>
                     <div class="dfb-item" data-dfb-text="Des chiffres clés pour prendre de meilleures décisions.">Indicateurs</div>
-                    <div class="dfb-item" data-dfb-text="Un agenda prévisionnel lisible sur un an.">Prévisionnel</div>
-                    <div class="dfb-item" data-dfb-text="Les défibrillateurs prêtés pour dépannage.">Prêts</div>
-                    <div class="dfb-item" data-dfb-text="Traçabilité des défibrillateurs repris.">Reprises</div>
-                    <div class="dfb-item" data-dfb-text="Défibrillateurs inutilisés dans votre stock.">Stockés</div>
-                    <div class="dfb-item" data-dfb-text="Veille sur les défibrillateurs obsolètes.">Archivés</div>
+                    <div class="dfb-item" data-dfb-text="Un agenda prévisionnel lisible sur un an des maintenances à réaliser.">Prévisionnel</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs prêtés, par exemple pour un dépannage.">Prêts</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit de la traçabilité des défibrillateurs repris, par exemple pour un défaut de fabrication.">Reprises</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs inutilisés que vous mentionnés comme dans votre stock.">Stockés</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">Archivés</div>
                 </div>
             </div>
 
@@ -1466,18 +1472,18 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Maintenances</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Organisation des tournées technicien.">Tournées</div>
-                    <div class="dfb-item" data-dfb-text="Téléchargez ou renvoyez les PDF de maintenance.">Reçus PDF</div>
-                    <div class="dfb-item" data-dfb-text="Suivi comptable pour ne manquer aucun consommable.">Suivi Comptable</div>
-                    <div class="dfb-item" data-dfb-text="Organisation et suivi des déclarations GEO DAE.">Traitement GEO DAE</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit d'un organisateur de tournées pour les techniciens avec la sélection des défibrillateurs.">Tournées</div>
+                    <div class="dfb-item" data-dfb-text="Téléchargez ou renvoyez les reçus PDF générés par les techniciens.">Reçus PDF</div>
+                    <div class="dfb-item" data-dfb-text="Un suivi comptable pour ne manquer aucun consommable, par exemple lorsque vous remplacez une électrode pendant une maintenance.">Suivi Comptable</div>
+                    <div class="dfb-item" data-dfb-text="Suivez le traitement manuel des déclarations entre la plateforme GEO DAE et les exports du logiciel.">Traitement GEO DAE</div>
                 </div>
             </div>
 
             <!-- CRM Tickets -->
             <div class="dfb-parent">
-                <div class="dfb-parent-title">CRM Tickets</div>
+                <div class="dfb-parent-title">CRM</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Un système simple pour ne manquer aucune demande client.">Tickets</div>
+                    <div class="dfb-item" data-dfb-text="Un système de création et gestion de tickets en tableau kanban pour ne manquer aucune demande.">Tickets</div>
                 </div>
             </div>
 
@@ -1485,11 +1491,11 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Registres</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Enregistrez les informations de vos clients.">Clients</div>
-                    <div class="dfb-item" data-dfb-text="Gérez et faites signer vos contrats.">Contrats</div>
-                    <div class="dfb-item" data-dfb-text="Profils de techniciens internes ou externes.">Techniciens</div>
-                    <div class="dfb-item" data-dfb-text="Informations de vos fournisseurs.">Fournisseurs</div>
-                    <div class="dfb-item" data-dfb-text="Profils commerciaux.">Commerciaux</div>
+                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos clients.">Clients</div>
+                    <div class="dfb-item" data-dfb-text="Rédigez vos contrats avec un processus de signature en ligne ou hors ligne.">Contrats</div>
+                    <div class="dfb-item" data-dfb-text="Ajoutez des techniciens internes ou externes à votre entreprise.">Techniciens</div>
+                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos fournisseurs.">Fournisseurs</div>
+                    <div class="dfb-item" data-dfb-text="PEnregistrez les informations sur vos commerciaux.">Commerciaux</div>
                 </div>
             </div>
 
@@ -1497,8 +1503,8 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Inventaire</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Enregistrez les commandes fournisseur.">Commandes</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez les pièces du stock.">Stocks</div>
+                    <div class="dfb-item" data-dfb-text="Enregistrez les commandes passées auprès de votre fournisseur.">Commandes</div>
+                    <div class="dfb-item" data-dfb-text="Enregistrez les pièces du stock, par exemple de la signalétique, des électrodes et autres.">Stocks</div>
                 </div>
             </div>
 
@@ -1506,7 +1512,7 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Pièces Comptables</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Veille des factures et devis liés aux clients.">Factures & Devis</div>
+                    <div class="dfb-item" data-dfb-text="Enregistrez pour veille les factures et les devis liés aux commandes des clients.">Factures & Devis</div>
                 </div>
             </div>
 
@@ -1514,10 +1520,10 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Variables</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Gérez les labels des modèles de défibrillateurs.">Modèles</div>
-                    <div class="dfb-item" data-dfb-text="Gérez les modèles de contrats.">Contrats</div>
-                    <div class="dfb-item" data-dfb-text="Gérez les modèles de boîtiers.">Boîtiers</div>
-                    <div class="dfb-item" data-dfb-text="Gérez les modèles de pièces.">Pièces</div>
+                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les labels des modèles de défibrillateurs.">Modèles</div>
+                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de contrats.">Contrats</div>
+                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de boîtiers.">Boîtiers</div>
+                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de pièces du stock.">Pièces</div>
                 </div>
             </div>
 
@@ -1525,7 +1531,7 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Rappels & Sécurité</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Communications fabricants et ANSM.">Canal Notifications</div>
+                    <div class="dfb-item" data-dfb-text="Nous remontons les communications sur les rappels des fabricants concernant les défibrillateurs et les recommandations de sécurité de l'ANSM.">Canal Notifications</div>
                 </div>
             </div>
 
@@ -1533,7 +1539,7 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Assistance</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Support Defibeo 24/7.">Aide Défibeo</div>
+                    <div class="dfb-item" data-dfb-text="L'assistance technique standard Défibeo est toujours gratuite. Pour des besoins complémentaires ou plus larges une aide personnalisée vous est proposée.">Aide Défibeo</div>
                 </div>
             </div>
 
@@ -1541,14 +1547,14 @@ Réservez une démo
             <div class="dfb-parent">
                 <div class="dfb-parent-title">Partager</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Partagez le formulaire CRM via lien ou QR code.">Formulaire Partageable</div>
+                    <div class="dfb-item" data-dfb-text="Partagez le formulaire de contact ou de signalement vers le CRM à l'aide du lien ou du QR code. Vous récupérez ainsi toutes les entrées à un seul endroit.">Formulaire Partageable</div>
                 </div>
             </div>
         </div>
 
         <div class="dfb-text-panel">
             <img class="dfb-text-icon" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/RESPONDER.svg" alt="Icône">
-            <span>Survolez ou cliquez un élément pour afficher l'information.</span>
+            <span>Survolez ou cliquez un composant pour afficher le commentaire.</span>
         </div>
     </div>
 </div>
