@@ -83,7 +83,7 @@
 .hero {
       margin-top: -80px;
   position: relative;
-  background: #e5ff6a;
+  background: #ffffff;
   color: #000;
   padding: 2rem 2rem;
   display: block;
@@ -94,7 +94,14 @@
     border-radius: 0px;
 
 }
-
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(https://civilpromaws.s3.eu-north-1.amazonaws.com/plackage.png) center / cover no-repeat;
+    opacity: 0.5;
+    z-index: 0;
+}
 
 .hero > * {
   position: relative;
@@ -170,7 +177,7 @@
       padding: 4rem 2rem;
     }
     .container {
-      max-width: 1180px;
+      max-width: 1300px;
       margin: auto;
     }
     section h2 {
@@ -191,17 +198,18 @@
       gap: 2rem;
     }
     .card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 19px;
-      padding: 0px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: #fff;
+    border: 1px solid #edededd1;
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    box-shadow: 0 3px 9px rgb(0 0 0 / 10%);
     }
     .card img {
       max-width: 100%;
-      margin-bottom: 1rem;
+      margin-bottom: -20px;
       border-radius: 18px 18px 0px 0px;
+
     }
     .card h3 {
           font-weight: 100 !important;
@@ -218,7 +226,7 @@
       display: inline-block;
       padding: 0.5rem 1rem;
       border-radius: 6px;
-      background: #3f1368;
+      background: #0081f9;
       color: #fff;
       text-decoration: none;
       font-size: 0.9rem;
@@ -358,7 +366,7 @@ letter-spacing: -1px !important;
           font-family: 'DefibeoTAZ', sans-serif;
           letter-spacing: -0.8px;
               font-weight: 100 !important;
-font-size: 24px !important;
+font-size: 26px !important;
 cursor: default !important;
 text-align: left !important;
 padding-left: 20px;
@@ -367,8 +375,15 @@ padding-bottom: 10px;
 color: #000 !important;
     }
 
+    .dfb-browser-wrapper {
+background: #f5f4f2;
+padding-top: 80px;
+padding-bottom: 80px;
+    }
+
             .okazu2 {
-font-size: 16px !important;
+font-size: 19.5px !important;
+    line-height: 32px;
 cursor: default !important;
 padding-left: 20px;
 padding-right: 20px;
@@ -390,7 +405,7 @@ cursor: pointer;
     }
 
 .okazu3:hover {
-    box-shadow: 0 0 0px 6px #6f8cff29;
+    box-shadow: 0 0 0px 6px #e4f2ff;
         font-weight: 100 !important;
 }
 
@@ -407,17 +422,18 @@ line-height: 42px !important;
       }
 
             .okazu4 {
- font-family: 'DefibeoMain', sans-serif;
-     font-weight: 100 !important;
-font-size: 42px;
-cursor: default !important;
-line-height: 65px;
-padding-left: 20px;
-padding-right: 20px;
-color: black;
-padding-bottom: 40px; 
-text-align: center !important;
-margin: auto;
+font-family: 'DefibeoTAZ', sans-serif;
+    font-weight: 100 !important;
+    font-size: 46px;
+    letter-spacing: -1px;
+    cursor: default !important;
+    line-height: 65px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    padding-bottom: 40px;
+    text-align: center !important;
+    margin: auto;
     }
 
 .highlight2 {
@@ -1344,14 +1360,15 @@ color: #000 !important;
 width: 100%;
     padding: 40px 20px;
     font-family: sans-serif;
-    background: red;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: white;
     max-width: 700px;
     margin: auto;
-    border: 1px solid grey;
     margin-top: 50px;
-    border-radius: 22px;
     margin-bottom: 50px;
+
+    border: 1px solid #edededd1;
+    border-radius: 20px;
+    box-shadow: 0 3px 9px rgb(0 0 0 / 10%);
 }
 
 /* ----- Toggle ----- */
@@ -1390,7 +1407,7 @@ width: 100%;
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background: #ccc;
+  background: #0475de;
   border-radius: 30px;
   transition: .3s;
 }
@@ -1402,13 +1419,13 @@ width: 100%;
   width: 22px;
   left: 3px;
   top: 3px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 50%;
   transition: .3s;
 }
 
 .fs-toggle-switch input:checked + .fs-toggle-slider {
-  background: #4cd964;
+  background: #ff399f;
 }
 
 .fs-toggle-switch input:checked + .fs-toggle-slider:before {
@@ -1661,19 +1678,19 @@ width: 100%;
     <div class="container">
       <div class="cards">
         <div class="card zus">
-          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Rose2.svg" alt="Mobilité">
+          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/aezfeafef.svg" alt="Mobilité"><br><br>
           <h3 class="okazu">Infogérance</h3>
           <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
           <a href="#message" class="idgo okazu3">Contactez-nous</a>
         </div>
         <div class="card zus">
-          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Vert3.svg" alt="Assistance">
+          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fezfezfzef.svg" alt="Assistance"><br><br>
           <h3 class="okazu">Logiciel Métier</h3>
           <p class="okazu2">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
           <a href="#message" class="idgo okazu3">Contactez-nous</a>
         </div>
         <div class="card zus">
-          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Violet4.svg" alt="Infogérance">
+          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/jytejyjeyj.svg" alt="Infogérance"><br><br>
           <h3 class="okazu">Accessibilité</h3>
           <p class="okazu2">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et mobile.</p>
           <a href="#message" class="idgo okazu3">Contactez-nous</a>
