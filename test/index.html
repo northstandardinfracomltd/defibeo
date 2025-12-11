@@ -756,51 +756,123 @@ padding-bottom: 2px !important;
 </head>
 <body>
 <div class="defibeo2-alert-banner-stkyTop-992x__v1">
-  <span class="defibeo2-alert-text-992x__v1">
-New text alert content 
-  </span>
-  <a href="#" class="defibeo2-alert-closeBtn-992x__v1">Masquer</a>
+  <div class="defibeo2-alert-left__logo">
+    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
+  </div>
+
+  <div class="defibeo2-alert-buttons">
+    <a href="https://defibeo-com-reserver-un-appel.youcanbook.me" 
+       target="_blank" 
+       class="defibeo2-btn demo-btn">
+       Réserver Démo
+    </a>
+
+    <button id="openBtn-registerpay" class="defibeo2-btn contact-btn">
+      Contacter
+    </button>
+  </div>
 </div>
 
+
 <style>
+
+    /* Responsive Mobile */
+@media (max-width: 768px) {
+
   .defibeo2-alert-banner-stkyTop-992x__v1 {
-    position: sticky;
-    font-weight: 100 !important;
-    top: 0;
-    z-index: 9999;
-    background: linear-gradient(45deg, #5c3183, #460283);
-    color: #fff;
-    padding-top: 14px !important; 
-    padding: 12px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .defibeo2-alert-left__logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .defibeo2-alert-left__logo img {
+    height: 36px;
+  }
+
+  .defibeo2-alert-buttons {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-font-family: 'DefibeoMain', sans-serif;
-font-weight: 100 !important;
-    font-size: 16px;
+    flex-direction: row;
+    gap: 0;
   }
 
-  .defibeo2-alert-text-992x__v1 {
-    flex: 1;
-    margin-right: 15px;
-    line-height: 1.4;
-    font-weight: 100 !important;
+  .defibeo2-btn {
+    width: 50%;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    text-align: center; /* pour un rendu plus propre */
   }
 
-  .defibeo2-alert-closeBtn-992x__v1 {
-    color: #1af1f5;
-    text-decoration: none;
-    cursor: pointer;
-    white-space: nowrap;
-    font-weight: bold;
-    font-weight: 100 !important;
+  .demo-btn {
+    border-radius: 12px 0 0 12px !important;
   }
 
-  .defibeo2-alert-closeBtn-992x__v1:hover {
-    opacity: 1;
-        text-decoration: none;
-        font-weight: 100 !important;
+  .contact-btn {
+    border-radius: 0 12px 12px 0 !important;
   }
+}
+
+
+
+.defibeo2-alert-banner-stkyTop-992x__v1 {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+  background: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+/* Logo */
+.defibeo2-alert-left__logo img {
+  height: 40px;
+  display: block;
+}
+
+/* Boutons container */
+.defibeo2-alert-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Style Commun */
+.defibeo2-btn {
+  margin-right: 10px;
+  font-family: 'DefibeoMain', sans-serif;
+  font-weight: 100 !important;
+  border: none !important;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: left;
+  font-size: 16px !important;
+  border-radius: 12px !important;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0 !important;
+}
+
+/* Bouton Réserver Démo = transparent */
+.demo-btn {
+  background: transparent !important;
+  color: #000 !important;
+}
+
+/* Bouton Contacter = noir */
+.contact-btn {
+  background: #000 !important;
+  color: #fff !important;
+}
 
   ::selection {
   background: #ff91e72e; /* couleur du fond lors de la sélection */
@@ -872,7 +944,6 @@ border-bottom: 1px solid grey;
         <section class="two-columns">
     <div class="col">
 
-            <img class="defibeologo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Logo Defibeo" class="logo">
  <h1>
   Le premier logiciel français d'infogérance à personnaliser, pour la traçabilité et les maintenances des défibrillateurs.
 </h1>
@@ -1246,9 +1317,17 @@ color: #000 !important;
   
 
   .fs-section-features-stars {
-  width: 100%;
-  padding: 40px 20px;
-  font-family: sans-serif;
+width: 100%;
+    padding: 40px 20px;
+    font-family: sans-serif;
+    background: red;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin: auto;
+    border: 1px solid grey;
+    margin-top: 50px;
+    border-radius: 22px;
+    margin-bottom: 50px;
 }
 
 /* ----- Toggle ----- */
@@ -1264,7 +1343,7 @@ color: #000 !important;
   font-size: 15px;
   opacity: 0.4;
   transition: opacity .3s ease;
-  font-weight: 600;
+  font-family: 'DefibeoMain', sans-serif; font-weight: 100 !important;
 }
 
 .fs-toggle-label.active {
@@ -1316,6 +1395,7 @@ color: #000 !important;
 .fs-features-content {
   display: none;
   animation: fs-fade-in .35s ease;
+  font-family: 'DefibeoMain', sans-serif; font-weight: 100 !important;
 }
 
 .fs-features-content.active {
@@ -1351,8 +1431,16 @@ color: #000 !important;
 .fs-feature-item p {
   margin: 0;
   font-size: 15px;
+  font-family: 'DefibeoMain', sans-serif; font-weight: 100 !important;
   line-height: 1.4;
 }
+
+.defibeobestsoftware  {
+  font-size: 22px;
+  font-family: 'DefibeoMain', sans-serif; font-weight: 100 !important;
+  text-align: center;
+}
+
 
 @keyframes fs-fade-in {
   from { opacity: 0; transform: translateY(5px); }
@@ -1537,85 +1625,8 @@ color: #000 !important;
 
     </div>
   </section>
-<a href="https://defibeo-com-reserver-un-appel.youcanbook.me" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
-Réservez une démo
-</a>
 
 
-
-<section class="fs-section-features-stars">
-  
-  <!-- Toggle -->
-  <div class="fs-toggle-wrapper">
-    <span class="fs-toggle-label fs-toggle-left active">Au Bureau</span>
-
-    <label class="fs-toggle-switch">
-      <input type="checkbox" id="fsToggleInput">
-      <span class="fs-toggle-slider"></span>
-    </label>
-
-    <span class="fs-toggle-label fs-toggle-right">Sur le Terrain</span>
-  </div>
-
-  <!-- Bloc Au Bureau -->
-  <div class="fs-features-content fs-content-bureau active">
-    <div class="fs-feature-item">
-      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
-      <p><strong>BlaBla1</strong>, lorem ipsum dolore tien iso suprea.</p>
-    </div>
-
-    <div class="fs-feature-item">
-      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
-      <p><strong>BlaBla2</strong>, lorem ipsum dolore tien preo suprea.</p>
-    </div>
-
-    <div class="fs-feature-item">
-      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
-      <p><strong>BlaBla3</strong>, lorem ipsum dolore tien deo suprea.</p>
-    </div>
-  </div>
-
-  <!-- Bloc Sur le Terrain -->
-  <div class="fs-features-content fs-content-terrain">
-    <div class="fs-feature-item">
-      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
-      <p><strong>BlaBla4</strong>, lorem ipsum dolore tien geto suprea.</p>
-    </div>
-
-    <div class="fs-feature-item">
-      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
-      <p><strong>BlaBla5</strong>, lorem ipsum dolore tien greo suprea.</p>
-    </div>
-
-    <div class="fs-feature-item">
-      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
-      <p><strong>BlaBla6</strong>, lorem ipsum dolore tien seo suprea.</p>
-    </div>
-  </div>
-
-</section>
-
-<script>
-  const fsToggle = document.getElementById('fsToggleInput');
-  const lblLeft = document.querySelector('.fs-toggle-left');
-  const lblRight = document.querySelector('.fs-toggle-right');
-  const bureau = document.querySelector('.fs-content-bureau');
-  const terrain = document.querySelector('.fs-content-terrain');
-
-  fsToggle.addEventListener('change', () => {
-    if (fsToggle.checked) {
-      bureau.classList.remove('active');
-      terrain.classList.add('active');
-      lblLeft.classList.remove('active');
-      lblRight.classList.add('active');
-    } else {
-      bureau.classList.add('active');
-      terrain.classList.remove('active');
-      lblLeft.classList.add('active');
-      lblRight.classList.remove('active');
-    }
-  });
-</script>
 
 
 
@@ -1647,7 +1658,8 @@ Réservez une démo
     </div>
   </section>
 
-  
+
+
 <br><br><br>
     <h2 class="okazu4" >Les composants du logiciel.</h2>
 <div class="dfb-browser-wrapper">
@@ -1824,6 +1836,92 @@ Réservez une démo
 })();
 </script>
 </div>
+
+
+
+  <br><br><br>
+    <h2 class="okazu4" >Voyez la vie en rose avec ces fonctionnalités.</h2>
+
+
+<section class="fs-section-features-stars">
+
+  
+  <!-- Toggle -->
+  <div class="fs-toggle-wrapper">
+    <span class="fs-toggle-label fs-toggle-left active">Au Bureau</span>
+
+    <label class="fs-toggle-switch">
+      <input type="checkbox" id="fsToggleInput">
+      <span class="fs-toggle-slider"></span>
+    </label>
+
+    <span class="fs-toggle-label fs-toggle-right">Sur le Terrain</span>
+  </div>
+
+  <!-- Bloc Au Bureau -->
+  <div class="fs-features-content fs-content-bureau active">
+    <div class="fs-feature-item">
+      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
+      <p><strong>BlaBla1</strong>, lorem ipsum dolore tien iso suprea.</p>
+    </div>
+
+    <div class="fs-feature-item">
+      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
+      <p><strong>BlaBla2</strong>, lorem ipsum dolore tien preo suprea.</p>
+    </div>
+
+    <div class="fs-feature-item">
+      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
+      <p><strong>BlaBla3</strong>, lorem ipsum dolore tien deo suprea.</p>
+    </div>
+  </div>
+
+  <!-- Bloc Sur le Terrain -->
+  <div class="fs-features-content fs-content-terrain">
+    <div class="fs-feature-item">
+      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
+      <p><strong>BlaBla4</strong>, lorem ipsum dolore tien geto suprea.</p>
+    </div>
+
+    <div class="fs-feature-item">
+      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
+      <p><strong>BlaBla5</strong>, lorem ipsum dolore tien greo suprea.</p>
+    </div>
+
+    <div class="fs-feature-item">
+      <div class="fs-feature-icon"><img src="https://via.placeholder.com/40"></div>
+      <p><strong>BlaBla6</strong>, lorem ipsum dolore tien seo suprea.</p>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  const fsToggle = document.getElementById('fsToggleInput');
+  const lblLeft = document.querySelector('.fs-toggle-left');
+  const lblRight = document.querySelector('.fs-toggle-right');
+  const bureau = document.querySelector('.fs-content-bureau');
+  const terrain = document.querySelector('.fs-content-terrain');
+
+  fsToggle.addEventListener('change', () => {
+    if (fsToggle.checked) {
+      bureau.classList.remove('active');
+      terrain.classList.add('active');
+      lblLeft.classList.remove('active');
+      lblRight.classList.add('active');
+    } else {
+      bureau.classList.add('active');
+      terrain.classList.remove('active');
+      lblLeft.classList.add('active');
+      lblRight.classList.remove('active');
+    }
+  });
+</script>
+
+
+
+
+
 
   <!-- Pricing -->
   <section>
