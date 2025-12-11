@@ -58,6 +58,11 @@
          font-weight: 100 !important;
       src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeoTITLE.otf') format('opentype');
     }
+        @font-face {
+      font-family: 'DefibeoTAZ';
+         font-weight: 100 !important;
+      src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold.otf') format('opentype');
+    }
 
     body, html, #root {
   margin: 0;
@@ -77,7 +82,7 @@
     /* Hero */
 .hero {
   position: relative;
-  background: #fff;
+  background: #ffffff;
   color: #000;
   padding: 2rem 2rem;
   display: block;
@@ -85,10 +90,17 @@
   overflow: hidden; /* important */
   border-bottom: 1px solid #ededed;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px;
 
 }
-
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(https://civilpromaws.s3.eu-north-1.amazonaws.com/plackage.png) center / cover no-repeat;
+    opacity: 0.5;
+    z-index: 0;
+}
 
 .hero > * {
   position: relative;
@@ -96,7 +108,8 @@
 }
 
     .hero .container {
-      max-width: 1200px;
+    width: 100%;
+    max-width: 1300px;
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -114,8 +127,9 @@
 
     .hero h1 {
           font-weight: 100 !important;
-      font-family: 'DefibeoMain', sans-serif;
-      font-size: 42px;
+      font-family: 'DefibeoTAZ', sans-serif;
+      font-size: 68px;
+      letter-spacing: -2px !important;
       cursor: default;
       line-height: 60px;
       margin-top: 0px;
@@ -347,13 +361,16 @@ letter-spacing: -1px !important;
 
 
         .okazu {
+          font-family: 'DefibeoTAZ', sans-serif;
+          letter-spacing: -0.8px;
               font-weight: 100 !important;
-font-size: 22px !important;
+font-size: 24px !important;
 cursor: default !important;
 text-align: left !important;
 padding-left: 20px;
 padding-right: 20px;
 padding-bottom: 10px;
+color: #000 !important;
     }
 
             .okazu2 {
@@ -761,17 +778,20 @@ padding-bottom: 2px !important;
   </div>
 
   <div class="defibeo2-alert-buttons">
-    <a href="https://defibeo-com-reserver-un-appel.youcanbook.me" 
-       target="_blank" 
-       class="defibeo2-btn demo-btn">
-       Réserver Démo
-    </a>
+<button id="btn-reserver-demo" class="defibeo2-btn demo-btn">
+  Réserver Démo
+</button>
 
     <button id="openBtn-registerpay" class="defibeo2-btn contact-btn">
       Contacter
     </button>
   </div>
 </div>
+<script>
+  document.getElementById("btn-reserver-demo").addEventListener("click", function () {
+    window.open("https://defibeo-com-reserver-un-appel.youcanbook.me", "_blank");
+  });
+</script>
 
 
 <style>
@@ -783,6 +803,7 @@ padding-bottom: 2px !important;
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
+
   }
 
   .defibeo2-alert-left__logo {
@@ -825,12 +846,12 @@ padding-bottom: 2px !important;
   top: 0;
   width: 100%;
   z-index: 999999;
-  background: #fff;
-  padding: 10px 20px;
+    background: #ff399f;
+  padding: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0px solid #eee;
 }
 
 /* Logo */
@@ -843,7 +864,7 @@ padding-bottom: 2px !important;
 .defibeo2-alert-buttons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
 }
 
 /* Style Commun */
@@ -851,7 +872,6 @@ padding-bottom: 2px !important;
   margin-right: 10px;
   font-family: 'DefibeoMain', sans-serif;
   font-weight: 100 !important;
-  border: none !important;
   padding: 10px 20px;
   text-decoration: none;
   text-align: left;
@@ -859,19 +879,22 @@ padding-bottom: 2px !important;
   border-radius: 12px !important;
   cursor: pointer;
   display: inline-block;
-  margin-bottom: 0 !important;
+  margin-top: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 /* Bouton Réserver Démo = transparent */
 .demo-btn {
-  background: transparent !important;
-  color: #000 !important;
+    background: #ff399f;
+    border: 1px solid #ff51ab;
+      color: #fff !important;
 }
 
 /* Bouton Contacter = noir */
 .contact-btn {
-  background: #000 !important;
-  color: #fff !important;
+    background: #ff399f;
+    border: 1px solid #ff51ab;
+      color: #fff !important;
 }
 
   ::selection {
@@ -895,10 +918,11 @@ padding-bottom: 2px !important;
 }
 
 .tigerattack {
-background: blue; 
-border-radius: 18px;
-text-align: center;
-border: 1px solid grey;
+    background: #ffffff38;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #0000000f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .bigbastos {
@@ -945,8 +969,10 @@ border-bottom: 1px solid grey;
     <div class="col">
 
  <h1>
-  Le premier logiciel français d'infogérance à personnaliser, pour la traçabilité et les maintenances des défibrillateurs.
+Le Logiciel qui Orchestre vos Maintenances de Défibrillateurs
 </h1>
+<p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
+        </p>
 <br>
 <button id="openBtn-registerpay" class="ffka defibeocontact">Contactez votre interlocuteur</button>
 
