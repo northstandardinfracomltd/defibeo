@@ -214,7 +214,7 @@
     .card h3 {
           font-weight: 100 !important;
       font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+    margin-bottom: -20px;
     }
     .card p {
           font-weight: 100 !important;
@@ -225,11 +225,11 @@
           font-weight: 100 !important;
       display: inline-block;
       padding: 0.5rem 1rem;
-      border-radius: 6px;
+    border-radius: 13px !important;
       background: #0081f9;
       color: #fff;
       text-decoration: none;
-      font-size: 0.9rem;
+font-size: 18px !important;
     }
 
 
@@ -375,11 +375,15 @@ padding-bottom: 10px;
 color: #000 !important;
     }
 
-    .dfb-browser-wrapper {
-background: #f5f4f2;
+.dfb-browser-wrapper {
+background: #fff5fa;
 padding-top: 80px;
 padding-bottom: 80px;
+    background: url(https://civilpromaws.s3.eu-north-1.amazonaws.com/backgroundETR.png) center / cover no-repeat;
+
     }
+
+
 
             .okazu2 {
 font-size: 19.5px !important;
@@ -782,21 +786,7 @@ padding-bottom: 2px !important;
   </style>
 </head>
 <body>
-<div class="defibeo2-alert-banner-stkyTop-992x__v1">
-  <div class="defibeo2-alert-left__logo">
-    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
-  </div>
 
-  <div class="defibeo2-alert-buttons">
-<button id="btn-reserver-demo" class="defibeo2-btn demo-btn">
-  Réserver Démo
-</button>
-
-    <button id="openBtn-registerpay" class="defibeo2-btn contact-btn">
-      Contacter
-    </button>
-  </div>
-</div>
 <script>
   document.getElementById("btn-reserver-demo").addEventListener("click", function () {
     window.open("https://defibeo-com-reserver-un-appel.youcanbook.me", "_blank");
@@ -856,13 +846,11 @@ position: sticky;
     top: 0;
     width: 100%;
     z-index: 999999;
-    background: linear-gradient(45deg, #ffffff, #d0d0d01c);
+    background: transparent;
     padding: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ababab1f;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Logo */
@@ -873,6 +861,13 @@ position: sticky;
     margin-bottom: -15px;
     display: block;
 }
+
+
+.krako {
+height: 90px;
+margin-right:auto;
+}
+
 
 /* Boutons container */
 .defibeo2-alert-buttons {
@@ -889,7 +884,7 @@ position: sticky;
   padding: 10px 20px;
   text-decoration: none;
   text-align: left;
-  font-size: 16px !important;
+  font-size: 18px !important;
   border-radius: 12px !important;
   cursor: pointer;
   display: inline-block;
@@ -969,6 +964,9 @@ border-bottom: 1px solid grey;
   });
 </script>
 
+<a href="https://defibeo-com-reserver-un-appel.youcanbook.me" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
+Réservez une démo
+</a>
   <!-- Hero -->
   <section class="hero">
     <div class="container">
@@ -981,9 +979,9 @@ border-bottom: 1px solid grey;
 
         <section class="two-columns">
     <div class="col">
-
+    <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
  <h1>
-Le Logiciel qui Orchestre vos Maintenances de Défibrillateurs
+Le Logiciel Leader GMAO Défibrillateurs
 </h1>
 <p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
         </p>
@@ -1393,10 +1391,12 @@ width: 100%;
 
 /* Switch Apple-like */
 .fs-toggle-switch {
-  position: relative;
-  width: 52px;
-  height: 28px;
-  display: inline-block;
+position: relative;
+    width: 43px;
+    height: 23px;
+    border: 4px solid #ffd6eb;
+    border-radius: 100px;
+    display: inline-block;
 }
 
 .fs-toggle-switch input {
@@ -1407,18 +1407,18 @@ width: 100%;
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background: #0475de;
-  border-radius: 30px;
+background: #ff399f;
+    border-radius: 23px;
   transition: .3s;
 }
 
 .fs-toggle-slider:before {
   content: "";
   position: absolute;
-  height: 22px;
-  width: 22px;
-  left: 3px;
-  top: 3px;
+    height: 17px;
+    width: 17px;
+    left: 3px;
+    top: 3px;
   background: #ffffff;
   border-radius: 50%;
   transition: .3s;
@@ -1429,7 +1429,7 @@ width: 100%;
 }
 
 .fs-toggle-switch input:checked + .fs-toggle-slider:before {
-  transform: translateX(24px);
+  transform: translateX(20px);
 }
 
 /* ----- Content display ----- */
@@ -1702,9 +1702,9 @@ width: 100%;
 
 
 <br><br><br>
-    <h2 class="okazu4" >Les composants du logiciel.</h2>
+
 <div class="dfb-browser-wrapper">
-        
+            <h2 class="okazu4" >Les composants du logiciel.</h2>
 <style>
 @font-face {
     font-family: "DefibeoFont";
@@ -2227,12 +2227,55 @@ margin: auto;
     padding: 4px;
   }
 }
+
+.infoplus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.infoplus {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.lang-options-uniY {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.davis {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.infoplusTXT {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* 📱 MOBILE : 1 colonne */
+@media (max-width: 768px) {
+  .infoplus-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 </style>
 
 
 
 <br>
 <div class="divider"></div>
+
+
+
+
+<div class="infoplus-grid">
 
 <div class="infoplus">
 
@@ -2241,7 +2284,14 @@ margin: auto;
    <p class="infoplusTXT">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise.</p>
    </div>
 </div>
-<div class="divider"></div>
+
+<div class="infoplus">
+
+  <div class="lang-options-uniY">
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO1.svg" alt="Personnalisé" >
+   <p class="infoplusTXT">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise.</p>
+   </div>
+</div>
 <div class="infoplus">
   
   <div class="lang-options-uniY">
@@ -2249,7 +2299,6 @@ margin: auto;
 <p class="infoplusTXT">Utiliser le logiciel Défibeo, c’est garantir la conformité de votre traitement grâce à des fonctionnalités conçues dans le respect des directives en matière de traçabilité et d’infogérance (selon norme AFNOR S99-170), ainsi qu’un hébergement selon la norme ISO 27001.</p>
   </div>
 </div>
-<div class="divider"></div>
 <div class="infoplus">
 
     <div class="lang-options-uniY">
@@ -2257,7 +2306,6 @@ margin: auto;
 <p class="infoplusTXT">Vous êtes autonome et indépendant grâce à notre licence d’achat du logiciel à vie, ainsi vous bénéficiez aussi d’un hébergement dédié à votre entreprise, uniquement pour vous, à la fois sécurisé, étanche et robuste. Vos données sont en sécurité, grâce à un système de multi-sauvegardes en ligne et hors ligne.</p>
   </div>
 </div>
-<div class="divider"></div>
 <div class="infoplus">
   
   <div class="lang-options-uniY">
@@ -2266,7 +2314,6 @@ margin: auto;
   </div>
 </div>
 
-<div class="divider"></div>
 <div class="infoplus">
 
     <div class="lang-options-uniY">
@@ -2275,7 +2322,6 @@ margin: auto;
   </div>
 </div>
 
-<div class="divider"></div>
 <div class="infoplus">
   
   <div class="lang-options-uniY">
@@ -2284,7 +2330,6 @@ margin: auto;
   </div>
 </div>
 
-<div class="divider"></div>
 <div class="infoplus">
 
     <div class="lang-options-uniY">
@@ -2293,7 +2338,6 @@ margin: auto;
   </div>
 </div>
 
-<div class="divider"></div>
 <div class="infoplus">
 
 
@@ -2303,7 +2347,6 @@ margin: auto;
   </div>
 </div>
 
-<div class="divider"></div>
 <div class="infoplus">
 
 
@@ -2314,7 +2357,6 @@ margin: auto;
   </div>
 </div>
 
-<div class="divider"></div>
 <div class="infoplus">
 
 
@@ -2325,7 +2367,7 @@ margin: auto;
   </div>
 </div>
 
-
+</div>
 <style>
 .divider {
 height: 1PX;
