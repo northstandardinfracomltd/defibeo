@@ -90,21 +90,11 @@
   display: block;
   text-align: left;
   overflow: hidden; /* important */
-  border-bottom: 1px solid #ededed;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     border-radius: 0px;
 
 }
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.4) 2px, transparent 2px);
-    background-size: 40px 40px;
-    background-repeat: repeat;
-    opacity: 0.5;
-    z-index: 0;
-}
+
 
 .hero > * {
   position: relative;
@@ -132,17 +122,28 @@
       }
 
     .hero h1 {
-          font-weight: 100 !important;
-      font-family: 'DefibeoTAZ', sans-serif;
-      font-size: 48px;
-      letter-spacing: -2px !important;
-      cursor: default;
-      line-height: 55px;
-          min-height: 170px;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      border-bottom: 0px solid transparent;
+    font-weight: 100 !important;
+    font-family: 'DefibeoTAZ', sans-serif;
+    font-size: 70px;
+    letter-spacing: -3px !important;
+    cursor: default;
+    line-height: 75px;
+    min-height: 255px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px solid transparent;
     }
+
+    .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, white 0%, white 70%, #16f3bcbd 100%);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+
     .hero p {
           font-weight: 100 !important;
       font-size: 19px;
@@ -398,11 +399,12 @@ color: #000 !important;
     }
 
 .dfb-browser-wrapper {
-    background: #5a3372;
+background: radial-gradient(circle, white 0%, white 65%, #e5ff6b80 100%);
     padding-top: 80px;
-    border-radius: 36px;
+    border-radius: 0px;
     padding-bottom: 80px;
-    border: 8px solid #eed4ff;
+    border: none;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 
     }
 
@@ -887,7 +889,7 @@ position: sticky;
 
 
 .krako {
-height: 100px;
+height: 110px;
 margin-right:auto;
     margin-top: 40px;
     margin-left: -2px;
@@ -1451,7 +1453,7 @@ width: 100%;
 
 
 .kirikouuuu  {
- background: linear-gradient(45deg, #faffe1, #e9fffa);
+ background: #fff;
 }
 
 
@@ -1949,6 +1951,10 @@ width: 40px;
 </script>
 </div>
 
+<div class="fullwidth-image">
+    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testillustrationback.svg" alt="Illustration">
+</div>
+
 
 
    <div class="LELOUP">
@@ -2054,6 +2060,17 @@ width: 40px;
 </div>
 
 <style>
+
+  .fullwidth-image {
+    width: 100%;
+}
+
+.fullwidth-image img {
+    width: 100%;
+    height: auto;
+    display: block; /* évite un petit espace sous l'image */
+}
+
 
   .LELOUP {
     background: #fff;
