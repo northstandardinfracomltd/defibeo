@@ -110,12 +110,14 @@
 
     .hero .container {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1350px;
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
       align-items: center;
     }
+
+    
 
         @media(max-width: 900px){
   .hero h1 {
@@ -329,7 +331,7 @@ font-size: 18px !important;
     }
 
         .musika {
-max-width: 1200px;
+max-width: 1350px;
     margin: 0 auto;
     background: #ffffff00;
     border: 0px solid #ffffff00 ;
@@ -937,9 +939,7 @@ margin-right:auto;
     padding: 20px;
 }
 
-.two-columns .col {
-    flex: 1;
-}
+
 
 .two-columns p {
     margin: 0;
@@ -972,6 +972,14 @@ width: 100%;
   padding-left: 6px;
 }
 
+.left-column {
+    flex-basis: 40%;
+}
+
+.right-column {
+    flex-basis: 60%;
+}
+
 
 @media (max-width: 900px) {
     .two-columns {
@@ -1001,12 +1009,8 @@ Réservez une démo
 
       <div class="musika">
 
-
-
-
-
         <section class="two-columns">
-    <div class="col">
+    <div class="col left-column">
     <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
 <h1>
 Logiciel métier leader pour<span id="typing"></span> défibrillateurs
@@ -1057,7 +1061,7 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 
     </div>
 
-    <div class="col">
+    <div class="col right-column">
 
         <div class="tigerattack">
             <img class="illustrationone" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testillustrationback.svg" alt="Logo Defibeo" class="logo"></div>
