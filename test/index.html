@@ -945,6 +945,12 @@ width: 100%;
 border-bottom: 1px solid grey;
 }
 
+#typing {
+  border-right: 2px solid #000;
+  padding-left: 6px;
+}
+
+
 @media (max-width: 900px) {
     .two-columns {
         flex-direction: column;
@@ -980,9 +986,57 @@ Réservez une démo
         <section class="two-columns">
     <div class="col">
     <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
- <h1>
-Le Logiciel Leader GMAO Défibrillateurs
+<h1>
+  Le Logiciel Leader <span id="typing"></span>
 </h1>
+<script>
+  const texts = [
+    "GMAO Défibrillateurs",
+    "Traçabilité Défibrillateurs",
+    "Infogérance Défibrillateurs"
+  ];
+
+  const typingElement = document.getElementById("typing");
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentText = texts[textIndex];
+
+    // Texte en cours (avancement)
+    typingElement.textContent = currentText.slice(0, charIndex);
+
+    if (!isDeleting) {
+      // Écriture
+      if (charIndex < currentText.length) {
+        charIndex++;
+        setTimeout(type, 80);
+      } else {
+        // Pause plus longue quand le mot est fini
+        setTimeout(() => {
+          isDeleting = true;
+          type();
+        }, 1200);
+      }
+    } else {
+      // Suppression
+      if (charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(type, 200);
+      }
+    }
+  }
+
+  // Lancement
+  type();
+</script>
+
 <p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
         </p>
 <br>
@@ -1981,22 +2035,6 @@ background: #ff399f;
       </div>
     </div>
   </section>
-<div class="divider"></div>
-
-<div class="contact-block-uniX" id="message" >
-  <img class="pikolo" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/XGLASSES.svg" alt="Vidéo Présentation">
-  <p class="contact-text-uniX">Vous souhaitez en savoir plus sur le logiciel : Veuillez nous contacter pour organiser une présentation par écran partagé.</p>
-  
-  <div class="contact-links-uniX" id="message1">
-        <a href="mailto:fr@defibeo.com" class="VID btncontact contact-btn-uniX" >Mail: fr@defibeo.com</a>
-    <a href="tel:+33651517065" class="btncontact contact-btn-uniX">Tél: +33 6 51 51 70 65</a>
-  </div>
-
-  <div class="contact-status-uniX">
-    <span class="contact-status-dot-uniX"></span>
-    <span class="contact-status-text-uniX">Disponible de 9h à 18h<br>Lundi à Vendredi</span>
-  </div>
-</div>
 
 <style>
 .okazu007 {
@@ -2233,12 +2271,19 @@ margin: auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 20px 0;
+
+      width: 100%;
+    max-width: 1300px;
+    margin: auto;
 }
 
 .infoplus {
   background: #fff;
-  border-radius: 10px;
   padding: 20px;
+  border: 1px solid #edededd1 !important;
+  border-radius: 20px;
+  box-shadow: 0 3px 9px rgb(0 0 0 / 10%);
+
 }
 
 .lang-options-uniY {
@@ -2269,16 +2314,12 @@ margin: auto;
 
 
 
-<br>
-<div class="divider"></div>
-
 
 
 
 <div class="infoplus-grid">
 
 <div class="infoplus">
-
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO1.svg" alt="Personnalisé" >
    <p class="infoplusTXT">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise.</p>
@@ -2348,9 +2389,6 @@ margin: auto;
 </div>
 
 <div class="infoplus">
-
-
-
       <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Inde%CC%81.svg" alt="Indépendant" >
 <p class="infoplusTXT">Adopter le logiciel Défibeo, c'est aussi apporter de la valeur ajoutée à votre entreprise. Outre le fait que le logiciel est en marque blanche, vous êtes propriétaire du logiciel et indépendant sur l'hébergement des données.</p>
@@ -2358,15 +2396,18 @@ margin: auto;
 </div>
 
 <div class="infoplus">
-
-
-  
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO6.svg" alt="Éditeur No-Code" >
 <p class="infoplusTXT">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone.</p>
   </div>
 </div>
 
+<div class="infoplus">
+  <div class="lang-options-uniY">
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO6.svg" alt="Éditeur No-Code" >
+<p class="infoplusTXT">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone.</p>
+  </div>
+</div>
 </div>
 <style>
 .divider {
