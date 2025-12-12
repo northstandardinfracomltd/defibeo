@@ -129,10 +129,10 @@
     .hero h1 {
           font-weight: 100 !important;
       font-family: 'DefibeoTAZ', sans-serif;
-      font-size: 68px;
+      font-size: 48px;
       letter-spacing: -2px !important;
       cursor: default;
-      line-height: 60px;
+      line-height: 55px;
       margin-top: 0px;
       margin-bottom: 0px;
       border-bottom: 0px solid transparent;
@@ -153,9 +153,7 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .hero img {
-      width: 100%;
-    }
+
 
         .defibeologo {
       width: 100%;
@@ -364,7 +362,7 @@ letter-spacing: -1px !important;
 
         .okazu {
           font-family: 'DefibeoTAZ', sans-serif;
-          letter-spacing: -0.8px;
+          letter-spacing: -0.5px;
               font-weight: 100 !important;
 font-size: 26px !important;
 cursor: default !important;
@@ -376,10 +374,9 @@ color: #000 !important;
     }
 
 .dfb-browser-wrapper {
-background: #fff5fa;
+background: #0281f9;
 padding-top: 80px;
 padding-bottom: 80px;
-    background: url(https://civilpromaws.s3.eu-north-1.amazonaws.com/backgroundETR.png) center / cover no-repeat;
 
     }
 
@@ -987,55 +984,46 @@ Réservez une démo
     <div class="col">
     <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
 <h1>
-  Le Logiciel Leader <span id="typing"></span>
+Logiciel pour<span id="typing"></span> défibrillateurs
 </h1>
 <script>
   const texts = [
-    "GMAO Défibrillateurs",
-    "Traçabilité Défibrillateurs",
-    "Infogérance Défibrillateurs"
+        " les tournées des",
+    " les maintenances des",
+        " les techniciens",
+    " la traçabilité",
+    " l'infogérance",
+    " la veille",
+     " les rappels"
   ];
 
   const typingElement = document.getElementById("typing");
 
   let textIndex = 0;
   let charIndex = 0;
-  let isDeleting = false;
 
   function type() {
     const currentText = texts[textIndex];
 
-    // Texte en cours (avancement)
     typingElement.textContent = currentText.slice(0, charIndex);
 
-    if (!isDeleting) {
-      // Écriture
-      if (charIndex < currentText.length) {
-        charIndex++;
-        setTimeout(type, 80);
-      } else {
-        // Pause plus longue quand le mot est fini
-        setTimeout(() => {
-          isDeleting = true;
-          type();
-        }, 1200);
-      }
+    if (charIndex < currentText.length) {
+      charIndex++;
+      setTimeout(type, 80); // vitesse écriture
     } else {
-      // Suppression
-      if (charIndex > 0) {
-        charIndex--;
-        setTimeout(type, 50);
-      } else {
-        isDeleting = false;
+      // Pause quand le texte est complet
+      setTimeout(() => {
+        // Passage au texte suivant
         textIndex = (textIndex + 1) % texts.length;
-        setTimeout(type, 200);
-      }
+        charIndex = 0;
+        type();
+      }, 1200); // pause plus longue
     }
   }
 
-  // Lancement
   type();
 </script>
+
 
 <p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
         </p>
@@ -1049,7 +1037,7 @@ Réservez une démo
         <div class="tigerattack">
             <img class="illustrationone" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testillustrationback.svg" alt="Logo Defibeo" class="logo">
 
-        <p class="bigbastos" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
+        <p class="bigbastos" >Le logiciel leader spécialsié pour les mainteneurs et distrubuteurs
         </p></div>
     </div>
 </section>
@@ -1934,7 +1922,9 @@ background: #ff399f;
 
 
 
-  <br><br><br>
+   <div class="LELOUP">
+  
+  
     <h2 class="okazu4" >Voyez la vie en rose avec ces fonctionnalités.</h2>
 
 
@@ -1991,6 +1981,8 @@ background: #ff399f;
 
 </section>
 
+</div>
+
 <script>
   const fsToggle = document.getElementById('fsToggleInput');
   const lblLeft = document.querySelector('.fs-toggle-left');
@@ -2012,14 +2004,9 @@ background: #ff399f;
     }
   });
 </script>
-
-
-
-
-
-
-  <!-- Pricing -->
+       <div class="LELOUP2">
   <section>
+
     <div class="container">
     <h2 class="okazu4" >Une offre unique, tout comme vous.</h2>
       <div class="pricing">
@@ -2035,8 +2022,24 @@ background: #ff399f;
       </div>
     </div>
   </section>
+</div>
 
 <style>
+
+  .LELOUP {
+background: lightcyan;
+padding-top: 80px;
+padding-bottom: 80px;
+
+}
+
+  .LELOUP2 {
+background: lightyellow;
+padding-top: 80px;
+padding-bottom: 80px;
+margin-top: -40px;
+
+}
 .okazu007 {
   margin-top: 35px !important;
     background: #ffffff;
