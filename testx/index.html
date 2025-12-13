@@ -81,18 +81,18 @@
 
     /* Hero */
 .hero {
-    margin-top: -50px;
+margin-top: 0px;
     margin-bottom: 70px;
-  position: relative;
-  background: #ffffff;
-  color: #000;
-  padding: 2rem 2rem;
-  display: block;
-  text-align: left;
-  overflow: hidden; /* important */
+    position: relative;
+    background: #ffffff;
+    color: #000;
+    padding-top: 0px !important;
+    padding: 2rem 2rem;
+    display: block;
+    text-align: left;
+    overflow: hidden;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     border-radius: 0px;
-
 }
 
 
@@ -1060,12 +1060,12 @@ width: 100%;
       <button class="dfbgo-popup-close-btn" id="dfbgoClosePopup">
         Fermer
       </button>
-
-      <h2 class="dfbgo-popup-title">Défibeo Go</h2>
+<img class="gogogocho" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
+      <h2 class="dfbgo-popup-title">Hey</h2>
       <p class="dfbgo-popup-subtitle">
         Votre réseau local de professionnels du défibrillateur
       </p>
-      <div class="dfbgo-popup-price">À partir de 29€ / mois</div>
+      <div class="dfbgo-popup-price">29€ / mois</div>
       <a href="mailto:contact@defibeo.fr" class="dfbgo-popup-mail-btn">
         Nous contacter
       </a>
@@ -1116,10 +1116,9 @@ width: 100%;
 
       <!-- RESULTAT -->
       <div class="dfbgo-search-result" id="dfbgoResult">
-        <h3>Super, nous avons des pros !</h3>
-        <p class="dfbgo-result-text"></p>
+        <h3 class="killallA">Super, nous avons des pros !</h3>
+        <p class="killall dfbgo-result-text"></p>
         <div class="dfbgo-result-actions">
-          <a href="mailto:contact@defibeo.fr">Contacter</a>
           <a href="tel:+33615157065">Appeler +33 6 15 15 70 65</a>
         </div>
       </div>
@@ -1136,64 +1135,74 @@ width: 100%;
 <!-- ================= CSS ================= -->
 <style>
 /* BARRE */
-.dfbgo-bar-wrapper{background:#111;padding:14px 20px}
-.dfbgo-bar-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.dfbgo-bar-text{color:#fff;font-size:15px}
-.dfbgo-bar-action-btn{background:#fff;border:none;padding:10px 18px;font-weight:600;cursor:pointer}
 
+.gogogocho {height: 110px; margin-right: auto; margin-top: 40px; margin-left: -2px;}
+.dfbgo-bar-wrapper{background:#16f3bc;padding:14px 20px}
+.dfbgo-bar-inner{max-width:100%;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.dfbgo-bar-text{color:#fff;font-size:15px}
+.dfbgo-bar-action-btn{color: #fff; font-size: 18px; border-radius: 13px; background: #000; border: none; font-family: 'DefibeoMain', sans-serif; padding: 11px 19px; font-weight: 100; cursor: pointer;}
+.dfbgo-bar-action-btn:hover{ font-weight: 100 !important; box-shadow: 0 0 0px 8px #0000001a; text-decoration: none; }
 /* POPUP */
 .dfbgo-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:9999}
-.dfbgo-popup-container{width:900px;max-width:95%;display:flex;background:#fff;border-radius:6px;overflow:hidden;position:relative}
-.dfbgo-popup-left{width:40%;background:#f3a6b5;padding:40px;position:relative}
-.dfbgo-popup-right{width:60%;padding:40px}
+.dfbgo-popup-container{width:900px;max-width:95%;display:flex;background:#fff;border-radius:16px;overflow:hidden;position:relative}
+.dfbgo-popup-left{width:40%;background:#e4ff6b;padding:40px;position:relative}
+.dfbgo-popup-right{width:60%;padding:40px; background: radial-gradient(circle, white 0%, white 70%, #e4ff6b59 100%);}
 
 .dfbgo-popup-title{font-size:28px;margin-bottom:10px}
 .dfbgo-popup-subtitle{font-size:15px;margin-bottom:20px}
-.dfbgo-popup-price{font-size:32px;font-weight:700;margin:30px 0}
-.dfbgo-popup-mail-btn{background:#111;color:#fff;padding:12px 22px;text-decoration:none;display:inline-block}
+.dfbgo-popup-price{cursor: default; letter-spacing: -0.5px; font-family: 'DefibeoTAZ', sans-serif; font-size:32px;font-weight:700;margin:30px 0}
+.dfbgo-popup-mail-btn{color: #fff; font-size: 18px; border-radius: 13px; background: #000; border: none; font-family: 'DefibeoMain', sans-serif; padding: 11px 19px; font-weight: 100; cursor: pointer; text-decoration:none;display:inline-block}
 
 /* CLOSE */
 .dfbgo-popup-close-btn{
-  position:absolute;
-  top:15px;
-  left:15px;
-  background:none;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
+position: absolute; top: 15px; left: 15px; background: none; border: none; font-weight: 100; text-decoration: none; font-size: 18px; font-family: 'DefibeoMain', sans-serif; cursor: pointer;
 }
 
 /* FORM */
-.dfbgo-row{display:flex;gap:25px;margin-bottom:20px}
+.dfbgo-row{    margin-top: 20px; display:flex;gap:25px;margin-bottom:20px}
 .dfbgo-col{flex:1}
-.dfbgo-search-form label{font-size:13px;display:block;margin-bottom:6px}
-.dfbgo-search-form input{width:100%;padding:10px}
+.dfbgo-search-form label{font-size: 16px; color: #000; display: block; margin-bottom: 10px;}
+.dfbgo-search-form input{text-align: center; width: 90%; color: #000; padding: 10px; font-family: 'DefibeoMain', sans-serif; font-size: 18px; border-radius: 11px; background: #ffffff; border: 1px solid #e3e3e3;}
+
+.dfbgo-search-form input:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 /* RADIO */
 .dfbgo-radio-group{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:20px}
-.dfbgo-radio-group label{display:flex;align-items:center;cursor:pointer;font-size:14px}
+.dfbgo-radio-group label{display: flex; align-items: center; cursor: pointer; font-size: 16px; color: #000;}
 .dfbgo-radio-group input{display:none}
-.dfbgo-radio-group span{width:16px;height:16px;border:2px solid #111;border-radius:50%;margin-right:8px;position:relative}
+.dfbgo-radio-group span{ width: 15px; height: 15px; border: 3px solid #0282fa; border-radius: 50%; margin-right: 7px; position: relative; }
 .dfbgo-radio-group input:checked + span::after{
-  content:"";width:8px;height:8px;background:#111;border-radius:50%;
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+content: ""; width: 10px; height: 10px; background: #0582fa; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
 
 /* BUTTON */
-.dfbgo-search-btn{width:100%;padding:12px;background:#111;color:#fff;border:none;cursor:pointer}
+.dfbgo-search-btn{width: 100%; background: #111; color: #fff; border: none; cursor: pointer; font-family: 'DefibeoMain', sans-serif; font-size: 18px; border-radius: 13px; padding: 13px 20px;}
 .dfbgo-search-btn:disabled{opacity:.4;cursor:not-allowed}
 
 /* LOADER */
 .dfbgo-loader{
-  width:20px;height:20px;border:3px solid #fff;border-top:3px solid transparent;
+  width:20px;height:20px;border:1px solid #fff;border-top:3px solid transparent;
   border-radius:50%;animation:spin .8s linear infinite;margin:0 auto
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 
 /* RESULT */
 .dfbgo-search-result{display:none;margin-top:25px}
-.dfbgo-result-actions a{margin-right:15px;font-weight:600;text-decoration:none}
-.dfbgo-restart-btn{display:none;margin-top:20px;background:none;border:none;text-decoration:underline;cursor:pointer}
+.killallA { font-family: 'DefibeoMain', sans-serif; font-size: 22px; color: #000;}
+.killall { font-family: 'DefibeoMain', sans-serif; font-size: 17px; color: #000;}
+.dfbgo-result-actions a{margin-right: 0px; font-weight: 100; text-decoration: none; font-family: 'DefibeoMain', sans-serif; font-size: 17px; padding: 0px; color: #ff399f;}
+.dfbgo-restart-btn{display:none; margin-top: 20px; background: none; border: none; text-decoration: none; cursor: pointer; font-family: 'DefibeoMain', sans-serif; font-size: 18px; padding: 0px; color: #0282fa;}
+
+input:disabled {
+background: #f3f3f3 !important;
+    border: 1px solid #e3e3e3 !important;
+    color: #9a9a9a !important;
+}
+
+
 </style>
 
 <!-- ================= JS ================= -->
@@ -1231,7 +1240,7 @@ width: 100%;
       resultText.innerText=
         'Nous avons '+e+' entreprises et '+i+
         ' indépendants professionnels à proximité du '+cp+
-        '. Contactez votre interlocuteur pour commencer, ou accédez à votre compte Go.';
+        '. Ouvrez votre compte Go pour commencer ou appelez votre interlocuteur.';
 
       form.style.display='none';
       result.style.display='block';
