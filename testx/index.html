@@ -203,6 +203,7 @@
       gap: 2rem;
     }
     .card {
+          z-index: 1000;
     background: #fff;
     border: 1px solid #edededd1;
     border-radius: 20px;
@@ -211,9 +212,11 @@
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     }
     .card img {
-      max-width: 100%;
-      margin-bottom: -20px;
-      border-radius: 18px 18px 0px 0px;
+    max-width: 100.5%;
+    margin-left: -1px;
+    margin-bottom: -20px;
+    margin-top: -1px;
+    border-radius: 19px 19px 0px 0px;
 
     }
     .card h3 {
@@ -369,15 +372,16 @@ letter-spacing: -1px !important;
 
 
 .okazuPINK {
-    font-family: 'DefibeoTAZ', sans-serif;
+font-family: 'DefibeoTAZ', sans-serif;
     font-weight: 100 !important;
-    font-size: 46px;
-    letter-spacing: -1px;
+    font-size: 70px;
+    letter-spacing: -3px;
     cursor: default !important;
     line-height: 65px;
+    margin-top: 20px !important;
     padding-left: 20px;
     padding-right: 20px;
-    color: #fff;
+    color: #000000;
     padding-bottom: 40px;
     text-align: center !important;
     margin: auto;
@@ -399,7 +403,8 @@ color: #000 !important;
     }
 
 .dfb-browser-wrapper {
-background: radial-gradient(circle, white 0%, white 65%, #e5ff6b80 100%);
+  margin-top: 45px;
+background: radial-gradient(circle, white 0%, white 70%, #16f3bc80 100%);
     padding-top: 80px;
     border-radius: 0px;
     padding-bottom: 80px;
@@ -434,7 +439,7 @@ cursor: pointer;
     }
 
 .okazu3:hover {
-    box-shadow: 0 0 0px 6px #e4f2ff;
+    box-shadow: 0 0 0px 8px #e4f2ff;
         font-weight: 100 !important;
 }
 
@@ -578,7 +583,7 @@ cursor: pointer;
 
 .defibeocontact:hover {
       font-weight: 100 !important;
-    box-shadow: 0 0 0px 6px #0000001a;
+    box-shadow: 0 0 0px 8px #0000001a;
     text-decoration: none;
 }
         .liza {
@@ -589,11 +594,18 @@ font-size: 22px;
     }
 
     .ffka {
-margin-right: 10px;
+    margin-right: 0px;
+    margin-bottom: 85px !important;
     font-family: 'DefibeoMain', sans-serif;
     font-weight: 100 !important;
     border: none !important;
     padding: 10px 20px;
+    font-size: 18px !important;
+    border-radius: 13px !important;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 22px;
+    padding-right: 22px;
     }
 
         .derekpalacios {
@@ -605,37 +617,32 @@ background: #226eb4 !important;
 
     /* Bouton WhatsApp sticky bas-droite */
 .whatsapp-float {
-
-    position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none;
-  z-index: 9999;
-
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  width: auto ;
-  padding-left: 20px;
-  padding-right: 20px;
-    padding-top: 2px;
-  padding-bottom: 2px;
-  height: 40px;
-
-background: #ff399f;
-    border: 1px solid #ff51ab;
-  border-radius: 12px;
+position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    z-index: 9999;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    width: auto;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 40px;
+    background: #ff399f;
+    border: 1px solid #d33f8b;
+    border-radius: 13px;
 }
 
 .whatsapp-float:hover {
@@ -990,6 +997,19 @@ width: 100%;
 
 }
 
+@keyframes shake-horizontal {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-6px); }
+  30%  { transform: translateX(6px); }
+  45%  { transform: translateX(-6px); }
+  60%  { transform: translateX(6px); }
+  75%  { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake-horizontal 0.6s ease-in-out;
+}
 </style>
 
 <script>
@@ -1004,9 +1024,30 @@ width: 100%;
   });
 </script>
 
-<a href="https://defibeo-com-reserver-un-appel.youcanbook.me" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
-Réservez une démo
+<a href="https://defibeo-com-reserver-un-appel.youcanbook.me"
+   target="_blank"
+   class="whatsapp-float js-shake-btn"
+   aria-label="Réserver une démo">
+   Réservez une démo
 </a>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.querySelector('.js-shake-btn');
+
+  if (!btn) return;
+
+  setInterval(() => {
+    btn.classList.add('shake');
+
+    // Retire la classe après l'animation
+    setTimeout(() => {
+      btn.classList.remove('shake');
+    }, 600);
+
+  }, 3000);
+});
+</script>
+
   <!-- Hero -->
   <section class="hero">
     <div class="container">
@@ -1450,6 +1491,7 @@ width: 100%;
 
 .kirikouuuu  {
  background: #fff;
+     margin-top: -160px;
 }
 
 
@@ -1779,26 +1821,26 @@ width: 40px;
     font-family: "DefibeoFont";
     src: url("https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf") format("opentype");
 }
-.dfb-browser { width:calc(100% - 20px); max-width:1100px; margin:40px auto; background:white; border-radius:14px; box-shadow:0 8px 22px rgba(0,0,0,0.09); display:flex; flex-direction:column; overflow:hidden; font-family:"DefibeoFont",sans-serif; }
-.dfb-browser-header { display:flex; align-items:center; gap:14px; background:#e8e8e8; padding:10px 18px; }
+.dfb-browser {     border: 1px solid #e4e4e4; width:calc(100% - 20px); max-width:1100px; margin:40px auto; background:white; border-radius:14px; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05); display:flex; flex-direction:column; overflow:hidden; font-family:"DefibeoFont",sans-serif; }
+.dfb-browser-header { border-bottom: 1px solid #e3e3e3; display:flex; align-items:center; gap:14px; background:#ffffff; padding:10px 18px; }
 .dfb-browser-buttons { display:flex; gap:8px; }
 .dfb-circle { width:13px; height:13px; border-radius:50%; }
-.dfb-red { background:#ff5f57; }
-.dfb-yellow { background:#ffbd2e; }
-.dfb-green { background:#28c840; }
-.dfb-browser-url { flex:1; background:white; border-radius:6px; padding:6px 10px; text-align:center; font-size:14px; border:1px solid #dcdcdc; color:#666; }
+.dfb-red { background: #ff86c4; border: 3px solid #d4669e;}
+.dfb-yellow { background: #e5ff6b; border: 3px solid #bfd751; }
+.dfb-green { background: #16f3bc; border: 3px solid #29d6ad; }
+.dfb-browser-url { flex: 1; background: #f7f7f7c4; border-radius: 8px; padding: 6px 10px; text-align: center; font-size: 16px; border: 1px solid #e4e4e4c2; color: #8a8a8a; }
 .dfb-container { display:flex; width:100%; min-height:520px; }
-.dfb-menu { width:420px; background:#fafafa; border-right:1px solid #e1e1e1; padding:22px; }
+.dfb-menu { width: 460px; background: #ffffff; border-right: 1px solid #e2e2e2; padding: 22px;}
 .dfb-logo { display:flex; align-items:center; margin-bottom:20px; }
-.dfb-logo-img { width:50px; height:50px; border:5px solid #ffbcdf; border-radius:100%; padding:2px; margin-right:10px; object-fit:cover; background: #ff399f; }
+.dfb-logo-img {width: 55px; height: 55px; border: 8px solid #ffdcee; border-radius: 100%; padding: 2px; margin-right: 10px; object-fit: cover; background: #ff399f; }
 .dfb-logo-text { font-weight: 100 !important; font-size:18px; font-weight:bold; color:#222; cursor: default;}
 .dfb-parent { margin-bottom:20px; }
-.dfb-parent-title { font-weight: 100 !important; font-size:15px; font-weight:bold; margin-bottom:10px; color:#222; }
+.dfb-parent-title { font-weight: 100 !important; font-size: 18px; margin-bottom: 10px; color: #000000; font-family: 'DefibeoTAZ', sans-serif; letter-spacing: -0.5px; }
 .dfb-cloud { display:flex; flex-wrap:wrap; gap:8px; }
-.dfb-item { background:#e9e9e9; padding:6px 14px; border-radius:20px; font-size:13px; cursor:pointer; transition:0.2s ease; border:1px solid transparent; }
-.dfb-item:hover { background:#dcdcdc; }
-.dfb-item.active { background:#16f3bc; color:rgb(0, 0, 0); border-color:#16f3bc; }
-.dfb-text-panel {font-weight: 100 !important; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px; font-size:17px; text-align:center; color:#444; scroll-margin-top:20px; }
+.dfb-item { background: #000000; padding: 6px 14px; border-radius: 30px; font-size: 16px; color: #fff; cursor: pointer; transition: 0.2s ease; border: none;}
+.dfb-item:hover { background:#000000; }
+.dfb-item.active { background:#ff399f; color:#fff; border-color:#ff399f; }
+.dfb-text-panel {font-weight: 100 !important; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px; font-size:18px; text-align:center; color:#444; scroll-margin-top:20px; }
 .dfb-text-icon {font-weight: 100 !important; width:42px; height:42px; margin-bottom:10px; }
 @media(max-width:900px){
   .dfb-container{flex-direction:column;}
@@ -1840,6 +1882,7 @@ width: 40px;
                     <div class="dfb-item" data-dfb-text="Il s'agit de la traçabilité des défibrillateurs repris, par exemple pour un défaut de fabrication.">Reprises</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs inutilisés que vous mentionnés comme dans votre stock.">Stockés</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">Archivés</div>
+                    <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">CRM Tickets</div>
                 </div>
             </div>
 
@@ -1851,14 +1894,6 @@ width: 40px;
                     <div class="dfb-item" data-dfb-text="Téléchargez ou renvoyez les reçus PDF générés par les techniciens.">Reçus PDF</div>
                     <div class="dfb-item" data-dfb-text="Un suivi comptable pour ne manquer aucun consommable, par exemple lorsque vous remplacez une électrode pendant une maintenance.">Suivi Comptable</div>
                     <div class="dfb-item" data-dfb-text="Suivez le traitement manuel des déclarations entre la plateforme GEO DAE et les exports du logiciel.">Traitement GEO DAE</div>
-                </div>
-            </div>
-
-            <!-- CRM Tickets -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">CRM</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Un système de création et gestion de tickets en tableau kanban pour ne manquer aucune demande.">Tickets</div>
                 </div>
             </div>
 
@@ -1956,7 +1991,7 @@ width: 40px;
    <div class="LELOUP">
   
   
-    <h2 class="okazu4" >Fonctionnalités Phares</h2>
+    <h2 class="okazu4 piraat" >Fonctionnalités Phares</h2>
 
 
 <section class="fs-section-features-stars">
@@ -2057,6 +2092,9 @@ width: 40px;
 
 <style>
 
+.piraat {
+color: #fff !important;
+}
   .fullwidth-image {
     width: 100%;
     background: #16f3bc;
@@ -2070,7 +2108,7 @@ width: 40px;
 
 
   .LELOUP {
-    background: #fff;
+    background: #000000;
     padding-top: 80px;
     padding-bottom: 80px;
 
@@ -2079,7 +2117,7 @@ width: 40px;
   .LELOUP2 {
 background: #fff;
     padding-top: 80px;
-    border-radius: 36px;
+    border-radius: 0px;
     padding-bottom: 80px;
     margin-top: -40px;
 
@@ -2848,7 +2886,8 @@ width: 300px !important;
 
 .fullwidth-imageISO img {
     width: 100%;
-        max-width: 700px;
+        margin: auto;
+max-width: 750px;
     height: auto;
     display: block; /* évite un petit espace sous l'image */
 }
