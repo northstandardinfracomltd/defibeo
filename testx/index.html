@@ -1055,6 +1055,12 @@ width: 100%;
 
     <!-- COLONNE GAUCHE -->
     <div class="dfbgo-popup-left">
+
+      <!-- FERMER -->
+      <button class="dfbgo-popup-close-btn" id="dfbgoClosePopup">
+        Fermer
+      </button>
+
       <h2 class="dfbgo-popup-title">Défibeo Go</h2>
       <p class="dfbgo-popup-subtitle">
         Votre réseau local de professionnels du défibrillateur
@@ -1082,7 +1088,7 @@ width: 100%;
               type="text"
               id="dfbgo-postal"
               maxlength="5"
-              placeholder="33000"
+              placeholder="12345"
             >
           </div>
         </div>
@@ -1090,10 +1096,10 @@ width: 100%;
         <!-- BESOIN -->
         <label>Votre besoin</label>
         <div class="dfbgo-radio-group">
-          <label><input type="radio" name="need" value="Installation"> <span></span>Installation</label>
-          <label><input type="radio" name="need" value="Maintenance"> <span></span>Maintenance</label>
-          <label><input type="radio" name="need" value="Conseil"> <span></span>Conseil</label>
-          <label><input type="radio" name="need" value="Autre"> <span></span>Autre</label>
+          <label><input type="radio" name="need" value="Installation"><span></span>Installation</label>
+          <label><input type="radio" name="need" value="Maintenance"><span></span>Maintenance</label>
+          <label><input type="radio" name="need" value="Conseil"><span></span>Conseil</label>
+          <label><input type="radio" name="need" value="Autre"><span></span>Autre</label>
         </div>
 
       </div>
@@ -1124,11 +1130,6 @@ width: 100%;
 
     </div>
 
-    <!-- FERMER -->
-    <button class="dfbgo-popup-close-btn" id="dfbgoClosePopup">
-      Fermer
-    </button>
-
   </div>
 </div>
 
@@ -1143,14 +1144,27 @@ width: 100%;
 /* POPUP */
 .dfbgo-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:9999}
 .dfbgo-popup-container{width:900px;max-width:95%;display:flex;background:#fff;border-radius:6px;overflow:hidden;position:relative}
-.dfbgo-popup-left{width:40%;background:#f3a6b5;padding:40px}
-.dfbgo-popup-title{font-size:28px;margin-bottom:10px}
-.dfbgo-popup-price{font-size:32px;font-weight:700;margin:30px 0}
-.dfbgo-popup-mail-btn{background:#111;color:#fff;padding:12px 22px;text-decoration:none;display:inline-block}
+.dfbgo-popup-left{width:40%;background:#f3a6b5;padding:40px;position:relative}
 .dfbgo-popup-right{width:60%;padding:40px}
 
+.dfbgo-popup-title{font-size:28px;margin-bottom:10px}
+.dfbgo-popup-subtitle{font-size:15px;margin-bottom:20px}
+.dfbgo-popup-price{font-size:32px;font-weight:700;margin:30px 0}
+.dfbgo-popup-mail-btn{background:#111;color:#fff;padding:12px 22px;text-decoration:none;display:inline-block}
+
+/* CLOSE */
+.dfbgo-popup-close-btn{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:none;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
 /* FORM */
-.dfbgo-row{display:flex;gap:15px}
+.dfbgo-row{display:flex;gap:25px;margin-bottom:20px}
 .dfbgo-col{flex:1}
 .dfbgo-search-form label{font-size:13px;display:block;margin-bottom:6px}
 .dfbgo-search-form input{width:100%;padding:10px}
@@ -1161,7 +1175,8 @@ width: 100%;
 .dfbgo-radio-group input{display:none}
 .dfbgo-radio-group span{width:16px;height:16px;border:2px solid #111;border-radius:50%;margin-right:8px;position:relative}
 .dfbgo-radio-group input:checked + span::after{
-  content:"";width:8px;height:8px;background:#111;border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  content:"";width:8px;height:8px;background:#111;border-radius:50%;
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
 }
 
 /* BUTTON */
@@ -1179,9 +1194,6 @@ width: 100%;
 .dfbgo-search-result{display:none;margin-top:25px}
 .dfbgo-result-actions a{margin-right:15px;font-weight:600;text-decoration:none}
 .dfbgo-restart-btn{display:none;margin-top:20px;background:none;border:none;text-decoration:underline;cursor:pointer}
-
-/* CLOSE */
-.dfbgo-popup-close-btn{position:absolute;bottom:15px;right:20px;background:none;border:none;font-weight:600;cursor:pointer}
 </style>
 
 <!-- ================= JS ================= -->
@@ -1213,9 +1225,14 @@ width: 100%;
       var cp=postal.value;
       var e=2,i=7;
       if(cp.startsWith('33')){e=3;i=8}
-      if(cp.startsWith('75')){e=5;i=12}
+      else if(cp.startsWith('75')){e=5;i=12}
+      else if(cp.startsWith('13')){e=4;i=6}
 
-      resultText.innerText=`Nous avons ${e} entreprises et ${i} indépendants professionnels à proximité. Contactez votre interlocuteur pour commencer.`;
+      resultText.innerText=
+        'Nous avons '+e+' entreprises et '+i+
+        ' indépendants professionnels à proximité du '+cp+
+        '. Contactez votre interlocuteur pour commencer, ou accédez à votre compte Go.';
+
       form.style.display='none';
       result.style.display='block';
       searchBtn.style.display='none';
