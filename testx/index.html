@@ -367,6 +367,13 @@ max-width: 1350px;
     }
 
         @media(max-width: 900px){
+
+
+              .LELOUP {
+display: none !important;
+}
+
+
             .musika {
     padding: 0px !important;
 
@@ -1361,6 +1368,198 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+<!-- ================= BOUTON OUVERTURE POPUP PAIEMENT ================= -->
+<button id="openBtn-defibeo-pay" class="dfbpay-open-btn">
+  Accéder au paiement
+</button>
+
+<!-- ================= POPUP PAIEMENT ================= -->
+<div class="dfbpay-popup-overlay" id="dfbpayPopup">
+
+  <div class="dfbpay-popup-container">
+
+    <!-- COLONNE GAUCHE -->
+    <div class="dfbpay-popup-left">
+
+      <button class="dfbpay-popup-close-btn" id="dfbpayClosePopup">
+        Fermer
+      </button>
+
+      <h2 class="dfbpay-title">Défibeo Go</h2>
+      <p class="dfbpay-subtitle">
+        Finalisez votre accès et activez votre compte professionnel
+      </p>
+
+      <a href="mailto:contact@defibeo.fr" class="dfbpay-left-btn">
+        Une question ? Contactez-nous
+      </a>
+
+    </div>
+
+    <!-- COLONNE DROITE -->
+    <div class="dfbpay-popup-right">
+
+      <form class="dfbpay-form">
+
+        <label>Entreprise</label>
+        <input type="text" placeholder="Nom de votre entreprise">
+
+        <label>Email</label>
+        <input type="email" placeholder="email@exemple.com">
+
+        <label>Téléphone</label>
+        <input type="tel" placeholder="+33 6 00 00 00 00">
+
+        <label>Nom</label>
+        <input type="text" placeholder="Votre nom">
+
+        <a href="#" class="dfbpay-submit-btn">
+          Payer
+        </a>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= CSS ================= -->
+<style>
+/* BOUTON PAGE */
+.dfbpay-open-btn{
+  padding:12px 20px;
+  background:#111;
+  color:#fff;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* OVERLAY */
+.dfbpay-popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+}
+
+/* CONTAINER */
+.dfbpay-popup-container{
+  width:900px;
+  max-width:95%;
+  display:flex;
+  background:#fff;
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+}
+
+/* LEFT */
+.dfbpay-popup-left{
+  width:40%;
+  background:#f3a6b5;
+  padding:40px;
+  position:relative;
+}
+
+.dfbpay-title{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.dfbpay-subtitle{
+  font-size:15px;
+  margin-bottom:30px;
+}
+
+.dfbpay-left-btn{
+  display:inline-block;
+  background:#111;
+  color:#fff;
+  padding:12px 22px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* CLOSE */
+.dfbpay-popup-close-btn{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:none;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* RIGHT */
+.dfbpay-popup-right{
+  width:60%;
+  padding:40px;
+}
+
+/* FORM */
+.dfbpay-form label{
+  display:block;
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+.dfbpay-form input{
+  width:100%;
+  padding:10px;
+  margin-bottom:18px;
+  font-family:'DefibeoMain', sans-serif;
+  font-size:16px;
+  border-radius:11px;
+  background:#fff;
+  border:1px solid #e3e3e3;
+  box-sizing:border-box;
+}
+
+.dfbpay-form input:focus{
+  outline:none;
+  border-color:#111;
+  box-shadow:0 0 0 2px rgba(17,17,17,.12);
+}
+
+/* SUBMIT */
+.dfbpay-submit-btn{
+  display:block;
+  width:100%;
+  padding:14px;
+  background:#111;
+  color:#fff;
+  text-align:center;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+}
+</style>
+
+<!-- ================= JS ================= -->
+<script>
+(function(){
+  var openBtn=document.getElementById('openBtn-defibeo-pay');
+  var popup=document.getElementById('dfbpayPopup');
+  var closeBtn=document.getElementById('dfbpayClosePopup');
+
+  if(openBtn){
+    openBtn.addEventListener('click',function(){
+      popup.style.display='flex';
+    });
+  }
+
+  closeBtn.addEventListener('click',function(){
+    popup.style.display='none';
+  });
+})();
+</script>
 
 
   <!-- Hero -->
@@ -3272,6 +3471,10 @@ max-width: 750px;
 
 <div class="fullwidth-imageISO">
      <p class="barcodex">Soutenu par des organismes technologiques privés et des institutions publiques impliquées dans les services aux entreprises et le secteur médical.</p>
+    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
+
+<br><br>
+<p class="barcodex">Nous acceptons les paiements par dépot Chorus, Paypal, Carte Bancaire et virement.</p>
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
 </div>
 
