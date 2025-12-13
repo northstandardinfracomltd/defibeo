@@ -1015,6 +1015,60 @@ width: 100%;
 .shake {
   animation: shake-horizontal 0.5s ease-in-out;
 }
+
+.dfbgo-bar-wrapper {
+  width: 100%;
+  background: #111;
+  padding: 14px 20px;
+  box-sizing: border-box;
+}
+
+.dfbgo-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dfbgo-bar-text {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.dfbgo-bar-action-btn {
+  background: #ffffff;
+  color: #111;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dfbgo-bar-action-btn:hover {
+  background: #e5e5e5;
+}
+
+/* Responsive léger */
+@media (max-width: 768px) {
+  .dfbgo-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dfbgo-bar-action-btn {
+    margin-top: 10px;
+  }
+}
+
+
+
 </style>
 
 <script>
@@ -1052,6 +1106,40 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 9000);
 });
 </script>
+
+
+<div class="dfbgo-bar-wrapper">
+  <div class="dfbgo-bar-inner">
+    <div class="dfbgo-bar-text">
+      Vous recherchez un prestataire local distributeur &amp; mainteneur défibrillateurs, voici Défibeo Go
+    </div>
+
+    <button
+      type="button"
+      class="dfbgo-bar-action-btn"
+      data-target="openBtn-registerpay"
+    >
+      Découvrir
+    </button>
+  </div>
+</div>
+<script>
+  (function () {
+    var btn = document.querySelector('.dfbgo-bar-action-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+      var targetId = btn.getAttribute('data-target');
+      var targetEl = document.getElementById(targetId);
+
+      if (targetEl) {
+        targetEl.click();
+      }
+    });
+  })();
+</script>
+
+
 
   <!-- Hero -->
   <section class="hero">
@@ -1581,7 +1669,7 @@ width: 40px;
     height: 40px;
     padding: 10px;
     border: none;
-    background: radial-gradient(#ff399f, #fff);
+    background: #000;
     border-radius: 16px;
     display: flex;
     justify-content: center;
