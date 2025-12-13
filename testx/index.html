@@ -1015,56 +1015,116 @@ width: 100%;
 .shake {
   animation: shake-horizontal 0.5s ease-in-out;
 }
+/* OVERLAY */
+.dfbgo-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
 
-.dfbgo-bar-wrapper {
-  width: 100%;
+/* CONTAINER */
+.dfbgo-popup-container {
+  width: 900px;
+  max-width: 95%;
+  background: #fff;
+  display: flex;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* LEFT */
+.dfbgo-popup-left {
+  width: 40%;
+  background: #f3a6b5;
+  padding: 40px;
+  color: #111;
+}
+
+.dfbgo-popup-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.dfbgo-popup-subtitle {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.dfbgo-popup-price {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.dfbgo-popup-mail-btn {
+  display: inline-block;
   background: #111;
-  padding: 14px 20px;
+  color: #fff;
+  padding: 12px 22px;
+  text-decoration: none;
+}
+
+/* RIGHT */
+.dfbgo-popup-right {
+  width: 60%;
+  padding: 40px;
+}
+
+.dfbgo-search-form label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.dfbgo-search-form input,
+.dfbgo-search-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
   box-sizing: border-box;
 }
 
-.dfbgo-bar-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.dfbgo-bar-text {
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 1.4;
-  font-weight: 400;
-}
-
-.dfbgo-bar-action-btn {
-  background: #ffffff;
-  color: #111;
+.dfbgo-search-btn {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: #fff;
   border: none;
-  padding: 10px 18px;
-  font-size: 14px;
-  font-weight: 600;
   cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.dfbgo-bar-action-btn:hover {
-  background: #e5e5e5;
+/* RESULT */
+.dfbgo-search-result {
+  display: none;
+  margin-top: 25px;
 }
 
-/* Responsive léger */
-@media (max-width: 768px) {
-  .dfbgo-bar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.dfbgo-result-text {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
 
-  .dfbgo-bar-action-btn {
-    margin-top: 10px;
-  }
+.dfbgo-result-actions a {
+  display: inline-block;
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* CLOSE */
+.dfbgo-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
 }
 
 
@@ -1108,36 +1168,151 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<div class="dfbgo-bar-wrapper">
-  <div class="dfbgo-bar-inner">
-    <div class="dfbgo-bar-text">
-      Vous recherchez un prestataire local distributeur &amp; mainteneur défibrillateurs, voici Défibeo Go
+<!-- Bouton déclencheur (exemple) -->
+<button id="openBtn-defibeo-search">Trouver un pro</button>
+
+<!-- POPUP -->
+<div class="dfbgo-popup-overlay" id="dfbgoPopup-search">
+  <div class="dfbgo-popup-container">
+
+    <!-- COLONNE GAUCHE -->
+    <div class="dfbgo-popup-left">
+      <h2 class="dfbgo-popup-title">Défibeo Go</h2>
+      <p class="dfbgo-popup-subtitle">
+        Votre réseau local de professionnels du défibrillateur
+      </p>
+
+      <div class="dfbgo-popup-price">
+        À partir de 29€ / mois
+      </div>
+
+      <a
+        href="mailto:contact@defibeo.fr"
+        class="dfbgo-popup-mail-btn"
+      >
+        Nous contacter
+      </a>
     </div>
 
-    <button
-      type="button"
-      class="dfbgo-bar-action-btn"
-      data-target="openBtn-registerpay"
-    >
-      Découvrir
-    </button>
+    <!-- COLONNE DROITE -->
+    <div class="dfbgo-popup-right">
+
+      <div class="dfbgo-search-form">
+
+        <label>Pays</label>
+        <input type="text" value="France" disabled>
+
+        <label>Code postal</label>
+        <input
+          type="text"
+          id="dfbgo-postal"
+          maxlength="5"
+          placeholder="Ex : 33000"
+        >
+
+        <label>Votre besoin</label>
+        <select id="dfbgo-need">
+          <option value="">Choisir</option>
+          <option>Installation</option>
+          <option>Maintenance</option>
+          <option>Conseil</option>
+          <option>Autre</option>
+        </select>
+
+        <button
+          type="button"
+          class="dfbgo-search-btn"
+          id="dfbgoSearchBtn"
+        >
+          Rechercher un pro
+        </button>
+
+        <!-- RESULTAT -->
+        <div class="dfbgo-search-result" id="dfbgoResult">
+          <p class="dfbgo-result-text"></p>
+
+          <div class="dfbgo-result-actions">
+            <a href="mailto:contact@defibeo.fr">Contacter</a>
+            <a href="tel:+33615157065">Appeler +33 6 15 15 70 65</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CLOSE -->
+    <button class="dfbgo-popup-close" id="dfbgoClosePopup">×</button>
+
   </div>
 </div>
+
 <script>
-  (function () {
-    var btn = document.querySelector('.dfbgo-bar-action-btn');
-    if (!btn) return;
+(function () {
 
-    btn.addEventListener('click', function () {
-      var targetId = btn.getAttribute('data-target');
-      var targetEl = document.getElementById(targetId);
+  var openBtn = document.getElementById('openBtn-defibeo-search');
+  var popup = document.getElementById('dfbgoPopup-search');
+  var closeBtn = document.getElementById('dfbgoClosePopup');
+  var searchBtn = document.getElementById('dfbgoSearchBtn');
+  var postalInput = document.getElementById('dfbgo-postal');
+  var resultBox = document.getElementById('dfbgoResult');
+  var resultText = document.querySelector('.dfbgo-result-text');
 
-      if (targetEl) {
-        targetEl.click();
-      }
+  if (openBtn) {
+    openBtn.addEventListener('click', function () {
+      popup.style.display = 'flex';
     });
-  })();
+  }
+
+  closeBtn.addEventListener('click', function () {
+    popup.style.display = 'none';
+    resultBox.style.display = 'none';
+    searchBtn.innerText = 'Rechercher un pro';
+    searchBtn.disabled = false;
+  });
+
+  searchBtn.addEventListener('click', function () {
+    var postal = postalInput.value;
+
+    if (!/^\d{5}$/.test(postal)) {
+      alert('Veuillez saisir un code postal valide à 5 chiffres');
+      return;
+    }
+
+    searchBtn.innerText = 'Recherche en cours...';
+    searchBtn.disabled = true;
+    resultBox.style.display = 'none';
+
+    setTimeout(function () {
+      var entreprises = 2;
+      var independants = 7;
+
+      if (postal.startsWith('33')) {
+        entreprises = 3;
+        independants = 8;
+      } else if (postal.startsWith('75')) {
+        entreprises = 5;
+        independants = 12;
+      } else if (postal.startsWith('13')) {
+        entreprises = 4;
+        independants = 6;
+      }
+
+      resultText.innerText =
+        'Nous avons ' + entreprises + ' entreprises et ' +
+        independants +
+        ' indépendants professionnels à proximité. Contactez votre interlocuteur pour commencer.';
+
+      resultBox.style.display = 'block';
+      searchBtn.innerText = 'Rechercher un pro';
+      searchBtn.disabled = false;
+
+    }, 3000);
+  });
+
+})();
 </script>
+
 
 
 
