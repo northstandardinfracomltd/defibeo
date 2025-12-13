@@ -327,14 +327,14 @@ font-size: 18px !important;
     }
 
     footer {
-      border-radius: 0px;
-      margin-top: -30px;
-      background: #12f4bd;
-      color: #000;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-          font-weight: 100 !important;
+    border-radius: 0px;
+    margin-top: -60px;
+    background: #ffffff;
+    color: #000;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    font-weight: 100 !important;
     }
 
         .musika {
@@ -999,16 +999,16 @@ width: 100%;
 
 @keyframes shake-horizontal {
   0%   { transform: translateX(0); }
-  15%  { transform: translateX(-6px); }
-  30%  { transform: translateX(6px); }
-  45%  { transform: translateX(-6px); }
-  60%  { transform: translateX(6px); }
-  75%  { transform: translateX(-3px); }
+  15%  { transform: translateX(-4px); }
+  30%  { transform: translateX(4px); }
+  45%  { transform: translateX(-4px); }
+  60%  { transform: translateX(4px); }
+  75%  { transform: translateX(-2px); }
   100% { transform: translateX(0); }
 }
 
 .shake {
-  animation: shake-horizontal 0.6s ease-in-out;
+  animation: shake-horizontal 0.5s ease-in-out;
 }
 </style>
 
@@ -1042,9 +1042,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Retire la classe après l'animation
     setTimeout(() => {
       btn.classList.remove('shake');
-    }, 600);
+    }, 500);
 
-  }, 3000);
+  }, 9000);
 });
 </script>
 
@@ -1465,7 +1465,7 @@ color: #000 !important;
 width: 100%;
     padding: 40px 20px;
     font-family: sans-serif;
-    background: white;
+    background: transparent;
     max-width: 700px;
     margin: auto;
     margin-top: -45px;
@@ -1482,21 +1482,25 @@ width: 100%;
 }
 
 .fs-toggle-label {
-  font-size: 15px;
-  opacity: 0.4;
-  transition: opacity .3s ease;
-  font-family: 'DefibeoMain', sans-serif; font-weight: 100 !important;
+font-size: 18px;
+    opacity: 0.3;
+    color: #fff;
+    transition: opacity .3s 
+ease;
+    font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100 !important;
 }
 
 
 .kirikouuuu  {
  background: #fff;
-     margin-top: -160px;
+     margin-top: -200px;
 }
 
 
 .fs-toggle-label.active {
   opacity: 1;
+  
 }
 
 /* Switch Apple-like */
@@ -1504,7 +1508,7 @@ width: 100%;
 position: relative;
     width: 43px;
     height: 23px;
-    border: 4px solid #ffd6eb;
+    border: 4px solid #12f4bd;
     border-radius: 100px;
     display: inline-block;
 }
@@ -1517,7 +1521,7 @@ position: relative;
   position: absolute;
   cursor: pointer;
   inset: 0;
-background: #ff399f;
+background: #000;
     border-radius: 23px;
   transition: .3s;
 }
@@ -1535,8 +1539,12 @@ background: #ff399f;
 }
 
 .fs-toggle-switch input:checked + .fs-toggle-slider {
-  background: #ff399f;
+background: #000;
+border: 4px solid #e5ff6b;
 }
+
+
+
 
 .fs-toggle-switch input:checked + .fs-toggle-slider:before {
   transform: translateX(20px);
@@ -1555,18 +1563,21 @@ background: #ff399f;
 
 /* ----- Feature Item ----- */
 .fs-feature-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: none;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 6px;
 }
 
 .fs-feature-icon {
 width: 40px;
     height: 40px;
-    min-width: 40px;
-    border: 4px solid #ffd6eb;
+    padding: 10px;
     background: #ff399f;
-    border-radius: 14px;
+    border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1581,10 +1592,13 @@ width: 40px;
 }
 
 .fs-feature-item p {
-  margin: 0;
-  font-size: 15px;
-  font-family: 'DefibeoMain', sans-serif; font-weight: 100 !important;
-  line-height: 1.4;
+margin: 0;
+    font-size: 18px;
+    font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100 !important;
+    line-height: 1.4;
+    color: #000000;
+    cursor: default;
 }
 
 .defibeobestsoftware  {
@@ -1840,8 +1854,8 @@ width: 40px;
 .dfb-item { background: #000000; padding: 6px 14px; border-radius: 30px; font-size: 16px; color: #fff; cursor: pointer; transition: 0.2s ease; border: none;}
 .dfb-item:hover { background:#000000; }
 .dfb-item.active { background:#ff399f; color:#fff; border-color:#ff399f; }
-.dfb-text-panel {font-weight: 100 !important; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px; font-size:18px; text-align:center; color:#444; scroll-margin-top:20px; }
-.dfb-text-icon {font-weight: 100 !important; width:42px; height:42px; margin-bottom:10px; }
+.dfb-text-panel {cursor: default; font-weight: 100 !important; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px; font-size:18px; text-align:center; color:#444; scroll-margin-top:20px; }
+.dfb-text-icon {cursor: default; font-weight: 100 !important; width:42px; height:42px; margin-bottom:10px; }
 @media(max-width:900px){
   .dfb-container{flex-direction:column;}
   .dfb-menu{width:90%;}
@@ -2109,8 +2123,8 @@ color: #fff !important;
 
   .LELOUP {
     background: #000000;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 100px;
+    padding-bottom: 40px;
 
 }
 
@@ -2398,10 +2412,10 @@ margin: auto;
 </style>
 
 
+<div class="rideauABC">
 
 
-
-    <h2 class="okazu4" >Et tellement plus</h2>
+    <h2 class="okazu4" >Un Éventail d'outils pour Faciliter vos Usages</h2>
 
 <div class="infoplus-grid">
 
@@ -2494,13 +2508,20 @@ margin: auto;
 <p class="infoplusTXT">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone.</p>
   </div>
 </div>
-</div>
+</div></div>
 <style>
 .divider {
 height: 1PX;
     background-color: rgb(232 232 232);
     margin: 20px 0;
 }
+
+.rideauABC {
+background: radial-gradient(circle, white 0%, white 60%, #16f3bccf 100%);
+width: 100%;
+}
+
+
 </style>
 
 <style>
@@ -2820,7 +2841,7 @@ color: #000000;
 
 .faj:hover {
 text-decoration: underline; 
-color: #000000;
+color: #166aff;
       margin-left: 2px;
       margin-right: 2px;
 }
@@ -2833,7 +2854,7 @@ color: #000000;
 
 .faj2:hover {
 text-decoration: underline; 
-color: #000000;
+color: #166aff;
 }
 
 /* Classes fortement préfixées/complexes pour éviter conflits */
@@ -2892,18 +2913,28 @@ max-width: 750px;
     display: block; /* évite un petit espace sous l'image */
 }
 
+
+.barcodex {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 100 !important;
+    font-size: 18px;
+    font-family: 'DefibeoMain', sans-serif;
+    cursor: default;
+}
 </style>
 
 
 <div class="fullwidth-imageISO">
+     <p class="barcodex">Soutenu par des organismes technologiques et institutionnels impliqués dans les services et le médical.</p>
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
 </div>
 
 
 
   <footer>
-     <img class="defibeologoF" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/logos+defibs+WHITE.svg" alt="Logo Defibeo" >
-    <p class="footertxt">&copy; 2025 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a><br><br>↗<a class="civilprom faj" href="https://cgvfr.defibeo.com/">Convention Expresse</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">UK</a> ↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutschland</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
+     <img class="defibeologoF" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Logo Defibeo" >
+    <p class="footertxt">&copy; 2026 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a><br><br>↗<a class="civilprom faj" href="https://defibeo.com/eng/">UK</a> ↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutschland</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
   </footer>
 
   <!-- Footer SEO Links -->
@@ -3069,7 +3100,7 @@ margin-top: 20px;
 
 .footer-seo-links {
   
-  background-color: #e5ff6b; /* Couleur de fond discrète */
+  background-color: linear-gradient(359deg, #e5ff6b85, #fff, #ffffff); /* Couleur de fond discrète */
   padding: 40px;
   border-radius: 0px !important;
   font-size: 14px;
