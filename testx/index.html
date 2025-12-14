@@ -2689,7 +2689,30 @@ width: 40px;
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/aezfeafef.svg" alt="Mobilité"><br><br>
           <h3 class="okazu">Infogérance</h3>
           <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
-          <a href="#" id="openBtn-defibeo-contact" class="idgo okazu3">Contactez-nous</a>
+          <a href="#" class="open-defibeo-contact idgo okazu3">Contactez-nous</a>
+          
+          <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const buttons = document.querySelectorAll('.open-defibeo-contact');
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // 👉 ici tu mets EXACTEMENT la même action
+      // que ton bouton original faisait pour[js ouvrir le popup]
+
+      const popup = document.getElementById('defibeo-contact-popup');
+      if (popup) {
+        popup.classList.add('active');
+      }
+    });
+  });
+
+});
+</script>
+
         </div>
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fezfezfzef.svg" alt="Assistance"><br><br>
