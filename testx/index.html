@@ -1311,6 +1311,39 @@ background: #f3f3f3 !important;
     background: radial-gradient(circle, white 0%, white 45%, #e4ff6b57 100%) !important;
 }
 
+.dfbgo-popup-container {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+@media (max-width: 768px) {
+  .dfbgo-popup-container {
+    flex-direction: column;
+  }
+
+  .dfbgo-popup-left,
+  .dfbgo-popup-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dfbgo-popup-left,
+  .dfbgo-popup-right {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dfbgo-popup-close-btn {
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+  }
+}
+
+
 
 </style>
 
