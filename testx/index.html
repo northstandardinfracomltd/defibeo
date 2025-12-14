@@ -1305,6 +1305,15 @@ background: #f3f3f3 !important;
 
 </style>
 
+
+
+
+
+
+
+
+
+
 <!-- ================= JS ================= -->
 <script>
 (function(){
@@ -1697,7 +1706,177 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 <p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
         </p>
 <br>
-<button id="openBtn-registerpay" class="ffka defibeocontact">Contactez votre interlocuteur</button>
+<button href="#" id="openBtn-defibeo-contact" class="ffka defibeocontact">Contactez votre interlocuteur</button>
+
+
+<!-- ================= POPUP CONTACT ================= -->
+<div class="dfbcontact-popup-overlay" id="dfbcontactPopup">
+
+  <div class="dfbcontact-popup-container">
+
+    <!-- FERMER -->
+    <button class="dfbcontact-popup-close-btn" id="dfbcontactClosePopup">
+      Fermer
+    </button>
+
+    <!-- TITRES -->
+    <h2 class="dfbcontact-popup-title">Contactez Défibeo</h2>
+    <p class="dfbcontact-popup-subtitle">
+      Choisissez le moyen le plus simple pour échanger avec notre équipe
+    </p>
+
+    <!-- GRID CONTACT -->
+    <div class="dfbcontact-grid">
+
+      <!-- CARD 1 -->
+      <div class="dfbcontact-card">
+        <h3>Appelez-nous</h3>
+        <a href="tel:+33651517065" class="dfbcontact-card-btn">
+          06 51 51 70 65
+        </a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="dfbcontact-card">
+        <h3>Écrivez-nous</h3>
+        <a href="mailto:fr@defibeo.com" class="dfbcontact-card-btn">
+          fr@defibeo.com
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="dfbcontact-card">
+        <h3>Réservez une démo</h3>
+        <a href="#" class="dfbcontact-card-btn">
+          Réserver
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================= CSS ================= -->
+<style>
+/* OVERLAY */
+.dfbcontact-popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+}
+
+/* CONTAINER */
+.dfbcontact-popup-container{
+  width:900px;
+  max-width:95%;
+  background:#fff;
+  border-radius:16px;
+  padding:50px 40px;
+  position:relative;
+  text-align:center;
+  font-family:'DefibeoMain', sans-serif;
+}
+
+/* CLOSE */
+.dfbcontact-popup-close-btn{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:none;
+  border:none;
+  font-size:18px;
+  font-weight:100;
+  cursor:pointer;
+}
+
+/* TITLES */
+.dfbcontact-popup-title{
+  font-size:28px;
+  margin-bottom:10px;
+  color:#000;
+}
+
+.dfbcontact-popup-subtitle{
+  font-size:16px;
+  color:#000;
+  margin-bottom:40px;
+}
+
+/* GRID */
+.dfbcontact-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:25px;
+}
+
+/* CARD */
+.dfbcontact-card{
+  border:1px solid #e3e3e3;
+  border-radius:16px;
+  padding:30px 20px;
+  background:#fff;
+}
+
+.dfbcontact-card h3{
+  font-size:20px;
+  margin-bottom:20px;
+  color:#000;
+}
+
+/* BUTTON */
+.dfbcontact-card-btn{
+  display:inline-block;
+  background:#000;
+  color:#fff;
+  font-size:18px;
+  border-radius:13px;
+  padding:11px 19px;
+  text-decoration:none;
+  font-weight:100;
+}
+
+.dfbcontact-card-btn:hover{
+  box-shadow:0 0 0px 8px #0000001a;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .dfbcontact-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<!-- ================= JS ================= -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var openBtn = document.getElementById('openBtn-defibeo-contact');
+  var popup = document.getElementById('dfbcontactPopup');
+  var closeBtn = document.getElementById('dfbcontactClosePopup');
+
+  if (openBtn) {
+    openBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.style.display = 'flex';
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      popup.style.display = 'none';
+    });
+  }
+});
+</script>
+
+
+
 
     </div>
 </section>
