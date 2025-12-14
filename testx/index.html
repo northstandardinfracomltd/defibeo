@@ -1134,11 +1134,13 @@ width: 100%;
 <img class="gogogocho" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
       <h2 class="dfbgo-popup-title">Go, pour les clients</h2>
       <p class="dfbgo-popup-subtitle">
-— Sourcing & devis<br>
-— Maîtrise d'œuvre<br>
-— Suivi Chantier<br>
-— Professionnels Vérifiés<br>
-— Professionnels Utilisateurs Logiciel Défibeo
+— Sourcing et devis.<br>
+— Maîtrise d'œuvre.<br>
+— Suivi de chantier.<br>
+— Professionnels vérifiés.<br>
+— Garantie conformité.<br>
+— Traitement prioritaire.<br>
+— Pro utilisateurs de Défibeo.
       </p>
       <div class="dfbgo-popup-price">393€ /an</div>
       <a href="https://www.paypal.com/ncp/payment/TBYMUP8WPR8ZE" class="dfbgo-popup-mail-btn">
@@ -1186,7 +1188,7 @@ width: 100%;
         id="dfbgoSearchBtn"
         disabled
       >
-        Rechercher un pro
+        Rechercher
       </button>
 
 
@@ -1199,9 +1201,6 @@ Aucun frais caché, pas de pourcentage sur vos achats, devenez client Go avec le
       <div class="dfbgo-search-result" id="dfbgoResult">
         <h3 class="killallA">Super, nous avons des pros !</h3>
         <p class="killall dfbgo-result-text"></p>
-        <div class="dfbgo-result-actions">
-          <a href="tel:+33615157065">Appeler +33 6 15 15 70 65</a>
-        </div>
       </div>
 
       <button class="dfbgo-restart-btn" id="dfbgoRestartBtn">
@@ -1720,9 +1719,8 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
     </button>
 
     <!-- TITRES -->
-    <h2 class="dfbcontact-popup-title">Contactez Défibeo</h2>
     <p class="dfbcontact-popup-subtitle">
-      Choisissez le moyen le plus simple pour échanger avec notre équipe
+Comment souhaitez-vous nous contacter.
     </p>
 
     <!-- GRID CONTACT -->
@@ -1730,7 +1728,7 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 
       <!-- CARD 1 -->
       <div class="dfbcontact-card">
-        <h3>Appelez-nous</h3>
+        <h3>Téléphone</h3>
         <a href="tel:+33651517065" class="dfbcontact-card-btn">
           06 51 51 70 65
         </a>
@@ -1738,7 +1736,7 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 
       <!-- CARD 2 -->
       <div class="dfbcontact-card">
-        <h3>Écrivez-nous</h3>
+        <h3>Email</h3>
         <a href="mailto:fr@defibeo.com" class="dfbcontact-card-btn">
           fr@defibeo.com
         </a>
@@ -1746,9 +1744,9 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 
       <!-- CARD 3 -->
       <div class="dfbcontact-card">
-        <h3>Réservez une démo</h3>
-        <a href="#" class="dfbcontact-card-btn">
-          Réserver
+        <h3>Écran Partagé</h3>
+        <a href="https://defibeo-com-reserver-un-appel.youcanbook.me/" class="dfbcontact-card-btn">
+          Réserver une démo
         </a>
       </div>
 
@@ -1785,14 +1783,16 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 
 /* CLOSE */
 .dfbcontact-popup-close-btn{
-  position:absolute;
-  top:15px;
-  left:15px;
-  background:none;
-  border:none;
-  font-size:18px;
-  font-weight:100;
-  cursor:pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-weight: 100;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'DefibeoMain', sans-serif;
+    cursor: pointer;
 }
 
 /* TITLES */
@@ -1803,9 +1803,11 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 }
 
 .dfbcontact-popup-subtitle{
-  font-size:16px;
-  color:#000;
-  margin-bottom:40px;
+    font-size: 18px !important;
+    color: #000;
+    cursor: default !important;
+    margin-bottom: 40px !important;
+        margin-top: 15px !important;
 }
 
 /* GRID */
@@ -1817,28 +1819,36 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 
 /* CARD */
 .dfbcontact-card{
-  border:1px solid #e3e3e3;
-  border-radius:16px;
-  padding:30px 20px;
-  background:#fff;
+    border: 1px solid #edededd1;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    background: radial-gradient(circle, white 0%, white 45%, #16f3bc45 100%);
 }
 
 .dfbcontact-card h3{
-  font-size:20px;
-  margin-bottom:20px;
-  color:#000;
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: -5px;
+    cursor: default;
+    color: #000;
 }
 
 /* BUTTON */
 .dfbcontact-card-btn{
-  display:inline-block;
-  background:#000;
-  color:#fff;
-  font-size:18px;
-  border-radius:13px;
-  padding:11px 19px;
-  text-decoration:none;
-  font-weight:100;
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 13px;
+    padding: 11px 19px;
+    text-decoration: none;
+    font-weight: 100;
+    border: none !important;
+    max-width: 83%;
+    width: 100%;
+    margin: auto;
+    margin-bottom: -10px;
 }
 
 .dfbcontact-card-btn:hover{
