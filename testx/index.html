@@ -1766,6 +1766,40 @@ Finalisez l'achat de votre licence à vie du logiciel Défibeo pour votre entrep
 .dfbpay-submit-btn:hover{
   box-shadow:0 0 0px 8px #0000001a;
 }
+
+
+@media (max-width: 768px) {
+  .dfbpay-popup-container {
+    flex-direction: column;
+  }
+
+  .dfbpay-popup-left,
+  .dfbpay-popup-right {
+    width: 100%;
+  }
+}
+
+.dfbpay-popup-container {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+@media (max-width: 768px) {
+  .dfbpay-popup-left,
+  .dfbpay-popup-right {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dfbpay-popup-overlay {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+}
+
+
 </style>
 
 <!-- ================= JS ================= -->
@@ -1877,12 +1911,12 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 
 /* CLOSE */
 .dfbcontact-popup-close-btn{
+  font-weight: 100 !important;
     position: absolute;
     top: 15px;
     left: 15px;
     background: none;
     border: none;
-    font-weight: 100;
     text-decoration: none;
     font-size: 18px;
     font-family: 'DefibeoMain', sans-serif;
@@ -1923,6 +1957,7 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 }
 
 .dfbcontact-card h3{
+  font-weight: 100 !important;
     font-size: 22px;
     margin-bottom: 20px;
     margin-top: -5px;
@@ -2712,27 +2747,23 @@ width: 40px;
           <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
           <a href="#" class="open-defibeo-contact idgo okazu3">Contactez-nous</a>
           
-          <script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  const buttons = document.querySelectorAll('.open-defibeo-contact');
-
-  buttons.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
+  document.querySelectorAll('.open-defibeo-contact').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
       e.preventDefault();
 
-      // 👉 ici tu mets EXACTEMENT la même action
-      // que ton bouton original faisait pour[js ouvrir le popup]
-
-      const popup = document.getElementById('defibeo-contact-popup');
-      if (popup) {
-        popup.classList.add('active');
+      const originalBtn = document.getElementById('openBtn-defibeo-contact');
+      if (originalBtn) {
+        originalBtn.click();
       }
     });
   });
 
 });
 </script>
+
 
         </div>
         <div class="card zus">
