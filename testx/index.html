@@ -1048,11 +1048,20 @@ width: 100%;
     margin-bottom: -8px;
 }
 
-#typing {
-    border-right: 5px solid #ffbee0;
-    padding-left: 4px;
-    color: #ff399f;
+@keyframes dfbgo-blink-cursor {
+  0%   { border-right-color: #12f4bd; }
+  49%  { border-right-color: #12f4bd; }
+  50%  { border-right-color: transparent; }
+  100% { border-right-color: transparent; }
 }
+
+#typing {
+  border-right: 5px solid #12f4bd;
+  padding-left: 4px;
+  color: #000000;
+  animation: dfbgo-blink-cursor 1s steps(1) infinite;
+}
+
 
 
 
@@ -1131,8 +1140,8 @@ width: 100%;
 — Professionnels Vérifiés<br>
 — Professionnels Utilisateurs Logiciel Défibeo
       </p>
-      <div class="dfbgo-popup-price">379€ /an</div>
-      <a href="mailto:contact@defibeo.fr" class="dfbgo-popup-mail-btn">
+      <div class="dfbgo-popup-price">393€ /an</div>
+      <a href="https://www.paypal.com/ncp/payment/TBYMUP8WPR8ZE" class="dfbgo-popup-mail-btn">
         Accès immédiat
       </a>
     </div>
@@ -1248,10 +1257,23 @@ position: absolute; top: 15px; left: 15px; background: none; border: none; font-
 }
 
 /* RADIO */
+.dfbgo-radio-groupDOS {display:flex;flex-wrap:wrap;gap:15px;margin-bottom:20px}
+.dfbgo-radio-groupDOS label{display: flex; align-items: center; cursor: pointer; font-size: 16px; color: #000;}
+.dfbgo-radio-groupDOS input{display:none}
+.dfbgo-radio-groupDOS span{ width: 15px; height: 15px; border: 3px solid #0282fa; border-radius: 50%; display: inline-flex; margin-right: 7px; position: relative; margin-bottom: -4px;}
+.dfbgo-radio-groupDOS input:checked + span::after{
+content: ""; width: 10px; height: 10px; background: #0582fa; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
+
+
+
+
+/* RADIO */
 .dfbgo-radio-group{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:20px}
 .dfbgo-radio-group label{display: flex; align-items: center; cursor: pointer; font-size: 16px; color: #000;}
 .dfbgo-radio-group input{display:none}
-.dfbgo-radio-group span{ width: 15px; height: 15px; border: 3px solid #0282fa; border-radius: 50%; display: inline-flex; margin-right: 7px; position: relative; margin-bottom: -4px;}
+.dfbgo-radio-group span{width: 15px; height: 15px; border: 3px solid #0282fa; border-radius: 50%; margin-right: 7px; position: relative;}
 .dfbgo-radio-group input:checked + span::after{
 content: ""; width: 10px; height: 10px; background: #0582fa; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
@@ -1379,13 +1401,13 @@ document.addEventListener('DOMContentLoaded', function () {
       </button>
 
       <img class="gogogocho" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
-      <h2 class="dfbpay-title">Votre commande</h2>
+      <h2 class="dfbgo-popup-titleDOS dfbpay-title">Votre commande</h2>
       <p class="dfbpay-subtitle">
-Finalisez l'achat de votre licence à vie du logiciel Défibeo pour votre entreprise. Un interlocuteur vous contactera pour la prise en main, les ajustements et la formation.
+Finalisez l'achat de votre licence à vie du logiciel Défibeo pour votre entreprise. Un interlocuteur vous contactera pour la prise en main, les ajustements et la formation. Un doute, une question, vous pouvez directement nous appeler.
       </p>
 
-      <a href="tel:0651517065" class="dfbpay-left-btn">
-Aide : +33 6 51 51 70 65
+<a href="+33651517065" class="dfbgo-popup-mail-btn">
+        Tél: 06 51 51 70 65
       </a>
 
     </div>
@@ -1405,13 +1427,13 @@ Aide : +33 6 51 51 70 65
         <input type="tel" placeholder="+33 6 00 00 00 00">
 
         <label>Volume des défibrillateurs</label>
-        <div class="dfbgo-radio-group">
+        <div class="dfbgo-radio-groupDOS">
           <label><input type="radio" name="need" value="Installation"><span></span>Moins 3,000</label>
           <label><input type="radio" name="need" value="Maintenance"><span></span>Plus de 3,000</label>
         </div>
 
-        <a href="#" class="dfbpay-submit-btn">
-          Payer
+        <a href="https://www.paypal.com/ncp/payment/R4GWLF2B734NC" class="dfbpay-submit-btn">
+          Commander
         </a>
 
       </form>
@@ -1423,8 +1445,32 @@ Aide : +33 6 51 51 70 65
 </div>
 
 <!-- ================= CSS ================= -->
+
 <style>
-<style>
+
+.dfbgo-popup-titleDOS {
+    font-size: 28px !important;
+    margin-bottom: 10px !important;
+    cursor: default !important;
+    margin-top: -38px !important;
+}
+
+
+.dfbgo-popup-mail-btnDOS {
+    color: #fff;
+    font-size: 18px;
+    border-radius: 13px;
+    background: #000;
+    border: none;
+    font-family: 'DefibeoMain', sans-serif;
+    padding: 9px 19px;
+    font-weight: 100;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
 /* BOUTON PAGE */
 .dfbpay-open-btn{
   color:#fff;
@@ -3512,16 +3558,35 @@ max-width: 750px;
      <p class="barcodex">Soutenu par des organismes technologiques privés et des institutions publiques impliquées dans les services aux entreprises et le secteur médical.</p>
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
 
-<br><br>
-<p class="barcodex">Nous acceptons les paiements par dépot Chorus, Paypal, Carte Bancaire et virement.</p>
-    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
+<script>
+(function () {
+  var mobileImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/verticallogos.svg";
+  var desktopImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg";
+
+  function swapImageForMobile() {
+    var img = document.querySelector('img[src*="fundings.svg"]');
+    if (!img) return;
+
+    if (window.innerWidth <= 768) {
+      img.src = mobileImage;
+    } else {
+      img.src = desktopImage;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', swapImageForMobile);
+  window.addEventListener('resize', swapImageForMobile);
+})();
+</script>
+
+
 </div>
 
 
 
   <footer>
      <img class="defibeologoF" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Logo Defibeo" >
-    <p class="footertxt">&copy; 2026 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a><br><br>↗<a class="civilprom faj" href="https://defibeo.com/eng/">UK</a> ↗<a class="civilprom faj" href="cgvfr.defibeo.com">Convention/CGV</a>↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutschland</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
+    <p class="footertxt">&copy; 2026 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a><br><br>↗<a class="civilprom faj" href="https://defibeo.com/eng/">UK</a> ↗<a class="civilprom faj" href="http://cgvfr.defibeo.com/">Convention/CGV</a>↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutschland</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
   </footer>
 
   <!-- Footer SEO Links -->
