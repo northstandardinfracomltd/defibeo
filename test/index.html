@@ -81,7 +81,8 @@
 
     /* Hero */
 .hero {
-      margin-top: -80px;
+    margin-top: -50px;
+    margin-bottom: 70px;
   position: relative;
   background: #ffffff;
   color: #000;
@@ -935,7 +936,7 @@ margin-right:auto;
 
 .two-columns {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     padding: 20px;
 }
 
@@ -983,8 +984,18 @@ width: 100%;
 
 @media (max-width: 900px) {
     .two-columns {
-        flex-direction: column;
-    } }
+        flex-direction: column !important;
+    } 
+  
+  .left-column {
+    flex-basis: 50%;
+}
+
+.right-column {
+    flex-basis: 50%;
+}
+
+}
 
 </style>
 
@@ -1453,6 +1464,12 @@ width: 100%;
   font-family: 'DefibeoMain', sans-serif; font-weight: 100 !important;
 }
 
+
+.kirikouuuu  {
+ background: linear-gradient(45deg, #faffe1, #e9fffa);
+}
+
+
 .fs-toggle-label.active {
   opacity: 1;
 }
@@ -1743,7 +1760,7 @@ width: 40px;
 
 
   <!-- Atouts -->
-  <section>
+  <section class="kirikouuuu">
     <div class="container">
       <div class="cards">
         <div class="card zus">
