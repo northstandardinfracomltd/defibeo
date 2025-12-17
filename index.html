@@ -589,7 +589,7 @@ cursor: default;
 background: #ffffff;
     font-weight: 100 !important;
     border-radius: 20px;
-    max-width: 350px;
+    max-width: 550px;
     border: 1px solid #edededd1;
     margin: auto;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
@@ -3149,7 +3149,7 @@ background: #fff ;
     border-radius: 0px;
     border: none;
     max-width: 350px;
-    margin: auto;
+    margin-right: auto;
 }
 .pricing-plan007 {
     padding: 2rem;
@@ -3428,7 +3428,8 @@ margin: auto;
   margin:0 auto;
   padding:40px;
   background:#fff;
-  margin-bottom: 50px;
+margin-bottom: 100px;
+    margin-top: -50px;
     border-radius: 20px;
     border: 1px solid #edededd1;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
@@ -3498,11 +3499,11 @@ margin: auto;
     border-radius: 0px;
     background: #e5ff6b;
     cursor: default !important;
-  text-align:center
+  text-align: center !important;
 }
 .defibeo-roi-result-label-9x8k3{
       margin-bottom: 5px;
-    opacity: .7;
+    opacity: 1;
     color: #000 !important;
     font-size: 18px !important;
 }
@@ -3518,6 +3519,14 @@ font-family: 'DefibeoTAZ', sans-serif !important;
 }
 
 .trikol {display: none !important;}
+
+@media (max-width: 768px) {
+.defibeo-roi-calculator-wrapper-9x8k3 {
+    border: none !important;
+    box-shadow: none !important;
+}
+}
+
 
 </style>
 
@@ -3591,7 +3600,7 @@ Quel coût, ROI et temps préservé : Estimez, pour la première année d’acti
 
   <!-- Champ 3 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f3">
-    <span class="defibeo-roi-field-label-9x8k3">Panier moyen par client et par maintenance pour 12 mois.</span>
+    <span class="defibeo-roi-field-label-9x8k3">Panier moyen par client, par maintenance (par défibrillateur) pour 12 mois.</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f3a" name="field3">
@@ -3605,10 +3614,6 @@ Quel coût, ROI et temps préservé : Estimez, pour la première année d’acti
         <input type="radio" id="f3c" name="field3">
         <label for="f3c">Environ 300€ HT</label>
       </div>
-      <div class="defibeo-roi-radio-item-9x8k3">
-        <input type="radio" id="f3d" name="field3">
-        <label for="f3d">Environ 400€ HT</label>
-      </div>
     </div>
   </div>
 
@@ -3618,23 +3623,15 @@ Quel coût, ROI et temps préservé : Estimez, pour la première année d’acti
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f4a" name="field4">
-        <label for="f4a">Papier & Tableur</label>
+        <label for="f4a">Papier ou Tableur</label>
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f4b" name="field4">
-        <label for="f4b">Papier uniquement</label>
+        <label for="f4b">Logiciel GMAO</label>
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f4c" name="field4">
-        <label for="f4c">Tableur uniquement</label>
-      </div>
-      <div class="defibeo-roi-radio-item-9x8k3">
-        <input type="radio" id="f4d" name="field4">
-        <label for="f4d">Logiciel GMAO</label>
-      </div>
-      <div class="defibeo-roi-radio-item-9x8k3">
-        <input type="radio" id="f4e" name="field4">
-        <label for="f4e">Autre</label>
+        <label for="f4c">Autre</label>
       </div>
     </div>
   </div>
@@ -3651,11 +3648,11 @@ Voici vos résultats : il s’agit de valeurs indicatives, calculées pour les 1
   <div class="defibeo-roi-results-grid-9x8k3">
     <div class="defibeo-roi-result-card-9x8k3">
 <div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="timeResult">000h</div>
-      <div class="defibeo-roi-result-label-9x8k3">Temps gagné sur 12 mois pour toutes les opérations de maintenance sur le terrain et le traitement au bureau.</div>
+      <div class="defibeo-roi-result-label-9x8k3">Temps gagné estimé sur 12 mois pour toutes les opérations de maintenances sur le terrain et le traitement au bureau avec le logiciel Défibeo.</div>
     </div>
     <div class="defibeo-roi-result-card-9x8k3">
 <div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="costResult">00.00€</div>
-      <div class="defibeo-roi-result-label-9x8k3">Le montant moyen répercuté par maintenance, lié au coût du logiciel Défibeo — achat et hébergement inclus — pour les 12 mois suivant l’achat.</div>
+      <div class="defibeo-roi-result-label-9x8k3">Le montant moyen estimé répercuté par maintenance, lié au coût du logiciel Défibeo (achat et hébergement inclus) pour les 12 mois suivant l’achat.</div>
     </div>
   </div>
 
