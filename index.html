@@ -3494,18 +3494,25 @@ margin: auto;
 }
 .defibeo-roi-result-label-9x8k3{font-size:16px;margin-bottom:20px;opacity:.7}
 .defibeo-roi-result-value-9x8k3{font-size:42px}
+
+
+.TERRAFIOL {
+    font-family: 'DefibeoTAZ', sans-serif !important;
+    font-weight: 100 !important;
+        font-size: 50px !important;
+}
+
 </style>
 
 <!-- ÉTAPE 1 -->
 <div class="defibeo-roi-step-form-9x8k3">
-  <div class="defibeo-roi-title-9x8k3">Calculez votre ROI et le temps gagné</div>
   <div class="defibeo-roi-subtitle-9x8k3">
-    Obtenez des informations clés sur vos performances, les valeurs sont indicatives et basée sur la première année à l’issue de l’achat du logiciel Défibeo.
+Quel coût, ROI et temps préservé : Estimez, pour la première année d’activité avec l’achat du logiciel Défibeo, le coût répercuté pour chaque maintenance ainsi que le temps que vous pourriez potentiellement préserver sur 12 mois, en fonction de vos volumes et en comparaison avec votre processus actuel.
   </div>
 
   <!-- Champ 1 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f1" style="display:block">
-    <span class="defibeo-roi-field-label-9x8k3">Volume Défibrillateurs à maintenir</span>
+    <span class="defibeo-roi-field-label-9x8k3">Volume des défibrillateurs.</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f1a" name="field1" value="500">
@@ -3536,7 +3543,7 @@ margin: auto;
 
   <!-- Champ 2 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f2">
-    <span class="defibeo-roi-field-label-9x8k3">Volume Maintenances sur 12 mois</span>
+    <span class="defibeo-roi-field-label-9x8k3">Volume estimé des maintenances sur 12 mois.</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f2a" name="field2" value="700">
@@ -3567,7 +3574,7 @@ margin: auto;
 
   <!-- Champ 3 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f3">
-    <span class="defibeo-roi-field-label-9x8k3">Panier Moyen Maintenance</span>
+    <span class="defibeo-roi-field-label-9x8k3">Panier moyen par client et par maintenance pour 12 mois.</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f3a" name="field3">
@@ -3590,7 +3597,7 @@ margin: auto;
 
   <!-- Champ 4 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f4">
-    <span class="defibeo-roi-field-label-9x8k3">Votre outil ou méthode actuelle</span>
+    <span class="defibeo-roi-field-label-9x8k3">Votre processus ou méthode actuelle.</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f4a" name="field4">
@@ -3606,11 +3613,11 @@ margin: auto;
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f4d" name="field4">
-        <label for="f4d">Logiciel GMAO similaire Défibeo</label>
+        <label for="f4d">Logiciel GMAO</label>
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f4e" name="field4">
-        <label for="f4e">Outil non spécifique infogéré</label>
+        <label for="f4e">Autre</label>
       </div>
     </div>
   </div>
@@ -3620,19 +3627,18 @@ margin: auto;
 
 <!-- ÉTAPE 2 -->
 <div class="defibeo-roi-results-container-9x8k3">
-  <div class="defibeo-roi-title-9x8k3">Résultats de l’estimation pour votre ROI et de temps gagné</div>
   <div class="defibeo-roi-subtitle-9x8k3">
-    Il s’agit de valeurs indicatives et basées sur la première année à l’issue de l’achat du logiciel Défibeo selon vos informations communiquées.
+Voici vos résultats : il s’agit de valeurs indicatives, calculées pour les 12 mois suivant l’achat du logiciel Défibeo, selon vos critères.
   </div>
 
   <div class="defibeo-roi-results-grid-9x8k3">
     <div class="defibeo-roi-result-card-9x8k3">
-      <div class="defibeo-roi-result-label-9x8k3">Temps gagné sur 1 an</div>
-      <div class="defibeo-roi-result-value-9x8k3" id="timeResult">000h</div>
+      <div class="defibeo-roi-result-label-9x8k3">Temps gagné sur 12 mois pour toutes les opérations de maintenance sur le terrain et le traitement au bureau.</div>
+      <div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="timeResult">000h</div>
     </div>
     <div class="defibeo-roi-result-card-9x8k3">
-      <div class="defibeo-roi-result-label-9x8k3">Coût moyen HT par maintenance</div>
-      <div class="defibeo-roi-result-value-9x8k3" id="costResult">00.00€</div>
+      <div class="defibeo-roi-result-label-9x8k3">Le montant moyen répercuté par maintenance, lié au coût du logiciel Défibeo — achat et hébergement inclus — pour les 12 mois suivant l’achat.</div>
+      <div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="costResult">00.00€</div>
     </div>
   </div>
 
