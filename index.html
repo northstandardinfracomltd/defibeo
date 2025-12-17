@@ -3434,9 +3434,14 @@ margin: auto;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
 }
 .defibeo-roi-title-9x8k3{font-size:32px;margin-bottom:10px}
-.defibeo-roi-subtitle-9x8k3{font-size:16px;opacity:.7;margin-bottom:40px;line-height:1.5}
+.defibeo-roi-subtitle-9x8k3{    font-size: 18px;
+    color: #000 !important;
+    opacity: 1;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  cursor: default; }
 .defibeo-roi-field-block-9x8k3{margin-bottom:30px;display:none}
-.defibeo-roi-field-label-9x8k3{font-size:18px;margin-bottom:14px;display:block}
+.defibeo-roi-field-label-9x8k3{  cursor: default; font-size:18px;margin-bottom:14px;display:block}
 .defibeo-roi-radio-group-9x8k3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
 .defibeo-roi-radio-item-9x8k3 input{display:none}
 .defibeo-roi-radio-item-9x8k3 label{
@@ -3460,11 +3465,13 @@ margin: auto;
 }
 .defibeo-roi-cta-button-9x8k3,
 .defibeo-roi-reset-button-9x8k3{
-    background: #ff399f;
+      font-size: 18px !important;
+    background: #ff399f !important;
     padding: 13px 24px !important;
     color: #fff;
+    cursor: pointer !important;
     border-radius: 13px !important;
-    font-family: 'DefibeoMain', sans-serif;
+    font-family: 'DefibeoMain', sans-serif  !important;
     font-weight: 100 !important;
         border: none !important;
 }
@@ -3480,10 +3487,11 @@ margin: auto;
 }
 .defibeo-roi-results-container-9x8k3{display:none}
 .defibeo-roi-results-grid-9x8k3{
+      margin-bottom: 20px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:20px;
-  margin-top:30px
+  margin-top:20px
 }
 .defibeo-roi-result-card-9x8k3{
   padding:30px;
@@ -3492,15 +3500,24 @@ margin: auto;
     cursor: default !important;
   text-align:center
 }
-.defibeo-roi-result-label-9x8k3{font-size:16px;margin-bottom:20px;opacity:.7}
+.defibeo-roi-result-label-9x8k3{
+      margin-bottom: 5px;
+    opacity: .7;
+    color: #000 !important;
+    font-size: 18px !important;
+}
 .defibeo-roi-result-value-9x8k3{font-size:42px}
 
 
 .TERRAFIOL {
-    font-family: 'DefibeoTAZ', sans-serif !important;
+font-family: 'DefibeoTAZ', sans-serif !important;
     font-weight: 100 !important;
-        font-size: 50px !important;
+    font-size: 60px !important;
+    color: #000 !important;
+    letter-spacing: -1px;
 }
+
+.trikol {display: none !important;}
 
 </style>
 
@@ -3627,18 +3644,18 @@ Quel coût, ROI et temps préservé : Estimez, pour la première année d’acti
 
 <!-- ÉTAPE 2 -->
 <div class="defibeo-roi-results-container-9x8k3">
-  <div class="defibeo-roi-subtitle-9x8k3">
+  <div class="defibeo-roi-subtitle-9x8k3 trikol">
 Voici vos résultats : il s’agit de valeurs indicatives, calculées pour les 12 mois suivant l’achat du logiciel Défibeo, selon vos critères.
   </div>
 
   <div class="defibeo-roi-results-grid-9x8k3">
     <div class="defibeo-roi-result-card-9x8k3">
+<div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="timeResult">000h</div>
       <div class="defibeo-roi-result-label-9x8k3">Temps gagné sur 12 mois pour toutes les opérations de maintenance sur le terrain et le traitement au bureau.</div>
-      <div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="timeResult">000h</div>
     </div>
     <div class="defibeo-roi-result-card-9x8k3">
+<div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="costResult">00.00€</div>
       <div class="defibeo-roi-result-label-9x8k3">Le montant moyen répercuté par maintenance, lié au coût du logiciel Défibeo — achat et hébergement inclus — pour les 12 mois suivant l’achat.</div>
-      <div class="defibeo-roi-result-value-9x8k3 TERRAFIOL" id="costResult">00.00€</div>
     </div>
   </div>
 
