@@ -3418,217 +3418,175 @@ margin: auto;
 </style>
 
 
-<div class="defibeo-roi-calculator-wrapper-9x8k3">
+<div class="defibeo-roi-calculator-wrapper-9x8k3" id="defibeo-roi-anchor-9x8k3">
 
-  <style>
-    .defibeo-roi-calculator-wrapper-9x8k3 {
-      font-family: 'DefibeoMain', sans-serif;
-      font-weight: 100 !important;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px;
-      background: #ffffff;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
+<style>
+.defibeo-roi-calculator-wrapper-9x8k3{
+  font-family:'DefibeoMain',sans-serif;
+  font-weight:100 !important;
+  max-width:900px;
+  margin:0 auto;
+  padding:40px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06)
+}
+.defibeo-roi-title-9x8k3{font-size:32px;margin-bottom:10px}
+.defibeo-roi-subtitle-9x8k3{font-size:16px;opacity:.7;margin-bottom:40px;line-height:1.5}
+.defibeo-roi-field-block-9x8k3{margin-bottom:30px;display:none}
+.defibeo-roi-field-label-9x8k3{font-size:18px;margin-bottom:14px;display:block}
+.defibeo-roi-radio-group-9x8k3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.defibeo-roi-radio-item-9x8k3 input{display:none}
+.defibeo-roi-radio-item-9x8k3 label{
+  display:block;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1px solid #e5e5e5;
+  cursor:pointer;
+  background:#fafafa;
+  transition:.25s
+}
+.defibeo-roi-radio-item-9x8k3 input:checked+label{
+  background:#000;
+  color:#fff;
+  border-color:#000
+}
+.defibeo-roi-cta-button-9x8k3,
+.defibeo-roi-reset-button-9x8k3{
+  margin-top:20px;
+  padding:16px 30px;
+  font-size:16px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer
+}
+.defibeo-roi-cta-button-9x8k3{background:#000;color:#fff;display:none}
+.defibeo-roi-reset-button-9x8k3{
+  background:#fff;
+  color:#000;
+  border:1px solid #000
+}
+.defibeo-roi-results-container-9x8k3{display:none}
+.defibeo-roi-results-grid-9x8k3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  margin-top:30px
+}
+.defibeo-roi-result-card-9x8k3{
+  padding:30px;
+  border-radius:18px;
+  background:#f7f7f7;
+  text-align:center
+}
+.defibeo-roi-result-label-9x8k3{font-size:16px;margin-bottom:20px;opacity:.7}
+.defibeo-roi-result-value-9x8k3{font-size:42px}
+</style>
 
-    .defibeo-roi-title-9x8k3 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .defibeo-roi-subtitle-9x8k3 {
-      font-size: 16px;
-      opacity: 0.7;
-      margin-bottom: 40px;
-      line-height: 1.5;
-    }
-
-    .defibeo-roi-field-block-9x8k3 {
-      margin-bottom: 30px;
-    }
-
-    .defibeo-roi-field-label-9x8k3 {
-      font-size: 18px;
-      margin-bottom: 14px;
-      display: block;
-    }
-
-    .defibeo-roi-radio-group-9x8k3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-    }
-
-    .defibeo-roi-radio-item-9x8k3 {
-      position: relative;
-    }
-
-    .defibeo-roi-radio-item-9x8k3 input {
-      display: none;
-    }
-
-    .defibeo-roi-radio-item-9x8k3 label {
-      display: block;
-      padding: 14px 18px;
-      border-radius: 14px;
-      border: 1px solid #e5e5e5;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      background: #fafafa;
-    }
-
-    .defibeo-roi-radio-item-9x8k3 input:checked + label {
-      background: #000;
-      color: #fff;
-      border-color: #000;
-    }
-
-    .defibeo-roi-cta-button-9x8k3 {
-      margin-top: 40px;
-      padding: 16px 30px;
-      font-size: 16px;
-      border-radius: 999px;
-      border: none;
-      background: #000;
-      color: #fff;
-      cursor: pointer;
-      transition: opacity 0.2s ease;
-    }
-
-    .defibeo-roi-cta-button-9x8k3:hover {
-      opacity: 0.85;
-    }
-
-    .defibeo-roi-results-container-9x8k3 {
-      display: none;
-      margin-top: 30px;
-    }
-
-    .defibeo-roi-results-grid-9x8k3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .defibeo-roi-result-card-9x8k3 {
-      padding: 30px;
-      border-radius: 18px;
-      background: #f7f7f7;
-      text-align: center;
-    }
-
-    .defibeo-roi-result-label-9x8k3 {
-      font-size: 16px;
-      margin-bottom: 20px;
-      opacity: 0.7;
-    }
-
-    .defibeo-roi-result-value-9x8k3 {
-      font-size: 42px;
-      letter-spacing: -1px;
-    }
-  </style>
-
-  <!-- ÉTAPE 1 -->
-  <div class="defibeo-roi-step-form-9x8k3">
-    <div class="defibeo-roi-title-9x8k3">Calculez votre ROI et le temps gagné</div>
-    <div class="defibeo-roi-subtitle-9x8k3">
-      Obtenez des informations clés sur vos performances, les valeurs sont indicatives et basée sur la première année à l’issue de l’achat du logiciel Défibeo.
-    </div>
-
-    <!-- Champ 1 -->
-    <div class="defibeo-roi-field-block-9x8k3">
-      <span class="defibeo-roi-field-label-9x8k3">Volume Défibrillateurs à maintenir</span>
-      <div class="defibeo-roi-radio-group-9x8k3">
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="500" id="f1a"><label for="f1a">Moins de 500</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="1000" id="f1b"><label for="f1b">Moins de 1000</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="2000" id="f1c"><label for="f1c">Moins de 2000</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="5000" id="f1d"><label for="f1d">Moins de 5000</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="10000" id="f1e"><label for="f1e">Moins de 10000</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="15000" id="f1f"><label for="f1f">Plus de 10000</label></div>
-      </div>
-    </div>
-
-    <!-- Champ 2 -->
-    <div class="defibeo-roi-field-block-9x8k3">
-      <span class="defibeo-roi-field-label-9x8k3">Volume Maintenances sur 12 mois</span>
-      <div class="defibeo-roi-radio-group-9x8k3">
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="700" id="f2a"><label for="f2a">Moins de 700</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="1200" id="f2b"><label for="f2b">Moins de 1200</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="2500" id="f2c"><label for="f2c">Moins de 2500</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="6000" id="f2d"><label for="f2d">Moins de 6000</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="14000" id="f2e"><label for="f2e">Moins de 14000</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="20000" id="f2f"><label for="f2f">Plus de 14000</label></div>
-      </div>
-    </div>
-
-    <!-- Champ 3 -->
-    <div class="defibeo-roi-field-block-9x8k3">
-      <span class="defibeo-roi-field-label-9x8k3">Panier Moyen Maintenance</span>
-      <div class="defibeo-roi-radio-group-9x8k3">
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3" value="100" id="f3a"><label for="f3a">Environ 100€ HT</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3" value="200" id="f3b"><label for="f3b">Environ 200€ HT</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3" value="300" id="f3c"><label for="f3c">Environ 300€ HT</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3" value="400" id="f3d"><label for="f3d">Environ 400€ HT</label></div>
-      </div>
-    </div>
-
-    <!-- Champ 4 -->
-    <div class="defibeo-roi-field-block-9x8k3">
-      <span class="defibeo-roi-field-label-9x8k3">Votre outil ou méthode actuelle</span>
-      <div class="defibeo-roi-radio-group-9x8k3">
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4" id="f4a"><label for="f4a">Papier & Tableur</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4" id="f4b"><label for="f4b">Papier uniquement</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4" id="f4c"><label for="f4c">Tableur uniquement</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4" id="f4d"><label for="f4d">Logiciel GMAO similaire Défibeo</label></div>
-        <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4" id="f4e"><label for="f4e">Outil non spécifique infogéré</label></div>
-      </div>
-    </div>
-
-    <button class="defibeo-roi-cta-button-9x8k3" onclick="defibeoRoiCalculate9x8k3()">Voir les résultats</button>
+<!-- ÉTAPE 1 -->
+<div class="defibeo-roi-step-form-9x8k3">
+  <div class="defibeo-roi-title-9x8k3">Calculez votre ROI et le temps gagné</div>
+  <div class="defibeo-roi-subtitle-9x8k3">
+    Obtenez des informations clés sur vos performances, les valeurs sont indicatives et basée sur la première année à l’issue de l’achat du logiciel Défibeo.
   </div>
 
-  <!-- ÉTAPE 2 -->
-  <div class="defibeo-roi-results-container-9x8k3">
-    <div class="defibeo-roi-title-9x8k3">Résultats de l’estimation pour votre ROI et de temps gagné</div>
-    <div class="defibeo-roi-subtitle-9x8k3">
-      Il s’agit de valeurs indicatives et basées sur la première année à l’issue de l’achat du logiciel Défibeo selon vos informations communiquées.
-    </div>
-
-    <div class="defibeo-roi-results-grid-9x8k3">
-      <div class="defibeo-roi-result-card-9x8k3">
-        <div class="defibeo-roi-result-label-9x8k3">Temps gagné sur 1 an si vous utilisez Défibeo</div>
-        <div class="defibeo-roi-result-value-9x8k3" id="defibeo-time-result-9x8k3">000h</div>
-      </div>
-
-      <div class="defibeo-roi-result-card-9x8k3">
-        <div class="defibeo-roi-result-label-9x8k3">Coût moyen HT du logiciel par maintenance sur 12 mois</div>
-        <div class="defibeo-roi-result-value-9x8k3" id="defibeo-cost-result-9x8k3">00.00€</div>
-      </div>
+  <div class="defibeo-roi-field-block-9x8k3" id="f1" style="display:block">
+    <span class="defibeo-roi-field-label-9x8k3">Volume Défibrillateurs à maintenir</span>
+    <div class="defibeo-roi-radio-group-9x8k3">
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="500"><label>Moins de 500</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="1000"><label>Moins de 1000</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="2000"><label>Moins de 2000</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="5000"><label>Moins de 5000</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="10000"><label>Moins de 10000</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field1" value="15000"><label>Plus de 10000</label></div>
     </div>
   </div>
 
-  <script>
-    function defibeoRoiCalculate9x8k3() {
-      const maintenances = document.querySelector('input[name="field2"]:checked');
-      if (!maintenances) return;
+  <div class="defibeo-roi-field-block-9x8k3" id="f2">
+    <span class="defibeo-roi-field-label-9x8k3">Volume Maintenances sur 12 mois</span>
+    <div class="defibeo-roi-radio-group-9x8k3">
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="700"><label>Moins de 700</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="1200"><label>Moins de 1200</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="2500"><label>Moins de 2500</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="6000"><label>Moins de 6000</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="14000"><label>Moins de 14000</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field2" value="20000"><label>Plus de 14000</label></div>
+    </div>
+  </div>
 
-      const maintValue = parseInt(maintenances.value, 10);
+  <div class="defibeo-roi-field-block-9x8k3" id="f3">
+    <span class="defibeo-roi-field-label-9x8k3">Panier Moyen Maintenance</span>
+    <div class="defibeo-roi-radio-group-9x8k3">
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3"><label>Environ 100€ HT</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3"><label>Environ 200€ HT</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3"><label>Environ 300€ HT</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field3"><label>Environ 400€ HT</label></div>
+    </div>
+  </div>
 
-      const minutesGained = maintValue * 14;
-      const hoursGained = Math.ceil(minutesGained / 60);
+  <div class="defibeo-roi-field-block-9x8k3" id="f4">
+    <span class="defibeo-roi-field-label-9x8k3">Votre outil ou méthode actuelle</span>
+    <div class="defibeo-roi-radio-group-9x8k3">
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4"><label>Papier & Tableur</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4"><label>Papier uniquement</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4"><label>Tableur uniquement</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4"><label>Logiciel GMAO similaire Défibeo</label></div>
+      <div class="defibeo-roi-radio-item-9x8k3"><input type="radio" name="field4"><label>Outil non spécifique infogéré</label></div>
+    </div>
+  </div>
 
-      const costPerMaintenance = (1500 / maintValue).toFixed(2);
+  <button class="defibeo-roi-cta-button-9x8k3" id="cta">Voir les résultats</button>
+</div>
 
-      document.getElementById('defibeo-time-result-9x8k3').innerText = hoursGained + 'h';
-      document.getElementById('defibeo-cost-result-9x8k3').innerText = costPerMaintenance + '€';
+<!-- ÉTAPE 2 -->
+<div class="defibeo-roi-results-container-9x8k3">
+  <div class="defibeo-roi-title-9x8k3">Résultats de l’estimation pour votre ROI et de temps gagné</div>
+  <div class="defibeo-roi-subtitle-9x8k3">
+    Il s’agit de valeurs indicatives et basées sur la première année à l’issue de l’achat du logiciel Défibeo selon vos informations communiquées.
+  </div>
 
-      document.querySelector('.defibeo-roi-step-form-9x8k3').style.display = 'none';
-      document.querySelector('.defibeo-roi-results-container-9x8k3').style.display = 'block';
-    }
-  </script>
+  <div class="defibeo-roi-results-grid-9x8k3">
+    <div class="defibeo-roi-result-card-9x8k3">
+      <div class="defibeo-roi-result-label-9x8k3">Temps gagné sur 1 an</div>
+      <div class="defibeo-roi-result-value-9x8k3" id="timeResult">000h</div>
+    </div>
+    <div class="defibeo-roi-result-card-9x8k3">
+      <div class="defibeo-roi-result-label-9x8k3">Coût moyen HT par maintenance</div>
+      <div class="defibeo-roi-result-value-9x8k3" id="costResult">00.00€</div>
+    </div>
+  </div>
+
+  <button class="defibeo-roi-reset-button-9x8k3" id="reset">Recommencer</button>
+</div>
+
+<script>
+const show=(id)=>document.getElementById(id).style.display='block';
+document.querySelectorAll('input[name="field1"]').forEach(e=>e.onchange=()=>show('f2'));
+document.querySelectorAll('input[name="field2"]').forEach(e=>e.onchange=()=>show('f3'));
+document.querySelectorAll('input[name="field3"]').forEach(e=>e.onchange=()=>{
+  show('f4');
+  document.getElementById('cta').style.display='inline-block';
+});
+
+document.getElementById('cta').onclick=()=>{
+  const m=parseInt(document.querySelector('input[name="field2"]:checked').value);
+  document.getElementById('timeResult').innerText=Math.ceil((m*14)/60)+'h';
+  document.getElementById('costResult').innerText=(1500/m).toFixed(2)+'€';
+  document.querySelector('.defibeo-roi-step-form-9x8k3').style.display='none';
+  document.querySelector('.defibeo-roi-results-container-9x8k3').style.display='block';
+  document.getElementById('defibeo-roi-anchor-9x8k3').scrollIntoView({behavior:'smooth'});
+};
+
+document.getElementById('reset').onclick=()=>{
+  document.querySelectorAll('input[type="radio"]').forEach(r=>r.checked=false);
+  document.querySelectorAll('.defibeo-roi-field-block-9x8k3').forEach(b=>b.style.display='none');
+  document.getElementById('f1').style.display='block';
+  document.getElementById('cta').style.display='none';
+  document.querySelector('.defibeo-roi-results-container-9x8k3').style.display='none';
+  document.querySelector('.defibeo-roi-step-form-9x8k3').style.display='block';
+  document.getElementById('defibeo-roi-anchor-9x8k3').scrollIntoView({behavior:'smooth'});
+};
+</script>
 
 </div>
 
