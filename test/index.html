@@ -1125,7 +1125,7 @@ width: 100%;
 <div class="dfbgo-bar-wrapper">
   <div class="dfbgo-bar-inner">
     <div class="dfbgo-bar-text">
-      Vous recherchez un distributeur et mainteneur défibrillateurs qualifié  à proximité, voici Défibeo Go!
+Text pour la plateforme technicien extincteurs déifbrillateurs pour trouver des partenaires locaux. 
     </div>
     <button
       type="button"
@@ -1852,151 +1852,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-        <style>
-    /* Import Police */
-    @font-face {
-        font-family: 'DefibeoMain';
-        src: url('path/to/defibeomain.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    /* Conteneur Global */
-    .dbx-v2-main-wrapper {
-        background-color: #f6f8fa; /* Gris GitHub */
-        border: 1px solid #d0d7de;
-        border-radius: 12px;
-        padding: 32px 24px;
-        font-family: 'DefibeoMain', sans-serif;
-        max-width: 1100px;
-        margin: 20px auto;
-        box-sizing: border-box;
-    }
-
-    /* Titre Parent */
-    .dbx-v2-main-title {
-        font-size: 24px;
-        font-weight: 600;
-        color: #1f2328;
-        margin-bottom: 24px;
-        text-align: center;
-    }
-
-    /* Conteneur des boutons (Flexbox) */
-    .dbx-v2-grid-container {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-    }
-
-    /* Bouton (Lien href) */
-    .dbx-v2-card-link {
-        flex: 1;
-        text-decoration: none; /* Enlever le soulignement du lien */
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        background-color: #ffffff;
-        border: 1px solid #d0d7de;
-        border-radius: 8px;
-        transition: all 0.25s ease-in-out;
-        box-shadow: 0 1px 2px rgba(31,35,40,0.04);
-    }
-
-    /* Titre dans le bouton */
-    .dbx-v2-card-title {
-        font-size: 19px;
-        font-weight: 700;
-        color: #1f2328;
-        margin-bottom: 8px;
-        display: block;
-    }
-
-    /* Description sous le titre */
-    .dbx-v2-card-desc {
-        font-size: 14px;
-        color: #636c76;
-        line-height: 1.5;
-        display: block;
-    }
-
-    /* Hover effect */
-    .dbx-v2-card-link:hover {
-        border-color: #afb8c1;
-        background-color: #f3f4f6;
-        transform: translateY(-3px);
-        box-shadow: 0 4px 12px rgba(31,35,40,0.08);
-    }
-
-    /* État Selected (Defibeo par défaut) */
-    .dbx-v2-card-link.is-active-now {
-        border: 2px solid #0969da;
-        background-color: #ffffff;
-        position: relative;
-    }
-    
-    .dbx-v2-card-link.is-active-now .dbx-v2-card-title {
-        color: #0969da;
-    }
-
-    /* RESPONSIVE : Passage en colonne sur mobile */
-    @media (max-width: 768px) {
-        .dbx-v2-grid-container {
-            flex-direction: column;
-        }
         
-        .dbx-v2-main-title {
-            font-size: 20px;
-        }
-
-        .dbx-v2-card-link {
-            flex: none;
-            width: 100%;
-            box-sizing: border-box;
-        }
-    }
-</style>
-
-<div class="dbx-v2-main-wrapper">
-    <h2 class="dbx-v2-main-title">Nos solutions autour du même cercle</h2>
-
-    <div class="dbx-v2-grid-container">
-        <a href="https://google.com/" class="dbx-v2-card-link is-active-now" onclick="dbxActivate(this)">
-            <span class="dbx-v2-card-title">Defibeo</span>
-            <span class="dbx-v2-card-desc">Logiciel pour la traçabilité et maintenance des défibrillateurs</span>
-        </a>
-
-        <a href="https://google.com/" class="dbx-v2-card-link" onclick="dbxActivate(this)">
-            <span class="dbx-v2-card-title">Extincteo</span>
-            <span class="dbx-v2-card-desc">Logiciel pour la traçabilité et maintenance des extincteurs</span>
-        </a>
-
-        <a href="https://google.com/" class="dbx-v2-card-link" onclick="dbxActivate(this)">
-            <span class="dbx-v2-card-title">Formeo</span>
-            <span class="dbx-v2-card-desc">Logiciel pour l'organisation des formations</span>
-        </a>
-    </div>
-</div>
-
-<script>
-    function dbxActivate(element) {
-        // Supprime la classe active de tous les éléments
-        const allCards = document.querySelectorAll('.dbx-v2-card-link');
-        allCards.forEach(card => card.classList.remove('is-active-now'));
-        
-        // Ajoute la classe active à l'élément cliqué
-        element.classList.add('is-active-now');
-        
-        // Note: Le href s'exécutera après le clic. 
-        // Si vous voulez empêcher la navigation immédiate pour tester le style, 
-        // vous pouvez ajouter "event.preventDefault()" ici.
-    }
-</script>
-
-
-
-
-
     <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
 <h1>
 Logiciel métier leader pour<span id="typing"></span> défibrillateurs
@@ -4389,6 +4245,149 @@ max-width: 750px;
 
 
 <div class="fullwidth-imageISO">
+
+    <style>
+    /* Import Police */
+    @font-face {
+        font-family: 'DefibeoMain';
+        src: url('path/to/defibeomain.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* Conteneur Global */
+    .dbx-v2-main-wrapper {
+        background-color: #f6f8fa; /* Gris GitHub */
+        border: 1px solid #d0d7de;
+        border-radius: 12px;
+        padding: 32px 24px;
+        font-family: 'DefibeoMain', sans-serif;
+        max-width: 1100px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    /* Titre Parent */
+    .dbx-v2-main-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1f2328;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    /* Conteneur des boutons (Flexbox) */
+    .dbx-v2-grid-container {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    /* Bouton (Lien href) */
+    .dbx-v2-card-link {
+        flex: 1;
+        text-decoration: none; /* Enlever le soulignement du lien */
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #d0d7de;
+        border-radius: 8px;
+        transition: all 0.25s ease-in-out;
+        box-shadow: 0 1px 2px rgba(31,35,40,0.04);
+    }
+
+    /* Titre dans le bouton */
+    .dbx-v2-card-title {
+        font-size: 19px;
+        font-weight: 700;
+        color: #1f2328;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    /* Description sous le titre */
+    .dbx-v2-card-desc {
+        font-size: 14px;
+        color: #636c76;
+        line-height: 1.5;
+        display: block;
+    }
+
+    /* Hover effect */
+    .dbx-v2-card-link:hover {
+        border-color: #afb8c1;
+        background-color: #f3f4f6;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(31,35,40,0.08);
+    }
+
+    /* État Selected (Defibeo par défaut) */
+    .dbx-v2-card-link.is-active-now {
+        border: 2px solid #0969da;
+        background-color: #ffffff;
+        position: relative;
+    }
+    
+    .dbx-v2-card-link.is-active-now .dbx-v2-card-title {
+        color: #0969da;
+    }
+
+    /* RESPONSIVE : Passage en colonne sur mobile */
+    @media (max-width: 768px) {
+        .dbx-v2-grid-container {
+            flex-direction: column;
+        }
+        
+        .dbx-v2-main-title {
+            font-size: 20px;
+        }
+
+        .dbx-v2-card-link {
+            flex: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+</style>
+
+<div class="dbx-v2-main-wrapper">
+    <h2 class="dbx-v2-main-title">Nos solutions autour du même cercle</h2>
+
+    <div class="dbx-v2-grid-container">
+        <a href="https://google.com/" class="dbx-v2-card-link is-active-now" onclick="dbxActivate(this)">
+            <span class="dbx-v2-card-title">Defibeo</span>
+            <span class="dbx-v2-card-desc">Logiciel pour la traçabilité et maintenance des défibrillateurs</span>
+        </a>
+
+        <a href="https://google.com/" class="dbx-v2-card-link" onclick="dbxActivate(this)">
+            <span class="dbx-v2-card-title">Extincteo</span>
+            <span class="dbx-v2-card-desc">Logiciel pour la traçabilité et maintenance des extincteurs</span>
+        </a>
+
+        <a href="https://google.com/" class="dbx-v2-card-link" onclick="dbxActivate(this)">
+            <span class="dbx-v2-card-title">Formeo</span>
+            <span class="dbx-v2-card-desc">Logiciel pour l'organisation des formations</span>
+        </a>
+    </div>
+</div>
+
+<script>
+    function dbxActivate(element) {
+        // Supprime la classe active de tous les éléments
+        const allCards = document.querySelectorAll('.dbx-v2-card-link');
+        allCards.forEach(card => card.classList.remove('is-active-now'));
+        
+        // Ajoute la classe active à l'élément cliqué
+        element.classList.add('is-active-now');
+        
+        // Note: Le href s'exécutera après le clic. 
+        // Si vous voulez empêcher la navigation immédiate pour tester le style, 
+        // vous pouvez ajouter "event.preventDefault()" ici.
+    }
+</script>
+
+
      <p class="barcodex">Soutenu par des organismes technologiques privés et des institutions publiques impliquées dans les services aux entreprises et le secteur médical.</p>
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
 
