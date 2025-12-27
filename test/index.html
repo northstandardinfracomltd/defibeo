@@ -1849,6 +1849,121 @@ document.addEventListener('DOMContentLoaded', function () {
         <section class="two-columns">
     <div class="col left-column">
       
+
+
+
+        <style>
+    /* Import de la police - Assurez-vous que le chemin est correct */
+    @font-face {
+        font-family: 'DefibeoMain';
+        src: url('path/to/defibeomain.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* Conteneur principal avec le gris type GitHub */
+    .dbx-custom-wrapper-container-99 {
+        display: flex;
+        gap: 16px;
+        padding: 24px;
+        background-color: #f6f8fa; /* Gris clair GitHub */
+        border: 1px solid #d0d7de;
+        border-radius: 8px;
+        font-family: 'DefibeoMain', sans-serif;
+        justify-content: center;
+        max-width: 1000px;
+        margin: 20px auto;
+    }
+
+    /* Style de base des boutons interactifs */
+    .dbx-custom-btn-item-action {
+        flex: 1;
+        cursor: pointer;
+        padding: 16px;
+        background-color: #ffffff;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1px 0 rgba(31,35,40,0.04);
+    }
+
+    /* Effet Hover */
+    .dbx-custom-btn-item-action:hover {
+        background-color: #f3f4f6;
+        border-color: #afb8c1;
+        transform: translateY(-2px);
+    }
+
+    /* État Sélectionné (Selected) - Style type GitHub Active */
+    .dbx-custom-btn-item-action.is-selected-active {
+        background-color: #ffffff;
+        border-color: #0969da;
+        border-width: 2px;
+        box-shadow: 0 2px 8px rgba(9, 105, 218, 0.15);
+        padding: 15px; /* Ajustement pour compenser la bordure de 2px */
+    }
+
+    /* Titre du bouton (19px) */
+    .dbx-custom-btn-title-main {
+        font-size: 19px;
+        font-weight: 600;
+        color: #1f2328;
+        margin-bottom: 4px;
+    }
+
+    /* Description en plus petit */
+    .dbx-custom-btn-desc-sub {
+        font-size: 13px;
+        color: #636c76;
+        line-height: 1.4;
+    }
+
+    /* Ajustement couleur titre si sélectionné */
+    .dbx-custom-btn-item-action.is-selected-active .dbx-custom-btn-title-main {
+        color: #0969da;
+    }
+</style>
+
+<div class="dbx-custom-wrapper-container-99" id="dbx-software-selector">
+    <div class="dbx-custom-btn-item-action is-selected-active" onclick="selectDbxTab(this)">
+        <span class="dbx-custom-btn-title-main">Defibeo</span>
+        <span class="dbx-custom-btn-desc-sub">Logiciel pour la traçabilité et maintenance des défibrillateurs</span>
+    </div>
+
+    <div class="dbx-custom-btn-item-action" onclick="selectDbxTab(this)">
+        <span class="dbx-custom-btn-title-main">Extincteo</span>
+        <span class="dbx-custom-btn-desc-sub">Logiciel pour la traçabilité et maintenance des extincteurs</span>
+    </div>
+
+    <div class="dbx-custom-btn-item-action" onclick="selectDbxTab(this)">
+        <span class="dbx-custom-btn-title-main">Formeo</span>
+        <span class="dbx-custom-btn-desc-sub">Logiciel pour l'organisation des formations</span>
+    </div>
+</div>
+
+<script>
+    function selectDbxTab(element) {
+        // Récupère tous les boutons du conteneur
+        const buttons = document.querySelectorAll('.dbx-custom-btn-item-action');
+        
+        // Retire la classe 'is-selected-active' de tous les boutons
+        buttons.forEach(btn => {
+            btn.classList.remove('is-selected-active');
+        });
+        
+        // Ajoute la classe au bouton cliqué
+        element.classList.add('is-selected-active');
+        
+        // Optionnel : Logique pour changer le contenu de la page en dessous
+        console.log("Onglet sélectionné : " + element.querySelector('.dbx-custom-btn-title-main').innerText);
+    }
+</script>
+
+
+
     <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
 <h1>
 Logiciel métier leader pour<span id="typing"></span> défibrillateurs
