@@ -1853,7 +1853,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         <style>
-    /* Import de la police - Assurez-vous que le chemin est correct */
+    /* Import Police */
     @font-face {
         font-family: 'DefibeoMain';
         src: url('path/to/defibeomain.woff2') format('woff2');
@@ -1861,106 +1861,139 @@ document.addEventListener('DOMContentLoaded', function () {
         font-style: normal;
     }
 
-    /* Conteneur principal avec le gris type GitHub */
-    .dbx-custom-wrapper-container-99 {
-        display: flex;
-        gap: 16px;
-        padding: 24px;
-        background-color: #f6f8fa; /* Gris clair GitHub */
+    /* Conteneur Global */
+    .dbx-v2-main-wrapper {
+        background-color: #f6f8fa; /* Gris GitHub */
         border: 1px solid #d0d7de;
-        border-radius: 8px;
+        border-radius: 12px;
+        padding: 32px 24px;
         font-family: 'DefibeoMain', sans-serif;
-        justify-content: center;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 20px auto;
+        box-sizing: border-box;
     }
 
-    /* Style de base des boutons interactifs */
-    .dbx-custom-btn-item-action {
-        flex: 1;
-        cursor: pointer;
-        padding: 16px;
-        background-color: #ffffff;
-        border: 1px solid #d0d7de;
-        border-radius: 6px;
-        transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 1px 0 rgba(31,35,40,0.04);
-    }
-
-    /* Effet Hover */
-    .dbx-custom-btn-item-action:hover {
-        background-color: #f3f4f6;
-        border-color: #afb8c1;
-        transform: translateY(-2px);
-    }
-
-    /* État Sélectionné (Selected) - Style type GitHub Active */
-    .dbx-custom-btn-item-action.is-selected-active {
-        background-color: #ffffff;
-        border-color: #0969da;
-        border-width: 2px;
-        box-shadow: 0 2px 8px rgba(9, 105, 218, 0.15);
-        padding: 15px; /* Ajustement pour compenser la bordure de 2px */
-    }
-
-    /* Titre du bouton (19px) */
-    .dbx-custom-btn-title-main {
-        font-size: 19px;
+    /* Titre Parent */
+    .dbx-v2-main-title {
+        font-size: 24px;
         font-weight: 600;
         color: #1f2328;
-        margin-bottom: 4px;
+        margin-bottom: 24px;
+        text-align: center;
     }
 
-    /* Description en plus petit */
-    .dbx-custom-btn-desc-sub {
-        font-size: 13px;
+    /* Conteneur des boutons (Flexbox) */
+    .dbx-v2-grid-container {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    /* Bouton (Lien href) */
+    .dbx-v2-card-link {
+        flex: 1;
+        text-decoration: none; /* Enlever le soulignement du lien */
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #d0d7de;
+        border-radius: 8px;
+        transition: all 0.25s ease-in-out;
+        box-shadow: 0 1px 2px rgba(31,35,40,0.04);
+    }
+
+    /* Titre dans le bouton */
+    .dbx-v2-card-title {
+        font-size: 19px;
+        font-weight: 700;
+        color: #1f2328;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    /* Description sous le titre */
+    .dbx-v2-card-desc {
+        font-size: 14px;
         color: #636c76;
-        line-height: 1.4;
+        line-height: 1.5;
+        display: block;
     }
 
-    /* Ajustement couleur titre si sélectionné */
-    .dbx-custom-btn-item-action.is-selected-active .dbx-custom-btn-title-main {
+    /* Hover effect */
+    .dbx-v2-card-link:hover {
+        border-color: #afb8c1;
+        background-color: #f3f4f6;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(31,35,40,0.08);
+    }
+
+    /* État Selected (Defibeo par défaut) */
+    .dbx-v2-card-link.is-active-now {
+        border: 2px solid #0969da;
+        background-color: #ffffff;
+        position: relative;
+    }
+    
+    .dbx-v2-card-link.is-active-now .dbx-v2-card-title {
         color: #0969da;
+    }
+
+    /* RESPONSIVE : Passage en colonne sur mobile */
+    @media (max-width: 768px) {
+        .dbx-v2-grid-container {
+            flex-direction: column;
+        }
+        
+        .dbx-v2-main-title {
+            font-size: 20px;
+        }
+
+        .dbx-v2-card-link {
+            flex: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
     }
 </style>
 
-<div class="dbx-custom-wrapper-container-99" id="dbx-software-selector">
-    <div class="dbx-custom-btn-item-action is-selected-active" onclick="selectDbxTab(this)">
-        <span class="dbx-custom-btn-title-main">Defibeo</span>
-        <span class="dbx-custom-btn-desc-sub">Logiciel pour la traçabilité et maintenance des défibrillateurs</span>
-    </div>
+<div class="dbx-v2-main-wrapper">
+    <h2 class="dbx-v2-main-title">Nos solutions autour du même cercle</h2>
 
-    <div class="dbx-custom-btn-item-action" onclick="selectDbxTab(this)">
-        <span class="dbx-custom-btn-title-main">Extincteo</span>
-        <span class="dbx-custom-btn-desc-sub">Logiciel pour la traçabilité et maintenance des extincteurs</span>
-    </div>
+    <div class="dbx-v2-grid-container">
+        <a href="https://google.com/" class="dbx-v2-card-link is-active-now" onclick="dbxActivate(this)">
+            <span class="dbx-v2-card-title">Defibeo</span>
+            <span class="dbx-v2-card-desc">Logiciel pour la traçabilité et maintenance des défibrillateurs</span>
+        </a>
 
-    <div class="dbx-custom-btn-item-action" onclick="selectDbxTab(this)">
-        <span class="dbx-custom-btn-title-main">Formeo</span>
-        <span class="dbx-custom-btn-desc-sub">Logiciel pour l'organisation des formations</span>
+        <a href="https://google.com/" class="dbx-v2-card-link" onclick="dbxActivate(this)">
+            <span class="dbx-v2-card-title">Extincteo</span>
+            <span class="dbx-v2-card-desc">Logiciel pour la traçabilité et maintenance des extincteurs</span>
+        </a>
+
+        <a href="https://google.com/" class="dbx-v2-card-link" onclick="dbxActivate(this)">
+            <span class="dbx-v2-card-title">Formeo</span>
+            <span class="dbx-v2-card-desc">Logiciel pour l'organisation des formations</span>
+        </a>
     </div>
 </div>
 
 <script>
-    function selectDbxTab(element) {
-        // Récupère tous les boutons du conteneur
-        const buttons = document.querySelectorAll('.dbx-custom-btn-item-action');
+    function dbxActivate(element) {
+        // Supprime la classe active de tous les éléments
+        const allCards = document.querySelectorAll('.dbx-v2-card-link');
+        allCards.forEach(card => card.classList.remove('is-active-now'));
         
-        // Retire la classe 'is-selected-active' de tous les boutons
-        buttons.forEach(btn => {
-            btn.classList.remove('is-selected-active');
-        });
+        // Ajoute la classe active à l'élément cliqué
+        element.classList.add('is-active-now');
         
-        // Ajoute la classe au bouton cliqué
-        element.classList.add('is-selected-active');
-        
-        // Optionnel : Logique pour changer le contenu de la page en dessous
-        console.log("Onglet sélectionné : " + element.querySelector('.dbx-custom-btn-title-main').innerText);
+        // Note: Le href s'exécutera après le clic. 
+        // Si vous voulez empêcher la navigation immédiate pour tester le style, 
+        // vous pouvez ajouter "event.preventDefault()" ici.
     }
 </script>
+
+
 
 
 
