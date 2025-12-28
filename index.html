@@ -145,14 +145,16 @@ max-width: 85% !important;
 }
 
 .dfbgo-bar-wrapper {
-    background: #16f3bc;
-    padding: 14px 10px;
+background: #1b166a;
+    border-bottom: 1px solid #252072;
+    padding: 17px;
     text-align: center;
 }
 
       }
 
     .hero h1 {
+            color: #fff;
     font-weight: 100 !important;
     font-family: 'DefibeoTAZ', sans-serif;
     font-size: 70px;
@@ -169,7 +171,7 @@ max-width: 85% !important;
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle, white 0%, white 70%, #16f3bcbd 100%);
+    background: radial-gradient(#281698, #020248) !important;
     opacity: 0.5;
     z-index: 0;
 }
@@ -179,6 +181,7 @@ max-width: 85% !important;
           font-weight: 100 !important;
       font-size: 19px;
       line-height: 35px;
+      color: #fff;
       margin-bottom: 0px;
       cursor: default;
     }
@@ -656,15 +659,16 @@ cursor: pointer;
      display: inline-block;
       padding: 0.5rem 1rem;
       border-radius: 6px;
-      background: #000;
+      background: #674eff;
       color: #fff;rgb(19, 104, 103)rgb(34, 217, 214)
       text-decoration: none;
       font-size: 0.9rem;
+      outline: #674eff solid 3px;
+    outline-offset: 4px;
     }
 
 .defibeocontact:hover {
       font-weight: 100 !important;
-    box-shadow: 0 0 0px 8px #0000001a;
     text-decoration: none;
 }
         .liza {
@@ -1073,7 +1077,7 @@ width: 100%;
 #typing {
   border-right: 5px solid #12f4bd;
   padding-left: 4px;
-  color: #000000;
+  color: #ffffff;
   animation: dfbgo-blink-cursor 1s steps(1) infinite;
 }
 
@@ -1124,14 +1128,14 @@ width: 100%;
 <div class="dfbgo-bar-wrapper">
   <div class="dfbgo-bar-inner">
     <div class="dfbgo-bar-text">
-      Vous recherchez un distributeur et mainteneur défibrillateurs qualifié  à proximité, voici Défibeo Go!
+Obtenez une présentation détaillée du logiciel en écran partagé avec un expert produit.
     </div>
     <button
       type="button"
       class="dfbgo-bar-action-btn"
-      id="openBtn-defibeo-search"
+      href="https://defibeo-com-reserver-un-appel.youcanbook.me"
     >
-      En savoir plus
+      Réservez une démo
     </button>
   </div>
 </div>
@@ -1227,8 +1231,21 @@ Aucun frais caché, pas de pourcentage sur vos achats. Devenez client Go avec le
 .gogogocho {height: 110px; margin-right: auto; margin-top: 2px; margin-left: -2px;}
 .dfbgo-bar-wrapper{background:#16f3bc;padding:14px 20px}
 .dfbgo-bar-inner{max-width:100%;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.dfbgo-bar-text{color: #000; font-size: 18px; margin-bottom: -1px; cursor: default;}
-.dfbgo-bar-action-btn{color: #fff; font-size: 18px; border-radius: 13px; background: #000; border: none; font-family: 'DefibeoMain', sans-serif; padding: 11px 19px; font-weight: 100; cursor: pointer;}
+.dfbgo-bar-text{color: #fff; font-size: 18px; margin-bottom: -1px; cursor: default;}
+.dfbgo-bar-action-btn{
+  color: #fff;
+    font-size: 18px;
+    border-radius: 13px;
+    background: #674eff;
+    border: none;
+    outline: #674eff solid 3px;
+    outline-offset: 4px;
+    font-family: 'DefibeoMain', sans-serif;
+    padding: 11px 19px;
+    font-weight: 100;
+    cursor: pointer;
+
+}
 .dfbgo-bar-action-btn:hover{ font-weight: 100 !important; box-shadow: 0 0 0px 8px #0000001a; text-decoration: none; }
 /* POPUP */
 .dfbgo-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:9999}
@@ -1457,12 +1474,6 @@ margin-top: 20px !important;
 </script>
 
 
-<a href="https://defibeo-com-reserver-un-appel.youcanbook.me"
-   target="_blank"
-   class="whatsapp-float js-shake-btn"
-   aria-label="Réserver une démo">
-   Réservez une démo
-</a>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const btn = document.querySelector('.js-shake-btn');
@@ -1848,7 +1859,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <section class="two-columns">
     <div class="col left-column">
       
-    <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/DefibeoLogoV2.svg" alt="Defibeo Logo">
+    <img class="krako" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeowhite.svg" alt="Defibeo Logo">
 <h1>
 Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 </h1>
@@ -2755,7 +2766,7 @@ width: 40px;
     <div class="container">
       <div class="cards">
         <div class="card zus">
-          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/aezfeafef.svg" alt="Mobilité"><br><br>
+          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/illustrate3.svg" alt="Mobilité"><br><br>
           <h3 class="okazu">Infogérance</h3>
           <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
           <a href="#" class="open-defibeo-contact idgo okazu3">Contactez-nous</a>
@@ -2780,13 +2791,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         </div>
         <div class="card zus">
-          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fezfezfzef.svg" alt="Assistance"><br><br>
+          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/illustrate2.svg" alt="Assistance"><br><br>
           <h3 class="okazu">GMAO</h3>
           <p class="okazu2">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
           <a href="#pricingplan" class="idgo okazu3">Commander</a>
         </div>
         <div class="card zus">
-          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/jytejyjeyj.svg" alt="Infogérance"><br><br>
+          <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/illustrate1.svg" alt="Infogérance"><br><br>
           <h3 class="okazu">Mobilité</h3>
           <p class="okazu2">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
           <a href="#pricingplan" class="idgo okazu3">S'inscrire</a>
@@ -3135,18 +3146,18 @@ document.addEventListener('DOMContentLoaded', function () {
     border-radius: 100px;
     text-align: center;
     font-size: 18px;
-    color: #000;
-    border: none;
+    color: #fff;
+    border: 1px solid #4535ac;
     cursor: pointer;
-    background: #12f4bd;
+    background: transparent;
     transition: .25s;
 }
 
 
 .defibeo-roi-radio-item-9x8k3 input:checked+label{
-  background:#000;
-  color:#fff;
-  border-color:#000
+background: #382a97;
+    color: #fff;
+    border-color: #897ae6;
 }
 .defibeo-roi-cta-button-9x8k3,
 .defibeo-roi-reset-button-9x8k3{
@@ -3238,16 +3249,10 @@ Coût, ROI et temps préservé : Estimez, pour la première année d’activité
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f1d" name="field1" value="5000">
-        <label for="f1d">Moins de 5000</label>
+        <label for="f1d">Plus de 5000</label>
       </div>
-      <div class="defibeo-roi-radio-item-9x8k3">
-        <input type="radio" id="f1e" name="field1" value="10000">
-        <label for="f1e">Moins de 10000</label>
-      </div>
-      <div class="defibeo-roi-radio-item-9x8k3">
-        <input type="radio" id="f1f" name="field1" value="15000">
-        <label for="f1f">Plus de 10000</label>
-      </div>
+
+
     </div>
   </div>
 
@@ -3269,15 +3274,7 @@ Coût, ROI et temps préservé : Estimez, pour la première année d’activité
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f2d" name="field2" value="6000">
-        <label for="f2d">Moins de 6000</label>
-      </div>
-      <div class="defibeo-roi-radio-item-9x8k3">
-        <input type="radio" id="f2e" name="field2" value="14000">
-        <label for="f2e">Moins de 14000</label>
-      </div>
-      <div class="defibeo-roi-radio-item-9x8k3">
-        <input type="radio" id="f2f" name="field2" value="20000">
-        <label for="f2f">Plus de 14000</label>
+        <label for="f2d">Plus de 6000</label>
       </div>
     </div>
   </div>
