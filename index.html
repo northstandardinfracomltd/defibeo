@@ -4241,6 +4241,206 @@ max-width: 750px;
 
 
 <div class="fullwidth-imageISO">
+
+
+  <style>
+    @font-face {
+        font-family: 'DefibeoMain';
+        src: url('path/to/defibeomain.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .dbx-v3-main-wrapper {
+background-color: #ffffff;
+    border: 1px solid #edededd1;
+    border-radius: 20px;
+    padding: 32px 24px;
+    font-family: 'DefibeoMain', sans-serif;
+    max-width: 1100px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .dbx-v3-main-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1f2328;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    /* Style de l'alerte Full Width */
+    .dbx-v3-alert-banner {
+        display: none; /* Caché par défaut */
+        width: 100%;
+        background-color: #fff8c5; /* Jaune d'alerte GitHub */
+        border: 1px solid rgba(175, 128, 6, 0.3);
+        border-radius: 6px;
+        padding: 12px 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-between;
+        animation: dbxFadeIn 0.3s ease;
+    }
+
+    @keyframes dbxFadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dbx-v3-alert-text {
+        font-size: 14px;
+        color: #735c0f;
+        font-weight: 500;
+    }
+
+    .dbx-v3-contact-btn {
+        background-color: #1f2328;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: background 0.2s;
+        white-space: nowrap;
+        margin-left: 15px;
+    }
+
+    .dbx-v3-contact-btn:hover {
+        background-color: #2b3137;
+    }
+
+    .dbx-v3-grid-container {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    .dbx-v3-card-link {
+flex: 1;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #fff !important;
+    background-color: #0281f9;
+    border: 1px solid #0281f9;
+    border-radius: 17px;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 1px 2px rgba(31, 35, 40, 0.04);
+    }
+
+        .tripleaaa {
+    color: #fff !important;
+    background-color: #008600 !important;
+    border: 2.5px solid #ffc300 !important;
+    }
+
+            .triplebbb {
+    color: #fff !important;
+    background-color: #008600 !important;
+    border: 2.5px solid #ffc300 !important;
+    }
+
+                .tripleccc {
+    color: #fff !important;
+    background-color: #008600 !important;
+    border: 2.5px solid #ffc300 !important;
+    }
+
+
+
+
+    .dbx-v3-card-title {
+    font-size: 22px;
+    font-weight: 100;
+    color: #fff;
+    margin-bottom: 8px;
+    display: block;
+    }
+
+    .dbx-v3-card-desc {
+        font-size: 14px;
+        color: #fff;
+        line-height: 1.5;
+        display: block;
+    }
+
+    .dbx-v3-card-link:hover {
+        transform: translateY(-3px);
+    }
+
+    .dbx-v3-card-link.is-active-now {
+        border: 2px solid #0969da;
+        background-color: #ffffff;
+        padding: 19px; /* Compensation bordure */
+    }
+    
+    .dbx-v3-card-link.is-active-now .dbx-v3-card-title {
+        color: #0969da;
+    }
+
+    @media (max-width: 768px) {
+        .dbx-v3-grid-container { flex-direction: column; }
+        .dbx-v3-alert-banner { flex-direction: column; gap: 10px; text-align: center; }
+        .dbx-v3-contact-btn { margin-left: 0; width: 100%; text-align: center; }
+    }
+</style>
+
+<div class="dbx-v3-main-wrapper">
+    <h2 class="dbx-v3-main-title">Nos solutions logicielles connexes, distinctes ou à ajouter en tant que modules à la demande.</h2>
+
+    <div id="dbx-beta-alert" class="dbx-v3-alert-banner">
+        <span class="dbx-v3-alert-text">
+            Logiciel bientôt disponible, vous pouvez l'obtenir en version bêta pour l'instant le temps.
+        </span>
+        <a href="mailto:mail@civilprom.com" class="dbx-v3-contact-btn">Nous contacter</a>
+    </div>
+
+    <div class="dbx-v3-grid-container">
+        <a href="https://google.com/" class="tripleaaa dbx-v3-card-link is-active-now" onclick="dbxLogic(this, 'defibeo', event)">
+            <span class="dbx-v3-card-title">Defibeo</span>
+            <span class="dbx-v3-card-desc">Logiciel pour la traçabilité et la maintenance GMAO des défibrillateurs</span>
+        </a>
+
+        <a href="https://google.com/" class="triplebbb dbx-v3-card-link" onclick="dbxLogic(this, 'beta', event)">
+            <span class="dbx-v3-card-title">Extincteo</span>
+            <span class="dbx-v3-card-desc">Logiciel pour la traçabilité et la maintenance GMAO des extincteurs</span>
+        </a>
+
+        <a href="https://google.com/" class="tripleccc dbx-v3-card-link" onclick="dbxLogic(this, 'beta', event)">
+            <span class="dbx-v3-card-title">Formeo</span>
+            <span class="dbx-v3-card-desc">Logiciel pour l'organisation des formations</span>
+        </a>
+    </div>
+</div>
+
+<script>
+    function dbxLogic(element, type, event) {
+        // Optionnel : empêcher la redirection pour voir l'effet de l'alerte
+        // event.preventDefault(); 
+
+        // Gestion des classes actives
+        const allCards = document.querySelectorAll('.dbx-v3-card-link');
+        allCards.forEach(card => card.classList.remove('is-active-now'));
+        element.classList.add('is-active-now');
+
+        // Gestion de l'affichage de l'alerte
+        const alertBox = document.getElementById('dbx-beta-alert');
+        if (type === 'beta') {
+            alertBox.style.display = 'flex';
+        } else {
+            alertBox.style.display = 'none';
+        }
+    }
+</script>
+
+
+
      <p class="barcodex">Soutenu par des organismes technologiques privés et des institutions publiques impliquées dans les services aux entreprises et le secteur médical.</p>
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
 
