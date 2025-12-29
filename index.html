@@ -239,7 +239,7 @@ background: #1b166a;
     .card {
           z-index: 1000;
     background: #fff;
-    border: 1px solid #edededd1;
+    border: 1px solid #e8e8e8;
     border-radius: 20px;
     padding: 0px;
     text-align: center;
@@ -371,7 +371,6 @@ border-radius: 0px;
     font-weight: 100 !important;
     border-top: 1px solid #e5e5e5;
     margin-top: -10px;
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     }
 
         .musika {
@@ -621,6 +620,8 @@ text-align: left;
     }
 
                 .okazu13 {
+                  outline: #674eff solid 3px;
+    outline-offset: 4px;
 text-decoration: none;
     text-align: left;
     margin-left: 0px;
@@ -638,9 +639,7 @@ text-decoration: none;
     }
 
 .okazu13:hover {
-    box-shadow: none; 
     font-weight: 100 !important;
-    text-decoration: none;
 }
 
 
@@ -1129,7 +1128,7 @@ width: 100%;
 <div class="dfbgo-bar-wrapper">
   <div class="dfbgo-bar-inner">
     <div class="dfbgo-bar-text">
-Obtenez une présentation détaillée du logiciel en écran partagé avec un expert produit.
+Une présentation personnalisée et détaillée du logiciel Défibeo en écran partagé.
     </div>
     <button
       type="button"
@@ -2817,7 +2816,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <br><br><br>
 
 <div class="dfb-browser-wrapper">
-            <h2 class="okazuPINK" >Arborescence & Composants</h2>
+            <h2 class="okazuPINK" >Arborescence</h2>
 <style>
 @font-face {
     font-family: "DefibeoFont";
@@ -2848,9 +2847,18 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 .dfb-logo-text { font-weight: 100 !important; font-size:18px; font-weight:bold; color:#222; cursor: default;}
 .dfb-parent { margin-bottom:20px; }
-.dfb-parent-title { font-weight: 100 !important; font-size: 18px; margin-bottom: 10px; color: #000000; font-family: 'DefibeoTAZ', sans-serif; letter-spacing: -0.5px; }
+.dfb-parent-title { font-weight: 100 !important; font-size: 18px; margin-bottom: 10px; color: #000000; font-family: 'DefibeoMain', sans-serif; letter-spacing: -0.5px; }
 .dfb-cloud { display:flex; flex-wrap:wrap; gap:8px; }
-.dfb-item { background: #000000; padding: 6px 14px; border-radius: 30px; font-size: 16px; color: #fff; cursor: pointer; transition: 0.2s ease; border: none;}
+.dfb-item {
+  background: linear-gradient(202deg, #ffffff, #f6f6f6);
+    padding: 6px 14px;
+    border: 1px solid #dddddd;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
 .dfb-item:hover { background:#000000; }
 .dfb-item.active {     background: #674eff;
     color: #fff;
@@ -2886,29 +2894,36 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="dfb-parent-title">Défibrillateurs</div>
                 <div class="dfb-cloud">
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez éligibles aux maintenances et aux tournées.">Avec Maintenance</div>
+                     <div class="dfb-item" data-dfb-text="Visualisez vos défibrillateurs sur une carte interactive.">Map</div>
+                     <div class="dfb-item" data-dfb-text="Des chiffres clés pour prendre de meilleures décisions.">Statistiques</div>
+                </div>
+            </div>
+
+
+                        <div class="dfb-parent">
+                <div class="dfb-parent-title">Filtres</div>
+                <div class="dfb-cloud">
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action est nécessaire dans les 3 prochains mois, par exemple une date de péremption.">Action Requise 3 Mois</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action nécessaire est passée, par exemple une date de péremption.">Action Requise Expirée</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez non éligibles aux maintenances et aux tournées.">Sans Maintenance</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez en portage ou sous-traitance d'une autre entreprise.">Sous Traitance</div>
-                    <div class="dfb-item" data-dfb-text="Visualisez vos défibrillateurs sur une carte interactive.">Map</div>
-                    <div class="dfb-item" data-dfb-text="Des chiffres clés pour prendre de meilleures décisions.">Indicateurs</div>
-                    <div class="dfb-item" data-dfb-text="Un agenda prévisionnel lisible sur un an des maintenances à réaliser.">Prévisionnel</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs prêtés, par exemple pour un dépannage.">Prêts</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit de la traçabilité des défibrillateurs repris, par exemple pour un défaut de fabrication.">Reprises</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs inutilisés que vous mentionnés comme dans votre stock.">Stockés</div>
                     <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">Archivés</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">CRM Tickets</div>
                 </div>
             </div>
 
             <!-- Maintenances -->
             <div class="dfb-parent">
-                <div class="dfb-parent-title">Maintenances</div>
+                <div class="dfb-parent-title">GMAO</div>
                 <div class="dfb-cloud">
                     <div class="dfb-item" data-dfb-text="Il s'agit d'un organisateur de tournées pour les techniciens avec la sélection des défibrillateurs.">Tournées</div>
                     <div class="dfb-item" data-dfb-text="Téléchargez ou renvoyez les reçus PDF générés par les techniciens.">Reçus PDF</div>
-                    <div class="dfb-item" data-dfb-text="Un suivi comptable pour ne manquer aucun consommable, par exemple lorsque vous remplacez une électrode pendant une maintenance.">Suivi Comptable</div>
+                    <div class="dfb-item" data-dfb-text="Un suivi comptable pour ne manquer aucun consommable, par exemple lorsque vous remplacez une électrode pendant une maintenance.">Traitement Comptable</div>
                     <div class="dfb-item" data-dfb-text="Suivez le traitement manuel des déclarations passées et en cours entre la plateforme GEO DAE et les exports du logiciel.">Traitement GEO DAE</div>
+                    <div class="dfb-item" data-dfb-text="Un agenda prévisionnel lisible sur un an des maintenances à réaliser.">Prévisionnel</div>
+                   <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">CRM Tickets</div>
                 </div>
             </div>
 
@@ -2922,29 +2937,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos fournisseurs.">Fournisseurs</div>
                     <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos commerciaux.">Commerciaux</div>
                     <div class="dfb-item" data-dfb-text="Enregistrez les fichiers importants comme des manuels, notices, livrets et autres.">GED Librairie</div>
-                </div>
-            </div>
-
-            <!-- Commandes & Stocks -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Inventaire</div>
-                <div class="dfb-cloud">
                     <div class="dfb-item" data-dfb-text="Enregistrez les commandes passées auprès de votre fournisseur.">Commandes</div>
                     <div class="dfb-item" data-dfb-text="Enregistrez les pièces du stock, par exemple de la signalétique, des électrodes et autres.">Stocks</div>
-                </div>
-            </div>
-
-            <!-- Factures & Devis -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Pièces Comptables</div>
-                <div class="dfb-cloud">
                     <div class="dfb-item" data-dfb-text="Enregistrez pour veille les factures et les devis liés aux commandes des clients.">Factures & Devis</div>
                 </div>
             </div>
 
-            <!-- Variables -->
+                        <!-- Variables -->
             <div class="dfb-parent">
-                <div class="dfb-parent-title">Réglages Variables</div>
+                <div class="dfb-parent-title">Variables</div>
                 <div class="dfb-cloud">
                      <div class="dfb-item" data-dfb-text="Éditez en autonomie vos couleurs, votre nom commercial, vos coordonnées, votre logo, etc.">Marque</div>
                     <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les labels des modèles de défibrillateurs.">Modèles</div>
@@ -2954,16 +2955,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
 
+
+
             <!-- Rappels & Sécurité -->
             <div class="dfb-parent">
-                <div class="dfb-parent-title">Autres Modules</div>
+                <div class="dfb-parent-title">Autres Rubriques</div>
                 <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Nous remontons les communications sur les rappels des fabricants concernant les défibrillateurs et les recommandations de sécurité de l'ANSM.">Rappels & Recommandations</div>
-                    <div class="dfb-item" data-dfb-text="(Optionnel Gratuit) Il s'agit d'un onglet pour vérifier de retour au bureau les maintenances avant d'actualiser votre base de données.">Modération</div>
+                    <div class="dfb-item" data-dfb-text="Nous remontons les communications sur les rappels des fabricants concernant les défibrillateurs et les recommandations de sécurité de l'ANSM.">Veille ANSM</div>
                     <div class="dfb-item" data-dfb-text="(Optionnel Gratuit) Il s'agit du formulaire que vous pouvez intégrer à votre site internet et partager via QR code et lien court également, pour récupérer des feedbacks, demandes et signalements directement sur le CRM.">Formulaire Partagé</div>
                    <div class="dfb-item" data-dfb-text="(Optionnel Gratuit) L'API de Défibeo est ouverte, vous pouvez ainsi connecter les apps de tiers que vous souhaitez.">Connecteurs API</div>
-                    <div class="dfb-item" data-dfb-text="(Optionnel, accès en supplément) Vous pouvez consulter et répondre aux demandes de missions et appels d'offres déposés par des entreprises via la plateforme Go.">Appels d'Offres</div>
-                    <div class="dfb-item" data-dfb-text="(Optionnel, accès en supplément) Vous pouvez ajouter un agent IA personnalisé et contextualisé de la plateforme Textelp.">Agent IA Textelp</div>
                     <div class="dfb-item" data-dfb-text="Pour obtenir de l'aide ou une formation.">Assistance Défibeo</div>
                 </div>
             </div>
@@ -3181,7 +3181,7 @@ background: #382a97;
 .defibeo-roi-cta-button-9x8k3,
 .defibeo-roi-reset-button-9x8k3{
       font-size: 18px !important;
-    background: #ff399f !important;
+    background: #674eff !important;
     padding: 13px 24px !important;
     color: #fff;
     cursor: pointer !important;
@@ -3192,7 +3192,7 @@ background: #382a97;
 }
 .defibeo-roi-cta-button-9x8k3{background:#000;color:#fff;display:none}
 .defibeo-roi-reset-button-9x8k3{
-    background: #ff399f;
+    background: #674eff;
     padding: 13px 24px !important;
     color: #fff;
     border: none !important;
@@ -3209,11 +3209,12 @@ background: #382a97;
   margin-top:20px
 }
 .defibeo-roi-result-card-9x8k3{
-  padding:30px;
-    border-radius: 0px;
-    background: #e5ff6b;
+padding: 30px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
     cursor: default !important;
-  text-align: center !important;
+    text-align: center !important;
 }
 .defibeo-roi-result-label-9x8k3{
       margin-bottom: 5px;
@@ -3252,7 +3253,7 @@ Coût, ROI et temps préservé : Estimez, pour la première année d’activité
 
   <!-- Champ 1 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f1" style="display:block">
-    <span class="defibeo-roi-field-label-9x8k3">Volume des défibrillateurs.</span>
+    <span class="defibeo-roi-field-label-9x8k3">Volume des défibrillateurs?</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f1a" name="field1" value="500">
@@ -3277,7 +3278,7 @@ Coût, ROI et temps préservé : Estimez, pour la première année d’activité
 
   <!-- Champ 2 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f2">
-    <span class="defibeo-roi-field-label-9x8k3">Volume estimé des maintenances sur 12 mois.</span>
+    <span class="defibeo-roi-field-label-9x8k3">Volume estimé des maintenances sur 12 mois?</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f2a" name="field2" value="700">
@@ -3300,7 +3301,7 @@ Coût, ROI et temps préservé : Estimez, pour la première année d’activité
 
   <!-- Champ 3 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f3">
-    <span class="defibeo-roi-field-label-9x8k3">Panier moyen par client, par maintenance (par défibrillateur) pour 12 mois.</span>
+    <span class="defibeo-roi-field-label-9x8k3">Panier moyen par client, par maintenance (par défibrillateur) pour 12 mois?</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f3a" name="field3">
@@ -3319,7 +3320,7 @@ Coût, ROI et temps préservé : Estimez, pour la première année d’activité
 
   <!-- Champ 4 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f4">
-    <span class="defibeo-roi-field-label-9x8k3">Votre processus ou méthode actuelle.</span>
+    <span class="defibeo-roi-field-label-9x8k3">Votre processus ou méthode actuelle?</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f4a" name="field4">
@@ -3438,12 +3439,12 @@ background: radial-gradient(#281698, #020248) !important ;
 
 }
 .okazu007 {
-  margin-top: 35px !important;
-    background: #e5ff6b;
+margin-top: 35px !important;
+    background: #4435aa;
     font-weight: 100 !important;
-    border-radius: 0px;
-    border: none;
-    max-width: 390px;
+    border-radius: 20px;
+    border: 1px solid #5b54ac;
+    max-width: 600px;
     margin-right: auto;
 }
 .pricing-plan007 {
@@ -3453,7 +3454,7 @@ background: radial-gradient(#281698, #020248) !important ;
 .pricing-plan007 h3 {
     text-align: left !important;
     line-height: 30px;
-    color: #000000 !important;
+    color: #ffffff !important;
     font-size: 18px;
     font-weight: 100 !important;
     margin-top: -4px;
@@ -4926,13 +4927,12 @@ margin-top: 20px;
 
 .footer-seo-links {
   
-background: linear-gradient(359deg, #e5ff6b85, #fff, #ffffff);
+background: #ffffff;
     padding: 40px;
     border-radius: 0px !important;
     font-size: 14px;
     margin-bottom: -1000px !important;
     font-weight: 100 !important;
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     border-top: 1px solid #e5e5e5;
   
 }
