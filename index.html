@@ -624,7 +624,8 @@ text-align: left;
     outline-offset: 4px;
 text-decoration: none;
     text-align: left;
-    margin-left: 0px;
+margin-left: 5px;
+    margin-top: 10px;
     margin-right: 0px;
     font-weight: 100 !important;
     font-size: 18px !important;
@@ -1130,13 +1131,32 @@ width: 100%;
     <div class="dfbgo-bar-text">
 Une présentation personnalisée et détaillée du logiciel Défibeo en écran partagé.
     </div>
-    <button
-      type="button"
-      class="dfbgo-bar-action-btn"
-      href="https://defibeo-com-reserver-un-appel.youcanbook.me"
-    >
-      Réservez une démo
-    </button>
+<button
+  type="button"
+  class="dfbgo-bar-action-btn"
+  href="https://defibeo-com-reserver-un-appel.youcanbook.me"
+>
+  Réservez une démo
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // On cible tous les boutons ayant la classe spécifique
+    const buttons = document.querySelectorAll('.dfbgo-bar-action-btn');
+
+    buttons.forEach(button => {
+      button.style.cursor = 'pointer'; // Ajoute la main au survol pour l'ergonomie
+      
+      button.addEventListener('click', function() {
+        const url = this.getAttribute('href');
+        if (url) {
+          // Ouvre le lien dans le même onglet
+          window.location.href = url;
+        }
+      });
+    });
+  });
+</script>
   </div>
 </div>
 
@@ -2859,7 +2879,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cursor: pointer;
     transition: 0.2s ease;
 }
-.dfb-item:hover { background:#000000; }
+.dfb-item:hover { background:#674eff; color: #fff !important; border: 1px solid #674eff; }
 .dfb-item.active {     background: #674eff;
     color: #fff;
     border-color: #674eff;}
@@ -3440,10 +3460,10 @@ background: radial-gradient(#281698, #020248) !important ;
 }
 .okazu007 {
 margin-top: 35px !important;
-    background: #4435aa;
+    background: transparent;
     font-weight: 100 !important;
     border-radius: 20px;
-    border: 1px solid #5b54ac;
+    border: 1px solid #50469c;
     max-width: 600px;
     margin-right: auto;
 }
@@ -4304,17 +4324,17 @@ font-size: 24px;
 
     /* Style de l'alerte Full Width */
     .dbx-v3-alert-banner {
-        display: none; /* Caché par défaut */
-        width: 100%;
-        background-color: #fff8c5; /* Jaune d'alerte GitHub */
-        border: 1px solid rgba(175, 128, 6, 0.3);
-        border-radius: 6px;
-        padding: 12px 20px;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-        align-items: center;
-        justify-content: space-between;
-        animation: dbxFadeIn 0.3s ease;
+    display: none;
+    width: 100%;
+    background-color: #12f4bd;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    animation: dbxFadeIn 0.3s ease;
     }
 
     @keyframes dbxFadeIn {
@@ -4323,26 +4343,26 @@ font-size: 24px;
     }
 
     .dbx-v3-alert-text {
-        font-size: 14px;
-        color: #735c0f;
-        font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
     }
 
     .dbx-v3-contact-btn {
-        background-color: #1f2328;
-        color: #ffffff;
-        text-decoration: none;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 13px;
-        font-weight: 600;
-        transition: background 0.2s;
-        white-space: nowrap;
-        margin-left: 15px;
+background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s;
+    white-space: nowrap;
+    margin-left: 15px;
     }
 
     .dbx-v3-contact-btn:hover {
-        background-color: #2b3137;
+        background-color: #000000;
     }
 
     .dbx-v3-grid-container {
