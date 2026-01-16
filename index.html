@@ -4420,224 +4420,178 @@ background-color: #ffffff1a !important;
         .dbx-v3-contact-btn { margin-left: 0; width: 100%; text-align: center; }
     }
 
-    /* Configuration de la police et base */
-.dfb-global-wrapper {
+    :root {
+    --dfb-bg: #ffffff;
+    --dfb-accent: #000000;
+    --dfb-subtle: #f7f7f5;
+    --dfb-border: #e9e9e7;
+    --dfb-text-main: #37352f;
+    --dfb-text-light: #787774;
+    --dfb-featured-bg: #f1f5ff;
+    --dfb-featured-border: #3b82f6;
+}
+
+.dfb-main-scope {
     font-family: 'DefibeoMain', sans-serif;
     font-size: 19.5px;
-    color: #333;
-    line-height: 1.5;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
+    color: var(--dfb-text-main);
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Titres */
-.dfb-main-title-xl {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #1a1a1a;
-    border-left: 4px solid #333;
-    padding-left: 15px;
-}
+/* Layout Headers */
+.dfb-pane-header { margin-bottom: 32px; }
+.dfb-title { font-size: 28px; font-weight: 700; margin: 0 0 8px 0; letter-spacing: -0.5px; }
+.dfb-subtitle { color: var(--dfb-text-light); margin: 0; font-size: 18px; }
 
-/* Grille pour les logiciels */
-.dfb-grid-layout {
+/* Grid Logiciels (Forcée à 3 sur PC) */
+.dfb-software-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes strictes sur PC */
+    gap: 24px;
+    margin-bottom: 80px;
 }
 
-/* Cartes Logiciels */
-.dfb-card-item {
-    background: #f9f9f9;
-    border: 1px solid #eee;
-    padding: 25px;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
+/* Cartes Notion-Style */
+.dfb-card {
+    background: var(--dfb-bg);
+    border: 1px solid var(--dfb-border);
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+    position: relative;
 }
 
-.dfb-card-item:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.dfb-card:hover {
+    border-color: #d1d1cf;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 
-/* Style "Mise en avant" pour Défibeo */
-.dfb-featured-highlight {
-    background: #1a1a1a;
-    color: #ffffff;
-    border: none;
-    transform: scale(1.02);
+.dfb-card-featured {
+    background: var(--dfb-featured-bg);
+    border: 2px solid var(--dfb-featured-border);
 }
 
-.dfb-featured-highlight .dfb-price-tag {
-    color: #4ade80; /* Vert contrastant */
+.dfb-card-body { padding: 32px 24px; flex-grow: 1; }
+.dfb-badge-top {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--dfb-featured-border);
+    color: white; font-size: 12px; font-weight: bold;
+    padding: 2px 8px; border-radius: 4px; text-transform: uppercase;
 }
 
-.dfb-featured-highlight .dfb-btn-buy {
-    background: #ffffff;
-    color: #1a1a1a;
-}
-
-/* Typographie interne cartes */
-.dfb-item-name { margin: 0; font-size: 1.2rem; }
-.dfb-item-version { font-size: 0.8rem; opacity: 0.7; }
-.dfb-price-tag { font-size: 1.5rem; font-weight: bold; margin: 20px 0; }
+.dfb-product-name { font-size: 24px; font-weight: 700; margin: 0; }
+.dfb-product-ver { color: var(--dfb-text-light); font-size: 16px; margin-top: 4px; }
+.dfb-product-price { font-size: 22px; font-weight: 600; margin-top: 24px; color: var(--dfb-accent); }
 
 /* Boutons */
-.dfb-action-group { display: flex; gap: 10px; }
-.dfb-btn {
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    flex: 1;
-    text-align: center;
-    transition: opacity 0.2s;
+.dfb-card-footer { 
+    padding: 20px 24px; 
+    border-top: 1px solid var(--dfb-border);
+    display: flex; gap: 12px;
 }
 
-.dfb-btn-buy { background: #333; color: white; }
-.dfb-btn-quote { background: transparent; border: 1px solid currentColor; color: inherit; }
-.dfb-btn:hover { opacity: 0.8; }
-
-/* Section Mises à jour */
-.dfb-list-vertical { display: flex; flex-direction: column; gap: 25px; }
-.dfb-update-entry {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 25px;
+.dfb-btn-primary, .dfb-btn-outline, .dfb-btn-secondary {
+    text-decoration: none; text-align: center; flex: 1;
+    padding: 10px; border-radius: 6px; font-size: 16px; font-weight: 600;
+    cursor: pointer; transition: 0.2s; border: 1px solid transparent;
 }
 
-.dfb-update-meta { margin-bottom: 10px; }
-.dfb-upd-title { font-size: 1.1rem; margin-bottom: 5px; display: inline-block; }
-.dfb-upd-badge {
-    background: #e2e8f0;
-    padding: 2px 8px;
-    font-size: 0.7rem;
-    border-radius: 4px;
-    margin-left: 10px;
-    vertical-align: middle;
-}
+.dfb-btn-primary { background: var(--dfb-featured-border); color: white; }
+.dfb-btn-outline { border-color: var(--dfb-accent); color: var(--dfb-accent); background: transparent; }
+.dfb-btn-secondary { background: var(--dfb-subtle); color: var
 
-.dfb-upd-date { display: block; font-size: 0.8rem; color: #666; }
-.dfb-upd-desc { font-size: 0.95rem; color: #444; margin: 15px 0; }
-.dfb-upd-pricing-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.dfb-price-small { font-weight: bold; font-size: 1.2rem; }
-.dfb-link-download { color: #2563eb; text-decoration: underline; }
-
-/* Séparateur */
-.dfb-separator { border: 0; border-top: 1px solid #eee; margin: 60px 0; }
-
-/* RESPONSIVE iPHONE SE & MOBILES */
-@media (max-width: 480px) {
-    .dfb-global-wrapper { font-size: 17px; padding: 15px; }
-    .dfb-main-title-xl { font-size: 1.2rem; }
-    .dfb-action-group { flex-direction: column; width: 100%; }
-    .dfb-featured-highlight { transform: none; }
-    .dfb-upd-pricing-row { flex-direction: column; align-items: flex-start; }
-}
 </style>
-<div id="dfb-main-container-unique-99" class="dfb-global-wrapper">
 
-    <section class="dfb-section-container">
-        <h2 class="dfb-main-title-xl">Logiciels disponibles à l’achat</h2>
-        
-        <div class="dfb-grid-layout">
-            <div class="dfb-card-item dfb-featured-highlight" id="dfb-item-defibeo-2026">
-                <div class="dfb-card-header">
-                    <h3 class="dfb-item-name">Défibeo</h3>
-                    <span class="dfb-item-version">v 2026.2</span>
+<div id="dfb-root-v2" class="dfb-main-scope">
+    <section class="dfb-pane">
+        <header class="dfb-pane-header">
+            <h2 class="dfb-title">Logiciels disponibles à l’achat</h2>
+            <p class="dfb-subtitle">Solutions complètes pour votre gestion professionnelle en 2026.</p>
+        </header>
+
+        <div class="dfb-software-grid">
+            <div class="dfb-card dfb-card-featured" id="dfb-soft-defibeo">
+                <div class="dfb-card-body">
+                    <div class="dfb-badge-top">Recommandé</div>
+                    <h3 class="dfb-product-name">Défibeo</h3>
+                    <div class="dfb-product-ver">Version 2026.2</div>
+                    <div class="dfb-product-price">1,960.00€</div>
                 </div>
-                <div class="dfb-price-tag">1,960.00€</div>
-                <div class="dfb-action-group">
-                    <a href="#" class="dfb-btn dfb-btn-buy">Acheter</a>
-                    <button id="dfb-quote-defibeo" class="dfb-btn dfb-btn-quote">Devis</button>
+                <div class="dfb-card-footer">
+                    <a href="#" class="dfb-btn-primary">Acheter</a>
+                    <button id="dfb-q-defibeo" class="dfb-btn-secondary">Devis</button>
                 </div>
             </div>
 
-            <div class="dfb-card-item" id="dfb-item-extincteo-2025">
-                <div class="dfb-card-header">
-                    <h3 class="dfb-item-name">Extincteo</h3>
-                    <span class="dfb-item-version">v 2025.18</span>
+            <div class="dfb-card" id="dfb-soft-extincteo">
+                <div class="dfb-card-body">
+                    <h3 class="dfb-product-name">Extincteo</h3>
+                    <div class="dfb-product-ver">Version 2025.18</div>
+                    <div class="dfb-product-price">1,290.00€</div>
                 </div>
-                <div class="dfb-price-tag">1,290.00€</div>
-                <div class="dfb-action-group">
-                    <a href="#" class="dfb-btn dfb-btn-buy">Acheter</a>
-                    <button id="dfb-quote-extincteo" class="dfb-btn dfb-btn-quote">Devis</button>
+                <div class="dfb-card-footer">
+                    <a href="#" class="dfb-btn-outline">Acheter</a>
+                    <button id="dfb-q-extincteo" class="dfb-btn-secondary">Devis</button>
                 </div>
             </div>
 
-            <div class="dfb-card-item" id="dfb-item-eduxeo-2025">
-                <div class="dfb-card-header">
-                    <h3 class="dfb-item-name">Eduxeo</h3>
-                    <span class="dfb-item-version">v 2025.23</span>
+            <div class="dfb-card" id="dfb-soft-eduxeo">
+                <div class="dfb-card-body">
+                    <h3 class="dfb-product-name">Eduxeo</h3>
+                    <div class="dfb-product-ver">Version 2025.23</div>
+                    <div class="dfb-product-price">1,170.00€</div>
                 </div>
-                <div class="dfb-price-tag">1,170.00€</div>
-                <div class="dfb-action-group">
-                    <a href="#" class="dfb-btn dfb-btn-buy">Acheter</a>
-                    <button id="dfb-quote-eduxeo" class="dfb-btn dfb-btn-quote">Devis</button>
+                <div class="dfb-card-footer">
+                    <a href="#" class="dfb-btn-outline">Acheter</a>
+                    <button id="dfb-q-eduxeo" class="dfb-btn-secondary">Devis</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr class="dfb-separator">
+    <section class="dfb-pane">
+        <header class="dfb-pane-header">
+            <h2 class="dfb-title">Mises à jour disponibles</h2>
+            <p class="dfb-subtitle">Dernières améliorations pour vos outils installés.</p>
+        </header>
 
-    <section class="dfb-section-container">
-        <h2 class="dfb-main-title-xl">Mises à jour disponibles pour les clients existants</h2>
-        
-        <div class="dfb-list-vertical">
-            <div class="dfb-update-entry" id="dfb-upd-defibeo-26">
-                <div class="dfb-update-meta">
-                    <h3 class="dfb-upd-title">Version 2026.2</h3>
-                    <span class="dfb-upd-badge">Défibeo</span>
-                    <span class="dfb-upd-date">Publié le 16 Janvier 2026</span>
-                </div>
-                <div class="dfb-upd-content">
-                    <p class="dfb-upd-desc">Large mise à jour embarquant une nouvelle méthode pour l’organisation des tournées et une nouvelle interface. Vous pouvez <a href="#" class="dfb-link-download">télécharger la fiche</a> pour plus de détails.</p>
-                    <div class="dfb-upd-pricing-row">
-                        <span class="dfb-price-small">300€</span>
-                        <div class="dfb-action-group">
-                            <a href="#" class="dfb-btn dfb-btn-buy-sm">Acheter</a>
-                            <button id="dfb-quote-upd-1" class="dfb-btn dfb-btn-quote-sm">Devis</button>
-                        </div>
+        <div class="dfb-update-stack">
+            <div class="dfb-upd-row" id="dfb-up-1">
+                <div class="dfb-upd-info">
+                    <div class="dfb-upd-meta-line">
+                        <span class="dfb-tag">Défibeo</span>
+                        <span class="dfb-date">16 Janvier 2026</span>
                     </div>
+                    <h4 class="dfb-upd-ver-title">Version 2026.2 — 300€</h4>
+                    <p class="dfb-upd-text">Large mise à jour embarquant une nouvelle méthode pour l’organisation des tournées et une nouvelle interface. <a href="#" class="dfb-inline-link">Télécharger la fiche explicative</a>.</p>
+                </div>
+                <div class="dfb-upd-actions">
+                    <a href="#" class="dfb-btn-buy-mini">Acheter</a>
+                    <button id="dfb-q-u1" class="dfb-btn-quote-mini">Devis</button>
                 </div>
             </div>
 
-            <div class="dfb-update-entry" id="dfb-upd-extincteo-25">
-                <div class="dfb-update-meta">
-                    <h3 class="dfb-upd-title">Version 2025.18</h3>
-                    <span class="dfb-upd-badge">Extincteo</span>
-                    <span class="dfb-upd-date">Publié le 13 Décembre 2025</span>
-                </div>
-                <div class="dfb-upd-content">
-                    <p class="dfb-upd-desc">Large mise à jour embarquant une nouvelle méthode pour l’organisation des tournées et une nouvelle interface. Vous pouvez <a href="#" class="dfb-link-download">télécharger la fiche</a> pour plus de détails.</p>
-                    <div class="dfb-upd-pricing-row">
-                        <span class="dfb-price-small">300€</span>
-                        <div class="dfb-action-group">
-                            <a href="#" class="dfb-btn dfb-btn-buy-sm">Acheter</a>
-                            <button id="dfb-quote-upd-2" class="dfb-btn dfb-btn-quote-sm">Devis</button>
-                        </div>
+            <div class="dfb-upd-row" id="dfb-up-2">
+                <div class="dfb-upd-info">
+                    <div class="dfb-upd-meta-line">
+                        <span class="dfb-tag">Extincteo</span>
+                        <span class="dfb-date">13 Décembre 2025</span>
                     </div>
+                    <h4 class="dfb-upd-ver-title">Version 2025.18 — 300€</h4>
+                    <p class="dfb-upd-text">Mise à jour majeure incluant l'optimisation des rapports et le correctif de sécurité global. <a href="#" class="dfb-inline-link">Télécharger la fiche explicative</a>.</p>
+                </div>
+                <div class="dfb-upd-actions">
+                    <a href="#" class="dfb-btn-buy-mini">Acheter</a>
+                    <button id="dfb-q-u2" class="dfb-btn-quote-mini">Devis</button>
                 </div>
             </div>
         </div>
     </section>
 </div>
-
 
      <p class="barcodex">Soutenu par des organismes technologiques privés et des institutions publiques impliquées dans les services aux entreprises et le secteur médical.</p>
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
