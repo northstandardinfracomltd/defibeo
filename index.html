@@ -4422,170 +4422,156 @@ background-color: #ffffff1a !important;
 </style>
 
 <style>
-        /* --- Styles de Base & Reset Local --- */
-        .gs-store-container {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            color: #333;
-        }
+/* --- Styles de Base & Reset --- */
+    .gs-store-container {
+        font-family: 'DefibeoMain', sans-serif;
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 15px;
+        color: #333;
+    }
 
-        .gs-main-title {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            color: #000;
-        }
+    .gs-main-title {
+        font-size: 32px; /* Réduit */
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #000;
+        text-align: left; /* Aligné à gauche */
+    }
 
-        /* --- Filtres --- */
-        .gs-filter-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
+    /* --- Filtres --- */
+    .gs-filter-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
 
-        .gs-filter-label-main {
-            font-size: 24px;
-            font-weight: 500;
-        }
+    .gs-filter-label-main {
+        font-size: 18px;
+        font-weight: 500;
+    }
 
-        .gs-filter-option {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            font-size: 24px;
-            gap: 10px;
-            transition: color 0.2s;
-        }
+    .gs-filter-option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+        gap: 8px;
+        transition: color 0.2s;
+    }
 
-        /* Personnalisation Radio Button */
-        .gs-filter-option input[type="radio"] {
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            border: 2px solid #333;
-            border-radius: 50%;
-            outline: none;
-            cursor: pointer;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .gs-filter-option input[type="radio"] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #333;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .gs-filter-option input[type="radio"]:checked {
-            border-color: #3b5bdb;
-        }
+    .gs-filter-option input[type="radio"]:checked {
+        border-color: #3b5bdb;
+    }
 
-        .gs-filter-option input[type="radio"]:checked::after {
-            content: "";
-            width: 14px;
-            height: 14px;
-            background-color: #3b5bdb;
-            border-radius: 50%;
-        }
+    .gs-filter-option input[type="radio"]:checked::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: #3b5bdb;
+        border-radius: 50%;
+    }
 
-        .gs-filter-option:has(input:checked) {
-            color: #3b5bdb;
-        }
+    /* --- Grille d'Items (Force 3 colonnes sur PC) --- */
+    .gs-items-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 items par ligne */
+        gap: 20px;
+    }
 
-        /* --- Grille d'Items --- */
-        .gs-items-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
+    .gs-item-card {
+        background: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: left; /* Aligné à gauche */
+    }
 
-        .gs-item-card {
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease;
-        }
+    .gs-item-card.gs-hidden {
+        display: none;
+    }
 
-        /* Gestion de l'affichage par filtre */
-        .gs-item-card.gs-hidden {
-            display: none;
-        }
+    .gs-item-name {
+        font-size: 22px; /* Réduit */
+        margin: 0 0 15px 0;
+        font-weight: 600;
+        text-align: left;
+    }
 
-        .gs-item-name {
-            font-size: 28px;
-            margin: 0 0 20px 0;
-            font-weight: 500;
-        }
+    .gs-badge-container {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
 
-        .gs-badge-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+    .gs-badge {
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 500;
+        color: white;
+        background: #000;
+    }
 
-        .gs-badge {
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            color: white;
-            background: #000;
-        }
+    .gs-item-description {
+        font-size: 14px; /* Réduit */
+        line-height: 1.4;
+        color: #555;
+        margin-bottom: 20px;
+        text-align: left;
+        flex-grow: 1;
+    }
 
-        .gs-item-description {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #444;
-            margin-bottom: 30px;
-            flex-grow: 1; /* Pousse les boutons vers le bas */
-        }
+    /* --- Boutons --- */
+    .gs-button-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
 
-        /* --- Boutons --- */
-        .gs-button-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
+    .gs-btn {
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 5px;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        transition: opacity 0.2s;
+    }
 
-        .gs-btn {
-            text-decoration: none;
-            text-align: center;
-            padding: 12px 10px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 500;
-            transition: opacity 0.2s;
-            cursor: pointer;
-            border: none;
-        }
+    .gs-btn-buy { background-color: #347ab7; color: white; }
+    .gs-btn-quote { background-color: #5119a8; color: white; }
+    .gs-btn:hover { opacity: 0.85; }
 
-        .gs-btn-buy {
-            background-color: #347ab7;
-            color: white;
-        }
+    /* --- Responsive --- */
+    @media (max-width: 992px) {
+        .gs-items-grid { grid-template-columns: repeat(2, 1fr); } /* 2 sur tablette */
+    }
 
-        .gs-btn-quote {
-            background-color: #5119a8;
-            color: white;
-        }
-
-        .gs-btn:hover {
-            opacity: 0.85;
-        }
-
-        /* --- Responsive --- */
-        @media (max-width: 600px) {
-            .gs-main-title { font-size: 36px; }
-            .gs-filter-section { gap: 15px; }
-            .gs-filter-option, .gs-filter-label-main { font-size: 18px; }
-            .gs-items-grid { grid-template-columns: 1fr; }
-        }
+    @media (max-width: 650px) {
+        .gs-items-grid { grid-template-columns: 1fr; } /* 1 sur mobile */
+        .gs-main-title { font-size: 28px; }
+        .gs-filter-option { font-size: 16px; }
+    }
     </style>
-</head>
-<body>
 
 <div class="gs-store-container">
     <h1 class="gs-main-title">Store</h1>
