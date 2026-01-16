@@ -4420,178 +4420,246 @@ background-color: #ffffff1a !important;
         .dbx-v3-contact-btn { margin-left: 0; width: 100%; text-align: center; }
     }
 
-    :root {
-    --dfb-bg: #ffffff;
-    --dfb-accent: #000000;
-    --dfb-subtle: #f7f7f5;
-    --dfb-border: #e9e9e7;
-    --dfb-text-main: #37352f;
-    --dfb-text-light: #787774;
-    --dfb-featured-bg: #f1f5ff;
-    --dfb-featured-border: #3b82f6;
-}
+    /* --- Styles spécifiques pour la partie Mises à jour --- */
 
-.dfb-main-scope {
-    font-family: 'DefibeoMain', sans-serif;
-    font-size: 19.5px;
-    color: var(--dfb-text-main);
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Layout Headers */
-.dfb-pane-header { margin-bottom: 32px; }
-.dfb-title { font-size: 28px; font-weight: 700; margin: 0 0 8px 0; letter-spacing: -0.5px; }
-.dfb-subtitle { color: var(--dfb-text-light); margin: 0; font-size: 18px; }
-
-/* Grid Logiciels (Forcée à 3 sur PC) */
-.dfb-software-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes strictes sur PC */
-    gap: 24px;
-    margin-bottom: 80px;
-}
-
-/* Cartes Notion-Style */
-.dfb-card {
-    background: var(--dfb-bg);
-    border: 1px solid var(--dfb-border);
-    border-radius: 12px;
+.dfb-update-container {
     display: flex;
     flex-direction: column;
-    transition: all 0.2s ease-in-out;
-    position: relative;
+    gap: 32px;
 }
 
-.dfb-card:hover {
-    border-color: #d1d1cf;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+.dfb-upd-card {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid #e1e1e0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
-.dfb-card-featured {
-    background: var(--dfb-featured-bg);
-    border: 2px solid var(--dfb-featured-border);
+.dfb-upd-card:hover {
+    border-color: #c1c1bf;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
 }
 
-.dfb-card-body { padding: 32px 24px; flex-grow: 1; }
-.dfb-badge-top {
-    position: absolute; top: 12px; right: 12px;
-    background: var(--dfb-featured-border);
-    color: white; font-size: 12px; font-weight: bold;
-    padding: 2px 8px; border-radius: 4px; text-transform: uppercase;
+/* Sidebar de la carte mise à jour */
+.dfb-upd-sidebar {
+    width: 200px;
+    background: #fafaf9;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e1e1e0;
+    text-align: center;
 }
 
-.dfb-product-name { font-size: 24px; font-weight: 700; margin: 0; }
-.dfb-product-ver { color: var(--dfb-text-light); font-size: 16px; margin-top: 4px; }
-.dfb-product-price { font-size: 22px; font-weight: 600; margin-top: 24px; color: var(--dfb-accent); }
-
-/* Boutons */
-.dfb-card-footer { 
-    padding: 20px 24px; 
-    border-top: 1px solid var(--dfb-border);
-    display: flex; gap: 12px;
+.dfb-upd-software-badge {
+    background: #37352f;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.dfb-btn-primary, .dfb-btn-outline, .dfb-btn-secondary {
-    text-decoration: none; text-align: center; flex: 1;
-    padding: 10px; border-radius: 6px; font-size: 16px; font-weight: 600;
-    cursor: pointer; transition: 0.2s; border: 1px solid transparent;
+.dfb-upd-price-circle {
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
 }
 
-.dfb-btn-primary { background: var(--dfb-featured-border); color: white; }
-.dfb-btn-outline { border-color: var(--dfb-accent); color: var(--dfb-accent); background: transparent; }
-.dfb-btn-secondary { background: var(--dfb-subtle); color: var
+.dfb-upd-published {
+    font-size: 13px;
+    color: #8c8c8a;
+    font-weight: 500;
+}
 
+/* Zone principale du contenu */
+.dfb-upd-main {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dfb-upd-version-tag {
+    margin: 0 0 12px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.dfb-upd-description {
+    font-size: 18px;
+    color: #4a4a48;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.dfb-upd-links {
+    margin-bottom: 30px;
+}
+
+.dfb-download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.dfb-download-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Actions en bas de mise à jour */
+.dfb-upd-footer-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #f1f1f0;
+    padding-top: 25px;
+}
+
+.dfb-btn-buy-now {
+    background: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.dfb-btn-buy-now:hover { background: #333; }
+
+.dfb-btn-quote-flat {
+    background: transparent;
+    color: #37352f;
+    border: 1px solid #d1d1cf;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dfb-btn-quote-flat:hover {
+    background: #f7f7f5;
+    border-color: #37352f;
+}
+
+/* RESPONSIVE iPHONE SE & MOBILE */
+@media (max-width: 768px) {
+    .dfb-upd-card {
+        flex-direction: column;
+    }
+    
+    .dfb-upd-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e1e1e0;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .dfb-upd-price-circle { margin: 0; font-size: 22px; }
+    
+    .dfb-upd-main {
+        padding: 25px;
+    }
+    
+    .dfb-upd-footer-actions {
+        flex-direction: column;
+    }
+    
+    .dfb-btn-buy-now, .dfb-btn-quote-flat {
+        text-align: center;
+        width: 100%;
+    }
+}
 </style>
+
 
 <div id="dfb-root-v2" class="dfb-main-scope">
     <section class="dfb-pane">
         <header class="dfb-pane-header">
-            <h2 class="dfb-title">Logiciels disponibles à l’achat</h2>
-            <p class="dfb-subtitle">Solutions complètes pour votre gestion professionnelle en 2026.</p>
-        </header>
-
-        <div class="dfb-software-grid">
-            <div class="dfb-card dfb-card-featured" id="dfb-soft-defibeo">
-                <div class="dfb-card-body">
-                    <div class="dfb-badge-top">Recommandé</div>
-                    <h3 class="dfb-product-name">Défibeo</h3>
-                    <div class="dfb-product-ver">Version 2026.2</div>
-                    <div class="dfb-product-price">1,960.00€</div>
-                </div>
-                <div class="dfb-card-footer">
-                    <a href="#" class="dfb-btn-primary">Acheter</a>
-                    <button id="dfb-q-defibeo" class="dfb-btn-secondary">Devis</button>
-                </div>
-            </div>
-
-            <div class="dfb-card" id="dfb-soft-extincteo">
-                <div class="dfb-card-body">
-                    <h3 class="dfb-product-name">Extincteo</h3>
-                    <div class="dfb-product-ver">Version 2025.18</div>
-                    <div class="dfb-product-price">1,290.00€</div>
-                </div>
-                <div class="dfb-card-footer">
-                    <a href="#" class="dfb-btn-outline">Acheter</a>
-                    <button id="dfb-q-extincteo" class="dfb-btn-secondary">Devis</button>
-                </div>
-            </div>
-
-            <div class="dfb-card" id="dfb-soft-eduxeo">
-                <div class="dfb-card-body">
-                    <h3 class="dfb-product-name">Eduxeo</h3>
-                    <div class="dfb-product-ver">Version 2025.23</div>
-                    <div class="dfb-product-price">1,170.00€</div>
-                </div>
-                <div class="dfb-card-footer">
-                    <a href="#" class="dfb-btn-outline">Acheter</a>
-                    <button id="dfb-q-eduxeo" class="dfb-btn-secondary">Devis</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="dfb-pane">
-        <header class="dfb-pane-header">
             <h2 class="dfb-title">Mises à jour disponibles</h2>
-            <p class="dfb-subtitle">Dernières améliorations pour vos outils installés.</p>
+            <p class="dfb-subtitle">Optimisez vos outils avec les dernières versions publiées.</p>
         </header>
 
-        <div class="dfb-update-stack">
-            <div class="dfb-upd-row" id="dfb-up-1">
-                <div class="dfb-upd-info">
-                    <div class="dfb-upd-meta-line">
-                        <span class="dfb-tag">Défibeo</span>
-                        <span class="dfb-date">16 Janvier 2026</span>
-                    </div>
-                    <h4 class="dfb-upd-ver-title">Version 2026.2 — 300€</h4>
-                    <p class="dfb-upd-text">Large mise à jour embarquant une nouvelle méthode pour l’organisation des tournées et une nouvelle interface. <a href="#" class="dfb-inline-link">Télécharger la fiche explicative</a>.</p>
+        <div class="dfb-update-container">
+            <div class="dfb-upd-card" id="dfb-upd-defibeo">
+                <div class="dfb-upd-sidebar">
+                    <span class="dfb-upd-software-badge">Défibeo</span>
+                    <div class="dfb-upd-price-circle">300€</div>
+                    <span class="dfb-upd-published">16 Janvier 2026</span>
                 </div>
-                <div class="dfb-upd-actions">
-                    <a href="#" class="dfb-btn-buy-mini">Acheter</a>
-                    <button id="dfb-q-u1" class="dfb-btn-quote-mini">Devis</button>
+                
+                <div class="dfb-upd-main">
+                    <div class="dfb-upd-header">
+                        <h4 class="dfb-upd-version-tag">Mise à jour v2026.2</h4>
+                    </div>
+                    <p class="dfb-upd-description">
+                        Large mise à jour embarquant une nouvelle méthode pour l’organisation des tournées et une nouvelle interface utilisateur plus intuitive.
+                    </p>
+                    <div class="dfb-upd-links">
+                        <a href="#" class="dfb-download-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            Télécharger la fiche explicative
+                        </a>
+                    </div>
+                    <div class="dfb-upd-footer-actions">
+                        <a href="#" class="dfb-btn-buy-now">Commander l'update</a>
+                        <button id="dfb-q-upd-def" class="dfb-btn-quote-flat">Demander un devis</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="dfb-upd-row" id="dfb-up-2">
-                <div class="dfb-upd-info">
-                    <div class="dfb-upd-meta-line">
-                        <span class="dfb-tag">Extincteo</span>
-                        <span class="dfb-date">13 Décembre 2025</span>
-                    </div>
-                    <h4 class="dfb-upd-ver-title">Version 2025.18 — 300€</h4>
-                    <p class="dfb-upd-text">Mise à jour majeure incluant l'optimisation des rapports et le correctif de sécurité global. <a href="#" class="dfb-inline-link">Télécharger la fiche explicative</a>.</p>
+            <div class="dfb-upd-card" id="dfb-upd-extincteo">
+                <div class="dfb-upd-sidebar">
+                    <span class="dfb-upd-software-badge">Extincteo</span>
+                    <div class="dfb-upd-price-circle">300€</div>
+                    <span class="dfb-upd-published">13 Décembre 2025</span>
                 </div>
-                <div class="dfb-upd-actions">
-                    <a href="#" class="dfb-btn-buy-mini">Acheter</a>
-                    <button id="dfb-q-u2" class="dfb-btn-quote-mini">Devis</button>
+                
+                <div class="dfb-upd-main">
+                    <div class="dfb-upd-header">
+                        <h4 class="dfb-upd-version-tag">Mise à jour v2025.18</h4>
+                    </div>
+                    <p class="dfb-upd-description">
+                        Large mise à jour embarquant une nouvelle méthode pour l’organisation des tournées et une nouvelle interface utilisateur plus intuitive.
+                    </p>
+                    <div class="dfb-upd-links">
+                        <a href="#" class="dfb-download-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            Télécharger la fiche explicative
+                        </a>
+                    </div>
+                    <div class="dfb-upd-footer-actions">
+                        <a href="#" class="dfb-btn-buy-now">Commander l'update</a>
+                        <button id="dfb-q-upd-ext" class="dfb-btn-quote-flat">Demander un devis</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </div>
+
 
      <p class="barcodex">Soutenu par des organismes technologiques privés et des institutions publiques impliquées dans les services aux entreprises et le secteur médical.</p>
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fundings.svg" alt="Illustration">
