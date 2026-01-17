@@ -4424,6 +4424,7 @@ background-color: #ffffff1a !important;
 <style>
 /* --- Styles de Base & Reset --- */
     .gs-store-container {
+    display: none !important;
         font-family: 'DefibeoMain', sans-serif;
         max-width: 1100px;
         margin: 20px auto;
@@ -4599,6 +4600,13 @@ font-family: 'DefibeoMain', sans-serif !important;
         .gs-main-title { font-size: 28px; }
         .gs-filter-option { font-size: 16px; }
     }
+
+    /* Masquer l'élément pour les écrans de moins de 1025px */
+@media only screen and (max-width: 1024px) {
+    .gs-store-container {
+        display: none !important;
+    }
+}
     </style>
 
 <div class="gs-store-container">
