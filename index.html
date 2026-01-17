@@ -4428,7 +4428,8 @@ background-color: #ffffff1a !important;
         max-width: 1100px;
         margin: 20px auto;
         padding: 15px;
-        color: #333;
+        color: #000;
+            margin-bottom: 100px;
     }
 
     .gs-main-title {
@@ -4459,31 +4460,32 @@ background-color: #ffffff1a !important;
         cursor: pointer;
         font-size: 18px;
         gap: 8px;
-        transition: color 0.2s;
+        transition: color 0.2s;    margin-right: 6px;
     }
 
     .gs-filter-option input[type="radio"] {
-        appearance: none;
-        width: 18px;
-        height: 18px;
-        border: 2px solid #333;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #674eff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        margin-top: -1px;
     }
 
     .gs-filter-option input[type="radio"]:checked {
-        border-color: #3b5bdb;
+    border-color: #674eff;
     }
 
     .gs-filter-option input[type="radio"]:checked::after {
-        content: "";
-        width: 10px;
-        height: 10px;
-        background-color: #3b5bdb;
-        border-radius: 50%;
+content: "";
+    width: 11px;
+    height: 11px;
+    background-color: #674eff;
+    border-radius: 50%;
     }
 
     /* --- Grille d'Items (Force 3 colonnes sur PC) --- */
@@ -4510,9 +4512,10 @@ padding: 20px;
     }
 
     .gs-item-name {
-    font-size: 26px;
+    font-size: 25px;
+    margin-bottom: 8px !important;
     margin: 0 0 15px 0;
-        margin-top: 15px;
+    margin-top: 15px;
     cursor: default;
     text-align: left;
     }
@@ -4524,18 +4527,19 @@ padding: 20px;
     }
 
     .gs-badge {
-    border-radius: 15px;
-    font-size: 13px;
+border-radius: 45px;
+    font-size: 16px;
     font-weight: 500;
     cursor: default;
     color: #ffffff;
     border: none;
-    padding: 6px 16px 5px 16px;
-    background: radial-gradient(#281698, #020248) !important;
+    padding: 8px 20px 7px 20px;
+    background: #000000;
     }
 
     .gs-item-description {
 font-size: 18px;
+    cursor: default;
     line-height: 32px;
     color: #000000;
     margin-bottom: 20px;
@@ -4547,7 +4551,7 @@ font-size: 18px;
     .gs-button-group {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 15px;
     }
 
     .gs-btn {
@@ -4560,26 +4564,29 @@ font-size: 18px;
     }
 
     .gs-btn-buy { 
-font-family: 'DefibeoMain', sans-serif !important;
-      font-weight: 100 !important;
-          font-size: 18px !important;
+    font-family: 'DefibeoMain', sans-serif !important;
+    font-weight: 100 !important;
+    font-size: 18px !important;
     display: inline-block;
     padding: 0.5rem 1rem;
-    border-radius: 13px !important;
-    background: #674eff;
     color: #fff;
     text-decoration: none;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #140c70, inset 0 6px 12px #ffffff1f;
+    border-radius: 13px !important;
+    background: linear-gradient(126deg, #130b6f, #674eff) !important;
+    border: none;
     }
     .gs-btn-quote { 
 font-family: 'DefibeoMain', sans-serif !important;
-      font-weight: 100 !important;
-          font-size: 18px !important;
+    font-weight: 100 !important;
+    font-size: 18px !important;
     display: inline-block;
     padding: 0.5rem 1rem;
-    border-radius: 13px !important;
-    background: #000000;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #140c70, inset 0 6px 12px #ffffff1f;
+    border-radius: 13px !important;
+    background: linear-gradient(126deg, #674eff, #130b6f) !important;
      }
 
     /* --- Responsive --- */
@@ -4595,7 +4602,7 @@ font-family: 'DefibeoMain', sans-serif !important;
     </style>
 
 <div class="gs-store-container">
-    <h1 class="gs-main-title">Toutes nos solutions disponibles sur ce même sujet</h1>
+    <h1 class="gs-main-title">Toutes nos solutions disponibles à l'achat</h1>
 
     <div class="gs-filter-section">        
         <label class="gs-filter-option">
@@ -4620,9 +4627,9 @@ font-family: 'DefibeoMain', sans-serif !important;
         <div class="gs-item-card" data-type="Logiciel">
             <h3 class="gs-item-name">Logiciel Défibeo</h3>
             <div class="gs-badge-container">
-                <span class="gs-badge">1,690€</span>
+                <span class="gs-badge">1,690€ (avec TVA)</span>
             </div>
-            <p class="gs-item-description">Logiciel Défibeo pour la maintenance GMAO et la traçabilité des défibrillateurs. Il s'agit de version la plus récente.</p>
+            <p class="gs-item-description">Logiciel Défibeo pour la maintenance GMAO et la traçabilité des défibrillateurs. Il s'agit de la version la plus récente.</p>
             <div class="gs-button-group">
                 <a href="https://defibeo.com/" target="_blank" class="gs-btn gs-btn-buy">Acheter</a>
                 <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
