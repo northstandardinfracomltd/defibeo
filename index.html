@@ -3046,12 +3046,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         /* Style de la carte individuelle */
         .dfb-feature-card-item {
+              z-index: 1000;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+
             display: flex;
             flex-direction: column;
-            border-radius: 12px;
-            border: 1px solid grey;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
 
