@@ -3029,6 +3029,166 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 </div>
 
+
+
+
+
+    <style>
+        /* Importation de la police si nécessaire, sinon elle utilise la locale */
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+            font-family: 'DefibeoMain', sans-serif;
+        }
+
+        /* Container Principal avec nomenclature complexe */
+        .dfb-main-feature-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Style de la carte individuelle */
+        .dfb-feature-card-item {
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            border: 1px solid grey;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .dfb-feature-card-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Section Image (Haut) */
+        .dfb-feature-visual-wrapper {
+            background-color: #fff; /* Light Blue */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            height: 180px;
+        }
+
+        .dfb-feature-visual-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Section Texte (Bas) */
+        .dfb-feature-content-body {
+            background-color: #e0f2fe;
+            border-top: 1px solid grey;
+            padding: 20px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .dfb-feature-content-title {
+            font-size: 1.25rem;
+            text-align: left;
+            cursor: default;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
+
+        .dfb-feature-content-subtitle {
+            text-align: left;
+            cursor: default;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .dfb-main-feature-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .dfb-main-feature-grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <div class="dfb-main-feature-grid-container">
+        
+        <div class="dfb-feature-card-item">
+            <div class="dfb-feature-visual-wrapper">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img1.svg" alt="Reçu PDF">
+            </div>
+            <div class="dfb-feature-content-body">
+                <h3 class="dfb-feature-content-title">Reçu PDF</h3>
+                <p class="dfb-feature-content-subtitle">Génération automatique des rapports PDF selon un modèle personnalisé.</p>
+            </div>
+        </div>
+
+        <div class="dfb-feature-card-item">
+            <div class="dfb-feature-visual-wrapper">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img2.svg" alt="Ordre & Temps">
+            </div>
+            <div class="dfb-feature-content-body">
+                <h3 class="dfb-feature-content-title">Système de Tournées</h3>
+                <p class="dfb-feature-content-subtitle">Organisez vos ordres de missions et feuilles de temps pour les techniciens.</p>
+            </div>
+        </div>
+
+        <div class="dfb-feature-card-item">
+            <div class="dfb-feature-visual-wrapper">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img3.svg" alt="Comptabilité">
+            </div>
+            <div class="dfb-feature-content-body">
+                <h3 class="dfb-feature-content-title">Comptabilité</h3>
+                <p class="dfb-feature-content-subtitle">Enregistrez vos pièces comptables, suivez les consommables à facturer, générez des proforma.</p>
+            </div>
+        </div>
+
+        <div class="dfb-feature-card-item">
+            <div class="dfb-feature-visual-wrapper">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img4.svg" alt="Modération">
+            </div>
+            <div class="dfb-feature-content-body">
+                <h3 class="dfb-feature-content-title">Modération</h3>
+                <p class="dfb-feature-content-subtitle">Vérifiez les rapports avant d'envoyer l'email au client et modifier les données.</p>
+            </div>
+        </div>
+
+        <div class="dfb-feature-card-item">
+            <div class="dfb-feature-visual-wrapper">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img5.svg" alt="Qualité Service">
+            </div>
+            <div class="dfb-feature-content-body">
+                <h3 class="dfb-feature-content-title">Qualité Service</h3>
+                <p class="dfb-feature-content-subtitle">Digitalisez votre gestion d’interventions et de traçabilité pour mieux satisfaire vos clients.</p>
+            </div>
+        </div>
+
+        <div class="dfb-feature-card-item">
+            <div class="dfb-feature-visual-wrapper">
+                <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img6.svg" alt="Données Étanches">
+            </div>
+            <div class="dfb-feature-content-body">
+                <h3 class="dfb-feature-content-title">Données Étanches</h3>
+                <p class="dfb-feature-content-subtitle">Hébergement robuste avec redondance, si vous travaillez avec des externes, ceux-ci peuvent travailler sans accéder à vos données.</p>
+            </div>
+        </div>
+
+    </div>
+    
+
+    
 <div class="fullwidth-image">
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/testillustrationback.svg" alt="Illustration">
 </div>
