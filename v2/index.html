@@ -3711,6 +3711,180 @@ font-family: 'DefibeoTAZ', sans-serif !important;
 
 </style>
 
+
+<style>
+  /* Base du conteneur */
+  .dfb-acc-list-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: 'DefibeoMain', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Style de l'item accordéon */
+  .dfb-acc-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .dfb-acc-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  /* Header (la partie visible et clickable) */
+  .dfb-acc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    cursor: pointer;
+    list-style: none; /* Cache la flèche par défaut sur certains navigateurs */
+  }
+
+  /* Pour cacher la flèche sur Safari/Chrome */
+  .dfb-acc-header::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Alignement Gauche : Titre */
+  .dfb-acc-title {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+  }
+
+  /* Alignement Milieu : Prix */
+  .dfb-acc-price-cell {
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+    color: #444;
+  }
+
+  /* Alignement Droite : Bouton */
+  .dfb-acc-action {
+    flex: 1;
+    text-align: right;
+  }
+
+  .open-defibeo-contact {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+
+  .open-defibeo-contact:hover {
+    transform: scale(1.03);
+    background-color: #333;
+  }
+
+  /* Zone de contenu dépliée */
+  .dfb-acc-content {
+    padding: 20px 25px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Responsive simple */
+  @media (max-width: 600px) {
+    .dfb-acc-header {
+      flex-direction: column;
+      text-align: left;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .dfb-acc-price-cell, .dfb-acc-action {
+      text-align: left;
+      flex: none;
+    }
+  }
+</style>
+
+<div class="dfb-acc-list-container">
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Formation Défibeo</div>
+      <div class="dfb-acc-price-cell">250.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contact">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      <strong>Détails :</strong> Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Mise à jour Défibeo</div>
+      <div class="dfb-acc-price-cell">400.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contact">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Large actualisation Fév.2026 (optionnelle), nouveau système de tournée et 10 fonctionnalités.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Extension Extincteo</div>
+      <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contact">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Module intégré Extincteo pour la maintenance GMAO et la traçabilité des extincteurs.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Extension Eduxeo</div>
+      <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contact">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Module intégré Eduxeo pour les formations, feuilles de présences, certificats et stagiaires.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Extension Compta</div>
+      <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contact">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Module intégré pour la comptabilité. Éditez des devis, des factures et des bons de livraisons.
+    </div>
+  </details>
+
+</div>
+
+
 <!-- ÉTAPE 1 -->
 <div class="defibeo-roi-step-form-9x8k3">
   <div class="defibeo-roi-subtitle-9x8k3">
