@@ -2907,9 +2907,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     <br><br>
 
-<div class="dfb-browser-wrapper">
-            <h2 class="kijhguijhuij222" >L'arborescence du logiciel</h2>
-
 <style>
          .kijhguijhuij222 {
     font-family: 'DefibeoTAZ', sans-serif;
@@ -2993,10 +2990,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* Grid à deux colonnes */
 .cp-layout-container__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center; /* Centre verticalement le texte par rapport à l'image */
-  gap: 40px; /* Espace entre les deux colonnes */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    background: radial-gradient(#281698, #020248) !important;
+    outline: #674EFF solid 3px;
+    outline-offset: 3px;
+    margin: 13px;
 }
 
 /* Alignement du texte à gauche */
@@ -3005,31 +3011,35 @@ document.addEventListener('DOMContentLoaded', function () {
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+      padding: 30px;
 }
 
 .cp-layout-container__title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-family: 'DefibeoTAZ', sans-serif !important;
+    color: #fff !important;
 }
 
 .cp-layout-container__subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  color: #4a4a4a; /* Couleur d'exemple */
+    font-size: 19.5px;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    color: #ffffff;
 }
 
 /* Style du bouton */
 .cp-layout-container__button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #000; /* À modifier selon votre charte */
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
+    display: inline-block;
+    padding: 9px 19px;
+    background-color: #674eff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 13px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
 }
 
 .cp-layout-container__button:hover {
@@ -3044,9 +3054,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 .cp-layout-container__image {
   width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover; /* Garantit que l'image remplit l'espace sans déformation */
+    height: auto;
+    display: block;
+    object-fit: cover;
+    padding-top: 30px;
 }
 
 /* Responsive : Passage en une colonne sur mobile */
@@ -3067,13 +3078,13 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="cp-layout-container__grid">
     
     <div class="cp-layout-container__content">
-      <h2 class="cp-layout-container__title">Votre Titre Principal</h2>
+      <h2 class="cp-layout-container__title">L'arborescence du logiciel</h2>
       <p class="cp-layout-container__subtitle">Ceci est votre sous-titre explicatif, aligné proprement à gauche avec le reste du contenu.</p>
       <a href="#" class="cp-layout-container__button">Découvrir maintenant</a>
     </div>
 
     <div class="cp-layout-container__media">
-      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/IllustrationWebView.svg" alt="Illustration" class="cp-layout-container__image">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/IllustrationWebViewneo.svg" alt="Illustration" class="cp-layout-container__image">
     </div>
     
   </div>
@@ -3081,7 +3092,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-</div>
+
 
 
 
