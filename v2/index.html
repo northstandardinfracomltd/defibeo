@@ -2827,13 +2827,13 @@ document.addEventListener('DOMContentLoaded', function () {
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho3.svg" alt="Assistance"><br><br>
           <h3 class="okazu">GMAO</h3>
           <p class="okazu2">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
-          <a href="#" class="open-defibeo-contact idgo okazu3">En savoir plus</a>
+          <a href="/register" class="idgo okazu3">Commencer</a>
         </div>
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho.svg" alt="Infogérance"><br><br>
           <h3 class="okazu">Mobilité</h3>
           <p class="okazu2">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
-          <a href="#" class="open-defibeo-contact idgo okazu3">En savoir plus</a>
+          <a href="/register" class="idgo okazu3">Créer mon logiciel</a>
         </div>
       </div>
     </div>
@@ -2988,11 +2988,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* Container principal avec limitation de largeur */
 .cp-layout-container__wrapper {
-    max-width: 1115px;
+    max-width: 1100px;
     margin: 0 auto;
     font-family: "DefibeoFont", sans-serif;
     overflow: hidden;
-    margin-top: -150px;
+    margin-top: -175px;
     margin-bottom: 100px;
 }
 
@@ -3006,11 +3006,7 @@ document.addEventListener('DOMContentLoaded', function () {
     border-radius: 20px;
     padding: 0px;
     text-align: center;
-    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     background: radial-gradient(#281698, #020248) !important;
-    outline: #674EFF solid 3px;
-    outline-offset: 3px;
-    margin: 13px;
 }
 
 /* Alignement du texte à gauche */
@@ -3024,18 +3020,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 .cp-layout-container__title {
     font-size: 50px !important;
-    margin-bottom: 1rem;
+    margin-bottom: -5px;
     line-height: 1.2;
     font-family: 'DefibeoTAZ', sans-serif !important;
     color: #fff !important;
     letter-spacing: -1px;
+     cursor: default;
 }
 
 .cp-layout-container__subtitle {
     font-size: 19.5px;
-    margin-bottom: 2rem;
-    line-height: 1.5;
+    margin-bottom: 25px;
+    line-height: 30px;
     color: #ffffff;
+    cursor: default;
 }
 
 /* Style du bouton */
@@ -3046,13 +3044,11 @@ document.addEventListener('DOMContentLoaded', function () {
     color: #fff;
     text-decoration: none;
     border-radius: 13px;
-    font-weight: bold;
+    font-weight: 100;
     font-size: 18px;
     transition: opacity 0.3s ease;
-}
-
-.cp-layout-container__button:hover {
-  opacity: 0.8;
+    outline: #674eff solid 3px;
+    outline-offset: 4px;
 }
 
 /* Gestion de l'image en Full Width & Height */
@@ -3089,7 +3085,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     <div class="cp-layout-container__content">
       <h2 class="cp-layout-container__title">L'arborescence</h2>
-      <p class="cp-layout-container__subtitle">Ceci est votre sous-titre explicatif, aligné proprement à gauche avec le reste du contenu.</p>
+      <p class="cp-layout-container__subtitle">L’interface du logiciel est simple et intuitive : vous accédez instantanément aux informations essentielles grâce à une lisibilité optimale des données. Tout est centralisé, de la fiche client au suivi des défibrillateurs, en passant par la génération de reçus PDF, la facturation, la gestion de la relation client et l’inventaire. Accessible directement depuis votre navigateur, la solution ne nécessite aucune installation.</p>
       <a href="#" class="cp-layout-container__button">Créer mon compte</a>
     </div>
 
@@ -3397,7 +3393,7 @@ font-family: 'DefibeoTAZ', sans-serif;
 
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_Facilities.svg" alt="Personnalisé" >
-   <p class="infoplusTXT">Le réseau Facilities est un programme de Défibeo. Nous accompagnons les secteurs de l'hôtellerie, de l'immobilier, du sport etc. dans l'achat, la maîtrise et la supervision de leur parc de défibrillateurs et des services associés. Pour garantir une qualité optimale, nous recrutons directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de la solution Défibeo. <a href="#" class="grazioli">En savoir plus</a></p>
+   <p class="infoplusTXT">Le réseau Facilities est un programme de Défibeo. Nous accompagnons les secteurs de l'hôtellerie, de l'immobilier, du sport etc. dans l'achat, la maîtrise et la supervision de leur parc de défibrillateurs et des services associés. Pour garantir une qualité optimale, nous recrutons directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de la solution Défibeo. <a href="#" class="grazioli">Découvrir Défibeo Facilities</a></p>
    </div>
 </div>
 
@@ -3452,7 +3448,6 @@ font-family: 'DefibeoTAZ', sans-serif;
     .tpx-eval-card.tpx-is-active {
 border-color: #16f2bb;
     border: 3px solid #16f2bb;
-    background-color: #ffffff2e;
     }
 
     .tpx-eval-header {
@@ -3485,14 +3480,14 @@ border-color: #16f2bb;
     }
 
     .tpx-is-active .tpx-eval-radio-custom::after {
-        content: "";
-        position: absolute;
-top: 3px;
-    left: 3px;
-    width: 12px;
-    height: 12px;
-        border-radius: 50%;
-        background: #16f2bb;
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #16f2bb;
     }
 
     /* Contenu masqué par défaut */
@@ -3507,9 +3502,11 @@ top: 3px;
     }
 
     .tpx-eval-desc {
-        font-size: 18px;
-        color: #000;
-        margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #fff;
+    margin: 0 0 20px 0;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif;
     }
 
     .tpx-eval-price-box {
@@ -3548,8 +3545,7 @@ display: inline-block;
 
 <div class="tpx-eval-wrapper">
     <div class="tpx-eval-main-title">
-        Évaluez le coût de l’outil, pour un usage jusqu’à 10,000 requêtes mensuelles, au delà veuillez nous contacter. 
-        Le ROI est en moyenne de 23% et il représente un coût répercuté moyen de €0.09 par client ou utilisateur.
+Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré prêt à l’usage et personnalisé à votre effigie. Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique. Chez Défibeo notre support est disponible 24/7 via WhatsApp. Vous bénéficiez d'une session de formation gratuite, ainsi que 10 heures gratuites pour des modifications personnalisées par les éditeurs de Défibeo. L’achat du logiciel n’est pas soumis à la TVA (0%).
     </div>
 
     <label class="tpx-eval-card tpx-is-active" id="card-1">
@@ -3561,14 +3557,14 @@ display: inline-block;
         
         <div class="tpx-eval-collapsible">
             <p class="tpx-eval-desc">
-                Éligible jusqu'à 5,000 défibrillateurs. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+Éligible jusqu’à 5,000 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation et l’activation du logiciel.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€390</span>
+                <span class="tpx-eval-big-p">€400 TTC</span>
                 <span class="tpx-eval-small-p">Une fois pour l'activation</span>
             </div>
-            <div class="tpx-eval-label-host">+€198 par mois pour l’hébergement</div>
-            <a href="#" class="grazioli">Acheter</a>
+            <div class="tpx-eval-label-host">Puis 250€ TTC par mois</div>
+            <a href="#" class="grazioli">Souscrire</a>
         </div>
     </label>
 
@@ -3581,13 +3577,13 @@ display: inline-block;
         
         <div class="tpx-eval-collapsible">
             <p class="tpx-eval-desc">
-                Éligible à partir de 5,000 défibrillateurs.
+Éligible à partir de 5,000 défibrillateurs, incluant jusqu'à 100 sessions administrateurs et utilisateurs. Accès livré sous 2 à 4 jours après l’achat de l’activation et l’activation du logiciel.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€9,790</span>
-                <span class="tpx-eval-small-p">Setup cost</span>
+                <span class="tpx-eval-big-p">4,000€ TTC</span>
+                <span class="tpx-eval-small-p">Une fois pour l'activation</span>
             </div>
-            <div class="tpx-eval-label-host">+€350 par mois pour l’hébergement</div>
+            <div class="tpx-eval-label-host">Puis 500€ TTC par mois</div>
             <a href="#" class="grazioli">Contactez-nous</a>
         </div>
     </label>
@@ -3775,7 +3771,7 @@ font-family: 'DefibeoTAZ', sans-serif !important;
     flex: 1;
     text-align: center;
     font-weight: 100;
-    color: #fff;
+    color: #ffffff80;
     font-size: 12px;
   }
 
@@ -3786,21 +3782,19 @@ font-family: 'DefibeoTAZ', sans-serif !important;
   }
 
   .open-defibeo-contactX {
-    display: inline-block;
+display: inline-block;
     padding: 8px 18px;
-    background-color: #000;
+    background-color: #7259ff;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: transform 0.2s ease;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 100;
+    transition: transform 0s ease;
+    font-family: 'DefibeoMain', sans-serif;
+    margin-right: -8px;
   }
 
-  .open-defibeo-contactX:hover {
-    transform: scale(1.03);
-    background-color: #333;
-  }
 
   /* Zone de contenu dépliée */
   .dfb-acc-content {
@@ -3830,7 +3824,7 @@ padding: 20px 25px;
 
 
     <div class="tpx-eval-main-title">
-Nos autres solutions de formation, d'actualisations, et d'extensions pour votre logiciel Défibeo.
+Autres options complémentaires à la demande.
     </div>
 
 <div class="dfb-acc-list-container">
