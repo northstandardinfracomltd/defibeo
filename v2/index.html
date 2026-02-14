@@ -984,9 +984,9 @@ position: sticky;
 .krako {
 height: 150px;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-left: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 
@@ -1931,8 +1931,14 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 <p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
         </p>
 <br>
-<button href="/register" class="ffka defibeocontact">Créer mon compte</button>
-
+<button id="openBtn-register" class="ffka defibeocontact">
+  Créer mon compte
+</button>
+<script>
+  document.getElementById('openBtn-register').addEventListener('click', function() {
+    window.location.href = '/register';
+  });
+</script>
 
 
 <!-- ================= CSS ================= -->
@@ -3409,7 +3415,7 @@ font-family: 'DefibeoTAZ', sans-serif;
  <style>
 
     .tpx-eval-wrapper {
-        max-width: 500px;
+        max-width: 600px;
         font-family: 'TextelpRAG', sans-serif;
         font-weight: 100;
         color: #202124;
@@ -3419,11 +3425,13 @@ font-family: 'DefibeoTAZ', sans-serif;
     }
 
     .tpx-eval-main-title {
-        font-size: 18px;
-        margin-bottom: 32px;
-        color: #000000;
-        display: block;
-            text-align: center;
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif;
     }
 
     /* Style de la Carte */
@@ -3433,17 +3441,18 @@ font-family: 'DefibeoTAZ', sans-serif;
     padding: 24px;
     margin-bottom: 16px;
     cursor: pointer;
-    transition: all 0.25s ease;
-    border: 1px solid #e0dfee;
+    background: #ffffff0d;
+    transition: all 0s ease;
+    border: 1px solid #ffffff2e;
     overflow: hidden;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
     }
 
     /* État Actif (Border + Background) */
     .tpx-eval-card.tpx-is-active {
-border-color: #1a4bff;
-    border: 3px solid #1a4bff;
-    background-color: #ffffff;
+border-color: #16f2bb;
+    border: 3px solid #16f2bb;
+    background-color: #ffffff2e;
     }
 
     .tpx-eval-header {
@@ -3463,7 +3472,7 @@ border-color: #1a4bff;
     .tpx-eval-radio-custom {
         width: 24px;
         height: 24px;
-        border: 3px solid #1a4bff;;
+        border: 3px solid #16f2bb;;
         border-radius: 50%;
         position: relative;
         transition: all 0.2s ease;
@@ -3472,7 +3481,7 @@ border-color: #1a4bff;
     }
 
     .tpx-is-active .tpx-eval-radio-custom {
-        border-color: #1a4bff;
+        border-color: #16f2bb;
     }
 
     .tpx-is-active .tpx-eval-radio-custom::after {
@@ -3483,7 +3492,7 @@ top: 3px;
     width: 12px;
     height: 12px;
         border-radius: 50%;
-        background: #1a4bff;
+        background: #16f2bb;
     }
 
     /* Contenu masqué par défaut */
@@ -3715,7 +3724,7 @@ font-family: 'DefibeoTAZ', sans-serif !important;
 <style>
   /* Base du conteneur */
   .dfb-acc-list-container {
-    max-width: 1000px;
+    max-width: 600px;
     margin: 20px auto;
     font-family: 'DefibeoMain', sans-serif;
     display: flex;
@@ -3725,10 +3734,10 @@ font-family: 'DefibeoTAZ', sans-serif !important;
 
   /* Style de l'item accordéon */
   .dfb-acc-item {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border: 1px solid #ffffff2e;
+    border-radius: 17px;
     overflow: hidden;
-    background: #ffffff;
+    background: #ffffff0d;
     transition: box-shadow 0.2s ease;
   }
 
@@ -3754,17 +3763,18 @@ font-family: 'DefibeoTAZ', sans-serif !important;
   /* Alignement Gauche : Titre */
   .dfb-acc-title {
     flex: 1;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #1a1a1a;
+    font-weight: 100;
+    font-size: 18px;
+    color: #fff;
   }
 
   /* Alignement Milieu : Prix */
   .dfb-acc-price-cell {
     flex: 1;
     text-align: center;
-    font-weight: 500;
-    color: #444;
+    font-weight: 100;
+    color: #fff;
+    font-size: 12px;
   }
 
   /* Alignement Droite : Bouton */
@@ -3792,12 +3802,13 @@ font-family: 'DefibeoTAZ', sans-serif !important;
 
   /* Zone de contenu dépliée */
   .dfb-acc-content {
-    padding: 20px 25px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #eee;
-    color: #555;
+padding: 20px 25px;
+    background-color: #ffffff00;
+    border-top: 1px solid #4d459a;
+    color: #ffffff;
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 16px;
+    font-weight: 100;
   }
 
   /* Responsive simple */
