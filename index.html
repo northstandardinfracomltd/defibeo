@@ -131,8 +131,16 @@ max-width: 85% !important;
     background: radial-gradient(#281698, #020248)  !important;
     padding-top: 20px !important;
     border-radius: 0px !important;
-    padding-bottom: 30px !important;
+    padding-bottom: 0px !important;
     margin-top: 0px !important;
+}
+
+.defibeo-roi-calculator-wrapper-9x8k3 {
+  margin-bottom: 0px;
+  }
+
+  .rideauABC {
+    padding-bottom: 50px;
 }
 
     .dfbgo-bar-inner {
@@ -984,9 +992,9 @@ position: sticky;
 .krako {
 height: 150px;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 10px;
     margin-left: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 
@@ -1134,10 +1142,11 @@ Une présentation personnalisée et détaillée du logiciel en écran partagé.
     </div>
 <button
   type="button"
+  id="openBtn-defibeo-contact"
   class="dfbgo-bar-action-btn"
-  href="https://defibeo-com-reserver-un-appel.youcanbook.me"
+  href="#"
 >
-  Réservez une démo
+  Contactez votre interlocuteur
 </button>
 
 <script>
@@ -1931,8 +1940,14 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 <p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
         </p>
 <br>
-<button href="#" id="openBtn-defibeo-contact" class="ffka defibeocontact">Contactez votre interlocuteur</button>
-
+<button id="openBtn-register" class="ffka defibeocontact">
+  Créer mon compte
+</button>
+<script>
+  document.getElementById('openBtn-register').addEventListener('click', function() {
+    window.location.href = '/register';
+  });
+</script>
 
 
 <!-- ================= CSS ================= -->
@@ -2796,7 +2811,7 @@ width: 40px;
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho1.svg" alt="Mobilité"><br><br>
           <h3 class="okazu">Infogérance</h3>
           <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
-          <a href="#" class="open-defibeo-contact idgo okazu3">En savoir plus</a>
+          <a href="#" class="open-defibeo-contactWS idgo okazu3">Contactez-nous</a>
           
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -2821,13 +2836,13 @@ document.addEventListener('DOMContentLoaded', function () {
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho3.svg" alt="Assistance"><br><br>
           <h3 class="okazu">GMAO</h3>
           <p class="okazu2">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
-          <a href="#" class="open-defibeo-contact idgo okazu3">En savoir plus</a>
+          <a href="/register" class="idgo okazu3">Commencer</a>
         </div>
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho.svg" alt="Infogérance"><br><br>
           <h3 class="okazu">Mobilité</h3>
           <p class="okazu2">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
-          <a href="#" class="open-defibeo-contact idgo okazu3">En savoir plus</a>
+          <a href="/register" class="idgo okazu3">Créer mon logiciel</a>
         </div>
       </div>
     </div>
@@ -2907,8 +2922,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     <br><br>
 
-<div class="dfb-browser-wrapper">
-            <h2 class="kijhguijhuij222" >L'arborescence du logiciel</h2>
 <style>
          .kijhguijhuij222 {
     font-family: 'DefibeoTAZ', sans-serif;
@@ -2981,143 +2994,117 @@ document.addEventListener('DOMContentLoaded', function () {
   .dfb-menu{width:90%;}
   .dfb-browser{width:calc(100% - 20px); margin:20px auto;}
 }
+
+/* Container principal avec limitation de largeur */
+.cp-layout-container__wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: "DefibeoFont", sans-serif;
+    overflow: hidden;
+    margin-top: -175px;
+    margin-bottom: 100px;
+}
+
+/* Grid à deux colonnes */
+.cp-layout-container__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0px;
+    border: 1px solid #dbdbdb;
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+    background: radial-gradient(#281698, #020248) !important;
+}
+
+/* Alignement du texte à gauche */
+.cp-layout-container__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+      padding: 30px;
+}
+
+.cp-layout-container__title {
+    font-size: 50px !important;
+    margin-bottom: -5px;
+    line-height: 1.2;
+    font-family: 'DefibeoTAZ', sans-serif !important;
+    color: #fff !important;
+    letter-spacing: -1px;
+     cursor: default;
+}
+
+.cp-layout-container__subtitle {
+    font-size: 19.5px;
+    margin-bottom: 25px;
+    line-height: 30px;
+    color: #ffffff;
+    cursor: default;
+}
+
+/* Style du bouton */
+.cp-layout-container__button {
+    display: inline-block;
+    padding: 9px 19px;
+    background-color: #674eff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 13px;
+    font-weight: 100;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+    outline: #674eff solid 3px;
+    outline-offset: 4px;
+}
+
+/* Gestion de l'image en Full Width & Height */
+.cp-layout-container__media {
+  width: 100%;
+  height: 100%;
+}
+
+.cp-layout-container__image {
+  width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    padding-top: 30px;
+    border-radius: 0px 0px 19px 0px;
+}
+
+/* Responsive : Passage en une colonne sur mobile */
+@media (max-width: 768px) {
+  .cp-layout-container__grid {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+}
 </style>
 
-<div class="dfb-browser">
-    <div class="dfb-browser-header">
-        <div class="dfb-browser-buttons">
-            <div class="dfb-circle dfb-red"></div>
-            <div class="dfb-circle dfb-yellow"></div>
-            <div class="dfb-circle dfb-green"></div>
-        </div>
-        <div class="dfb-browser-url">demo.defibeo.com</div>
+
+<div class="cp-layout-container__wrapper">
+  <div class="cp-layout-container__grid">
+    
+    <div class="cp-layout-container__content">
+      <h2 class="cp-layout-container__title">L'arborescence</h2>
+      <p class="cp-layout-container__subtitle">L’interface du logiciel est simple et intuitive : vous accédez instantanément aux informations essentielles grâce à une lisibilité optimale des données. Tout est centralisé, de la fiche client au suivi des défibrillateurs, en passant par la génération de reçus PDF, la facturation, la gestion de la relation client et l’inventaire. Accessible directement depuis votre navigateur, la solution ne nécessite aucune installation.</p>
+      <a href="/register" class="cp-layout-container__button">Créer mon compte</a>
     </div>
 
-    <div class="dfb-container">
-        <div class="dfb-menu">
-            <div class="dfb-logo">
-                <img class="dfb-logo-img" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/REBRAND+ICON+BROWSER.svg" alt="Logo">
-                <div class="dfb-logo-text">Ajoutez votre logo!</div>
-            </div>
-
-            <!-- Défibrillateurs -->
-            <div class="dfb-parent">
-               <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit du tableau de tous les défibrillateurs.">Défibrillateurs</div>
-                     <div class="dfb-item" data-dfb-text="Visualisez vos défibrillateurs sur le territoire avec une carte interactive.">Plan</div>
-                    
-                </div>
-            </div>
-
-
-                        <div class="dfb-parent">
-                <div class="dfb-parent-title">Filtres Principaux</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action est nécessaire dans les 3 prochains mois, par exemple une date de péremption.">Action Requise 3 Mois</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action nécessaire est passée, par exemple une date de péremption.">Action Requise Expirée</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez éligibles aux maintenances et aux tournées.">Avec Maintenance</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez non éligibles aux maintenances et aux tournées.">Sans Maintenance</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez en portage ou sous-traitance d'une autre entreprise.">Sous Traitance</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs prêtés, par exemple pour un dépannage.">Prêts</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit de la traçabilité des défibrillateurs repris, par exemple pour un défaut de fabrication.">Reprises</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs inutilisés que vous mentionnés comme dans votre stock.">Stockés</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">Archivés</div>
-                </div>
-            </div>
-
-            <!-- Maintenances -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">GMAO</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit d'un organisateur de tournées pour les techniciens avec la sélection des défibrillateurs.">Tournées</div>
-                    <div class="dfb-item" data-dfb-text="Téléchargez ou renvoyez les reçus PDF générés par les techniciens.">Reçus PDF</div>
-                </div>
-            </div>
-
- <!-- Productivité -->
-                        <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Productivité</div>
-                <div class="dfb-cloud">
-                   <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">CRM Tickets</div>
-                                       <div class="dfb-item" data-dfb-text="Enregistrez les fichiers importants comme des manuels, notices, livrets et autres.">GED Librairie</div>
-                </div>
-            </div>
-
-            <!-- Registres -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Registres</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos clients.">Clients</div>
-                    <div class="dfb-item" data-dfb-text="Rédigez vos contrats avec un processus de signature en ligne ou hors ligne.">Contrats</div>
-                    <div class="dfb-item" data-dfb-text="Ajoutez des techniciens internes ou externes à votre entreprise.">Techniciens</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos fournisseurs.">Fournisseurs</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos commerciaux.">Commerciaux</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez les commandes passées auprès de votre fournisseur.">Commandes</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez pour veille les factures et les devis liés aux commandes des clients.">Factures & Devis</div>
-                </div>
-            </div>
-
-                        <!-- Variables -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Variables</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les labels des modèles de défibrillateurs.">Modèles</div>
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de contrats.">Contrats</div>
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de boîtiers.">Boîtiers</div>
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de pièces du stock.">Pièces</div>
-                </div>
-            </div>
-
-
-                        <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Inventaire</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit de l'inventaire des défibrillateurs, pièces et consommables.">Stocks Individualisés</div>
-                    <div class="dfb-item" data-dfb-text="Prévoir d'années en années les ventes de pièces pour chaque client.">Livre Ventes Annuelles</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrer les commandes passées auprès des fournisseurs.">Veille Livraisons</div>
-                </div>
-            </div>
-
-            <!-- Rappels & Sécurité -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Autres</div>
-                <div class="dfb-cloud">
-                  <div class="dfb-item" data-dfb-text="Des indicateurs et chiffres clés pour prendre de meilleures décisions.">Performances & Risques</div>
-                    <div class="dfb-item" data-dfb-text="Nous remontons les communications sur les rappels des fabricants concernant les défibrillateurs et les recommandations de sécurité de l'ANSM.">Veille ANSM</div>
-                    <div class="dfb-item" data-dfb-text="(Optionnel Gratuit) Il s'agit du formulaire que vous pouvez intégrer à votre site internet et partager via QR code et lien court également, pour récupérer des feedbacks, demandes et signalements directement sur le CRM.">Formulaire Partagé</div>
-                   <div class="dfb-item" data-dfb-text="(Optionnel Gratuit) L'API de Défibeo est ouverte, vous pouvez ainsi connecter les apps de tiers que vous souhaitez.">Connecteurs API</div>
-                    <div class="dfb-item" data-dfb-text="Pour obtenir de l'aide ou une formation.">Assistance Défibeo</div>
-                </div>
-            </div>
-
-
-
-        </div>
-
-        <div class="dfb-text-panel">
-            <img class="dfb-text-icon" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/aposthr.svg" alt="Icône">
-            <span>Cliquez sur une rubrique pour afficher le commentaire.</span>
-        </div>
+    <div class="cp-layout-container__media">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/IllustrationWebViewneo.svg" alt="Illustration" class="cp-layout-container__image">
     </div>
+    
+  </div>
 </div>
 
-<script>
-(function(){
-    const wrapper = document.querySelector('.dfb-browser-wrapper');
-    const textPanel = wrapper.querySelector('.dfb-text-panel span');
-    const items = wrapper.querySelectorAll('.dfb-item');
 
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            items.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-            textPanel.textContent = item.getAttribute('data-dfb-text');
-            textPanel.scrollIntoView({behavior:'smooth', block:'center'});
-        });
-    });
-})();
-</script>
-</div>
+
+
 
 
 
@@ -3412,7 +3399,7 @@ font-family: 'DefibeoTAZ', sans-serif;
 
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_Facilities.svg" alt="Personnalisé" >
-   <p class="infoplusTXT">Le réseau Facilities est un programme de Défibeo. Nous accompagnons les secteurs de l'hôtellerie, de l'immobilier, du sport etc. dans l'achat, la maîtrise et la supervision de leur parc de défibrillateurs et des services associés. Pour garantir une qualité optimale, nous recrutons directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de la solution Défibeo.</p>
+   <p class="infoplusTXT">Le réseau Facilities est un programme de Défibeo. Nous accompagnons les secteurs de l'hôtellerie, de l'immobilier, du sport etc. dans l'achat, la maîtrise et la supervision de leur parc de défibrillateurs et des services associés. Pour garantir une qualité optimale, nous recrutons directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de la solution Défibeo. <a href="/facilities" class="grazioliXHG">Découvrir Défibeo Facilities</a></p>
    </div>
 </div>
 
@@ -3424,21 +3411,223 @@ font-family: 'DefibeoTAZ', sans-serif;
 
     <div class="container">
     <h2 class="okazu4" >Achetez le cerveau de votre entreprise</h2>
-      <div class="pricing" id="pricingplan">
-        <div class="okazu9 pricing-plan">
-          <h3 class="okazu10 castrate"><br><br><br>Logiciel livré prêt à l’usage et personnalisé à votre effigie.</h3>      
-          <p class="price okazu11">1,790€<span class="liza"> TTC une fois pour l'activation.<br></p> <p class="iris">Puis 350 € TTC/trimestre, forfait activation et abonnement typique pour un volume jusqu'à 5,000 défibrillateurs et 3 sessions administrateurs.</p>          <p class="okazu12">Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique. Chez Défibeo notre support est disponible 24/7 via WhatsApp. Vous bénéficiez d'une session de formation gratuite, ainsi que 10 heures gratuites pour des modifications personnalisées par les éditeurs de Défibeo. L’achat du logiciel n’est pas soumis à la TVA (0%).</p>
-<div class="oklm">
-  <a href="#" class="open-defibeo-contact okazu13 cta">
-    Contactez votre interlocuteur
-  </a>
-</div>
-          <div class="okazu007 pricing-plan007">
-          <h3 class="okazu10">Le saviez-vous? Vous pouvez essayer le logiciel Défibeo, il est possible d'annuler votre achat sous 30 jours si vous le souhaitez.</h3>      
-        </div>
-        </div>
 
-      </div>
+
+
+ <style>
+
+  .grazioliXHG {
+color: #7259ff; 
+     }
+
+    .tpx-eval-wrapper {
+        max-width: 600px;
+        font-family: 'TextelpRAG', sans-serif;
+        font-weight: 100;
+        color: #202124;
+        line-height: 1.6;
+        margin: 20px auto;
+        text-align: left;
+    }
+
+    .tpx-eval-main-title {
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+
+    /* Style de la Carte */
+    .tpx-eval-card {
+    display: block;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    background: #ffffff0d;
+    transition: all 0s ease;
+    border: 1px solid #ffffff2e;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    /* État Actif (Border + Background) */
+    .tpx-eval-card.tpx-is-active {
+border-color: #16f2bb;
+    border: 3px solid #16f2bb;
+    }
+
+    .tpx-eval-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tpx-eval-header h2 {
+        font-size: 22px;
+        margin: 0;
+        font-weight: 100 !important;
+        color: #ffffff;
+    }
+
+    /* Radio Button Custom */
+    .tpx-eval-radio-custom {
+        width: 24px;
+        height: 24px;
+        border: 3px solid #16f2bb;;
+        border-radius: 50%;
+        position: relative;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+        background: transparent;
+    }
+
+    .tpx-is-active .tpx-eval-radio-custom {
+        border-color: #16f2bb;
+    }
+
+    .tpx-is-active .tpx-eval-radio-custom::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #16f2bb;
+    }
+
+    /* Contenu masqué par défaut */
+    .tpx-eval-collapsible {
+        display: none;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    .tpx-is-active .tpx-eval-collapsible {
+        display: block;
+    }
+
+    .tpx-eval-desc {
+    font-size: 18px;
+    color: #fff;
+    margin: 0 0 20px 0;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+
+    .tpx-eval-price-box {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .tpx-eval-big-p {
+font-size: 26px;
+    margin: 0;
+    color: #ffffff !important;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+
+    .tpx-eval-small-p {
+    font-size: 12px;
+    color: #ffffff;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+
+    .tpx-eval-label-host {
+      margin-bottom: 25px;
+display: inline-block;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    border: 1px solid #ffffff2e;
+    color: #ffffff;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+        .grazioli {
+    padding: 10px 18px;
+    background-color: #7259ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 100;
+    transition: transform 0s ease;
+    font-family: 'DefibeoMain', sans-serif;
+    margin-right: 0px;
+    outline: #674eff solid 3px;
+    outline-offset: 4px;
+    margin-left: 7px;
+ }
+
+    /* Input invisible */
+    .tpx-eval-hidden-radio {
+        display: none;
+    }
+</style>
+
+<div class="tpx-eval-wrapper">
+    <div class="tpx-eval-main-title">
+Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré prêt à l’usage et personnalisé à votre effigie. Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique. Chez Défibeo notre support est disponible 24/7 via WhatsApp. Vous bénéficiez d'une session de formation gratuite, ainsi que 10 heures gratuites pour des modifications personnalisées par les éditeurs de Défibeo. L’achat du logiciel n’est pas soumis à la TVA (0%).
+    </div>
+
+    <label class="tpx-eval-card tpx-is-active" id="card-1">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" checked onchange="tpxToggle(1)">
+        <div class="tpx-eval-header">
+            <h2>Standard</h2>
+            <div class="tpx-eval-radio-custom"></div>
+        </div>
+        
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
+Éligible jusqu’à 5,000 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation et l’activation du logiciel.
+            </p>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">800€</span>
+                <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation.</span>
+            </div>
+            <div class="tpx-eval-label-host">Puis 250€ TTC par mois.</div>
+            <br><a href="/register" class="grazioli">Souscrire</a><br><br>
+        </div>
+    </label>
+
+    <label class="tpx-eval-card" id="card-2">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" onchange="tpxToggle(2)">
+        <div class="tpx-eval-header">
+            <h2>Large</h2>
+            <div class="tpx-eval-radio-custom"></div>
+        </div>
+        
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
+Éligible à partir de 5,000 défibrillateurs, incluant jusqu'à 100 sessions administrateurs et utilisateurs. Accès livré sous 2 à 4 jours après l’achat de l’activation et l’activation du logiciel.
+            </p>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">6,000€</span>
+                <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation.</span>
+            </div>
+            <div class="tpx-eval-label-host">Puis 500€ TTC par mois.</div>
+            <br><a href="#" class="open-defibeo-contact grazioli">Contactez-nous</a><br><br>
+        </div>
+    </label>
+</div>
+
+<script>
+    function tpxToggle(selectedId) {
+        // Supprimer la classe active de toutes les cartes
+        document.querySelectorAll('.tpx-eval-card').forEach(card => {
+            card.classList.remove('tpx-is-active');
+        });
+        // Ajouter la classe à la carte sélectionnée
+        document.getElementById('card-' + selectedId).classList.add('tpx-is-active');
+    }
+</script>
     </div>
   </section>
 
@@ -3448,6 +3637,28 @@ font-family: 'DefibeoTAZ', sans-serif;
 <div class="defibeo-roi-calculator-wrapper-9x8k3" id="defibeo-roi-anchor-9x8k3">
 
 <style>
+
+  @media (max-width: 768px) {
+.cp-layout-container__content {
+    max-width: 76%;
+}
+
+
+
+
+.cp-layout-container__title {
+    font-size: 40px !important;
+}
+
+.cp-layout-container__wrapper {
+    max-width: 98%;
+    width: 98%;
+}
+
+    }
+
+
+
 .defibeo-roi-calculator-wrapper-9x8k3{
     font-family: 'DefibeoMain', sans-serif;
     font-weight: 100 !important;
@@ -3558,11 +3769,210 @@ font-family: 'DefibeoTAZ', sans-serif !important;
 
 </style>
 
+
+<style>
+  /* Base du conteneur */
+  .dfb-acc-list-container {
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: 'DefibeoMain', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Style de l'item accordéon */
+  .dfb-acc-item {
+    border: 1px solid #ffffff2e;
+    border-radius: 17px;
+    overflow: hidden;
+    background: #ffffff0d;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .dfb-acc-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  /* Header (la partie visible et clickable) */
+  .dfb-acc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    cursor: pointer;
+    list-style: none; /* Cache la flèche par défaut sur certains navigateurs */
+  }
+
+  /* Pour cacher la flèche sur Safari/Chrome */
+  .dfb-acc-header::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Alignement Gauche : Titre */
+  .dfb-acc-title {
+    flex: 1;
+    font-weight: 100;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  /* Alignement Milieu : Prix */
+  .dfb-acc-price-cell {
+    flex: 1;
+    text-align: center;
+    font-weight: 100;
+    color: #ffffff80;
+    font-size: 12px;
+  }
+
+  /* Alignement Droite : Bouton */
+  .dfb-acc-action {
+    flex: 1;
+    text-align: right;
+  }
+
+  .open-defibeo-contactX {
+display: inline-block;
+    padding: 8px 18px;
+    background-color: #7259ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 100;
+    transition: transform 0s ease;
+    font-family: 'DefibeoMain', sans-serif;
+    margin-right: -8px;
+  }
+
+
+  /* Zone de contenu dépliée */
+  .dfb-acc-content {
+padding: 20px 25px;
+    background-color: #ffffff00;
+    border-top: 1px solid #4d459a;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 100;
+  }
+
+  /* Responsive simple */
+  @media (max-width: 600px) {
+    .dfb-acc-header {
+      flex-direction: column;
+      text-align: left;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .dfb-acc-price-cell, .dfb-acc-action {
+      text-align: left;
+      flex: none;
+    }
+  }
+</style>
+
+
+    <div class="tpx-eval-main-title">
+Autres options à la demande.
+    </div>
+
+<div class="dfb-acc-list-container">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // On récupère tous les boutons avec la classe
+    const contactButtons = document.querySelectorAll('.open-defibeo-contactWS');
+    
+    // On récupère l'élément du popup (ou le bouton original qui marche déjà)
+    const originalTrigger = document.getElementById('openBtn-defibeo-contact');
+
+    contactButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le lien de recharger la page
+            
+            if (originalTrigger) {
+                // On simule un clic sur le bouton original qui a déjà la logique
+                originalTrigger.click();
+            } else {
+                console.warn("Le déclencheur original ID 'openBtn-defibeo-contact' est introuvable.");
+            }
+        });
+    });
+});
+  </script>
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Formation Défibeo</div>
+      <div class="dfb-acc-price-cell">250.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+     Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Mise à jour Défibeo</div>
+      <div class="dfb-acc-price-cell">400.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Large actualisation Fév.2026 (optionnelle), nouveau système de tournée et 10 fonctionnalités.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Extension Extincteo</div>
+      <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Module intégré Extincteo pour la maintenance GMAO et la traçabilité des extincteurs.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Extension Eduxeo</div>
+      <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Module intégré Eduxeo pour les formations, feuilles de présences, certificats et stagiaires.
+    </div>
+  </details>
+
+  <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Extension Compta</div>
+      <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contact</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Module intégré pour la comptabilité. Éditez des devis, des factures et des bons de livraisons.
+    </div>
+  </details>
+
+</div>
+
+
 <!-- ÉTAPE 1 -->
 <div class="defibeo-roi-step-form-9x8k3">
-  <div class="defibeo-roi-subtitle-9x8k3">
-Coût, ROI et temps préservé : Estimez, pour la première année d’activité avec l’acquisition du logiciel Défibeo, le coût répercuté par opération de maintenance ainsi que le temps que vous pourriez potentiellement préserver sur 12 mois, en fonction de vos volumes et en comparaison avec votre processus actuel.
-  </div>
+
 
   <!-- Champ 1 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f1" style="display:block">
@@ -3710,6 +4120,9 @@ document.getElementById('reset').onclick=()=>{
 
 <style>
 
+.defibeo-roi-step-form-9x8k3 {
+display: none !important;
+}
 
 .mongol {
     font-family: 'DefibeoTAZ', sans-serif;
@@ -3747,7 +4160,7 @@ color: #000 !important;
 background: radial-gradient(#281698, #020248) !important ;
     padding-top: 80px;
     border-radius: 0px;
-    padding-bottom: 80px;
+    padding-bottom: 1px;
     margin-top: -40px;
 
 }
@@ -4425,7 +4838,8 @@ width: 300px !important;
     max-width: 1200px;
     margin: auto;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .fullwidth-imageISO img {
@@ -4796,108 +5210,12 @@ font-family: 'DefibeoMain', sans-serif !important;
         display: none !important;
     }
 }
+
+@media (max-width: 768px) {
+.barcodex {  margin-top: -100px; }
+}
     </style>
 
-<div class="gs-store-container">
-    <h1 class="gs-main-title">Toutes nos solutions disponibles à l'achat</h1>
-
-    <div class="gs-filter-section">        
-        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="all" checked> Tous
-        </label>
-        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Logiciel"> Logiciel
-        </label>
-                <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Mise à jour"> Mise à jour
-        </label>
-                        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Extension"> Extension
-        </label>
-        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Formation"> Formation
-        </label>
-    </div>
-
-    <div class="gs-items-grid" id="gs-items-container">
-        
-        <div class="gs-item-card" data-type="Logiciel">
-            <h3 class="gs-item-name">Logiciel Défibeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">1,790€ TVA Incl. +Forfait</span>
-            </div>
-            <p class="gs-item-description">Logiciel Défibeo pour la maintenance GMAO et la traçabilité des défibrillateurs.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-        <div class="gs-item-card" data-type="Formation">
-            <h3 class="gs-item-name">Formation Défibeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">250.00€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-        <div class="gs-item-card" data-type="Mise à jour">
-            <h3 class="gs-item-name">Mise à jour Défibeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">400.00€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Large actualisation Fév.2026 (optionnelle), nouveau système de tournée et 10 fonctionnalités.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-
-
-                <div class="gs-item-card" data-type="Logiciel">
-            <h3 class="gs-item-name">Extension Extincteo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">900€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Module intégré Extincteo pour la maintenance GMAO et la traçabilité des extincteurs.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-        <div class="gs-item-card" data-type="Formation">
-            <h3 class="gs-item-name">Extension Eduxeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">900€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Module intégré Eduxeo pour les formations, feuilles de présences, certificats et stagiaires.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-                <div class="gs-item-card" data-type="Logiciel">
-            <h3 class="gs-item-name">Extension Compta</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">900€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Module intégré pour la comptabilité. Éditez des devis, des factures et des bons de livraisons.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-
-    </div>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -4954,9 +5272,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-     <p class="barcodex">Défibeo est recommandé par ses utilisateurs.</p>
+     <p class="barcodex">Défibeo est recommandé par ses utilisateurs!</p>
+<a href="https://es.trustpilot.com/review/defibeo.com" target="_blank">
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo_Trustpilot.svg" alt="Illustration">
-
+</a>
 <script>
 (function () {
   var mobileImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo_Trustpilot.svg";
@@ -5425,9 +5744,16 @@ margin-top: 20px;
 
 
 
+    @media (max-width: 768px) {
+.footer-seo-links {
+       display: none !important;
+    }
+}
+
+
 .footer-seo-links {
   
-background: radial-gradient(#281698, #020248) !important;
+background: #000 !important;
     padding: 40px;
     border-radius: 0px !important;
     font-size: 14px;
