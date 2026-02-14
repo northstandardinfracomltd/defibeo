@@ -2982,10 +2982,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* Container principal avec limitation de largeur */
 .cp-layout-container__wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  font-family: "DefibeoFont", sans-serif;
-  overflow: hidden;
+    max-width: 1115px;
+    margin: 0 auto;
+    font-family: "DefibeoFont", sans-serif;
+    overflow: hidden;
+    margin-top: -150px;
+    margin-bottom: 100px;
 }
 
 /* Grid à deux colonnes */
@@ -3015,11 +3017,12 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 .cp-layout-container__title {
-    font-size: 2.5rem;
+    font-size: 50px !important;
     margin-bottom: 1rem;
     line-height: 1.2;
     font-family: 'DefibeoTAZ', sans-serif !important;
     color: #fff !important;
+    letter-spacing: -1px;
 }
 
 .cp-layout-container__subtitle {
@@ -3058,6 +3061,7 @@ document.addEventListener('DOMContentLoaded', function () {
     display: block;
     object-fit: cover;
     padding-top: 30px;
+    border-radius: 0px 0px 19px 0px;
 }
 
 /* Responsive : Passage en une colonne sur mobile */
@@ -3078,7 +3082,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="cp-layout-container__grid">
     
     <div class="cp-layout-container__content">
-      <h2 class="cp-layout-container__title">L'arborescence du logiciel</h2>
+      <h2 class="cp-layout-container__title">L'arborescence</h2>
       <p class="cp-layout-container__subtitle">Ceci est votre sous-titre explicatif, aligné proprement à gauche avec le reste du contenu.</p>
       <a href="#" class="cp-layout-container__button">Découvrir maintenant</a>
     </div>
@@ -4947,106 +4951,6 @@ font-family: 'DefibeoMain', sans-serif !important;
 }
     </style>
 
-<div class="gs-store-container">
-    <h1 class="gs-main-title">Toutes nos solutions disponibles à l'achat</h1>
-
-    <div class="gs-filter-section">        
-        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="all" checked> Tous
-        </label>
-        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Logiciel"> Logiciel
-        </label>
-                <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Mise à jour"> Mise à jour
-        </label>
-                        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Extension"> Extension
-        </label>
-        <label class="gs-filter-option">
-            <input type="radio" name="gs-filter" value="Formation"> Formation
-        </label>
-    </div>
-
-    <div class="gs-items-grid" id="gs-items-container">
-        
-        <div class="gs-item-card" data-type="Logiciel">
-            <h3 class="gs-item-name">Logiciel Défibeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">1,790€ TVA Incl. +Forfait</span>
-            </div>
-            <p class="gs-item-description">Logiciel Défibeo pour la maintenance GMAO et la traçabilité des défibrillateurs.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-        <div class="gs-item-card" data-type="Formation">
-            <h3 class="gs-item-name">Formation Défibeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">250.00€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-        <div class="gs-item-card" data-type="Mise à jour">
-            <h3 class="gs-item-name">Mise à jour Défibeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">400.00€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Large actualisation Fév.2026 (optionnelle), nouveau système de tournée et 10 fonctionnalités.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-
-
-                <div class="gs-item-card" data-type="Logiciel">
-            <h3 class="gs-item-name">Extension Extincteo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">900€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Module intégré Extincteo pour la maintenance GMAO et la traçabilité des extincteurs.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-        <div class="gs-item-card" data-type="Formation">
-            <h3 class="gs-item-name">Extension Eduxeo</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">900€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Module intégré Eduxeo pour les formations, feuilles de présences, certificats et stagiaires.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-                <div class="gs-item-card" data-type="Logiciel">
-            <h3 class="gs-item-name">Extension Compta</h3>
-            <div class="gs-badge-container">
-                <span class="gs-badge">900€ TVA Incl.</span>
-            </div>
-            <p class="gs-item-description">Module intégré pour la comptabilité. Éditez des devis, des factures et des bons de livraisons.</p>
-            <div class="gs-button-group">
-                <a href="#" target="_blank" class="open-defibeo-contact gs-btn gs-btn-buy">Contact</a>
-                <button class="gs-btn gs-btn-quote gs-open-quote">Devis</button>
-            </div>
-        </div>
-
-
-    </div>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
