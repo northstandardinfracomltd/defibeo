@@ -3880,12 +3880,34 @@ Autres options à la demande.
 
 <div class="dfb-acc-list-container">
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // On récupère tous les boutons avec la classe
+    const contactButtons = document.querySelectorAll('.open-defibeo-contactWS');
+    
+    // On récupère l'élément du popup (ou le bouton original qui marche déjà)
+    const originalTrigger = document.getElementById('openBtn-defibeo-contact');
+
+    contactButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le lien de recharger la page
+            
+            if (originalTrigger) {
+                // On simule un clic sur le bouton original qui a déjà la logique
+                originalTrigger.click();
+            } else {
+                console.warn("Le déclencheur original ID 'openBtn-defibeo-contact' est introuvable.");
+            }
+        });
+    });
+});
+  </script>
   <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
       <div class="dfb-acc-title">Formation Défibeo</div>
       <div class="dfb-acc-price-cell">250.00€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX">Contact</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contact</a>
       </div>
     </summary>
     <div class="dfb-acc-content">
@@ -5720,6 +5742,13 @@ margin-top: 20px;
       margin-top: 20px;
     }
 
+
+
+    @media (max-width: 768px) {
+.footer-seo-links {
+       display: none !important;
+    }
+}
 
 
 .footer-seo-links {
