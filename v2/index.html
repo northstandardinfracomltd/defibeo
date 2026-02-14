@@ -3424,21 +3424,196 @@ font-family: 'DefibeoTAZ', sans-serif;
 
     <div class="container">
     <h2 class="okazu4" >Achetez le cerveau de votre entreprise</h2>
-      <div class="pricing" id="pricingplan">
-        <div class="okazu9 pricing-plan">
-          <h3 class="okazu10 castrate"><br><br><br>Logiciel livré prêt à l’usage et personnalisé à votre effigie.</h3>      
-          <p class="price okazu11">1,790€<span class="liza"> TTC une fois pour l'activation.<br></p> <p class="iris">Puis 350 € TTC/trimestre, forfait activation et abonnement typique pour un volume jusqu'à 5,000 défibrillateurs et 3 sessions administrateurs.</p>          <p class="okazu12">Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique. Chez Défibeo notre support est disponible 24/7 via WhatsApp. Vous bénéficiez d'une session de formation gratuite, ainsi que 10 heures gratuites pour des modifications personnalisées par les éditeurs de Défibeo. L’achat du logiciel n’est pas soumis à la TVA (0%).</p>
-<div class="oklm">
-  <a href="#" class="open-defibeo-contact okazu13 cta">
-    Contactez votre interlocuteur
-  </a>
-</div>
-          <div class="okazu007 pricing-plan007">
-          <h3 class="okazu10">Le saviez-vous? Vous pouvez essayer le logiciel Défibeo, il est possible d'annuler votre achat sous 30 jours si vous le souhaitez.</h3>      
-        </div>
-        </div>
 
-      </div>
+
+
+ <style>
+
+    .tpx-eval-wrapper {
+        max-width: 500px;
+        font-family: 'TextelpRAG', sans-serif;
+        font-weight: 100;
+        color: #202124;
+        line-height: 1.6;
+        margin: 20px auto;
+        text-align: left;
+    }
+
+    .tpx-eval-main-title {
+        font-size: 18px;
+        margin-bottom: 32px;
+        color: #000000;
+        display: block;
+            text-align: center;
+    }
+
+    /* Style de la Carte */
+    .tpx-eval-card {
+    display: block;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px solid #e0dfee;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    /* État Actif (Border + Background) */
+    .tpx-eval-card.tpx-is-active {
+border-color: #1a4bff;
+    border: 3px solid #1a4bff;
+    background-color: #ffffff;
+    }
+
+    .tpx-eval-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tpx-eval-header h2 {
+        font-size: 22px;
+        margin: 0;
+        font-weight: 100;
+        color: #ffffff;
+    }
+
+    /* Radio Button Custom */
+    .tpx-eval-radio-custom {
+        width: 24px;
+        height: 24px;
+        border: 3px solid #1a4bff;;
+        border-radius: 50%;
+        position: relative;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+        background: transparent;
+    }
+
+    .tpx-is-active .tpx-eval-radio-custom {
+        border-color: #1a4bff;
+    }
+
+    .tpx-is-active .tpx-eval-radio-custom::after {
+        content: "";
+        position: absolute;
+top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+        border-radius: 50%;
+        background: #1a4bff;
+    }
+
+    /* Contenu masqué par défaut */
+    .tpx-eval-collapsible {
+        display: none;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    .tpx-is-active .tpx-eval-collapsible {
+        display: block;
+    }
+
+    .tpx-eval-desc {
+        font-size: 18px;
+        color: #000;
+        margin: 0 0 20px 0;
+    }
+
+    .tpx-eval-price-box {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .tpx-eval-big-p {
+        font-size: 26px;
+        margin: 0;
+        color: #000 !important;
+    }
+
+    .tpx-eval-small-p {
+        font-size: 12px;
+        color: #000;
+    }
+
+    .tpx-eval-label-host {
+display: inline-block;
+    background: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid #674eff1c;
+    color: #000000;
+    }
+    
+    /* Input invisible */
+    .tpx-eval-hidden-radio {
+        display: none;
+    }
+</style>
+
+<div class="tpx-eval-wrapper">
+<h2 class="booba">Nos offres</h2>
+    <div class="tpx-eval-main-title">
+        Évaluez le coût de l’outil, pour un usage jusqu’à 10,000 requêtes mensuelles, au delà veuillez nous contacter. 
+        Le ROI est en moyenne de 23% et il représente un coût répercuté moyen de €0.09 par client ou utilisateur.
+    </div>
+
+    <label class="tpx-eval-card tpx-is-active" id="card-1">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" checked onchange="tpxToggle(1)">
+        <div class="tpx-eval-header">
+            <h2>Standard</h2>
+            <div class="tpx-eval-radio-custom"></div>
+        </div>
+        
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">€6,790</span>
+                <span class="tpx-eval-small-p">One time cost</span>
+            </div>
+            <div class="tpx-eval-label-host">+€198 par mois pour l’hébergement</div>
+        </div>
+    </label>
+
+    <label class="tpx-eval-card" id="card-2">
+        <input type="radio" name="tpx_pricing" class="tpx-eval-hidden-radio" onchange="tpxToggle(2)">
+        <div class="tpx-eval-header">
+            <h2>Access</h2>
+            <div class="tpx-eval-radio-custom"></div>
+        </div>
+        
+        <div class="tpx-eval-collapsible">
+            <p class="tpx-eval-desc">
+                Configuration sur mesure pour les besoins spécifiques et volumes élevés.
+            </p>
+            <div class="tpx-eval-price-box">
+                <span class="tpx-eval-big-p">€9,790</span>
+                <span class="tpx-eval-small-p">Setup cost</span>
+            </div>
+            <div class="tpx-eval-label-host">+€350 par mois pour l’hébergement</div>
+        </div>
+    </label>
+</div>
+
+<script>
+    function tpxToggle(selectedId) {
+        // Supprimer la classe active de toutes les cartes
+        document.querySelectorAll('.tpx-eval-card').forEach(card => {
+            card.classList.remove('tpx-is-active');
+        });
+        // Ajouter la classe à la carte sélectionnée
+        document.getElementById('card-' + selectedId).classList.add('tpx-is-active');
+    }
+</script>
     </div>
   </section>
 
