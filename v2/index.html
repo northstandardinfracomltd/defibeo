@@ -1142,7 +1142,8 @@ Une présentation personnalisée et détaillée du logiciel en écran partagé.
     </div>
 <button
   type="button"
-  class="open-defibeo-contact dfbgo-bar-action-btn"
+  id="openBtn-defibeo-contact"
+  class="dfbgo-bar-action-btn"
   href="#"
 >
   Contactez votre interlocuteur
@@ -3091,7 +3092,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="cp-layout-container__content">
       <h2 class="cp-layout-container__title">L'arborescence</h2>
       <p class="cp-layout-container__subtitle">L’interface du logiciel est simple et intuitive : vous accédez instantanément aux informations essentielles grâce à une lisibilité optimale des données. Tout est centralisé, de la fiche client au suivi des défibrillateurs, en passant par la génération de reçus PDF, la facturation, la gestion de la relation client et l’inventaire. Accessible directement depuis votre navigateur, la solution ne nécessite aucune installation.</p>
-      <a href="#" class="cp-layout-container__button">Créer mon compte</a>
+      <a href="/register" class="cp-layout-container__button">Créer mon compte</a>
     </div>
 
     <div class="cp-layout-container__media">
@@ -3398,7 +3399,7 @@ font-family: 'DefibeoTAZ', sans-serif;
 
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_Facilities.svg" alt="Personnalisé" >
-   <p class="infoplusTXT">Le réseau Facilities est un programme de Défibeo. Nous accompagnons les secteurs de l'hôtellerie, de l'immobilier, du sport etc. dans l'achat, la maîtrise et la supervision de leur parc de défibrillateurs et des services associés. Pour garantir une qualité optimale, nous recrutons directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de la solution Défibeo. <a href="#" class="grazioliXHG">Découvrir Défibeo Facilities</a></p>
+   <p class="infoplusTXT">Le réseau Facilities est un programme de Défibeo. Nous accompagnons les secteurs de l'hôtellerie, de l'immobilier, du sport etc. dans l'achat, la maîtrise et la supervision de leur parc de défibrillateurs et des services associés. Pour garantir une qualité optimale, nous recrutons directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de la solution Défibeo. <a href="/facilities" class="grazioliXHG">Découvrir Défibeo Facilities</a></p>
    </div>
 </div>
 
@@ -3612,7 +3613,7 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
                 <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation.</span>
             </div>
             <div class="tpx-eval-label-host">Puis 500€ TTC par mois.</div>
-            <br><a href="#" class="grazioli">Contactez-nous</a><br><br>
+            <br><a href="#" class="open-defibeo-contact grazioli">Contactez-nous</a><br><br>
         </div>
     </label>
 </div>
@@ -5187,6 +5188,10 @@ font-family: 'DefibeoMain', sans-serif !important;
         display: none !important;
     }
 }
+
+@media (max-width: 768px) {
+.barcodex {  margin-top: -100px; }
+}
     </style>
 
 
@@ -5245,9 +5250,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-     <p class="barcodex">Défibeo est recommandé par ses utilisateurs.</p>
+     <p class="barcodex">Défibeo est recommandé par ses utilisateurs!</p>
+<a href="https://es.trustpilot.com/review/defibeo.com" target="_blank">
     <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo_Trustpilot.svg" alt="Illustration">
-
+</a>
 <script>
 (function () {
   var mobileImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo_Trustpilot.svg";
