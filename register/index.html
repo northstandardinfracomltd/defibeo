@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de compte | Défibeo 2026</title>
+    <style>
+        @font-face {
+            font-family: 'DefibeoMain';
+            font-weight: 900 !important;
+            src: url('https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
+        }
+
+        :root {
+            --db-primary: #281698;
+            --db-bg-gradient: radial-gradient(#281698, #020248);
+            --db-black: #000000;
+            --db-gray: #f2f2f2;
+            --db-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'DefibeoMain', sans-serif; }
+
+        body, html { height: 100%; width: 100%; background-color: #fff; color: var(--db-black); }
+
+        /* Fix Desktop / Scroll Mobile */
+        @media (min-width: 993px) {
+            body { overflow: hidden; }
+        }
+        @media (max-width: 992px) {
+            body { overflow-y: auto; height: auto; }
+        }
+
+        .db-fs-main-wrapper { display: flex; height: 100vh; width: 100vw; }
+
+        /* --- Sidebar --- */
+        .db-fs-sidebar {
+            flex: 0 0 45%;
+            background: var(--db-bg-gradient) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .db-fs-logo { max-height: 120px; margin-bottom: 20px; }
+        .db-fs-sidebar p { max-width: 350px; line-height: 1.6; font-size: 1rem; opacity: 0.8; margin-bottom: 25px; font-weight: 100; }
+        
+        .db-fs-btn-more {
+            padding: 10px 25px;
+            border: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            font-weight: 900;
+            transition: var(--db-transition);
+        }
+        .db-fs-btn-more:hover { background: #fff; color: var(--db-primary); }
+
+        /* --- Formulaire --- */
+        .db-fs-content {
+            flex: 0 0 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .db-fs-container { width: 100%; max-width: 400px; }
+
+        .db-fs-group {
+            margin-bottom: 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--db-transition);
+            height: 0;
+            overflow: hidden;
+        }
+
+        .db-fs-group.active {
+            opacity: 1;
+            transform: translateY(0);
+            height: auto;
+            margin-bottom: 18px;
+        }
+
+        label { 
+            display: block; 
+            font-weight: 900; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid var(--db-black);
+            border-radius: 0; /* Minimaliste carré */
+            font-size: 0.95rem;
+            font-weight: 900;
+            outline: none;
+            background: #fff;
+        }
+
+        input:disabled { background: var(--db-gray); border-color: #ccc; color: #888; }
+
+        .db-fs-info { font-size: 0.7rem; margin-top: 5px; color: #666; font-weight: 100; }
+
+        /* Bouton Final */
+        .db-fs-submit {
+            display: block;
+            opacity: 0;
+            pointer-events: none;
+            width: 100%;
+            background: var(--db-black);
+            color: #fff;
+            padding: 18px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: var(--db-transition);
+        }
+        .db-fs-submit.visible { opacity: 1; pointer-events: all; }
+        .db-fs-submit:hover { background: var(--db-primary); }
+
+        /* Footer & Langue */
+        .db-fs-footer { 
+            position: absolute; bottom: 20px; width: 100%; text-align: center; 
+            font-size: 0.65rem; text-transform: uppercase; font-weight: 900;
+        }
+
+        #lang-switcher {
+            appearance: none; /* Supprime la flèche */
+            -webkit-appearance: none;
+            background: transparent;
+            border: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            cursor: pointer;
+            margin-top: 10px;
+            text-align: center;
+            outline: none;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .db-fs-main-wrapper { flex-direction: column; height: auto; }
+            .db-fs-sidebar { flex: 0 0 auto; padding: 60px 20px; }
+            .db-fs-content { flex: 0 0 auto; padding: 40px 20px 100px 20px; }
+            .db-fs-footer { position: relative; margin-top: 40px; bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="db-fs-main-wrapper">
+    <div class="db-fs-sidebar">
+        <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Logo" class="db-fs-logo">
+        <p>L'outil de gestion nouvelle génération. Puissant. Rapide. Défibeo 2026.</p>
+        <a href="#" class="db-fs-btn-more" id="btn-more">En savoir plus</a>
+    </div>
+
+    <div class="db-fs-content">
+        <div class="db-fs-container">
+            
+            <div class="db-fs-group active">
+                <label id="lbl-ent">Nom Entreprise</label>
+                <input type="text" id="input-ent" placeholder="Ex: Medical360" autocomplete="off">
+            </div>
+
+            <div class="db-fs-group" id="group-url">
+                <label id="lbl-url">Lien d'accès</label>
+                <input type="text" id="input-domain" disabled placeholder=".defibeo.com">
+            </div>
+
+            <div class="db-fs-group" id="group-email">
+                <label id="lbl-email">Votre Email</label>
+                <input type="email" id="input-email" placeholder="Ex: contact@medical360.com">
+            </div>
+
+            <div class="db-fs-group" id="group-tel">
+                <label id="lbl-tel">Votre Téléphone</label>
+                <input type="tel" id="input-tel" placeholder="06 12 34 56 78">
+            </div>
+
+            <div class="db-fs-group" id="group-pass">
+                <label id="lbl-pass">Mot de passe</label>
+                <input type="text" id="input-pass" maxlength="20">
+                <p class="db-fs-info" id="txt-pass-info">A-z, 0-9 (Max 20 chars).</p>
+            </div>
+
+            <a href="#" class="db-fs-submit" id="btn-submit">Activer l'abonnement</a>
+            <p id="txt-pay-info" style="display:none; text-align:center; margin-top:15px; font-size:0.65rem; font-weight:100; line-height:1.4;"></p>
+        </div>
+
+        <div class="db-fs-footer">
+            <p><span id="txt-copy"></span> | <a href="#" style="color:inherit;" id="link-cgu"></a></p>
+            <select id="lang-switcher">
+                <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="pt">PT</option><option value="de">DE</option><option value="nl">NL</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<script>
+    const trans = {
+        fr: { ent:"Entreprise", url:"Accès", email:"Email", tel:"Téléphone", pass:"Mot de passe", passI:"Lettres MAJ, min et chiffres requis.", btn:"Activer l'abonnement", pay:"Sécurisé par CB/Paypal. 199€ TTC/mois, sans engagement.", copy:"Défibeo 2026", cgu:"CGV / CGU", more:"En savoir plus" },
+        en: { ent:"Company", url:"Access", email:"Email", tel:"Phone", pass:"Password", passI:"Uppercase, lowercase & numbers required.", btn:"Activate now", pay:"Secure payment. €199/month, cancel anytime.", copy:"Défibeo 2026", cgu:"Terms & Conditions", more:"Learn more" },
+        es: { ent:"Empresa", url:"Acceso", email:"Email", tel:"Teléfono", pass:"Contraseña", passI:"Mayúsculas, minúsculas y números.", btn:"Activar suscripción", pay:"Pago seguro. 199€/mes, sin compromiso.", copy:"Défibeo 2026", cgu:"Términos legales", more:"Saber más" }
+    };
+
+    const show = id => document.getElementById(id).classList.add('active');
+
+    // Entreprise -> Email
+    document.getElementById('input-ent').addEventListener('input', e => {
+        let v = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, '');
+        if(v.length > 2) { 
+            document.getElementById('input-domain').value = v + ".defibeo.com";
+            show('group-url'); show('group-email');
+        }
+    });
+
+    // Email -> Tel
+    document.getElementById('input-email').addEventListener('input', e => {
+        if(e.target.value.includes('@')) show('group-tel');
+    });
+
+    // Tel -> Pass
+    document.getElementById('input-tel').addEventListener('input', e => {
+        if(e.target.value.length > 8) show('group-pass');
+    });
+
+    // Pass -> Button
+    document.getElementById('input-pass').addEventListener('input', e => {
+        const v = e.target.value;
+        if(v.length >= 6 && /[A-Z]/.test(v) && /[a-z]/.test(v) && /[0-9]/.test(v)) {
+            document.getElementById('btn-submit').classList.add('visible');
+            document.getElementById('txt-pay-info').style.display = 'block';
+        }
+    });
+
+    // Langues
+    const updateLang = (lang) => {
+        const l = trans[lang] || trans['en'];
+        document.getElementById('lbl-ent').innerText = l.ent;
+        document.getElementById('lbl-url').innerText = l.url;
+        document.getElementById('lbl-email').innerText = l.email;
+        document.getElementById('lbl-tel').innerText = l.tel;
+        document.getElementById('lbl-pass').innerText = l.pass;
+        document.getElementById('txt-pass-info').innerText = l.passI;
+        document.getElementById('btn-submit').innerText = l.btn;
+        document.getElementById('txt-pay-info').innerText = l.pay;
+        document.getElementById('txt-copy').innerText = l.copy;
+        document.getElementById('link-cgu').innerText = l.cgu;
+        document.getElementById('btn-more').innerText = l.more;
+    };
+
+    document.getElementById('lang-switcher').addEventListener('change', e => updateLang(e.target.value));
+    updateLang('fr');
+</script>
+</body>
+</html>
