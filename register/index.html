@@ -120,23 +120,23 @@
 
         /* Bouton Final */
         .db-fs-submit {
-            display: block;
-            opacity: 0;
-            pointer-events: none;
-            width: 100%;
-            background: var(--db-black);
-            color: #fff;
-            padding: 18px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 20px;
-            transition: var(--db-transition);
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    background: #674eff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 13px;
+    outline: #674eff solid 3px;
+    outline-offset: 3px;
         }
         .db-fs-submit.visible { opacity: 1; pointer-events: all; }
-        .db-fs-submit:hover { background: var(--db-primary); }
 
         /* Footer & Langue */
         .db-fs-footer { 
@@ -220,7 +220,7 @@
 
 <script>
     const trans = {
-        fr: { ent:"Entreprise", url:"Accès", email:"Email", tel:"Téléphone", pass:"Mot de passe", passI:"Lettres MAJ, min et chiffres requis.", btn:"Activer l'abonnement", pay:"Sécurisé par CB/Paypal. 199€ TTC/mois, sans engagement.", copy:"Défibeo 2026", cgu:"CGV / CGU", more:"En savoir plus" },
+        fr: { ent:"Nom de votre entreprise", url:"Lien d'accès", email:"Votre email", tel:"Votre téléphone", pass:"Créez un mot de passe", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur facture, veuillez nous contacter. Vous payerez aujourd'hui l'activation ainsi que le premier mois de l'abonnement.", copy:"Défibeo 2026", cgu:"Consulter les conditions générales de ventes et d'utilisation", more:"En savoir plus" },
         en: { ent:"Company", url:"Access", email:"Email", tel:"Phone", pass:"Password", passI:"Uppercase, lowercase & numbers required.", btn:"Activate now", pay:"Secure payment. €199/month, cancel anytime.", copy:"Défibeo 2026", cgu:"Terms & Conditions", more:"Learn more" },
         es: { ent:"Empresa", url:"Acceso", email:"Email", tel:"Teléfono", pass:"Contraseña", passI:"Mayúsculas, minúsculas y números.", btn:"Activar suscripción", pay:"Pago seguro. 199€/mes, sin compromiso.", copy:"Défibeo 2026", cgu:"Términos legales", more:"Saber más" }
     };
