@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Title & Description -->
+  <title>Défibeo | Logiciel Infogérance & GMAO Maintenance Défibrillateurs, Matériel Médical</title>
+  <meta name="description" content="Défibeo, le logiciel pour la maintenance GMAO des défibrillateurs du matériel médical. Recommandé pour les indépendants ou les larges entreprises.">
+
+    <!-- Indexation / Robots -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+
+
     <style>
         @font-face {
             font-family: 'DefibeoMain';
@@ -46,8 +56,19 @@
             text-align: center;
         }
 
-        .db-fs-logo { max-height: 120px; margin-bottom: 20px; }
-        .db-fs-sidebar p { max-width: 350px; line-height: 1.6; font-size: 18px; opacity: 1; margin-bottom: 25px; font-weight: 100; }
+        .db-fs-logo { max-height: 120px; margin-bottom: -15px; }
+        .db-fs-sidebar p { 
+            
+                max-width: 400px;
+    line-height: 1.6;
+    font-size: 18px;
+    opacity: 1;
+    margin-bottom: 30px;
+    cursor: default;
+    margin-top: 10px;
+    font-weight: 100;
+    
+        }
         
         .db-fs-btn-more {
             padding: 10px 25px;
@@ -104,19 +125,29 @@
     padding: 14px 15px;
     border: 1px solid #dedede;
     border-radius: 13px;
-    font-size: 0.95rem;
-    font-weight: 900;
+    font-size: 18px;
+    font-weight: 100;
     outline: none;
     background: #ffffff;
         }
 
+        input::placeholder {
+    color: #747474;
+        font-size: 18px;
+    font-weight: 100;
+    opacity: 1; /* Nécessaire pour Firefox qui baisse l'opacité par défaut */
+}
+
         input:disabled {
-                background: #efecff;
-    border-color: #c6bdff;
-    color: #a49ae4;
+background: #eeebff;
+    border: none;
+    color: #674eff;
+    text-align: center;
+        padding: 17px;
+        cursor: not-allowed;
         }
 
-        .db-fs-info { font-size: 0.7rem; margin-top: 5px; color: #666; font-weight: 100; }
+        .db-fs-info { font-size: 0.7rem; margin-top: 5px; color: #000; font-weight: 100; }
 
         /* Bouton Final */
         .db-fs-submit {
@@ -131,7 +162,7 @@
     text-decoration: none;
     font-weight: 900;
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 30px;
     border-radius: 13px;
     outline: #674eff solid 3px;
     outline-offset: 3px;
@@ -140,8 +171,13 @@
 
         /* Footer & Langue */
         .db-fs-footer { 
-            position: absolute; bottom: 20px; width: 100%; text-align: center; 
-            font-size: 0.65rem; text-transform: uppercase; font-weight: 900;
+position: absolute;
+    bottom: 20px;
+    color: #000;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 100;
         }
 
         #lang-switcher {
@@ -205,8 +241,14 @@
                 <p class="db-fs-info" id="txt-pass-info">A-z, 0-9 (Max 20 chars).</p>
             </div>
 
-            <a href="#" class="db-fs-submit" id="btn-submit">Activer l'abonnement</a>
-            <p id="txt-pay-info" style="display:none; text-align:center; margin-top:15px; font-size:0.65rem; font-weight:100; line-height:1.4;"></p>
+            <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-03H48174LV208752CNGIKDNI" class="db-fs-submit" id="btn-submit">Payer & Accéder</a>
+            <p id="txt-pay-info" style="display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 1.5;
+    cursor: default;    margin-top: 20px;"></p>
         </div>
 
         <div class="db-fs-footer">
@@ -220,7 +262,7 @@
 
 <script>
     const trans = {
-        fr: { ent:"Nom de votre entreprise", url:"Lien d'accès", email:"Votre email", tel:"Votre téléphone", pass:"Créez un mot de passe", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur facture, veuillez nous contacter. Vous payerez aujourd'hui l'activation (800€) ainsi que le premier mois de l'abonnement (250€).", copy:"Défibeo 2026", cgu:"Consulter les conditions générales de ventes et d'utilisation", more:"En savoir plus" },
+        fr: { ent:"Nom de l'entreprise", url:"Lien d'accès", email:"Votre email", tel:"Votre téléphone", pass:"Créez un mot de passe", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui l'activation (800€) ainsi que le premier mois de l'abonnement (250€).", copy:"Défibeo 2026", cgu:"Conditions Générales de Vente et d'Utilisation", more:"En savoir plus" },
         en: { ent:"Company", url:"Access", email:"Email", tel:"Phone", pass:"Password", passI:"Uppercase, lowercase & numbers required.", btn:"Activate now", pay:"Secure payment. €199/month, cancel anytime.", copy:"Défibeo 2026", cgu:"Terms & Conditions", more:"Learn more" },
         es: { ent:"Empresa", url:"Acceso", email:"Email", tel:"Teléfono", pass:"Contraseña", passI:"Mayúsculas, minúsculas y números.", btn:"Activar suscripción", pay:"Pago seguro. 199€/mes, sin compromiso.", copy:"Défibeo 2026", cgu:"Términos legales", more:"Saber más" }
     };
