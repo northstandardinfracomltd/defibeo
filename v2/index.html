@@ -2909,6 +2909,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <div class="dfb-browser-wrapper">
             <h2 class="kijhguijhuij222" >L'arborescence du logiciel</h2>
+
 <style>
          .kijhguijhuij222 {
     font-family: 'DefibeoTAZ', sans-serif;
@@ -2981,142 +2982,105 @@ document.addEventListener('DOMContentLoaded', function () {
   .dfb-menu{width:90%;}
   .dfb-browser{width:calc(100% - 20px); margin:20px auto;}
 }
+
+/* Container principal avec limitation de largeur */
+.cp-layout-container__wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "DefibeoFont", sans-serif;
+  overflow: hidden;
+}
+
+/* Grid à deux colonnes */
+.cp-layout-container__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center; /* Centre verticalement le texte par rapport à l'image */
+  gap: 40px; /* Espace entre les deux colonnes */
+}
+
+/* Alignement du texte à gauche */
+.cp-layout-container__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.cp-layout-container__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.cp-layout-container__subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: #4a4a4a; /* Couleur d'exemple */
+}
+
+/* Style du bouton */
+.cp-layout-container__button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #000; /* À modifier selon votre charte */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.cp-layout-container__button:hover {
+  opacity: 0.8;
+}
+
+/* Gestion de l'image en Full Width & Height */
+.cp-layout-container__media {
+  width: 100%;
+  height: 100%;
+}
+
+.cp-layout-container__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Garantit que l'image remplit l'espace sans déformation */
+}
+
+/* Responsive : Passage en une colonne sur mobile */
+@media (max-width: 768px) {
+  .cp-layout-container__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cp-layout-container__media {
+    order: -1; /* Place l'image au-dessus du texte sur mobile si souhaité */
+  }
+}
 </style>
 
-<div class="dfb-browser">
-    <div class="dfb-browser-header">
-        <div class="dfb-browser-buttons">
-            <div class="dfb-circle dfb-red"></div>
-            <div class="dfb-circle dfb-yellow"></div>
-            <div class="dfb-circle dfb-green"></div>
-        </div>
-        <div class="dfb-browser-url">demo.defibeo.com</div>
+
+<div class="cp-layout-container__wrapper">
+  <div class="cp-layout-container__grid">
+    
+    <div class="cp-layout-container__content">
+      <h2 class="cp-layout-container__title">Votre Titre Principal</h2>
+      <p class="cp-layout-container__subtitle">Ceci est votre sous-titre explicatif, aligné proprement à gauche avec le reste du contenu.</p>
+      <a href="#" class="cp-layout-container__button">Découvrir maintenant</a>
     </div>
 
-    <div class="dfb-container">
-        <div class="dfb-menu">
-            <div class="dfb-logo">
-                <img class="dfb-logo-img" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/REBRAND+ICON+BROWSER.svg" alt="Logo">
-                <div class="dfb-logo-text">Ajoutez votre logo!</div>
-            </div>
-
-            <!-- Défibrillateurs -->
-            <div class="dfb-parent">
-               <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit du tableau de tous les défibrillateurs.">Défibrillateurs</div>
-                     <div class="dfb-item" data-dfb-text="Visualisez vos défibrillateurs sur le territoire avec une carte interactive.">Plan</div>
-                    
-                </div>
-            </div>
-
-
-                        <div class="dfb-parent">
-                <div class="dfb-parent-title">Filtres Principaux</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action est nécessaire dans les 3 prochains mois, par exemple une date de péremption.">Action Requise 3 Mois</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs pour lesquels une action nécessaire est passée, par exemple une date de péremption.">Action Requise Expirée</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez éligibles aux maintenances et aux tournées.">Avec Maintenance</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez non éligibles aux maintenances et aux tournées.">Sans Maintenance</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs que vous mentionnez en portage ou sous-traitance d'une autre entreprise.">Sous Traitance</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs prêtés, par exemple pour un dépannage.">Prêts</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit de la traçabilité des défibrillateurs repris, par exemple pour un défaut de fabrication.">Reprises</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit des défibrillateurs inutilisés que vous mentionnés comme dans votre stock.">Stockés</div>
-                    <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">Archivés</div>
-                </div>
-            </div>
-
-            <!-- Maintenances -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">GMAO</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit d'un organisateur de tournées pour les techniciens avec la sélection des défibrillateurs.">Tournées</div>
-                    <div class="dfb-item" data-dfb-text="Téléchargez ou renvoyez les reçus PDF générés par les techniciens.">Reçus PDF</div>
-                </div>
-            </div>
-
- <!-- Productivité -->
-                        <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Productivité</div>
-                <div class="dfb-cloud">
-                   <div class="dfb-item" data-dfb-text="Il s'agit d'une veille des défibrillateurs obsolètes.">CRM Tickets</div>
-                                       <div class="dfb-item" data-dfb-text="Enregistrez les fichiers importants comme des manuels, notices, livrets et autres.">GED Librairie</div>
-                </div>
-            </div>
-
-            <!-- Registres -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Registres</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos clients.">Clients</div>
-                    <div class="dfb-item" data-dfb-text="Rédigez vos contrats avec un processus de signature en ligne ou hors ligne.">Contrats</div>
-                    <div class="dfb-item" data-dfb-text="Ajoutez des techniciens internes ou externes à votre entreprise.">Techniciens</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos fournisseurs.">Fournisseurs</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez les informations sur vos commerciaux.">Commerciaux</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez les commandes passées auprès de votre fournisseur.">Commandes</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrez pour veille les factures et les devis liés aux commandes des clients.">Factures & Devis</div>
-                </div>
-            </div>
-
-                        <!-- Variables -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Variables</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les labels des modèles de défibrillateurs.">Modèles</div>
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de contrats.">Contrats</div>
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de boîtiers.">Boîtiers</div>
-                    <div class="dfb-item" data-dfb-text="Créez, modifiez ou supprimez les modèles de pièces du stock.">Pièces</div>
-                </div>
-            </div>
-
-
-                        <div class="dfb-parent">
-                <div class="dfb-parent-title">Rubrique Inventaire</div>
-                <div class="dfb-cloud">
-                    <div class="dfb-item" data-dfb-text="Il s'agit de l'inventaire des défibrillateurs, pièces et consommables.">Stocks Individualisés</div>
-                    <div class="dfb-item" data-dfb-text="Prévoir d'années en années les ventes de pièces pour chaque client.">Livre Ventes Annuelles</div>
-                    <div class="dfb-item" data-dfb-text="Enregistrer les commandes passées auprès des fournisseurs.">Veille Livraisons</div>
-                </div>
-            </div>
-
-            <!-- Rappels & Sécurité -->
-            <div class="dfb-parent">
-                <div class="dfb-parent-title">Autres</div>
-                <div class="dfb-cloud">
-                  <div class="dfb-item" data-dfb-text="Des indicateurs et chiffres clés pour prendre de meilleures décisions.">Performances & Risques</div>
-                    <div class="dfb-item" data-dfb-text="Nous remontons les communications sur les rappels des fabricants concernant les défibrillateurs et les recommandations de sécurité de l'ANSM.">Veille ANSM</div>
-                    <div class="dfb-item" data-dfb-text="(Optionnel Gratuit) Il s'agit du formulaire que vous pouvez intégrer à votre site internet et partager via QR code et lien court également, pour récupérer des feedbacks, demandes et signalements directement sur le CRM.">Formulaire Partagé</div>
-                   <div class="dfb-item" data-dfb-text="(Optionnel Gratuit) L'API de Défibeo est ouverte, vous pouvez ainsi connecter les apps de tiers que vous souhaitez.">Connecteurs API</div>
-                    <div class="dfb-item" data-dfb-text="Pour obtenir de l'aide ou une formation.">Assistance Défibeo</div>
-                </div>
-            </div>
-
-
-
-        </div>
-
-        <div class="dfb-text-panel">
-            <img class="dfb-text-icon" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/aposthr.svg" alt="Icône">
-            <span>Cliquez sur une rubrique pour afficher le commentaire.</span>
-        </div>
+    <div class="cp-layout-container__media">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/IllustrationWebView.svg" alt="Illustration" class="cp-layout-container__image">
     </div>
+    
+  </div>
 </div>
 
-<script>
-(function(){
-    const wrapper = document.querySelector('.dfb-browser-wrapper');
-    const textPanel = wrapper.querySelector('.dfb-text-panel span');
-    const items = wrapper.querySelectorAll('.dfb-item');
 
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            items.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-            textPanel.textContent = item.getAttribute('data-dfb-text');
-            textPanel.scrollIntoView({behavior:'smooth', block:'center'});
-        });
-    });
-})();
-</script>
+
 </div>
 
 
