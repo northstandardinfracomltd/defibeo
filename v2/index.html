@@ -3072,10 +3072,7 @@ document.addEventListener('DOMContentLoaded', function () {
     grid-template-columns: 1fr;
     gap: 0px;
   }
-  
-  .cp-layout-container__media {
-    order: -1; /* Place l'image au-dessus du texte sur mobile si souhaité */
-  }
+
 }
 </style>
 
@@ -3517,26 +3514,41 @@ border-color: #16f2bb;
     }
 
     .tpx-eval-big-p {
-        font-size: 26px;
-        margin: 0;
-        color: #000 !important;
+font-size: 26px;
+    margin: 0;
+    color: #ffffff !important;
+    font-family: 'DefibeoMain', sans-serif;
     }
 
     .tpx-eval-small-p {
-        font-size: 12px;
-        color: #000;
+    font-size: 12px;
+    color: #ffffff;
+    font-family: 'DefibeoMain', sans-serif;
     }
 
     .tpx-eval-label-host {
 display: inline-block;
-    background: #ffffff;
-    padding: 6px 12px;
-    border-radius: 8px;
+    background: #ffffff12;
+    padding: 8px 16px;
+    border-radius: 100px;
     font-size: 14px;
     border: 1px solid #674eff1c;
-    color: #000000;
+    color: #ffffff;
+    font-family: 'DefibeoMain', sans-serif;
     }
-    
+        .grazioli {
+    padding: 8px 18px;
+    background-color: #7259ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 100;
+    transition: transform 0s ease;
+    font-family: 'DefibeoMain', sans-serif;
+    margin-right: -8px;
+ }
+
     /* Input invisible */
     .tpx-eval-hidden-radio {
         display: none;
@@ -3560,11 +3572,11 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
 Éligible jusqu’à 5,000 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation et l’activation du logiciel.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">€400 TTC</span>
-                <span class="tpx-eval-small-p">Une fois pour l'activation</span>
+                <span class="tpx-eval-big-p">€600</span>
+                <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation</span>
             </div>
             <div class="tpx-eval-label-host">Puis 250€ TTC par mois</div>
-            <a href="#" class="grazioli">Souscrire</a>
+            <br><a href="/register" class="grazioli">Souscrire</a>
         </div>
     </label>
 
@@ -3580,11 +3592,11 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
 Éligible à partir de 5,000 défibrillateurs, incluant jusqu'à 100 sessions administrateurs et utilisateurs. Accès livré sous 2 à 4 jours après l’achat de l’activation et l’activation du logiciel.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">4,000€ TTC</span>
-                <span class="tpx-eval-small-p">Une fois pour l'activation</span>
+                <span class="tpx-eval-big-p">4,000€</span>
+                <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation</span>
             </div>
             <div class="tpx-eval-label-host">Puis 500€ TTC par mois</div>
-            <a href="#" class="grazioli">Contactez-nous</a>
+            <br><a href="#" class="grazioli">Contactez-nous</a>
         </div>
     </label>
 </div>
@@ -3608,6 +3620,28 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
 <div class="defibeo-roi-calculator-wrapper-9x8k3" id="defibeo-roi-anchor-9x8k3">
 
 <style>
+
+  @media (max-width: 768px) {
+.cp-layout-container__content {
+    max-width: 76%;
+}
+
+
+
+
+.cp-layout-container__title {
+    font-size: 40px !important;
+}
+
+.cp-layout-container__wrapper {
+    max-width: 98%;
+    width: 98%;
+}
+
+    }
+
+
+
 .defibeo-roi-calculator-wrapper-9x8k3{
     font-family: 'DefibeoMain', sans-serif;
     font-weight: 100 !important;
