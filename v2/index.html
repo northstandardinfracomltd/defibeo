@@ -3911,14 +3911,57 @@ padding: 20px 25px;
       flex: none;
     }
   }
+
+  .full-width-toggle {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #f8f9fa; /* Couleur de fond légère */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.full-width-toggle:hover {
+    background-color: #e2e6ea;
+}
+
+/* Optionnel : ajuster l'espacement du titre parent */
+.tpx-eval-main-title {
+    margin-bottom: 15px;
+}
 </style>
 
 
-    <div class="tpx-eval-main-title">
-Options à la demande:
-    </div>
+<div class="tpx-eval-main-title">
+    <button id="toggle-options-btn" class="full-width-toggle">
+        Afficher les options supplémentaires
+    </button>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('toggle-options-btn');
+    const container = document.querySelector('.dfb-acc-list-container');
 
-<div class="dfb-acc-list-container">
+    btn.addEventListener('click', function() {
+        // Vérifie si le conteneur est actuellement caché
+        if (container.style.display === 'none' || container.style.display === '') {
+            // Affiche la div
+            container.style.display = 'block';
+            // Change le texte du bouton
+            btn.textContent = 'Ne plus afficher les options';
+        } else {
+            // Cache la div
+            container.style.display = 'none';
+            // Remet le texte initial
+            btn.textContent = 'Afficher les options supplémentaires';
+        }
+    });
+});</script>
+</div>
+
+<div class="dfb-acc-list-container" style="display: none;">
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
