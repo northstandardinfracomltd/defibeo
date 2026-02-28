@@ -9,9 +9,9 @@
   <meta name="description" content="Défibeo, le logiciel pour la maintenance GMAO des défibrillateurs du matériel médical. Recommandé pour les indépendants ou les larges entreprises.">
 
     <!-- Indexation / Robots -->
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow">
-  <meta name="bingbot" content="index, follow">
+  <meta name="robots" content="noindex, nofollow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="bingbot" content="noindex, nofollow">
 
   <link rel="icon" href="https://civilpromaws.s3.eu-north-1.amazonaws.com/isfavicondefibeo.png" type="image/png">
  <title>Défibeo | Logiciel Infogérance & GMAO Maintenance Défibrillateurs, Matériel Médical</title>
@@ -145,12 +145,12 @@
 }
 
         input:disabled {
-background: #eeebff;
-    border: none;
+background: linear-gradient(179deg, #ebe7ff, #ebe8ff);
+    border: 1px solid #d3ccff;
     color: #674eff;
     text-align: center;
-        padding: 17px;
-        cursor: not-allowed;
+    padding: 17px;
+    cursor: not-allowed;
         }
 
         .db-fs-info { font-size: 0.7rem; margin-top: 5px; color: #000; font-weight: 100; }
@@ -188,16 +188,18 @@ position: absolute;
 
         #lang-switcher {
             appearance: none; /* Supprime la flèche */
-            -webkit-appearance: none;
-            background: transparent;
-            border: none;
-            font-weight: 900;
-            text-transform: uppercase;
-            font-size: 0.65rem;
-            cursor: pointer;
-            margin-top: 10px;
-            text-align: center;
-            outline: none;
+-webkit-appearance: none;
+    background: transparent;
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
         }
 
         /* --- Responsive --- */
@@ -229,7 +231,7 @@ display: none !important;
         <p>Bienvenue à bord ! Finalisez votre inscription à Défibeo pour accéder à votre logiciel personnalisé en version Standard, pour la version Large veuillez nous contacter.</p>
         <a href="/" class="db-fs-btn-more" id="btn-more">En savoir plus</a>
                     <select id="lang-switcher">
-                <option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option><option value="pt">PT</option><option value="de">DE</option><option value="nl">NL</option>
+                <option value="fr">Français</option><option value="en">English</option><option value="es">Español</option><option value="pt">Português</option><option value="de">Deutsch</option><option value="nl">Nederlands</option>
             </select>
     </div>
 
@@ -272,8 +274,11 @@ display: none !important;
 <script>
     const trans = {
         fr: { ent:"Nom de l'entreprise", url:"Lien d'accès", email:"Votre email", tel:"Votre téléphone", pass:"Créez un mot de passe", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui l'activation (800€) ainsi que le premier mois de l'abonnement (250€).", copy:"Défibeo 2026", cgu:"Conditions Générales de Vente et d'Utilisation", more:"En savoir plus" },
-        en: { ent:"Company", url:"Access", email:"Email", tel:"Phone", pass:"Password", passI:"Uppercase, lowercase & numbers required.", btn:"Activate now", pay:"Secure payment. €199/month, cancel anytime.", copy:"Défibeo 2026", cgu:"Terms & Conditions", more:"Learn more" },
-        es: { ent:"Empresa", url:"Acceso", email:"Email", tel:"Teléfono", pass:"Contraseña", passI:"Mayúsculas, minúsculas y números.", btn:"Activar suscripción", pay:"Pago seguro. 199€/mes, sin compromiso.", copy:"Défibeo 2026", cgu:"Términos legales", more:"Saber más" }
+nl: { ent:"Bedrijfsnaam", url:"Toegangslink", email:"Uw e-mail", tel:"Uw telefoonnummer", pass:"Maak een wachtwoord aan", passI:"Ten minste één hoofdletter, één kleine letter en cijfers.", btn:"Abonnement activeren", pay:"Beveiligde betaling via creditcard of PayPal. Voor betaling op factuur via bankoverschrijving, neem contact met ons op. U betaalt vandaag de activatie (€ 800) en de eerste maand van het abonnement (€ 250).", copy:"Défibeo 2026", cgu:"Algemene Verkoop- en Gebruiksvoorwaarden", more:"Meer informatie" },
+de: { ent:"Unternehmensname", url:"Zugangslink", email:"Ihre E-Mail", tel:"Ihre Telefonnummer", pass:"Passwort erstellen", passI:"Mindestens ein Großbuchstabe, ein Kleinbuchstabe und Zahlen.", btn:"Abonnement aktivieren", pay:"Sichere Zahlung per Kreditkarte oder PayPal. Für Zahlungen auf Rechnung per Banküberweisung kontaktieren Sie uns bitte. Sie zahlen heute die Aktivierung (800 €) sowie den ersten Monat des Abonnements (250 €).", copy:"Défibeo 2026", cgu:"Allgemeine Geschäfts- und Nutzungsbedingungen", more:"Mehr erfahren" },
+en: { ent:"Company Name", url:"Access link", email:"Your email", tel:"Your phone number", pass:"Create a password", passI:"At least one uppercase letter, one lowercase letter, and numbers.", btn:"Activate subscription", pay:"Secure payment by credit card or PayPal. For payment by invoice via bank transfer, please contact us. You will pay the activation fee (€800) today, as well as the first month of the subscription (€250).", copy:"Défibeo 2026", cgu:"General Terms and Conditions of Sale and Use", more:"Learn more" },
+pt: { ent:"Nome da empresa", url:"Link de acesso", email:"Seu e-mail", tel:"Seu telefone", pass:"Crie uma senha", passI:"Pelo menos uma letra maiúscula, uma minúscula e números.", btn:"Ativar assinatura", pay:"Pagamento seguro por cartão de crédito ou PayPal. Para pagamento mediante fatura por transferência bancária, entre em contacto connosco. Pagará hoje a ativação (800 €) e o primeiro mês da assinatura (250 €).", copy:"Défibeo 2026", cgu:"Termos e Condições Gerais de Venda e Utilização", more:"Saber mais" },
+es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo electrónico", tel:"Su teléfono", pass:"Cree una contraseña", passI:"Al menos una letra mayúscula, una minúscula y números.", btn:"Activar suscripción", pay:"Pago seguro con tarjeta bancaria o PayPal. Para pagos mediante factura con transferencia bancaria, póngase en contacto con nosotros. Pagará hoy la activación (800 €) y el primer mes de suscripción (250 €).", copy:"Défibeo 2026", cgu:"Condiciones Generales de Venta y Uso", more:"Saber más" },
     };
 
     const show = id => document.getElementById(id).classList.add('active');
