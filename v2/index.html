@@ -118,6 +118,7 @@ margin-top: 0px;
         min-height: 240px !important;
         line-height: 50px !important;
         letter-spacing: -1px !important;
+        max-height: 240px !important;
 
     }
 
@@ -130,9 +131,12 @@ max-width: 85% !important;
     border-top: none;
     background: radial-gradient(#281698, #020248) !important;
     padding-top: 80px;
-    border-radius: 0px;
     padding-bottom: 1px;
-    margin-top: -1px;
+    max-width: 97%;
+    margin: auto;
+    border-radius: 23px;
+    margin-top: 20px;
+    border: 0px solid white;
 }
 
 .defibeo-roi-calculator-wrapper-9x8k3 {
@@ -1133,6 +1137,121 @@ width: 100%;
   });
 </script>
 
+<div class="lang-selector-container">
+    <div class="lang-button">
+        <label for="lang-select">Select Language:</label>
+        <select id="lang-select">
+            <option value="fr" selected>Français</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="de">Deutsch</option>
+            <option value="nl">Nederlands</option>
+        </select>
+    </div>
+</div>
+
+<style>
+    .lang-selector-container {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .lang-button {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 8px 16px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        border: 1px solid #444;
+    }
+
+    .lang-button label {
+        margin-right: 8px;
+        font-size: 13px;
+        white-space: nowrap;
+        opacity: 0.8;
+    }
+
+    .lang-button select {
+        background: transparent;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 2px;
+    }
+
+    /* Style des options pour les navigateurs qui le permettent */
+    .lang-button select option {
+        background-color: #1a1a1a;
+        color: white;
+    }
+</style>
+
+<script>
+    (function() {
+        // Ton dictionnaire de traductions
+        // Ajoute ici tes nouvelles clés au fur et à mesure
+        const translations = {
+            fr: {
+                "feature_title": "Données étanches",
+                "hero_button": "Commencer",
+                "contact_us": "Contactez-nous"
+            },
+            en: {
+                "feature_title": "Waterproof Data",
+                "hero_button": "Get Started",
+                "contact_us": "Contact Us"
+            },
+            es: {
+                "feature_title": "Datos estancos",
+                "hero_button": "Empezar",
+                "contact_us": "Contáctenos"
+            },
+            pt: {
+                "feature_title": "Dados estanques",
+                "hero_button": "Começar",
+                "contact_us": "Contate-nos"
+            },
+            de: {
+                "feature_title": "Wasserdichte Daten",
+                "hero_button": "Anfangen",
+                "contact_us": "Kontaktiere uns"
+            },
+            nl: {
+                "feature_title": "Waterdichte gegevens",
+                "hero_button": "Beginnen",
+                "contact_us": "Neem contact op"
+            }
+        };
+
+        const select = document.getElementById('lang-select');
+
+        select.addEventListener('change', (e) => {
+            const selectedLang = e.target.value;
+            
+            // On cible tous les éléments ayant l'attribut data-key
+            const elementsToTranslate = document.querySelectorAll('[data-key]');
+
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-key');
+                
+                // Si la traduction existe pour cette clé et cette langue
+                if (translations[selectedLang] && translations[selectedLang][key]) {
+                    el.innerText = translations[selectedLang][key];
+                }
+            });
+        });
+    })();
+</script>
 
 <!-- ================= BARRE INITIALE ================= -->
 <div class="dfbgo-bar-wrapper">
@@ -3019,7 +3138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 .position {
-    background: #11f5bc !important ;
+    background: radial-gradient(#281698, #020248) !important ;
 }
 
 
@@ -3140,7 +3259,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <div class="cp-layout-container__media">
-      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/googlemaps_defibeo.svg" alt="Illustration" class="cp-layout-container__image mimimage">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/googlemaps_defibeogeu.svg" alt="Illustration" class="cp-layout-container__image mimimage">
     </div>
     
   </div>
@@ -3179,13 +3298,13 @@ max-width: 96% !important;
 
 
         .buttonforGPS {
-background-color: #000 !important;
-    outline: #000 solid 3px !important;
+background-color: #674eff !important;
+    outline: #674eff solid 3px !important;
         }
 
 
         .dada {
-color: #000 !important;
+color: #fff !important;
         }
 
 
@@ -3557,10 +3676,10 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
         
         <div class="tpx-eval-collapsible">
             <p class="tpx-eval-desc">
-Éligible à partir de 5,000 défibrillateurs, incluant jusqu'à 100 sessions administrateurs et utilisateurs. Accès livré sous 2 à 4 jours après l’achat de l’activation et l’activation du logiciel. Interface personnalisée avec votre charte graphique, possibilité de modifier les compositions et logiques du logiciel.
+Éligible à partir de 5,000 défibrillateurs (volume illimité), incluant jusqu'à 15 sessions administrateurs et utilisateurs (pour d'autres volumes avec sous accès pour les clients et les techniciens, veuillez demander un devis). Accès livré sous 4 à 7 jours ouvrés après l’achat du logiciel (1 mois d'hébergement offert pour la prise en main). Interface personnalisée avec votre charte graphique et la possibilité de modifier les compositions et logiques du logiciel.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">6,000€</span>
+                <span class="tpx-eval-big-p">6,900€</span>
                 <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation.</span>
             </div>
             <div class="tpx-eval-label-host">Puis 500€ TTC par mois.</div>
@@ -3617,7 +3736,7 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
     margin: 0 auto;
     padding: 20px;
     background: transparent;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     margin-top: -70px;
     border-radius: 20px;
     border: 0px solid #ffffff00;
@@ -3835,7 +3954,7 @@ width: 100%;
     border-radius: 16px;
     cursor: pointer;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 100 !important;
     text-align: center;
     transition: opacity 0.3s ease;
 }
@@ -3906,7 +4025,7 @@ width: 100%;
       </div>
     </summary>
     <div class="dfb-acc-content">
-     Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes. Pour d'autres formats ou volumes, veuillez nous solliciter un devis.
+     Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes. Pour d'autres formats ou volumes, veuillez solliciter un devis.
     </div>
   </details>
 
@@ -4126,19 +4245,9 @@ document.getElementById('reset').onclick=()=>{
 
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO1.svg" alt="Personnalisé" >
-   <p class="infoplusTXT">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise.</p>
+   <p class="infoplusTXT">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise. Avec Défibeo Standard, la personnalisation est limitée au logo et aux couleurs.</p>
    </div>
 </div>
-
-
-<div class="infoplus">
-
-    <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO3.svg" alt="Hébergement Robuste" >
-<p class="infoplusTXT">Vous êtes autonome et indépendant grâce à notre licence d’achat du logiciel à vie, ainsi vous bénéficiez aussi d’un hébergement dédié à votre entreprise, uniquement pour vous, à la fois sécurisé, étanche et robuste. Vos données sont en sécurité, grâce à un système de multi-sauvegardes en ligne et hors ligne.</p>
-  </div>
-</div>
-
 
 <div class="infoplus">
 
@@ -4147,6 +4256,22 @@ document.getElementById('reset').onclick=()=>{
 <p class="infoplusTXT">Défibeo est utilisé par +130k défibrillateurs en Europe depuis 6 ans. Chaque jour, c'est environ 900 maintenances réalisées par nos utilisateurs. Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs & distributeurs de défibrillateurs exerçant dans ces pays ; Royaume-Uni (~55%), Allemagne (~15%), France (~10%), Belgique (~10%), Suisse (~5%) et Luxembourg (~5%).</p>
   </div>
 </div>
+
+<div class="infoplus">
+  <div class="lang-options-uniY">
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO6.svg" alt="Éditeur No-Code" >
+<p class="infoplusTXT">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.</p>
+  </div>
+</div>
+
+<div class="infoplus">
+
+    <div class="lang-options-uniY">
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO3.svg" alt="Hébergement Robuste" >
+<p class="infoplusTXT">Un hébergement puissant, flexible et fiable avec une redondance optimale. Défibeo s'appuie sur un serveur en ligne couplé à une sauvegarde physique gérée par notre branche Cieldata. Ces infrastructures sont réparties sur deux sites distincts et bénéficient des assurances et garanties les plus étendues. Vos données sont intégralement hébergées en France, à Pau (64).</p>
+  </div>
+</div>
+
 
 <div class="infoplus">
   
@@ -4165,12 +4290,7 @@ document.getElementById('reset').onclick=()=>{
   </div>
 </div>
 
-<div class="infoplus">
-  <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO6.svg" alt="Éditeur No-Code" >
-<p class="infoplusTXT">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone.</p>
-  </div>
-</div>
+
 
 
 
@@ -4220,11 +4340,14 @@ color: #000 !important;
 
   .LELOUP2 {
     border-top: none;
-background: radial-gradient(#281698, #020248) !important ;
+    background: radial-gradient(#281698, #020248) !important;
     padding-top: 80px;
-    border-radius: 0px;
     padding-bottom: 1px;
-    margin-top: -1px;
+    max-width: 97%;
+    margin: auto;
+    border-radius: 23px;
+    margin-top: 20px;
+    border: 0px solid white;
 
 }
 .okazu007 {
@@ -4459,11 +4582,11 @@ margin: auto;
 .infoplus-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px;
   padding: 20px 0;
-
+margin-bottom: -50px;
       width: 100%;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: auto;
 }
 
@@ -4702,6 +4825,8 @@ padding: 10px;
 
 
 .infoplus {
+      min-height: 530px;
+      padding-top: 35px !important;
 max-width: 400px;
     background: #fff;
     box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
@@ -4715,12 +4840,13 @@ max-width: 400px;
 }
 
 .infoplusTXT {
-  margin-top: 15px;
-  margin-bottom: 15px;
-      font-weight: 100 !important;
-  font-size: 16px;
-                        font-family: 'DefibeoMain', sans-serif;
-                        cursor: default;
+margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 100 !important;
+    font-size: 18px;
+    font-family: 'DefibeoMain', sans-serif;
+    cursor: default;
+    text-align: left;
 }
 
 
@@ -4908,8 +5034,9 @@ width: 300px !important;
 .fullwidth-imageISO img {
 width: 100%;
     margin: auto;
-    max-width: 300px;
-    margin-top: 25px;
+    max-width: 500px;
+    margin-top: -30px;
+    margin-bottom: -15px;
     height: auto;
     display: block;
 }
@@ -5335,14 +5462,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-     <p class="barcodex">Défibeo est recommandé par ses utilisateurs!</p>
-<a href="https://es.trustpilot.com/review/defibeo.com" target="_blank">
-    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo_Trustpilot.svg" alt="Illustration">
-</a>
+    <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo_cieldata.svg" alt="Illustration">
 <script>
 (function () {
-  var mobileImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo_Trustpilot.svg";
-  var desktopImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo_Trustpilot.svg";
+  var mobileImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo_cieldata.svg";
+  var desktopImage = "https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo_cieldata.svg";
 
   function swapImageForMobile() {
     var img = document.querySelector('img[src*="fundings.svg"]');
@@ -5366,7 +5490,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   <footer>
-    <p class="footertxt">&copy; 2026 Defibeo — Tous droits réservés.<br><br>Défibeo est une branche de ↗<a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a><br><br> ↗<a class="civilprom faj" href="http://cgvfr.defibeo.com/">Convention/CGV</a>↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/eng/">UK</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Deutschland</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgique</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a></p>
+    <p class="footertxt">&copy; 2026 Defibeo France — Tous droits réservés.<br><br>Logiciel édité par <a class="faj2 civilprom" href="https://cieldata.com/">Cieldata</a>. Identité graphique par <a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a>.<br><br> ↗<a class="civilprom faj" href="http://eula.defibeo.com/">EULA (Agreement)</a>↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/uk/">United Kingdom</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca/">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Germany</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgium</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a> ↗<a class="faj civilprom" href="https://defibeo.com/es/">Spain</a> ↗<a class="faj civilprom" href="https://defibeo.com/pt/">Portugal</a></p>
   </footer>
 
   <!-- Footer SEO Links -->
@@ -5815,14 +5939,15 @@ margin-top: 20px;
 
 
 .footer-seo-links {
-  
-background: #000 !important;
-    padding: 40px;
-    border-radius: 0px !important;
+background: black;
+    padding: 45px;
     font-size: 14px;
-    margin-bottom: -1000px !important;
-    font-weight: 100 !important;
+-    font-weight: 100 !important;
     border-top: 1px solid #e5e5e5;
+    max-width: 92%;
+    margin: auto;
+    border-radius: 23px;
+    margin-bottom: 30px !important; 
   
 }
 
