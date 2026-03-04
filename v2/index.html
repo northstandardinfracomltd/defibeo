@@ -2972,7 +2972,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <br><br><br>
 
 
-            <h2 class="kijhguijhuij">Compréhensif du métier de distributeur et mainteneur de défibrillateurs</h2>
+<h2 class="kijhguijhuij">Un outil structurant, compréhensif du métier de distributeur et mainteneur de défibrillateurs</h2>
 
 
     <div class="dfb-main-feature-grid-container">
@@ -3265,7 +3265,93 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </div>
 
+<style>
+  /* Conteneur principal avec la police spécifique */
+  .db-stats-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: "DefibeoFont", sans-serif;
+    font-size: 18px;
+    width: 100%;
+    margin: 2rem 0;
+  }
 
+  /* Style de chaque bloc individuel */
+  .db-stats-item {
+    flex: 1;
+    min-width: 250px; /* Force le passage à la ligne sur mobile */
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #f9f9f9; /* Optionnel : fond léger */
+    border-radius: 8px;
+  }
+
+  /* Conteneur du chiffre et du suffixe */
+  .db-stats-number-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Style du chiffre principal */
+  .db-stats-value {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  /* Style du suffixe (ex: %) plus petit */
+  .db-stats-suffix {
+    font-size: 1.5rem;
+    margin-left: 2px;
+  }
+
+  /* Style du paragraphe */
+  .db-stats-description {
+    margin: 0;
+    line-height: 1.4;
+    color: #444;
+  }
+
+  /* Responsive : Empilement sur écrans < 768px */
+  @media (max-width: 767px) {
+    .db-stats-wrapper {
+      flex-direction: column;
+    }
+    .db-stats-item {
+      min-width: 100%;
+    }
+  }
+</style>
+
+<div class="db-stats-wrapper">
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">123</span>
+      <span class="db-stats-suffix">%</span>
+    </div>
+    <p class="db-stats-description">Augmentation constatée sur les performances globales du système.</p>
+  </div>
+
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">45</span>
+      <span class="db-stats-suffix">k</span>
+    </div>
+    <p class="db-stats-description">Utilisateurs actifs ayant adopté la solution en moins d'un mois.</p>
+  </div>
+
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">99</span>
+      <span class="db-stats-suffix">.9</span>
+    </div>
+    <p class="db-stats-description">Taux de disponibilité garanti par notre infrastructure cloud.</p>
+  </div>
+</div>
 
 <div class="cp-layout-container__wrapper alphaomega">
   <div class="cp-layout-container__grid solutionfm">
