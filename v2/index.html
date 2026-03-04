@@ -3268,7 +3268,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <style>
   /* Conteneur principal avec la police spécifique */
   .db-stats-wrapper {
-    display: flex;
+display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
@@ -3276,16 +3276,27 @@ document.addEventListener('DOMContentLoaded', function () {
     font-size: 18px;
     width: 100%;
     margin: 2rem 0;
+    max-width: 1100px;
+    margin-top: -60px !important;
+    margin-bottom: 85px !important;
+    margin: auto;
   }
 
   /* Style de chaque bloc individuel */
   .db-stats-item {
     flex: 1;
-    min-width: 250px; /* Force le passage à la ligne sur mobile */
-    padding: 1.5rem;
+    min-width: 250px;
     text-align: center;
-    background-color: #f9f9f9; /* Optionnel : fond léger */
-    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8e8e8;
+    border-radius: 20px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: default;
+
   }
 
   /* Conteneur du chiffre et du suffixe */
@@ -3330,26 +3341,26 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="db-stats-wrapper">
   <div class="db-stats-item">
     <div class="db-stats-number-container">
-      <span class="db-stats-value">123</span>
+      <span class="db-stats-value">0.2</span>
       <span class="db-stats-suffix">%</span>
     </div>
-    <p class="db-stats-description">Augmentation constatée sur les performances globales du système.</p>
+    <p class="db-stats-description">Coût moyen répercuté la première année par maintenance du coût du logiciel pour un volume de 3500 maintenances.</p>
   </div>
 
   <div class="db-stats-item">
     <div class="db-stats-number-container">
-      <span class="db-stats-value">45</span>
-      <span class="db-stats-suffix">k</span>
+      <span class="db-stats-value">65</span>
+      <span class="db-stats-suffix">k€</span>
     </div>
-    <p class="db-stats-description">Utilisateurs actifs ayant adopté la solution en moins d'un mois.</p>
+    <p class="db-stats-description">Gain ROI par an en temps administratif et terrain économisé transformé en valeur salariale pour un volume de 3500 maintenances.</p>
   </div>
 
   <div class="db-stats-item">
     <div class="db-stats-number-container">
-      <span class="db-stats-value">99</span>
-      <span class="db-stats-suffix">.9</span>
+      <span class="db-stats-value">+99</span>
+      <span class="db-stats-suffix">%</span>
     </div>
-    <p class="db-stats-description">Taux de disponibilité garanti par notre infrastructure cloud.</p>
+    <p class="db-stats-description">Taux de disponibilité garanti par notre infrastructure cloud avec double redondance via notre datacenter Cieldata à Pau, France (64).</p>
   </div>
 </div>
 
@@ -6025,6 +6036,7 @@ margin-top: 20px;
 
 
 .footer-seo-links {
+  display: none !important;
 background: black;
     padding: 45px;
     font-size: 14px;
