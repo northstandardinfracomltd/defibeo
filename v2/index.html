@@ -1151,6 +1151,31 @@ width: 100%;
     </div>
 </div>
 
+<script>
+  window.addEventListener('scroll', function() {
+    const floatWrapper = document.querySelector('.db-float-wrapper');
+    const langSelector = document.querySelector('.lang-selector-container');
+    const scrollPos = window.scrollY;
+
+    // 1. Gestion de l'apparition de tes nouveaux boutons (100px)
+    if (scrollPos > 100) {
+        floatWrapper.classList.add('db-is-visible');
+    } else {
+        floatWrapper.classList.remove('db-is-visible');
+    }
+
+    // 2. Gestion de la disparition du sélecteur de langue (200px)
+    if (langSelector) { // Sécurité : on vérifie si l'élément existe
+        if (scrollPos > 200) {
+            langSelector.classList.add('lang-hidden');
+        } else {
+            langSelector.classList.remove('lang-hidden');
+        }
+    }
+});
+
+</script>
+
 <style>
     .lang-selector-container {
         position: fixed;
@@ -3228,7 +3253,7 @@ display: none !important;
 opacity: 0;
     visibility: hidden;
     transform: translateX(30px);
-    transition: all 0.4s ease-in-out;
+    transition: all 0s ease-in-out;
 
 position: fixed;
     top: 15px;
@@ -3298,7 +3323,23 @@ color: #000;
 font-weight: 100 !important;
 text-align: center;
 cursor: default;
+margin-top: 10px;
+    margin-bottom: 0px;
     }
+
+
+    /* On cible ton sélecteur existant */
+.lang-selector-container {
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Classe qui sera ajoutée par le JavaScript */
+.lang-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Empêche de cliquer dessus par erreur quand il est invisible */
+    transform: translateY(-10px); /* Petit effet de remontée vers le haut */
+}
 </style>
 
 <div class="db-float-wrapper">
