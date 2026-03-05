@@ -3225,6 +3225,11 @@ display: none !important;
 }
 /* Conteneur positionné en haut à droite */
 .db-float-wrapper {
+opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);
+    transition: all 0.4s ease-in-out;
+
 position: fixed;
     top: 15px;
     left: 15px;
@@ -3232,14 +3237,23 @@ position: fixed;
     flex-direction: column;
     gap: 12px;
     z-index: 9999;
-    background: #494796b0;
+    background: #fff;
     padding: 8px;
     border-radius: 16px;
-    border: 1px solid #7b76ff61;
+    border: 1px solid #e4e4e4;
+}
+
+.db-float-wrapper.db-is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
 }
 
 /* Style de base des "gélules" */
 .db-float-pill {
+    justify-content: center; 
+    min-width: 180px;
+
 font-family: 'DefibeoMain', sans-serif;
     box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
     display: flex;
@@ -3257,11 +3271,6 @@ font-family: 'DefibeoMain', sans-serif;
 
 
 /* Effets au survol */
-.db-float-pill:hover {
-    transform: scale(1.05) translateX(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    color: #ffffff;
-}
 
 /* Espacement de l'icône */
 .db-float-icon {
@@ -3281,9 +3290,19 @@ font-family: 'DefibeoMain', sans-serif;
         margin-right: 0;
     }
 }
+
+    .isotop {
+font-family: 'DefibeoMain', sans-serif;
+font-size: 18px;
+color: #000; 
+font-weight: 100 !important;
+text-align: center;
+cursor: default;
+    }
 </style>
 
 <div class="db-float-wrapper">
+  <p class="isotop">Contactez-nous!</p>
     <a href="tel:+33651517065" class="db-float-pill">
         <span class="db-float-text">Tel +33 6 51 51 70 65</span>
     </a>
@@ -3291,6 +3310,19 @@ font-family: 'DefibeoMain', sans-serif;
         <span class="db-float-text">Mail mail@defibeo.com</span>
     </a>
 </div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const floatWrapper = document.querySelector('.db-float-wrapper');
+    
+    // Si le scroll dépasse 100px
+    if (window.scrollY > 100) {
+        floatWrapper.classList.add('db-is-visible');
+    } else {
+        floatWrapper.classList.remove('db-is-visible');
+    }
+});
+</script>
 
 <div class="cp-layout-container__wrapper">
   <div class="cp-layout-container__grid">
@@ -3413,10 +3445,13 @@ font-size: 69px;
   /* Responsive : Empilement sur écrans < 768px */
   @media (max-width: 767px) {
     .db-stats-wrapper {
+          gap: 10px;
       flex-direction: column;
+    
     }
     .db-stats-item {
-      min-width: 100%;
+max-width: 85%;
+        margin: auto;
     }
   }
 </style>
@@ -4201,7 +4236,7 @@ width: 100%;
       <div class="dfb-acc-title">Formation Défibeo</div>
       <div class="dfb-acc-price-cell">250.00€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Obtenir</a>
       </div>
     </summary>
     <div class="dfb-acc-content">
@@ -4214,20 +4249,35 @@ width: 100%;
       <div class="dfb-acc-title">Mise à jour Défibeo</div>
       <div class="dfb-acc-price-cell">500.00€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Obtenir</a>
       </div>
     </summary>
     <div class="dfb-acc-content">
-      Large actualisation Février 2026 (optionnelle). Nouvelle interface UI, amélioration de l'intégration de Google Maps, amélioration des signalements avec QR code, options avancées pour le planificateur de tournées, fonctionnalité de réponse dans le CRM, système de notation post-maintenance, amélioration du suivi comptable avec la génération de proforma, etc.
+      Large actualisation Février 2026 (optionnelle). Nouvelle interface UI, amélioration de l'intégration de Google Maps, amélioration des signalements avec QR code, options avancées pour le planificateur de tournées, fonctionnalité de réponse dans le CRM, système de notation post-maintenance, amélioration du suivi comptable, etc.
     </div>
   </details>
+
+
+    <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title">Portail Clients Défibeo</div>
+      <div class="dfb-acc-price-cell">500.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Obtenir</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content">
+      Offrez à vos clients un accès à leurs informations et données avec une interface personnalisée. Des frais d'hébergements supplémentaires seront nécessaires. 
+    </div>
+  </details>
+
 
   <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
       <div class="dfb-acc-title">Extension Extincteo</div>
       <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Obtenir</a>
       </div>
     </summary>
     <div class="dfb-acc-content">
@@ -4240,7 +4290,7 @@ width: 100%;
       <div class="dfb-acc-title">Extension Eduxeo</div>
       <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Obtenir</a>
       </div>
     </summary>
     <div class="dfb-acc-content">
@@ -4253,7 +4303,7 @@ width: 100%;
       <div class="dfb-acc-title">Extension Compta</div>
       <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Obtenir</a>
       </div>
     </summary>
     <div class="dfb-acc-content">
