@@ -3217,8 +3217,82 @@ background: #ffffff !important;
   }
 
 }
+
+
+/* Conteneur positionné en haut à droite */
+.db-float-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999; /* Pour rester au-dessus de tout */
+    font-family: sans-serif;
+}
+
+/* Style de base des "gélules" */
+.db-float-pill {
+    display: flex;
+    align-items: center;
+    padding: 10px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Couleurs spécifiques (ajustables selon ta charte) */
+.db-float-phone {
+    background-color: rgba(37, 211, 102, 0.9); /* Vert type WhatsApp/Tel */
+}
+
+.db-float-mail {
+    background-color: rgba(0, 122, 255, 0.9); /* Bleu moderne */
+}
+
+/* Effets au survol */
+.db-float-pill:hover {
+    transform: scale(1.05) translateX(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* Espacement de l'icône */
+.db-float-icon {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+/* Responsive : On cache le texte sur mobile si besoin pour ne garder que les icônes */
+@media (max-width: 480px) {
+    .db-float-text {
+        display: none;
+    }
+    .db-float-pill {
+        padding: 10px;
+    }
+    .db-float-icon {
+        margin-right: 0;
+    }
+}
 </style>
 
+<div class="db-float-wrapper">
+    <a href="tel:+33651517065" class="db-float-pill db-float-phone">
+        <span class="db-float-icon">📞</span>
+        <span class="db-float-text">Tel +33 6 51 51 70 65</span>
+    </a>
+    <a href="mailto:mail@defibeo.com" class="db-float-pill db-float-mail">
+        <span class="db-float-icon">✉️</span>
+        <span class="db-float-text">Mail mail@defibeo.com</span>
+    </a>
+</div>
 
 <div class="cp-layout-container__wrapper">
   <div class="cp-layout-container__grid">
