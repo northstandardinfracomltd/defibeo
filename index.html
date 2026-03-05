@@ -1121,7 +1121,15 @@ width: 100%;
   animation: shake-horizontal 0.5s ease-in-out;
 }
 
+@media (max-width: 900px) {
+    .LELOUP2 {
+        padding-top: 0px !important;
+    }
 
+    .full-width-toggle {
+    max-width: 225px !important;
+    }
+}
 
 </style>
 
@@ -1137,11 +1145,603 @@ width: 100%;
   });
 </script>
 
+<div class="lang-selector-container">
+    <div class="lang-button">
+        <label for="lang-select">Select Language:</label>
+        <select id="lang-select">
+            <option value="fr" selected>Français</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="de">Deutsch</option>
+            <option value="nl">Nederlands</option>
+        </select>
+    </div>
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const floatWrapper = document.querySelector('.db-float-wrapper');
+    const langSelector = document.querySelector('.lang-selector-container');
+    const scrollPos = window.scrollY;
+
+    // 1. Gestion de l'apparition de tes nouveaux boutons (100px)
+    if (scrollPos > 100) {
+        floatWrapper.classList.add('db-is-visible');
+    } else {
+        floatWrapper.classList.remove('db-is-visible');
+    }
+
+    // 2. Gestion de la disparition du sélecteur de langue (200px)
+    if (langSelector) { // Sécurité : on vérifie si l'élément existe
+        if (scrollPos > 200) {
+            langSelector.classList.add('lang-hidden');
+        } else {
+            langSelector.classList.remove('lang-hidden');
+        }
+    }
+});
+
+</script>
+
+<style>
+    .lang-selector-container {
+        position: fixed;
+    bottom: 15px;
+    left: 15px;
+        z-index: 9999;
+    }
+
+    .lang-button {
+background-color: #ffffff;
+    color: #000000;
+    padding: 8px 16px;
+    padding-bottom: 7px !important;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 8%);
+    border: 1px solid #dbdbdb;
+    }
+
+    .lang-button label {
+    margin-right: 0px;
+    font-size: 16px;
+    white-space: nowrap;
+    opacity: 1;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+
+    .lang-button select {
+     background: transparent;
+    color: #000000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 16px;
+    padding: 2px;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+
+    /* Style des options pour les navigateurs qui le permettent */
+    .lang-button select option {
+        background-color: #1a1a1a;
+        color: white;
+    }
+</style>
+
+<script>
+    (function() {
+        // Ton dictionnaire de traductions
+        // Ajoute ici tes nouvelles clés au fur et à mesure
+        const translations = {
+            fr: {
+              "TRANSLATEA6": "Fermer",
+"TRANSLATEA1": "Comment souhaitez-vous nous contacter?",
+"TRANSLATEA2": "Téléphone",
+"TRANSLATEA3": "Email",
+"TRANSLATEA4": "Écran Partagé",
+"TRANSLATEA5": "Réserver une démo",
+                "TRANSLATE000001": "Données étanches",
+                "TRANSLATE000002": "Une présentation personnalisée et détaillée du logiciel en écran partagé.",
+                "TRANSLATE000003": "Contactez votre interlocuteur",
+                "TRANSLATE000200": "Contactez-nous!",
+                "TRANSLATE000007": "Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.",
+                "TRANSLATE000008": "Créer mon compte",
+                "TRANSLATE000009": "Infogérance",
+                "TRANSLATE0000010": "Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.",
+                "TRANSLATE0000011": "Contactez-nous",
+                "TRANSLATE0000012": "GMAO",
+                "TRANSLATE0000013": "Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.",
+                "TRANSLATE0000014": "Commencer",
+                "TRANSLATE0000015": "Mobilité",
+                "TRANSLATE0000016": "Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.",
+                "TRANSLATE0000017": "Créer mon logiciel",
+                "TRANSLATE0000018": "Un outil structurant, compréhensif du métier de distributeur et mainteneur de défibrillateurs",
+                "TRANSLATE000019": "Rapports PDF",
+                "TRANSLATE000020": "Génération automatique de rapports PDF basés sur des modèles personnalisables (contenu et identité visuelle), incluant les points de vérification, les informations du défibrillateur, une photographie et la signature numérique.",
+                "TRANSLATE000024x": "Centralisez vos pièces comptables par profil client, suivez les consommables à facturer selon les spécificités de chaque contrat et générez instantanément vos pièces comptables.",
+                "TRANSLATE000023": "Suivi comptable",
+                "TRANSLATE0000021": "Système de tournées",
+                "TRANSLATE0000022": "Gérez vos ordres de mission de A à Z : proposez à vos techniciens un trajet optimisé avec Google Maps, le contrôle de leur stock embarqué et une gestion simplifiée de leurs feuilles de temps / relevé d'heures.",
+                "TRANSLATE0000024": "Modération",
+                "TRANSLATE0000025": "Vérifiez les informations saisies par les techniciens grâce à la modération avant d'envoyer le rapport PDF par email automatique au client et de mettre à jour la base de données.",
+                "TRANSLATE000026": "Qualité de service",
+                "TRANSLATE000027": "Digitalisez la gestion de vos interventions et votre traçabilité pour accroître la satisfaction de vos clients. Gagnez en fiabilité grâce à une collecte rigoureuse des données de maintenance. Email de mesure de satisfaction client à l'issue de chaque intervention.",
+                "TRANSLATE000028": "Bénéficiez d’un hébergement robuste avec redondance. Que vous travailliez avec des collaborateurs internes ou externes, la confidentialité est assurée : les techniciens disposent d'accès restreints par rapport aux administrateurs.",
+                "TRANSLATE000030": "L'arborescence",
+                "TRANSLATE000031": "L’interface du logiciel est simple et intuitive : vous accédez instantanément aux informations essentielles grâce à une lisibilité optimale des données. Tout est centralisé, de la fiche client au suivi des défibrillateurs, en passant par la génération de reçus PDF, la facturation, la gestion de la relation client et l’inventaire. Accessible directement depuis votre navigateur, la solution ne nécessite aucune installation.",
+                "TRANSLATE000032": "Créer mon compte",
+                "TRANSLATE000033": "Signalements",
+                "TRANSLATE000034": "Commandez vos stickers vinyles personnalisés haute performance (résistants aux UV et aux intempéries) directement depuis votre logiciel Défibeo, à partir de 200 unités. Chaque sticker intègre un QR code permettant à un passant ou à votre client de signaler instantanément une information (incident technique, dégradation, utilisation, etc.). Vous centralisez ainsi, directement dans votre CRM Défibeo, toutes les remontées de terrain. Cet outil vous permet d'optimiser vos opérations en déterminant rapidement si une intervention sur place est requise ou si une résolution à distance est possible.",
+                "TRANSLATE000035": "J'ai une question!",
+                "TRANSLATE000036": "Trajet rationalisé",
+                "TRANSLATE000037": "Appuyez-vous sur Google Maps pour l’optimisation des tournées, laissez le logiciel attribuer un ordre de passage pour chaque maintenance. Le technicien peut autoriser la localisation en direct de sa position avec l’app Google Maps, donnant ainsi la capacité, par exemple, aux contrôleurs de gestion de savoir où en est le technicien, sans avoir besoin de solution coûteuse. L’organisateur de tournée comprend la gestion des points de départs et arrivés quotidiens si la tournée se réalise sur plusieurs jours.",
+                "TRANSLATE000038": "J'ai une question!",
+                "TRANSLATE000039": "Coût moyen répercuté la première année pour l'achat du logiciel par maintenance, évalué sur la base d'un volume de 3,500 interventions.",
+                "TRANSLATE000040": "Gain annuel ROI en productivité (administratif et terrain) valorisé en coûts salariaux, évalué pour un volume de 3,500 interventions.",
+                "TRANSLATE000041": "Taux de disponibilité garanti par notre infrastructure cloud en double redondance, hébergée dans notre datacenter Cieldata à Pau (64).",
+                "TRANSLATE000042": "Solution FM",
+                "TRANSLATE000043": "Défibeo accompagne aussi les acteurs de l'hôtellerie, de l'immobilier, des services publiques, du sport, etc. avec Défibeo Facilities ; un service clé en main incluant l'achat, la gestion et la supervision de leur parc de défibrillateurs. En recrutant directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de notre solution logicielle, nous garantissons ainsi une maîtrise d'œuvre totale. Ce dispositif permet au client final de déléguer 100% de la gestion de ses équipements de secours en toute sérénité.",
+                "TRANSLATE000044": "J'ai une question!",
+                "TRANSLATE000050": "Achetez le cerveau de votre entreprise",
+                "TRANSLATE000051": "Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré prêt à l’usage et personnalisé à votre effigie. Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique (aide, ajustements, etc.). Chez Défibeo notre support est disponible 24/7 via WhatsApp en français. L’achat du logiciel n’est pas soumis à la TVA (0%).",
+                "TRANSLATE000052": "Éligible jusqu’à 5,000 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation et l’activation du logiciel.",
+                "TRANSLATE000054": "(TTC) Une fois pour l'activation.",
+                "TRANSLATE000055": "Puis 250€ TTC par mois.",
+                "TRANSLATE000056": "Souscrire",
+                "TRANSLATE000057": "Éligible à partir de 5,000 défibrillateurs (volume illimité), incluant jusqu'à 25 sessions administrateurs (pour d'autres volumes, veuillez demander un devis). Accès livré sous 4 à 7 jours ouvrés après l’achat du logiciel (1 mois d'hébergement offert pour la prise en main). Interface personnalisée avec votre charte graphique et la possibilité de modifier les compositions et logiques du logiciel.",
+                "TRANSLATE000059": "(TTC) Une fois pour l'activation.",
+                "TRANSLATE000060": "Puis 500€ TTC par mois.",
+                "TRANSLATE000061": "Contactez-nous",
+                "TRANSLATE000070": "Formation",
+                "TRANSLATE000071": "Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes. Pour d'autres formats ou volumes, veuillez solliciter un devis.",
+                "TRANSLATE000074": "Publiée en Mars 2026. Nouvelle interface UI, amélioration de l'intégration de Google Maps, amélioration des signalements avec QR code et d'impression des stickers, options avancées pour le planificateur de tournées, fonctionnalité de réponse de l'agent dans le CRM, système de notation post-maintenance, amélioration du suivi comptable, etc.",
+                "TRANSLATE000072": "Mise à jour",
+                "TRANSLATE000075": "Portail Clients",
+                "TRANSLATE000077": "Offrez à vos clients un accès à leurs informations et données avec une interface personnalisée. Des frais d'hébergements supplémentaires seront peut-être nécessaires selon le volume souhaité.",
+                "TRANSLATE000078": "Portail Techniciens",
+                "TRANSLATE000081": "Extension Extincteo",
+                "TRANSLATE000083": "Module intégré Extincteo pour la maintenance GMAO et la traçabilité des extincteurs. Outre des informations techniques différentes, le module est similaire à celui de Défibeo, avec des fiches d'équipements, des signalements, des planifications de tournées, etc.",
+                "TRANSLATE000084": "Extension Eduxeo",
+                "TRANSLATE000086": "Module intégré Eduxeo pour les formations, feuilles de présences, certificats et stagiaires. L'allié pour les organismes de formations et les entreprises qui gèrent des formations en interne.",
+                "TRANSLATE000087": "Extension Compta",
+                "TRANSLATE000089": "Module intégré pour la comptabilité. Éditez des devis, des factures et des bons de livraisons directement depuis le logiciel, conforme à la législation en vigueur. Exportez vos données comptables pour les intégrer à votre logiciel de comptabilité (ex: Quickbooks, Sage, etc.).",
+                "TRANSLATE000100": "Facilitez vos usages et processus du quotidien",
+                "TRANSLATE000101": "Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise. Avec Défibeo Standard, la personnalisation est limitée au logo et aux couleurs.",
+                "TRANSLATE000102": "Défibeo est utilisé par +130k défibrillateurs en Europe depuis 6 ans. Chaque jour, c'est environ 900 maintenances réalisées par nos utilisateurs. Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs & distributeurs de défibrillateurs exerçant dans ces pays ; Royaume-Uni (~55%), Allemagne (~15%), France (~10%), Belgique (~10%), Suisse (~5%) et Luxembourg (~5%).",
+                "TRANSLATE000103": "Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.",
+                "TRANSLATE000104": "Un hébergement puissant, flexible et fiable avec une redondance optimale. Défibeo s'appuie sur un serveur en ligne couplé à une sauvegarde physique gérée par notre branche Cieldata. Ces infrastructures sont réparties sur deux sites distincts et bénéficient des assurances et garanties les plus étendues. Vos données sont intégralement hébergées en France, à Pau (64).",
+                "TRANSLATE000105": "Défibeo intègre les propriétés de tous les modèles de défibrillateurs tels que Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.",
+                "TRANSLATE000106": "Défibeo vous facilite la publication de vos défibrillateurs sur la plateforme gouvernementale française GEO DAE grâce à un export en lot conforme à ses exigences. Par exemple, un technicien peut signaler qu’un défibrillateur sur lequel il intervient est absent de GEO DAE, permettant ainsi à l’administrateur de suivre l'avancement de son ajout sur la plateforme."
+            },
+            en: {
+                "TRANSLATE000001": "Waterproof data",
+                "TRANSLATEA6": "Close",
+"TRANSLATEA1": "How would you like to contact us?",
+"TRANSLATEA2": "Phone",
+"TRANSLATEA3": "Email",
+"TRANSLATEA4": "Split Screen",
+"TRANSLATEA5": "Book a demo",
+                "TRANSLATE000002": "A personalized and detailed presentation of the software in split-screen mode.",
+                "TRANSLATE000003": "Contact your representative",
+                "TRANSLATE000200": "Contact us!",
+                "TRANSLATE000007": "Your new link in the chain of survival. Take control of the management and maintenance of your defibrillators with specialized business software. No more chaos from decentralized and offline work. Unleash your potential, increase efficiency, and give your business a new boost.",
+                "TRANSLATE000008": "Create my account",
+                "TRANSLATE000009": "Facilities Management",
+                "TRANSLATE0000010": "Centralize and guarantee the traceability of all information, activities, and data for defibrillators and customers.",
+                "TRANSLATE0000011": "Contact us",
+                "TRANSLATE0000012": "CMMS",
+                "TRANSLATE0000013": "Software composed of specific features for the business of defibrillator distributors and maintainers.",
+                "TRANSLATE0000014": "Get started",
+                "TRANSLATE0000015": "Mobility",
+                "TRANSLATE0000016": "Because maintenance happens in the field, the software accompanies you everywhere on computer and smartphone.",
+                "TRANSLATE0000017": "Create my software",
+                "TRANSLATE0000018": "A structuring tool, understanding the business of defibrillator distributors and maintainers",
+                "TRANSLATE000019": "PDF Reports",
+                "TRANSLATE000020": "Automatic generation of PDF reports based on customizable templates (content and visual identity), including verification points, defibrillator information, a photograph, and digital signature.",
+                "TRANSLATE000024x": "Centralize your accounting documents by customer profile, track consumables to be invoiced according to the specifics of each contract, and instantly generate your accounting documents.",
+                "TRANSLATE000023": "Accounting tracking",
+                "TRANSLATE0000021": "Tour system",
+                "TRANSLATE0000022": "Manage your mission orders from A to Z: offer your technicians an optimized route with Google Maps, control of their onboard stock, and simplified management of their timesheets / hours tracking.",
+                "TRANSLATE000024": "Moderation",
+                "TRANSLATE000025": "Verify the information entered by technicians through moderation before sending the PDF report by automatic email to the customer and updating the database.",
+                "TRANSLATE000026": "Quality of service",
+                "TRANSLATE000027": "Digitize the management of your interventions and your traceability to increase customer satisfaction. Gain reliability through rigorous collection of maintenance data. Customer satisfaction measurement email at the end of each intervention.",
+                "TRANSLATE000028": "Benefit from robust hosting with redundancy. Whether you work with internal or external collaborators, confidentiality is ensured: technicians have restricted access compared to administrators.",
+                "TRANSLATE000030": "The tree structure",
+                "TRANSLATE000031": "The software interface is simple and intuitive: you instantly access essential information thanks to optimal data readability. Everything is centralized, from the customer file to defibrillator tracking, including the generation of PDF receipts, invoicing, CRM, and inventory. Accessible directly from your browser, the solution requires no installation.",
+                "TRANSLATE000032": "Create my account",
+                "TRANSLATE000033": "Reports",
+                "TRANSLATE000034": "Order your custom high-performance vinyl stickers (UV and weather resistant) directly from your Défibeo software, starting from 200 units. Each sticker includes a QR code allowing a passerby or your customer to instantly report information (technical incident, damage, use, etc.). You thus centralize all field feedback directly in your Défibeo CRM. This tool allows you to optimize your operations by quickly determining if an on-site intervention is required or if a remote resolution is possible.",
+                "TRANSLATE000035": "I have a question!",
+                "TRANSLATE000036": "Streamlined route",
+                "TRANSLATE000037": "Rely on Google Maps for tour optimization, let the software assign a passage order for each maintenance. The technician can authorize live location sharing with the Google Maps app, giving, for example, management controllers the ability to know where the technician is without needing expensive solutions. The tour organizer includes the management of daily start and arrival points if the tour takes place over several days.",
+                "TRANSLATE000038": "I have a question!",
+                "TRANSLATE000039": "Average cost passed on in the first year for the purchase of the software per maintenance, evaluated based on a volume of 3,500 interventions.",
+                "TRANSLATE000040": "Annual ROI gain in productivity (administrative and field) valued in salary costs, evaluated for a volume of 3,500 interventions.",
+                "TRANSLATE000041": "Availability rate guaranteed by our double redundancy cloud infrastructure, hosted in our Cieldata datacenter in Pau (64).",
+                "TRANSLATE000042": "FM Solution",
+                "TRANSLATE000043": "Défibeo also supports players in the hotel, real estate, public services, sports sectors, etc., with Défibeo Facilities; a turnkey service including the purchase, management, and supervision of their defibrillator fleet. By directly recruiting the best local distributors and maintainers using our software solution, we guarantee total project management. This system allows the end customer to delegate 100% of their emergency equipment management with complete peace of mind.",
+                "TRANSLATE000044": "I have a question!",
+                "TRANSLATE000050": "Buy the brain of your company",
+                "TRANSLATE000051": "We offer two plans according to the scale of your needs. Software delivered ready to use and personalized with your image. Package including onboarding, cloud hosting, and technical assistance (help, adjustments, etc.). At Défibeo, our support is available 24/7 via WhatsApp in French. The purchase of the software is not subject to VAT (0%).",
+                "TRANSLATE000052": "Eligible for up to 5,000 defibrillators, including 3 administrator sessions. Immediate access after purchase and software activation.",
+                "TRANSLATE000054": "(Incl. VAT) One-time for activation.",
+                "TRANSLATE000055": "Then 250€ incl. VAT per month.",
+                "TRANSLATE000056": "Subscribe",
+                "TRANSLATE000057": "Eligible from 5,000 defibrillators (unlimited volume), including up to 25 administrator sessions (for other volumes, please request a quote). Access delivered within 4 to 7 business days after software purchase (1 month of hosting free for onboarding). Personalized interface with your graphic charter and the possibility to modify the compositions and logic of the software.",
+                "TRANSLATE000059": "(Incl. VAT) One-time for activation.",
+                "TRANSLATE000060": "Then 500€ incl. VAT per month.",
+                "TRANSLATE000061": "Contact us",
+                "TRANSLATE000070": "Training",
+                "TRANSLATE000071": "This is an (optional) training of 1h30 to 2h30 remotely for 1 to 3 people. For other formats or volumes, please request a quote.",
+                "TRANSLATE000074": "Published in March 2026. New UI interface, improved Google Maps integration, improved QR code reporting and sticker printing, advanced options for the tour planner, agent reply feature in the CRM, post-maintenance rating system, improved accounting tracking, etc.",
+                "TRANSLATE000072": "Update",
+                "TRANSLATE000075": "Customer Portal",
+                "TRANSLATE000077": "Offer your customers access to their information and data with a personalized interface. Additional hosting fees may be necessary depending on the desired volume.",
+                "TRANSLATE000078": "Technician Portal",
+                "TRANSLATE000081": "Extincteo Extension",
+                "TRANSLATE000083": "Integrated Extincteo module for CMMS maintenance and traceability of fire extinguishers. Besides different technical information, the module is similar to Défibeo's, with equipment files, reporting, tour planning, etc.",
+                "TRANSLATE000084": "Eduxeo Extension",
+                "TRANSLATE000086": "Integrated Eduxeo module for training, attendance sheets, certificates, and trainees. The ally for training organizations and companies managing internal training.",
+                "TRANSLATE000087": "Accounting Extension",
+                "TRANSLATE000089": "Integrated module for accounting. Edit quotes, invoices, and delivery notes directly from the software, compliant with current legislation. Export your accounting data to integrate it into your accounting software (e.g., Quickbooks, Sage, etc.).",
+                "TRANSLATE000100": "Facilitate your daily uses and processes",
+                "TRANSLATE000101": "Adopt the software and it adapts to you! Personalize it with your charter, your rules, your functions, and your processes. Entirely white-label, you generate real added value for your company. With Défibeo Standard, personalization is limited to the logo and colors.",
+                "TRANSLATE000102": "Défibeo is used by +130k defibrillators in Europe for 6 years. Every day, approximately 900 maintenances are carried out by our users. Forged by its users since 2019, Défibeo is the fruit of collective intelligence bringing together dozens of defibrillator maintainers & distributors operating in these countries: United Kingdom (~55%), Germany (~15%), France (~10%), Belgium (~10%), Switzerland (~5%), and Luxembourg (~5%).",
+                "TRANSLATE000103": "The Défibeo software, including features for the organization and completion of maintenance by technicians, is accessible directly from a web browser. No complex download is necessary, and it is practical and pleasant to use on computer, tablet, and smartphone. The fully web-based architecture ensures great responsiveness in the deployment of updates as well as access to economical solutions.",
+                "TRANSLATE000104": "Powerful, flexible, and reliable hosting with optimal redundancy. Défibeo relies on an online server coupled with a physical backup managed by our Cieldata branch. These infrastructures are spread across two distinct sites and benefit from the most extensive insurance and guarantees. Your data is fully hosted in France, in Pau (64).",
+                "TRANSLATE000105": "Défibeo integrates the properties of all defibrillator models such as Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.",
+                "TRANSLATE000106": "Défibeo facilitates the publication of your defibrillators on the French government platform GEO DAE thanks to a batch export compliant with its requirements. For example, a technician can report that a defibrillator they are working on is missing from GEO DAE, allowing the administrator to track the progress of its addition to the platform.",
+            },
+            es: {
+                "TRANSLATE000001": "Datos estancos",
+                "TRANSLATEA6": "Cerrar",
+"TRANSLATEA1": "¿Cómo desea contactarnos?",
+"TRANSLATEA2": "Teléfono",
+"TRANSLATEA3": "Correo electrónico",
+"TRANSLATEA4": "Pantalla dividida",
+"TRANSLATEA5": "Reservar una demo",
+                "TRANSLATE000002": "Una presentación personalizada y detallada del software en pantalla dividida.",
+                "TRANSLATE000003": "Contacte con su interlocutor",
+                "TRANSLATE000200": "¡Contáctenos!",
+                "TRANSLATE000007": "Su nuevo eslabón en la cadena de supervivencia. Tome el control de la gestión y el mantenimiento de sus desfibriladores gracias a un software empresarial especializado. Se acabó el caos del trabajo descentralizado y sin conexión. Libere su potencial, gane en eficiencia y dé un nuevo impulso a su empresa.",
+                "TRANSLATE000008": "Crear mi cuenta",
+                "TRANSLATE000009": "Centro de datos",
+                "TRANSLATE0000010": "Centralice y garantice la trazabilidad de toda la información, actividades y datos de los desfibriladores y clientes.",
+                "TRANSLATE0000011": "Contáctenos",
+                "TRANSLATE0000012": "GMAO",
+                "TRANSLATE0000013": "Software compuesto por funcionalidades específicas para el sector de distribuidores y mantenedores de desfibriladores.",
+                "TRANSLATE0000014": "Empezar",
+                "TRANSLATE0000015": "Movilidad",
+                "TRANSLATE0000016": "Porque el mantenimiento se vive en el terreno, el software le acompaña en cualquier lugar desde el ordenador o smartphone.",
+                "TRANSLATE0000017": "Crear mi software",
+                "TRANSLATE0000018": "Una herramienta estructurante que comprende el oficio del distribuidor y mantenedor de desfibriladores",
+                "TRANSLATE000019": "Informes PDF",
+                "TRANSLATE000020": "Generación automática de informes PDF basados en plantillas personalizables (contenido e identidad visual), que incluyen puntos de verificación, información del desfibrilador, una fotografía y firma digital.",
+                "TRANSLATE000024x": "Centralice sus documentos contables por perfil de cliente, realice el seguimiento de los consumibles a facturar según las especificidades de cada contrato y genere instantáneamente sus documentos contables.",
+                "TRANSLATE000023": "Seguimiento contable",
+                "TRANSLATE0000021": "Sistema de rutas",
+                "TRANSLATE0000022": "Gestione sus órdenes de misión de la A a la Z: ofrezca a sus técnicos un trayecto optimizado con Google Maps, control de su stock a bordo y una gestión simplificada de sus partes de horas.",
+                "TRANSLATE000024": "Moderación",
+                "TRANSLATE000025": "Verifique la información introducida por los técnicos mediante la moderación antes de enviar el informe PDF por correo electrónico automático al cliente y actualizar la base de datos.",
+                "TRANSLATE000026": "Calidad de servicio",
+                "TRANSLATE000027": "Digitalice la gestión de sus intervenciones y su trazabilidad para aumentar la satisfacción de sus clientes. Gane fiabilidad gracias a una recogida rigurosa de datos de mantenimiento. Correo de medición de satisfacción del cliente tras cada intervención.",
+                "TRANSLATE000028": "Benefíciese de un alojamiento robusto con redundancia. Tanto si trabaja con colaboradores internos como externos, la confidencialidad está garantizada: los técnicos disponen de accesos restringidos en comparación con los administradores.",
+                "TRANSLATE000030": "La estructura de árbol",
+                "TRANSLATE000031": "La interfaz del software es sencilla e intuitiva: acceda instantáneamente a la información esencial gracias a una legibilidad óptima de los datos. Todo está centralizado, desde la ficha del cliente hasta el seguimiento de los desfibriladores, pasando por la generación de recibos PDF, la facturación, el CRM y el inventario. Accesible directamente desde su navegador, la solución no requiere instalación.",
+                "TRANSLATE000032": "Crear mi cuenta",
+                "TRANSLATE000033": "Señalizaciones",
+                "TRANSLATE000034": "Pida sus pegatinas de vinilo personalizadas de alto rendimiento (resistentes a los rayos UV y a la intemperie) directamente desde su software Défibeo, a partir de 200 unidades. Cada pegatina integra un código QR que permite a un transeúnte o a su cliente reportar instantáneamente una información (incidente técnico, degradación, uso, etc.). De este modo, centraliza directamente en su CRM Défibeo todos los avisos del terreno. Esta herramienta le permite optimizar sus operaciones determinando rápidamente si se requiere una intervención presencial o si es posible una resolución a distancia.",
+                "TRANSLATE000035": "¡Tengo una pregunta!",
+                "TRANSLATE000036": "Trayecto racionalizado",
+                "TRANSLATE000037": "Apóyese en Google Maps para la optimización de rutas, deje que el software asigne un orden de paso para cada mantenimiento. El técnico puede autorizar la localización en directo de su posición con la app Google Maps, permitiendo, por ejemplo, que los controladores de gestión sepan dónde está el técnico sin necesidad de soluciones costosas. El organizador de rutas incluye la gestión de puntos de salida y llegada diarios si la ruta se realiza en varios días.",
+                "TRANSLATE000038": "¡Tengo una pregunta!",
+                "TRANSLATE000039": "Coste medio repercutido el primer año por la compra del software por mantenimiento, evaluado sobre la base de un volumen de 3.500 intervenciones.",
+                "TRANSLATE000040": "Ganancia anual de ROI en productividad (administrativa y de campo) valorada en costes salariales, evaluada para un volumen de 3.500 intervenciones.",
+                "TRANSLATE000041": "Tasa de disponibilidad garantizada por nuestra infraestructura cloud en doble redundancia, alojada en nuestro centro de datos Cieldata en Pau (64).",
+                "TRANSLATE000042": "Solución FM",
+                "TRANSLATE000043": "Défibeo también acompaña a los actores de la hostelería, el sector inmobiliario, servicios públicos, deporte, etc. con Défibeo Facilities; un servicio llave en mano que incluye la compra, gestión y supervisión de su parque de desfibriladores. Al contratar directamente a los mejores distribuidores y mantenedores locales usuarios de nuestra solución de software, garantizamos así una gestión total de la obra. Este dispositivo permite al cliente final delegar el 100% de la gestión de sus equipos de emergencia con total tranquilidad.",
+                "TRANSLATE000044": "¡Tengo una pregunta!",
+                "TRANSLATE000050": "Compre el cerebro de su empresa",
+                "TRANSLATE000051": "Ofrecemos dos ofertas según la magnitud de sus necesidades. Software entregado listo para usar y personalizado con su imagen. Paquete que incluye la puesta en marcha, el alojamiento en la nube y la asistencia técnica (ayuda, ajustes, etc.). En Défibeo nuestro soporte está disponible 24/7 vía WhatsApp en francés. La compra del software no está sujeta al IVA (0%).",
+                "TRANSLATE000052": "Elegible hasta 5.000 desfibriladores, incluyendo 3 sesiones de administrador. Acceso inmediato tras la compra de la activación y la activación del software.",
+                "TRANSLATE000054": "(IVA incl.) Una sola vez para la activación.",
+                "TRANSLATE000055": "Luego 250€ IVA incl. al mes.",
+                "TRANSLATE000056": "Suscribirse",
+                "TRANSLATE000057": "Elegible a partir de 5.000 desfibriladores (volumen ilimitado), incluyendo hasta 25 sesiones de administrador (para otros volúmenes, solicite un presupuesto). Acceso entregado en 4 a 7 días hábiles tras la compra del software (1 mes de alojamiento gratuito para la toma de contacto). Interfaz personalizada con su identidad gráfica y la posibilidad de modificar las composiciones y lógicas del software.",
+                "TRANSLATE000059": "(IVA incl.) Una sola vez para la activación.",
+                "TRANSLATE000060": "Luego 500€ IVA incl. al mes.",
+                "TRANSLATE000061": "Contáctenos",
+                "TRANSLATE000070": "Formación",
+                "TRANSLATE000071": "Se trata de una formación (opcional) de 1h30 a 2h30 a distancia para 1 a 3 personas. Para otros formatos o volúmenes, solicite un presupuesto.",
+                "TRANSLATE000074": "Publicada en marzo de 2026. Nueva interfaz de usuario, mejora de la integración de Google Maps, mejora de los avisos con código QR e impresión de pegatinas, opciones avanzadas para el planificador de rutas, funcionalidad de respuesta del agente en el CRM, sistema de valoración post-mantenimiento, mejora del seguimiento contable, etc.",
+                "TRANSLATE000072": "Actualización",
+                "TRANSLATE000075": "Portal de Clientes",
+                "TRANSLATE000077": "Ofrezca a sus clientes acceso a su información y datos con una interfaz personalizada. Pueden ser necesarios gastos de alojamiento adicionales según el volumen deseado.",
+                "TRANSLATE000078": "Portal de Técnicos",
+                "TRANSLATE000081": "Extensión Extincteo",
+                "TRANSLATE000083": "Módulo integrado Extincteo para el mantenimiento GMAO y la trazabilidad de extintores. Además de información técnica diferente, el módulo es similar al de Défibeo, con fichas de equipos, avisos, planificaciones de rutas, etc.",
+                "TRANSLATE000084": "Extensión Eduxeo",
+                "TRANSLATE000086": "Módulo integrado Eduxeo para formaciones, hojas de asistencia, certificados y alumnos. El aliado para centros de formación y empresas que gestionan formación interna.",
+                "TRANSLATE000087": "Extensión Conta",
+                "TRANSLATE000089": "Módulo integrado para contabilidad. Edite presupuestos, facturas y albaranes directamente desde el software, conforme a la legislación vigente. Exporte sus datos contables para integrarlos en su software de contabilidad (ej: Quickbooks, Sage, etc.).",
+                "TRANSLATE000100": "Facilite sus usos y procesos cotidianos",
+                "TRANSLATE000101": "¡Adopte el software y él se adaptará a usted! Personalícelo con su imagen, sus reglas, sus funciones y sus procesos. Totalmente marca blanca, genera un valor añadido real para su empresa. Con Défibeo Standard, la personalización se limita al logotipo y los colores.",
+                "TRANSLATE000102": "Défibeo es utilizado por más de 130k desfibriladores en Europa desde hace 6 años. Cada día, se realizan unas 900 tareas de mantenimiento por nuestros usuarios. Forjado por sus usuarios desde 2019, Défibeo es el fruto de una inteligencia colectiva que reúne a decenas de mantenedores y distribuidores de desfibriladores que ejercen en estos países: Reino Unido (~55%), Alemania (~15%), Francia (~10%), Bélgica (~10%), Suiza (~5%) y Luxemburgo (~5%).",
+                "TRANSLATE000103": "El software Défibeo, incluyendo las funcionalidades para la organización y realización de mantenimientos por parte de los técnicos, es accesible directamente desde un navegador web. No se requiere ninguna descarga compleja, y es práctico y agradable de usar tanto en ordenador como en tablet o smartphone. La arquitectura íntegramente web asegura una gran reactividad en el despliegue de actualizaciones así como el acceso a soluciones económicas.",
+                "TRANSLATE000104": "Un alojamiento potente, flexible y fiable con una redundancia óptima. Défibeo se apoya en un servidor en línea junto con una copia de seguridad física gestionada por nuestra división Cieldata. Estas infraestructuras están repartidas en dos sitios distintos y cuentan con los seguros y garantías más amplios. Sus datos están íntegramente alojados en Francia, en Pau (64).",
+                "TRANSLATE000105": "Défibeo integra las propiedades de todos los modelos de desfibriladores tales como Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.",
+                "TRANSLATE000106": "Défibeo le facilita la publicación de sus desfibriladores en la plataforma gubernamental francesa GEO DAE gracias a una exportación por lotes conforme a sus requisitos. Por ejemplo, un técnico puede reportar que un desfibrilador en el que interviene no está en GEO DAE, permitiendo así al administrador seguir el progreso de su incorporación a la plataforma.",
+            },
+            pt: {
+                "TRANSLATE000001": "Dados estanques",
+                "TRANSLATEA6": "Fechar",
+"TRANSLATEA1": "Como gostaria de nos contactar?",
+"TRANSLATEA2": "Telefone",
+"TRANSLATEA3": "Email",
+"TRANSLATEA4": "Ecrã dividido",
+"TRANSLATEA5": "Reservar uma demonstração",
+                "TRANSLATE000002": "Uma apresentação personalizada e detalhada do software em ecrã dividido.",
+                "TRANSLATE000003": "Contacte o seu interlocutor",
+                "TRANSLATE000200": "Contacte-nos!",
+                "TRANSLATE000007": "O seu novo elo na cadeia de sobrevivência. Assuma o controlo da gestão e manutenção dos seus desfibrilhadores graças a um software empresarial especializado. Acabe com o caos do trabalho descentralizado e offline. Liberte o seu potencial, ganhe eficiência e dê um novo impulso à sua empresa.",
+                "TRANSLATE000008": "Criar a minha conta",
+                "TRANSLATE000009": "Gestão de Instalações (Facility Management)",
+                "TRANSLATE0000010": "Centralize e garanta a rastreabilidade de todas as informações, atividades e dados dos desfibrilhadores e clientes.",
+                "TRANSLATE0000011": "Contacte-nos",
+                "TRANSLATE0000012": "GMAO",
+                "TRANSLATE0000013": "Software composto por funcionalidades específicas para o setor de distribuidores e técnicos de manutenção de desfibrilhadores.",
+                "TRANSLATE0000014": "Começar",
+                "TRANSLATE0000015": "Mobilidade",
+                "TRANSLATE0000016": "Porque a manutenção acontece no terreno, o software acompanha-o em qualquer lugar no computador ou smartphone.",
+                "TRANSLATE0000017": "Criar o meu software",
+                "TRANSLATE0000018": "Uma ferramenta estruturante que compreende o negócio do distribuidor e técnico de manutenção de desfibrilhadores",
+                "TRANSLATE000019": "Relatórios PDF",
+                "TRANSLATE000020": "Geração automática de relatórios PDF baseados em modelos personalizáveis (conteúdo e identidade visual), incluindo pontos de verificação, informações do desfibrilhador, uma fotografia e assinatura digital.",
+                "TRANSLATE000024": "Centralize os seus documentos contabilísticos por perfil de cliente, acompanhe os consumíveis a faturar segundo as especificidades de cada contrato e gere instantaneamente os seus documentos contabilísticos.",
+                "TRANSLATE000023": "Acompanhamento contabilístico",
+                "TRANSLATE0000021": "Sistema de rotas",
+                "TRANSLATE0000022": "Gira as suas ordens de missão de A a Z: ofereça aos seus técnicos um trajeto otimizado com Google Maps, o controlo do seu stock a bordo e uma gestão simplificada das suas folhas de horas.",
+                "TRANSLATE000024": "Moderação",
+                "TRANSLATE000025": "Verifique as informações inseridas pelos técnicos através da moderação antes de enviar o relatório PDF por e-mail automático ao cliente e atualizar a base de dados.",
+                "TRANSLATE000026": "Qualidade de serviço",
+                "TRANSLATE000027": "Digitalize a gestão das suas intervenções e a sua rastreabilidade para aumentar a satisfação dos seus clientes. Ganhe fiabilidade graças a uma recolha rigorosa de dados de manutenção. E-mail de medição de satisfação do cliente após cada intervenção.",
+                "TRANSLATE000028": "Beneficie de um alojamento robusto com redundância. Quer trabalhe com colaboradores internos ou externos, a confidencialidade é assegurada: os técnicos dispõem de acessos restritos em comparação com os administradores.",
+                "TRANSLATE000030": "A estrutura em árvore",
+                "TRANSLATE000031": "A interface do software é simples e intuitiva: aceda instantaneamente às informações essenciais graças a uma legibilidade ideal dos dados. Tudo é centralizado, desde a ficha do cliente ao acompanhamento dos desfibrilhadores, passando pela geração de recibos PDF, faturação, CRM e inventário. Acessível diretamente do seu navegador, a solução não requer instalação.",
+                "TRANSLATE000032": "Criar a minha conta",
+                "TRANSLATE000033": "Sinalizações",
+                "TRANSLATE000034": "Encomende os seus autocolantes de vinil personalizados de alto desempenho (resistentes aos UV e às intempéries) diretamente do seu software Défibeo, a partir de 200 unidades. Cada autocolante integra um código QR que permite a um transeunte ou ao seu cliente sinalizar instantaneamente uma informação (incidente técnico, degradação, utilização, etc.). Centraliza assim, diretamente no seu CRM Défibeo, todos os alertas de terreno. Esta ferramenta permite-lhe otimizar as suas operações, determinando rapidamente se é necessária uma intervenção no local ou se é possível uma resolução remota.",
+                "TRANSLATE000035": "Tenho uma pergunta!",
+                "TRANSLATE000036": "Trajeto racionalizado",
+                "TRANSLATE000037": "Apoie-se no Google Maps para a otimização de rotas, deixe que o software atribua uma ordem de passagem para cada manutenção. O técnico pode autorizar a localização em direto da sua posição com a app Google Maps, permitindo, por exemplo, que os controladores de gestão saibam onde está o técnico, sem necessidade de soluções dispendiosas. O organizador de rotas inclui a gestão dos pontos de partida e chegada diários se a rota se realizar em vários dias.",
+                "TRANSLATE000038": "Tenho uma pergunta!",
+                "TRANSLATE000039": "Custo médio repercutido no primeiro ano para a compra do software por manutenção, avaliado com base num volume de 3.500 intervenções.",
+                "TRANSLATE000040": "Ganho anual de ROI em produtividade (administrativa e de campo) valorizado em custos salariais, avaliado para um volume de 3.500 intervenções.",
+                "TRANSLATE000041": "Taxa de disponibilidade garantida pela nossa infraestrutura cloud em dupla redundância, alojada no nosso datacenter Cieldata em Pau (64).",
+                "TRANSLATE000042": "Solução FM",
+                "TRANSLATE000043": "O Défibeo também acompanha os intervenientes da hotelaria, do imobiliário, dos serviços públicos, do desporto, etc. com o Défibeo Facilities; um serviço chave na mão que inclui a compra, gestão e supervisão do seu parque de desfibrilhadores. Ao recrutar diretamente os melhores distribuidores e técnicos de manutenção locais utilizadores da nossa solução de software, garantimos assim uma gestão total do projeto. Este dispositivo permite ao cliente final delegar 100% da gestão dos seus equipamentos de emergência com total serenidade.",
+                "TRANSLATE000044": "Tenho uma pergunta!",
+                "TRANSLATE000050": "Compre o cérebro da sua empresa",
+                "TRANSLATE000051": "Propomos duas ofertas de acordo com a dimensão das suas necessidades. Software entregue pronto a usar e personalizado com a sua imagem. Pacote que inclui a aprendizagem inicial, alojamento cloud e assistência técnica (ajuda, ajustes, etc.). Na Défibeo o nosso suporte está disponível 24/7 via WhatsApp em francês. A compra do software não está sujeita a IVA (0%).",
+                "TRANSLATE000052": "Elegível até 5.000 desfibrilhadores, incluindo 3 sessões de administrador. Acesso imediato após a compra da ativação e a ativação do software.",
+                "TRANSLATE000054": "(IVA incl.) Pagamento único para a ativação.",
+                "TRANSLATE000055": "Depois 250€ IVA incl. por mês.",
+                "TRANSLATE000056": "Subscrever",
+                "TRANSLATE000057": "Elegível a partir de 5.000 desfibrilhadores (volume ilimitado), incluindo até 25 sessões de administrador (para outros volumes, por favor peça um orçamento). Acesso entregue em 4 a 7 dias úteis após a compra do software (1 mês de alojamento gratuito para a fase inicial). Interface personalizada com a sua identidade gráfica e a possibilidade de modificar as composições e lógicas do software.",
+                "TRANSLATE000059": "(IVA incl.) Pagamento único para a ativação.",
+                "TRANSLATE000060": "Depois 500€ IVA incl. por mês.",
+                "TRANSLATE000061": "Contacte-nos",
+                "TRANSLATE000070": "Formação",
+                "TRANSLATE000071": "Trata-se de uma formação (opcional) de 1h30 a 2h30 à distância para 1 a 3 pessoas. Para outros formatos ou volumes, por favor solicite um orçamento.",
+                "TRANSLATE000074": "Publicada em março de 2026. Nova interface UI, melhoria da integração do Google Maps, melhoria das sinalizações com código QR e impressão de autocolantes, opções avançadas para o planeador de rotas, funcionalidade de resposta do agente no CRM, sistema de avaliação pós-manutenção, melhoria do acompanhamento contabilístico, etc.",
+                "TRANSLATE000072": "Atualização",
+                "TRANSLATE000075": "Portal do Cliente",
+                "TRANSLATE000077": "Ofereça aos seus clientes acesso às suas informações e dados com uma interface personalizada. Poderão ser necessários custos de alojamento adicionais consoante o volume pretendido.",
+                "TRANSLATE000078": "Portal do Técnico",
+                "TRANSLATE000081": "Extensão Extincteo",
+                "TRANSLATE000083": "Módulo integrado Extincteo para a manutenção GMAO e rastreabilidade de extintores. Além de informações técnicas diferentes, o módulo é semelhante ao do Défibeo, com fichas de equipamentos, sinalizações, planeamento de rotas, etc.",
+                "TRANSLATE000084": "Extensão Eduxeo",
+                "TRANSLATE000086": "Módulo integrado Eduxeo para formações, folhas de presença, certificados e formandos. O aliado para centros de formação e empresas que gerem formações internas.",
+                "TRANSLATE000087": "Extensão Contabilidade",
+                "TRANSLATE000089": "Módulo integrado para contabilidade. Emita orçamentos, faturas e guias de remessa diretamente do software, em conformidade com a legislação em vigor. Exporte os seus dados contabilísticos para os integrar no seu software de contabilidade (ex: Quickbooks, Sage, etc.).",
+                "TRANSLATE000100": "Facilite as suas utilizações e processos do quotidiano",
+                "TRANSLATE000101": "Adote o software e ele adapta-se a si! Personalize-o com a sua identidade, as suas regras, as suas funções e os seus processos. Inteiramente em white label, gera um verdadeiro valor acrescentado para a sua empresa. Com o Défibeo Standard, a personalização limita-se ao logótipo e às cores.",
+                "TRANSLATE000102": "O Défibeo é utilizado por mais de 130k desfibrilhadores na Europa há 6 anos. Todos os dias, são realizadas cerca de 900 manutenções pelos nossos utilizadores. Forjado pelos seus utilizadores desde 2019, o Défibeo é o fruto de uma inteligência coletiva que reúne dezenas de técnicos de manutenção e distribuidores de desfibrilhadores que operam nestes países: Reino Unido (~55%), Alemanha (~15%), França (~10%), Bélgica (~10%), Suíça (~5%) e Luxemburgo (~5%).",
+                "TRANSLATE000103": "O software Défibeo, incluindo as funcionalidades para a organização e conclusão das manutenções pelos técnicos, é acessível diretamente de um navegador web. Não é necessário nenhum download complexo e é prático e agradável de utilizar tanto no computador, tablet como smartphone. A arquitetura integralmente web assegura uma grande reatividade na implementação das atualizações, bem como o acesso a soluções económicas.",
+                "TRANSLATE000104": "Um alojamento potente, flexível e fiável com uma redundância ideal. O Défibeo apoia-se num servidor online aliado a uma cópia de segurança física gerida pela nossa divisão Cieldata. Estas infraestruturas estão distribuídas por dois locais distintos e beneficiam dos seguros e garantias mais abrangentes. Os seus dados são integralmente alojados em França, em Pau (64).",
+                "TRANSLATE000105": "O Défibeo integra as propriedades de todos os modelos de desfibrilhadores tais como Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.",
+                "TRANSLATE000106": "O Défibeo facilita a publicação dos seus desfibrilhadores na plataforma governamental francesa GEO DAE graças a uma exportação em lote conforme às suas exigências. Por exemplo, um técnico pode sinalizar que um desfibrilhador onde está a intervir está ausente da GEO DAE, permitindo assim ao administrador acompanhar o progresso da sua inserção na plataforma.",
+            },
+            de: {
+                "TRANSLATE000001": "Wasserdichte Daten",
+                "TRANSLATEA6": "Schließen",
+"TRANSLATEA1": "Wie möchten Sie uns kontaktieren?",
+"TRANSLATEA2": "Telefon",
+"TRANSLATEA3": "E-Mail",
+"TRANSLATEA4": "Geteilter Bildschirm",
+"TRANSLATEA5": "Demo buchen",
+                "TRANSLATE000002": "Eine personalisierte und detaillierte Präsentation der Software im Split-Screen-Modus.",
+                "TRANSLATE000003": "Kontaktieren Sie Ihren Ansprechpartner",
+                "TRANSLATE000200": "Kontaktieren Sie uns!",
+                "TRANSLATE000007": "Ihr neues Glied in der Rettungskette. Übernehmen Sie die Kontrolle über die Verwaltung und Wartung Ihrer Defibrillatoren dank einer spezialisierten Branchensoftware. Schluss mit dem Chaos dezentraler Offline-Arbeit. Entfalten Sie Ihr Potenzial, gewinnen Sie an Effizienz und verleihen Sie Ihrem Unternehmen neuen Schwung.",
+                "TRANSLATE000008": "Mein Konto erstellen",
+                "TRANSLATE000009": "Facility Management",
+                "TRANSLATE0000010": "Zentralisieren und garantieren Sie die Rückverfolgbarkeit aller Informationen, Aktivitäten und Daten von Defibrillatoren und Kunden.",
+                "TRANSLATE0000011": "Kontaktieren Sie uns",
+                "TRANSLATE0000012": "IPS",
+                "TRANSLATE0000013": "Software mit spezifischen Funktionen für den Vertrieb und die Wartung von Defibrillatoren.",
+                "TRANSLATE0000014": "Starten",
+                "TRANSLATE0000015": "Mobilität",
+                "TRANSLATE0000016": "Da Wartung im Außendienst stattfindet, begleitet Sie die Software überallhin auf Computer und Smartphone.",
+                "TRANSLATE0000017": "Meine Software erstellen",
+                "TRANSLATE0000018": "Ein strukturierendes Tool, das das Geschäft von Defibrillator-Händlern und -Wartungsunternehmen versteht",
+                "TRANSLATE000019": "PDF-Berichte",
+                "TRANSLATE000020": "Automatische Erstellung von PDF-Berichten basierend auf anpassbaren Vorlagen (Inhalt und visuelle Identität), einschließlich Prüfpunkten, Defibrillator-Informationen, einem Foto und digitaler Signatur.",
+                "TRANSLATE000024x": "Zentralisieren Sie Ihre Buchhaltungsbelege nach Kundenprofil, verfolgen Sie die zu fakturierenden Verbrauchsmaterialien gemäß den Spezifikationen jedes Vertrags und erstellen Sie sofort Ihre Buchhaltungsbelege.",
+                "TRANSLATE000023": "Buchhaltungs-Tracking",
+                "TRANSLATE0000021": "Tourensystem",
+                "TRANSLATE0000022": "Verwalten Sie Ihre Einsatzaufträge von A bis Z: Bieten Sie Ihren Technikern eine optimierte Route mit Google Maps, die Kontrolle über ihren Bordvorrat und eine vereinfachte Verwaltung ihrer Zeiterfassung.",
+                "TRANSLATE000024": "Moderation",
+                "TRANSLATE000025": "Überprüfen Sie die von den Technikern eingegebenen Informationen durch Moderation, bevor der PDF-Bericht per automatischer E-Mail an den Kunden gesendet und die Datenbank aktualisiert wird.",
+                "TRANSLATE000026": "Servicequalität",
+                "TRANSLATE000027": "Digitalisieren Sie die Verwaltung Ihrer Einsätze und Ihre Rückverfolgbarkeit, um die Kundenzufriedenheit zu steigern. Gewinnen Sie an Zuverlässigkeit durch eine präzise Erfassung der Wartungsdaten. E-Mail zur Messung der Kundenzufriedenheit nach jedem Einsatz.",
+                "TRANSLATE000028": "Profitieren Sie von einem robusten Hosting mit Redundanz. Egal ob Sie mit internen oder externen Mitarbeitern arbeiten, die Vertraulichkeit ist gewährleistet: Techniker haben im Vergleich zu Administratoren eingeschränkte Zugriffsrechte.",
+                "TRANSLATE000030": "Die Baumstruktur",
+                "TRANSLATE000031": "Die Benutzeroberfläche der Software ist einfach und intuitiv: Dank optimaler Lesbarkeit der Daten greifen Sie sofort auf die wesentlichen Informationen zu. Alles ist zentralisiert, vom Kundenstammblatt über die Defibrillator-Verfolgung bis hin zur Erstellung von PDF-Quittungen, Fakturierung, CRM und Inventar. Direkt über Ihren Browser zugänglich, erfordert die Lösung keine Installation.",
+                "TRANSLATE000032": "Mein Konto erstellen",
+                "TRANSLATE000033": "Meldungen",
+                "TRANSLATE000034": "Bestellen Sie Ihre personalisierten Hochleistungs-Vinyl-Aufkleber (UV- und witterungsbeständig) direkt über Ihre Défibeo-Software, ab 200 Stück. Jeder Aufkleber enthält einen QR-Code, der es einem Passanten oder Ihrem Kunden ermöglicht, sofort eine Information (technischer Vorfall, Beschädigung, Nutzung usw.) zu melden. So zentralisieren Sie alle Rückmeldungen aus dem Feld direkt in Ihrem Défibeo CRM. Dieses Tool ermöglicht es Ihnen, Ihre Abläufe zu optimieren, indem Sie schnell feststellen, ob ein Einsatz vor Ort erforderlich ist oder ob eine Fernlösung möglich ist.",
+                "TRANSLATE000035": "Ich habe eine Frage!",
+                "TRANSLATE000036": "Rationalisierte Route",
+                "TRANSLATE000037": "Nutzen Sie Google Maps zur Tourenoptimierung und lassen Sie die Software eine Reihenfolge für jede Wartung zuweisen. Der Techniker kann die Live-Lokalisierung seiner Position mit der Google Maps App autorisieren, sodass beispielsweise Controller wissen, wo sich der Techniker befindet, ohne teure Lösungen zu benötigen. Der Tourenplaner umfasst die Verwaltung von täglichen Start- und Zielpunkten, falls die Tour über mehrere Tage geht.",
+                "TRANSLATE000038": "Ich habe eine Frage!",
+                "TRANSLATE000039": "Durchschnittliche Kosten, die im ersten Jahr für den Kauf der Software pro Wartung anfallen, berechnet auf Basis eines Volumens von 3.500 Einsätzen.",
+                "TRANSLATE000040": "Jährlicher ROI-Gewinn an Produktivität (Verwaltung und Außendienst), bewertet in Lohnkosten, berechnet für ein Volumen von 3.500 Einsätzen.",
+                "TRANSLATE000041": "Garantierte Verfügbarkeitsrate durch unsere Cloud-Infrastruktur mit doppelter Redundanz, gehostet in unserem Cieldata-Rechenzentrum in Pau (64).",
+                "TRANSLATE000042": "FM-Lösung",
+                "TRANSLATE000043": "Défibeo unterstützt mit Défibeo Facilities auch Akteure aus den Bereichen Hotellerie, Immobilien, öffentliche Dienste, Sport usw.; ein schlüsselfertiger Service, der den Kauf, die Verwaltung und die Überwachung ihres Defibrillator-Bestands umfasst. Durch die direkte Rekrutierung der besten lokalen Händler und Wartungsunternehmen, die unsere Softwarelösung nutzen, garantieren wir eine vollständige Projektsteuerung. Dieses System ermöglicht es dem Endkunden, 100 % der Verwaltung seiner Notfallausrüstung in aller Ruhe zu delegieren.",
+                "TRANSLATE000044": "Ich habe eine Frage!",
+                "TRANSLATE000050": "Kaufen Sie das Gehirn Ihres Unternehmens",
+                "TRANSLATE000051": "Wir bieten zwei Angebote je nach Umfang Ihrer Bedürfnisse an. Die Software wird einsatzbereit und in Ihrem Design geliefert. Pauschale inklusive Einarbeitung, Cloud-Hosting und technischer Unterstützung (Hilfe, Anpassungen usw.). Bei Défibeo ist unser Support rund um die Uhr per WhatsApp auf Französisch verfügbar. Der Kauf der Software unterliegt nicht der MwSt. (0 %).",
+                "TRANSLATE000052": "Berechtigt für bis zu 5.000 Defibrillatoren, inklusive 3 Administrator-Sitzungen. Sofortiger Zugriff nach Kauf der Aktivierung und Freischaltung der Software.",
+                "TRANSLATE000054": "(Inkl. MwSt.) Einmalig für die Aktivierung.",
+                "TRANSLATE000055": "Danach 250 € inkl. MwSt. pro Monat.",
+                "TRANSLATE000056": "Abonnieren",
+                "TRANSLATE000057": "Berechtigt ab 5.000 Defibrillatoren (unbegrenztes Volumen), inklusive bis zu 25 Administrator-Sitzungen (für andere Volumina fordern Sie bitte ein Angebot an). Zugang geliefert innerhalb von 4 bis 7 Werktagen nach Kauf der Software (1 Monat Hosting gratis zur Einarbeitung). Personalisierte Benutzeroberfläche mit Ihrem Corporate Design und der Möglichkeit, die Zusammensetzung und Logik der Software zu ändern.",
+                "TRANSLATE000059": "(Inkl. MwSt.) Einmalig für die Aktivierung.",
+                "TRANSLATE000060": "Danach 500 € inkl. MwSt. pro Monat.",
+                "TRANSLATE000061": "Kontaktieren Sie uns",
+                "TRANSLATE000070": "Schulung",
+                "TRANSLATE000071": "Es handelt sich um eine (optionale) Fernschulung von 1,5 bis 2,5 Stunden für 1 bis 3 Personen. Für andere Formate oder Volumina fordern Sie bitte ein Angebot an.",
+                "TRANSLATE000074": "Veröffentlicht im März 2026. Neue UI-Oberfläche, verbesserte Google Maps Integration, verbesserte Meldungen mit QR-Code und Aufkleberdruck, erweiterte Optionen für den Tourenplaner, Antwortfunktion für Agenten im CRM, Bewertungssystem nach der Wartung, verbessertes Buchhaltungs-Tracking usw.",
+                "TRANSLATE000072": "Update",
+                "TRANSLATE000075": "Kundenportal",
+                "TRANSLATE000077": "Bieten Sie Ihren Kunden Zugang zu ihren Informationen und Daten mit einer personalisierten Oberfläche. Je nach gewünschtem Volumen können zusätzliche Hosting-Gebühren anfallen.",
+                "TRANSLATE000078": "Technikerportal",
+                "TRANSLATE000081": "Extincteo Erweiterung",
+                "TRANSLATE000083": "Integriertes Extincteo-Modul für IPS-Wartung und Rückverfolgbarkeit von Feuerlöschern. Abgesehen von unterschiedlichen technischen Informationen ähnelt das Modul dem von Défibeo, mit Gerätekarten, Meldungen, Tourenplanung usw.",
+                "TRANSLATE000084": "Eduxeo Erweiterung",
+                "TRANSLATE000086": "Integriertes Eduxeo-Modul für Schulungen, Anwesenheitslisten, Zertifikate und Teilnehmer. Der Verbündete für Schulungsorganisationen und Unternehmen, die interne Schulungen verwalten.",
+                "TRANSLATE000087": "Buchhaltung Erweiterung",
+                "TRANSLATE000089": "Integriertes Modul für die Buchhaltung. Erstellen Sie Angebote, Rechnungen und Lieferscheine direkt aus der Software, konform mit der geltenden Gesetzgebung. Exportieren Sie Ihre Buchhaltungsdaten zur Integration in Ihre Buchhaltungssoftware (z. B. Quickbooks, Sage usw.).",
+                "TRANSLATE000100": "Erleichtern Sie Ihre täglichen Abläufe und Prozesse",
+                "TRANSLATE000101": "Nehmen Sie die Software an und sie passt sich Ihnen an! Personalisieren Sie sie mit Ihrem Design, Ihren Regeln, Ihren Funktionen und Ihren Prozessen. Vollständig als White Label generieren Sie einen echten Mehrwert für Ihr Unternehmen. Bei Défibeo Standard ist die Personalisierung auf Logo und Farben beschränkt.",
+                "TRANSLATE000102": "Défibeo wird seit 6 Jahren von über 130k Defibrillatoren in Europa genutzt. Jeden Tag werden etwa 900 Wartungen von unseren Nutzern durchgeführt. Seit 2019 von seinen Nutzern geformt, ist Défibeo das Ergebnis einer kollektiven Intelligenz von Dutzenden von Defibrillator-Wartern und -Händlern in diesen Ländern: Großbritannien (~55 %), Deutschland (~15 %), Frankreich (~10 %), Belgien (~10 %), Schweiz (~5 %) und Luxemburg (~5 %).",
+                "TRANSLATE000103": "Die Défibeo-Software, einschließlich der Funktionen für die Organisation und Durchführung von Wartungsarbeiten durch Techniker, ist direkt über einen Webbrowser zugänglich. Kein komplexer Download erforderlich; sie ist praktisch und angenehm auf Computer, Tablet und Smartphone zu bedienen. Die reine Web-Architektur sorgt für hohe Reaktionsgeschwindigkeit bei Updates sowie Zugang zu kosteneffizienten Lösungen.",
+                "TRANSLATE000104": "Leistungsstarkes, flexibles und zuverlässiges Hosting mit optimaler Redundanz. Défibeo stützt sich auf einen Online-Server gekoppelt mit einem physischen Backup, das von unserer Abteilung Cieldata verwaltet wird. Diese Infrastrukturen sind auf zwei verschiedene Standorte verteilt und profitieren von umfassendsten Versicherungen und Garantien. Ihre Daten werden vollständig in Frankreich, in Pau (64), gehostet.",
+                "TRANSLATE000105": "Défibeo integriert die Eigenschaften aller Defibrillator-Modelle wie Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.",
+                "TRANSLATE000106": "Défibeo erleichtert Ihnen die Veröffentlichung Ihrer Defibrillatoren auf der französischen Regierungsplattform GEO DAE durch einen Batch-Export gemäß deren Anforderungen. Beispielsweise kann ein Techniker melden, dass ein Defibrillator, an dem er arbeitet, bei GEO DAE fehlt, sodass der Administrator den Fortschritt der Hinzufügung auf der Plattform verfolgen kann.",
+            },
+            nl: {
+                "TRANSLATE000001": "Waterdichte gegevens",
+                "TRANSLATEA6": "Sluiten",
+"TRANSLATEA1": "Hoe wilt u contact met ons opnemen?",
+"TRANSLATEA2": "Telefoon",
+"TRANSLATEA3": "E-mail",
+"TRANSLATEA4": "Gedeeld scherm",
+"TRANSLATEA5": "Een demo boeken",
+                "TRANSLATE000002": "Een gepersonaliseerde en gedetailleerde presentatie van de software in split-screen modus.",
+                "TRANSLATE000003": "Contacteer uw contactpersoon",
+                "TRANSLATE000200": "Neem contact met ons op!",
+                "TRANSLATE000007": "Uw nieuwe schakel in de overlevingsketen. Neem de controle over het beheer en onderhoud van uw defibrillatoren dankzij gespecialiseerde bedrijfssoftware. Geen chaos meer door gedecentraliseerd en offline werk. Ontketen uw potentieel, win aan efficiëntie en geef uw bedrijf een nieuwe impuls.",
+                "TRANSLATE000008": "Mijn account aanmaken",
+                "TRANSLATE000009": "Facilitair beheer",
+                "TRANSLATE0000010": "Centraliseer en garandeer de traceerbaarheid van alle informatie, activiteiten en gegevens van defibrillatoren en klanten.",
+                "TRANSLATE0000011": "Contacteer ons",
+                "TRANSLATE0000012": "CMMS",
+                "TRANSLATE0000013": "Software bestaande uit specifieke functionaliteiten voor het vak van distributeur en onderhoudstechnicus van defibrillatoren.",
+                "TRANSLATE0000014": "Beginnen",
+                "TRANSLATE0000015": "Mobiliteit",
+                "TRANSLATE0000016": "Omdat onderhoud in het veld gebeurt, begeleidt de software u overal op computer en smartphone.",
+                "TRANSLATE0000017": "Mijn software aanmaken",
+                "TRANSLATE0000018": "Een structurerend hulpmiddel dat het vak van distributeur en onderhoudstechnicus van defibrillatoren begrijpt",
+                "TRANSLATE000019": "PDF-rapporten",
+                "TRANSLATE000020": "Automatische generatie van PDF-rapporten op basis van aanpasbare sjablonen (inhoud en visuele identiteit), inclusief controlepunten, defibrillatorinformatie, een foto en digitale handtekening.",
+                "TRANSLATE000024x": "Centraliseer uw boekhoudstukken per klantprofiel, volg de te factureren verbruiksartikelen volgens de specificaties van elk contract en genereer direct uw boekhoudstukken.",
+                "TRANSLATE000023": "Boekhoudkundige opvolging",
+                "TRANSLATE0000021": "Routingsysteem",
+                "TRANSLATE0000022": "Beheer uw opdrachten van A tot Z: bied uw technici een geoptimaliseerde route met Google Maps, controle over hun voorraad aan boord en een vereenvoudigd beheer van hun urenstaten.",
+                "TRANSLATE000024": "Moderatie",
+                "TRANSLATE000025": "Controleer de door technici ingevoerde informatie via moderatie voordat het PDF-rapport via automatische e-mail naar de klant wordt verzonden en de database wordt bijgewerkt.",
+                "TRANSLATE000026": "Servicekwaliteit",
+                "TRANSLATE000027": "Digitaliseer het beheer van uw interventies en uw traceerbaarheid om de klanttevredenheid te verhogen. Win aan betrouwbaarheid dankzij een nauwkeurige verzameling van onderhoudsgegevens. E-mail voor klanttevredenheidsmeting na elke interventie.",
+                "TRANSLATE000028": "Profiteer van robuuste hosting met redundantie. Of u nu met interne of externe medewerkers werkt, de vertrouwelijkheid is gegarandeerd: technici hebben beperkte toegang in vergelijking met beheerders.",
+                "TRANSLATE000030": "De boomstructuur",
+                "TRANSLATE000031": "De interface van de software is eenvoudig en intuïtief: u heeft direct toegang tot essentiële informatie dankzij een optimale leesbaarheid van de gegevens. Alles is gecentraliseerd, van het klantendossier tot de opvolging van defibrillatoren, inclusief de generatie van PDF-bonnen, facturatie, CRM en inventaris. Direct toegankelijk via uw browser, de oplossing vereist geen installatie.",
+                "TRANSLATE000032": "Mijn account aanmaken",
+                "TRANSLATE000033": "Meldingen",
+                "TRANSLATE000034": "Bestel uw gepersonaliseerde high-performance vinylstickers (UV- en weerbestendig) direct via uw Défibeo-software, vanaf 200 stuks. Elke sticker bevat een QR-code waarmee een voorbijganger of uw klant direct informatie kan melden (technisch incident, schade, gebruik, enz.). Zo centraliseert u alle veldfeedback direct in uw Défibeo CRM. Dit hulpmiddel stelt u in staat uw activiteiten te optimaliseren door snel te bepalen of een interventie ter plaatse vereist is of dat een oplossing op afstand mogelijk is.",
+                "TRANSLATE000035": "Ik heb een vraag!",
+                "TRANSLATE000036": "Gestroomlijnde route",
+                "TRANSLATE000037": "Vertrouw op Google Maps voor route-optimalisatie, laat de software een volgorde toewijzen voor elk onderhoud. De technicus kan live locatiebepaling autoriseren met de Google Maps app, waardoor bijvoorbeeld controllers weten waar de technicus is, zonder dure oplossingen. De routeplanner bevat het beheer van dagelijkse start- en eindpunten als de route over meerdere dagen plaatsvindt.",
+                "TRANSLATE000038": "Ik heb een vraag!",
+                "TRANSLATE000039": "Gemiddelde kosten doorberekend in het eerste jaar voor de aankoop van de software per onderhoudsbeurt, geëvalueerd op basis van een volume van 3.500 interventies.",
+                "TRANSLATE000040": "Jaarlijkse ROI-winst in productiviteit (administratief en in het veld) gewaardeerd in loonkosten, geëvalueerd voor een volume van 3.500 interventies.",
+                "TRANSLATE000041": "Beschikbaarheid gegarandeerd door onze cloudinfrastructuur met dubbele redundantie, gehost in ons Cieldata-datacenter in Pau (64).",
+                "TRANSLATE000042": "FM-oplossing",
+                "TRANSLATE000043": "Défibeo ondersteunt ook spelers in de hotelsector, vastgoed, publieke diensten, sport, enz. met Défibeo Facilities; een kant-en-klare service inclusief de aankoop, het beheer en het toezicht op hun defibrillatorenpark. Door rechtstreeks de beste lokale distributeurs en onderhoudstechnici te werven die onze softwareoplossing gebruiken, garanderen wij een totaal beheer. Dit systeem stelt de eindklant in staat om 100% van het beheer van zijn nooduitrusting met een gerust hart uit te besteden.",
+                "TRANSLATE000044": "Ik heb een vraag!",
+                "TRANSLATE000050": "Koop het brein van uw bedrijf",
+                "TRANSLATE000051": "Wij bieden twee pakketten aan op basis van uw behoeften. Software gebruiksklaar geleverd en gepersonaliseerd met uw logo. Pakket inclusief onboarding, cloudhosting en technische assistentie (hulp, aanpassingen, enz.). Bij Défibeo is onze support 24/7 beschikbaar via WhatsApp in het Frans. De aankoop van de software is niet onderworpen aan BTW (0%).",
+                "TRANSLATE000052": "Geschikt voor maximaal 5.000 defibrillatoren, inclusief 3 beheerderssessies. Directe toegang na aankoop en activering van de software.",
+                "TRANSLATE000054": "(Incl. BTW) Eenmalig voor activering.",
+                "TRANSLATE000055": "Daarna €250 incl. BTW per maand.",
+                "TRANSLATE000056": "Abonneren",
+                "TRANSLATE000057": "Geschikt vanaf 5.000 defibrillatoren (onbeperkt volume), inclusief tot 25 beheerderssessies (vraag voor andere volumes een offerte aan). Toegang geleverd binnen 4 tot 7 werkdagen na aankoop van de software (1 maand gratis hosting voor de onboarding). Gepersonaliseerde interface met uw huisstijl en de mogelijkheid om de composities en logica van de software te wijzigen.",
+                "TRANSLATE000059": "(Incl. BTW) Eenmalig voor activering.",
+                "TRANSLATE000060": "Daarna €500 incl. BTW per maand.",
+                "TRANSLATE000061": "Contacteer ons",
+                "TRANSLATE000070": "Training",
+                "TRANSLATE000071": "Dit is een (optionele) training van 1u30 tot 2u30 op afstand voor 1 tot 3 personen. Vraag voor andere formaten of volumes een offerte aan.",
+                "TRANSLATE000074": "Gepubliceerd in maart 2026. Nieuwe UI-interface, verbeterde Google Maps integratie, verbeterde meldingen met QR-code en stickerprinten, geavanceerde opties voor de routeplanner, antwoordfunctie voor agenten in de CRM, beoordelingssysteem na onderhoud, verbeterde boekhoudkundige opvolging, enz.",
+                "TRANSLATE000072": "Update",
+                "TRANSLATE000075": "Klantenportaal",
+                "TRANSLATE000077": "Bied uw klanten toegang tot hun informatie en gegevens met een gepersonaliseerde interface. Afhankelijk van het gewenste volume kunnen extra hostingkosten van toepassing zijn.",
+                "TRANSLATE000078": "Techniciportaal",
+                "TRANSLATE000081": "Extincteo uitbreiding",
+                "TRANSLATE000083": "Geïntegreerde Extincteo-module voor GMAO-onderhoud en traceerbaarheid van brandblussers. Naast verschillende technische informatie is de module vergelijkbaar met die van Défibeo, met apparatuurkaarten, meldingen, routeplanning, enz.",
+                "TRANSLATE000084": "Eduxeo uitbreiding",
+                "TRANSLATE000086": "Geïntegreerde Eduxeo-module voor trainingen, aanwezigheidslijsten, certificaten en stagiairs. De bondgenoot voor opleidingsinstituten en bedrijven die interne trainingen beheren.",
+                "TRANSLATE000087": "Boekhoudkundige uitbreiding",
+                "TRANSLATE000089": "Geïntegreerde module voor boekhouding. Maak offertes, facturen en leveringsbonnen direct vanuit de software, conform de geldende wetgeving. Exporteer uw boekhoudgegevens om ze te integreren in uw boekhoudsoftware (bijv. Quickbooks, Sage, enz.).",
+                "TRANSLATE000100": "Vergemakkelijk uw dagelijkse gebruik en processen",
+                "TRANSLATE000101": "Adopteer de software en deze past zich aan u aan! Personaliseer het met uw huisstijl, uw regels, uw functies en uw processen. Volledig white-label, u genereert echte toegevoegde waarde voor uw bedrijf. Bij Défibeo Standard is personalisatie beperkt tot het logo en de kleuren.",
+                "TRANSLATE000102": "Défibeo wordt al 6 jaar gebruikt door +130k defibrillatoren in Europa. Elke dag worden er ongeveer 900 onderhoudsbeurten uitgevoerd door onze gebruikers. Gesmeed door zijn gebruikers sinds 2019, is Défibeo de vrucht van collectieve intelligentie van tientallen onderhoudstechnici & distributeurs in deze landen: Verenigd Koninkrijk (~55%), Duitsland (~15%), Frankrijk (~10%), België (~10%), Zwitserland (~5%) en Luxemburg (~5%).",
+                "TRANSLATE000103": "De Défibeo-software, inclusief functionaliteiten voor de organisatie en voltooiing van onderhoud door technici, is direct toegankelijk via een webbrowser. Geen complexe downloads nodig, en het is praktisch en aangenaam in gebruik op computer, tablet en smartphone. De volledige webarchitectuur zorgt voor een grote reactiesnelheid bij updates en toegang tot voordelige oplossingen.",
+                "TRANSLATE000104": "Krachtige, flexibele en betrouwbare hosting met optimale redundantie. Défibeo steunt op een online server gekoppeld aan een fysieke back-up beheerd door onze Cieldata-tak. Deze infrastructuren zijn verspreid over twee verschillende locaties en profiteren van de meest uitgebreide verzekeringen en garanties. Uw gegevens worden volledig gehost in Frankrijk, in Pau (64).",
+                "TRANSLATE000105": "Défibeo integreert de eigenschappen van alle modellen defibrillatoren zoals Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.",
+                "TRANSLATE000106": "Défibeo vergemakkelijkt de publicatie van uw defibrillatoren op het Franse overheidsplatform GEO DAE dankzij een batch-export die voldoet aan de vereisten. Een technicus kan bijvoorbeeld melden dat een defibrillator waaraan hij werkt ontbreekt op GEO DAE, waardoor de beheerder de voortgang van de toevoeging op het platform kan volgen.",
+            }
+        };
+
+        const select = document.getElementById('lang-select');
+
+        select.addEventListener('change', (e) => {
+            const selectedLang = e.target.value;
+            
+            // On cible tous les éléments ayant l'attribut data-key
+            const elementsToTranslate = document.querySelectorAll('[data-key]');
+
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-key');
+                
+                // Si la traduction existe pour cette clé et cette langue
+                if (translations[selectedLang] && translations[selectedLang][key]) {
+                    el.innerText = translations[selectedLang][key];
+                }
+            });
+        });
+    })();
+</script>
 
 <!-- ================= BARRE INITIALE ================= -->
 <div class="dfbgo-bar-wrapper">
   <div class="dfbgo-bar-inner">
-    <div class="dfbgo-bar-text">
+    <div class="dfbgo-bar-text" data-key="TRANSLATE000002">
 Une présentation personnalisée et détaillée du logiciel en écran partagé.
     </div>
 <button
@@ -1149,6 +1749,7 @@ Une présentation personnalisée et détaillée du logiciel en écran partagé.
   id="openBtn-defibeo-contact"
   class="dfbgo-bar-action-btn"
   href="#"
+  data-key="TRANSLATE000003"
 >
   Contactez votre interlocuteur
 </button>
@@ -1539,12 +2140,12 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="dfbcontact-popup-container">
 
     <!-- FERMER -->
-    <button class="dfbcontact-popup-close-btn" id="dfbcontactClosePopup">
+    <button class="dfbcontact-popup-close-btn" id="dfbcontactClosePopup" data-key="TRANSLATEA6">
       Fermer
     </button>
 
     <!-- TITRES -->
-    <p class="dfbcontact-popup-subtitle">
+    <p class="dfbcontact-popup-subtitle" data-key="TRANSLATEA1">
 Comment souhaitez-vous nous contacter?
     </p>
 
@@ -1553,24 +2154,24 @@ Comment souhaitez-vous nous contacter?
 
       <!-- CARD 1 -->
       <div class="dfbcontact-card VRADc">
-        <h3>Téléphone</h3>
+        <h3 data-key="TRANSLATEA2">Téléphone</h3>
         <a href="tel:+33651517065" class="dfbcontact-card-btn">
-          06 51 51 70 65
+          +33 6 51 51 70 65
         </a>
       </div>
 
       <!-- CARD 2 -->
       <div class="dfbcontact-card VRADa">
-        <h3>Email</h3>
-        <a href="mailto:fr@defibeo.com" class="dfbcontact-card-btn">
-          fr@defibeo.com
+        <h3 data-key="TRANSLATEA3">Email</h3>
+        <a href="mailto:mail@defibeo.com" class="dfbcontact-card-btn">
+          mail@defibeo.com
         </a>
       </div>
 
       <!-- CARD 3 -->
       <div class="dfbcontact-card VRADb">
-        <h3>Écran Partagé</h3>
-        <a href="https://defibeo-com-reserver-un-appel.youcanbook.me/" class="dfbcontact-card-btn">
+        <h3 data-key="TRANSLATEA4">Écran Partagé</h3>
+        <a href="https://defibeo-com-reserver-un-appel.youcanbook.me/" class="dfbcontact-card-btn" data-key="TRANSLATEA5">
           Réserver une démo
         </a>
       </div>
@@ -1941,10 +2542,10 @@ Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 </script>
 
 
-<p class="tertraktoz" >Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
+<p class="tertraktoz" data-key="TRANSLATE000007">Votre nouveau maillon dans la chaîne de survie. Prenez le contrôle de la gestion et de la maintenance de vos défibrillateurs grâce à un logiciel métier spécialisé. Fini le chaos du travail décentralisé et hors ligne. Libérez votre potentiel, gagnez en efficacité et offrez un nouvel essor à votre entreprise.
         </p>
 <br>
-<button id="openBtn-register" class="ffka defibeocontact">
+<button id="openBtn-register" class="ffka defibeocontact" data-key="TRANSLATE000008">
   Créer mon compte
 </button>
 <script>
@@ -2813,9 +3414,9 @@ width: 40px;
       <div class="cards">
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho1.svg" alt="Mobilité"><br><br>
-          <h3 class="okazu">Infogérance</h3>
-          <p class="okazu2">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
-          <a href="#" class="open-defibeo-contactWS idgo okazu3">Contactez-nous</a>
+          <h3 class="okazu" data-key="TRANSLATE000009">Infogérance</h3>
+          <p class="okazu2" data-key="TRANSLATE0000010">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
+          <a href="#" class="open-defibeo-contactWS idgo okazu3" data-key="TRANSLATE0000011">Contactez-nous</a>
           
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -2838,15 +3439,15 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho3.svg" alt="Assistance"><br><br>
-          <h3 class="okazu">GMAO</h3>
-          <p class="okazu2">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
-          <a href="/register" class="idgo okazu3">Commencer</a>
+          <h3 class="okazu" data-key="TRANSLATE0000012">GMAO</h3>
+          <p class="okazu2" data-key="TRANSLATE0000013">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
+          <a href="/register" class="idgo okazu3" data-key="TRANSLATE0000014">Commencer</a>
         </div>
         <div class="card zus">
           <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/echoecho.svg" alt="Infogérance"><br><br>
-          <h3 class="okazu">Mobilité</h3>
-          <p class="okazu2">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
-          <a href="/register" class="idgo okazu3">Créer mon logiciel</a>
+          <h3 class="okazu" data-key="TRANSLATE0000015">Mobilité</h3>
+          <p class="okazu2" data-key="TRANSLATE0000016">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
+          <a href="/register" class="idgo okazu3" data-key="TRANSLATE0000017">Créer mon logiciel</a>
         </div>
       </div>
     </div>
@@ -2857,7 +3458,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <br><br><br>
 
 
-            <h2 class="kijhguijhuij">Compréhensif du métier de distributeur et mainteneur de défibrillateurs</h2>
+<h2 class="kijhguijhuij" data-key="TRANSLATE0000018">Un outil structurant, compréhensif du métier de distributeur et mainteneur de défibrillateurs</h2>
 
 
     <div class="dfb-main-feature-grid-container">
@@ -2867,8 +3468,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img1.svg" alt="Reçu PDF">
             </div>
             <div class="dfb-feature-content-body">
-                <h3 class="dfb-feature-content-title">Rapports PDF</h3>
-                <p class="dfb-feature-content-subtitle">Génération automatique de rapports PDF basés sur des modèles personnalisables (contenu et identité visuelle), incluant les points de vérification, les informations du défibrillateur, une photographie et la signature numérique.</p>
+                <h3 class="dfb-feature-content-title" data-key="TRANSLATE000019">Rapports PDF</h3>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE000020">Génération automatique de rapports PDF basés sur des modèles personnalisables (contenu et identité visuelle), incluant les points de vérification, les informations du défibrillateur, une photographie et la signature numérique.</p>
             </div>
         </div>
 
@@ -2877,8 +3478,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img2.svg" alt="Ordre & Temps">
             </div>
             <div class="dfb-feature-content-body">
-                <h3 class="dfb-feature-content-title">Système de tournées</h3>
-                <p class="dfb-feature-content-subtitle">Gérez vos ordres de mission de A à Z : proposez à vos techniciens un trajet optimisé avec Google Maps, le contrôle de leur stock embarqué et une gestion simplifiée de leurs feuilles de temps / relevé d'heures.</p>
+                <h3 class="dfb-feature-content-title" data-key="TRANSLATE0000021">Système de tournées</h3>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE0000022">Gérez vos ordres de mission de A à Z : proposez à vos techniciens un trajet optimisé avec Google Maps, le contrôle de leur stock embarqué et une gestion simplifiée de leurs feuilles de temps / relevé d'heures.</p>
             </div>
         </div>
 
@@ -2887,8 +3488,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img3.svg" alt="Comptabilité">
             </div>
             <div class="dfb-feature-content-body">
-                <h3 class="dfb-feature-content-title">Suivi comptable</h3>
-                <p class="dfb-feature-content-subtitle">Centralisez vos pièces comptables par profil client, suivez les consommables à facturer selon les spécificités de chaque contrat et générez instantanément vos factures proforma.</p>
+                <h3 class="dfb-feature-content-title" data-key="TRANSLATE000023">Suivi comptable</h3>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE000024x">Centralisez vos pièces comptables par profil client, suivez les consommables à facturer selon les spécificités de chaque contrat et générez instantanément vos pièces comptables.</p>
             </div>
         </div>
 
@@ -2897,8 +3498,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img4.svg" alt="Modération">
             </div>
             <div class="dfb-feature-content-body">
-                <h3 class="dfb-feature-content-title">Modération</h3>
-                <p class="dfb-feature-content-subtitle">Vérifiez les informations saisies par les techniciens grâce à la modération avant d'envoyer le rapport PDF par email automatique au client et de mettre à jour la base de données.</p>
+                <h3 class="dfb-feature-content-title" data-key="TRANSLATE0000024">Modération</h3>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE0000025">Vérifiez les informations saisies par les techniciens grâce à la modération avant d'envoyer le rapport PDF par email automatique au client et de mettre à jour la base de données.</p>
             </div>
         </div>
 
@@ -2907,8 +3508,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img5.svg" alt="Qualité Service">
             </div>
             <div class="dfb-feature-content-body">
-                <h3 class="dfb-feature-content-title">Qualité de service</h3>
-                <p class="dfb-feature-content-subtitle">Digitalisez la gestion de vos interventions et votre traçabilité pour accroître la satisfaction de vos clients. Gagnez en fiabilité grâce à une collecte rigoureuse des données de maintenance. Email de mesure de satisfaction client à l'issue de chaque intervention.</p>
+                <h3 class="dfb-feature-content-title" data-key="TRANSLATE000026">Qualité de service</h3>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE000027">Digitalisez la gestion de vos interventions et votre traçabilité pour accroître la satisfaction de vos clients. Gagnez en fiabilité grâce à une collecte rigoureuse des données de maintenance. Email de mesure de satisfaction client à l'issue de chaque intervention.</p>
             </div>
         </div>
 
@@ -2917,8 +3518,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/defibeo26img6.svg" alt="Données Étanches">
             </div>
             <div class="dfb-feature-content-body">
-                <h3 class="dfb-feature-content-title">Données étanches</h3>
-                <p class="dfb-feature-content-subtitle">Bénéficiez d’un hébergement robuste avec redondance. Que vous travailliez avec des collaborateurs internes ou externes, la confidentialité est assurée : les techniciens disposent d'accès restreints par rapport aux administrateurs.</p>
+                <h3 class="dfb-feature-content-title" data-key="TRANSLATE000001">Données étanches</h3>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE000028">Bénéficiez d’un hébergement robuste avec redondance. Que vous travailliez avec des collaborateurs internes ou externes, la confidentialité est assurée : les techniciens disposent d'accès restreints par rapport aux administrateurs.</p>
             </div>
         </div>
 
@@ -3025,10 +3626,14 @@ document.addEventListener('DOMContentLoaded', function () {
 .position {
     background: radial-gradient(#281698, #020248) !important ;
 }
-
+.reblack {
+color: #000 !important;
+}
 
 .solutionfm {
-    background: #000 !important ;
+background: #ffffff !important;
+    border-radius: 20px;
+    border: none;
 }
 
 /* Alignement du texte à gauche */
@@ -3045,7 +3650,7 @@ document.addEventListener('DOMContentLoaded', function () {
     margin-bottom: -5px;
     line-height: 1.2;
     font-family: 'DefibeoTAZ', sans-serif !important;
-    color: #fff !important;
+    color: #fff;
     letter-spacing: -1px;
      cursor: default;
 }
@@ -3096,20 +3701,140 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 }
+
+@media (max-width: 768px) {
+.db-float-wrapper {
+display: none !important;
+    }
+}
+/* Conteneur positionné en haut à droite */
+.db-float-wrapper {
+opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);
+    transition: all 0s ease-in-out;
+
+position: fixed;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+    background: #fff;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid #e4e4e4;
+}
+
+.db-float-wrapper.db-is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Style de base des "gélules" */
+.db-float-pill {
+    justify-content: center; 
+    min-width: 180px;
+
+font-family: 'DefibeoMain', sans-serif;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    display: flex;
+    font-weight: 100 !important;
+    align-items: center;
+    background: linear-gradient(126deg, #008eee, #6c1aff) !important;
+    padding: 10px 16px;
+    border-radius: 13px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+}
+
+
+/* Effets au survol */
+
+/* Espacement de l'icône */
+.db-float-icon {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+/* Responsive : On cache le texte sur mobile si besoin pour ne garder que les icônes */
+@media (max-width: 480px) {
+    .db-float-text {
+        display: none;
+    }
+    .db-float-pill {
+        padding: 10px;
+    }
+    .db-float-icon {
+        margin-right: 0;
+    }
+}
+
+    .isotop {
+font-family: 'DefibeoMain', sans-serif;
+font-size: 18px;
+color: #000; 
+font-weight: 100 !important;
+text-align: center;
+cursor: default;
+margin-top: 10px;
+    margin-bottom: 0px;
+    }
+
+
+    /* On cible ton sélecteur existant */
+.lang-selector-container {
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Classe qui sera ajoutée par le JavaScript */
+.lang-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Empêche de cliquer dessus par erreur quand il est invisible */
+    transform: translateY(-10px); /* Petit effet de remontée vers le haut */
+}
 </style>
 
+<div class="db-float-wrapper">
+  <p class="isotop" data-key="TRANSLATE000200">Contactez-nous!</p>
+    <a href="tel:+33651517065" class="db-float-pill">
+        <span class="db-float-text">Tel +33 6 51 51 70 65</span>
+    </a>
+    <a href="mailto:mail@defibeo.com" class="db-float-pill">
+        <span class="db-float-text">Mail mail@defibeo.com</span>
+    </a>
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const floatWrapper = document.querySelector('.db-float-wrapper');
+    
+    // Si le scroll dépasse 100px
+    if (window.scrollY > 100) {
+        floatWrapper.classList.add('db-is-visible');
+    } else {
+        floatWrapper.classList.remove('db-is-visible');
+    }
+});
+</script>
 
 <div class="cp-layout-container__wrapper">
   <div class="cp-layout-container__grid">
     
     <div class="cp-layout-container__content">
-      <h2 class="cp-layout-container__title">L'arborescence</h2>
-      <p class="cp-layout-container__subtitle">L’interface du logiciel est simple et intuitive : vous accédez instantanément aux informations essentielles grâce à une lisibilité optimale des données. Tout est centralisé, de la fiche client au suivi des défibrillateurs, en passant par la génération de reçus PDF, la facturation, la gestion de la relation client et l’inventaire. Accessible directement depuis votre navigateur, la solution ne nécessite aucune installation.</p>
-      <a href="/register" class="cp-layout-container__button">Créer mon compte</a>
+      <h2 class="cp-layout-container__title" data-key="TRANSLATE000030">L'arborescence</h2>
+      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000031">L’interface du logiciel est simple et intuitive : vous accédez instantanément aux informations essentielles grâce à une lisibilité optimale des données. Tout est centralisé, de la fiche client au suivi des défibrillateurs, en passant par la génération de reçus PDF, la facturation, la gestion de la relation client et l’inventaire. Accessible directement depuis votre navigateur, la solution ne nécessite aucune installation.</p>
+      <a href="/register" class="cp-layout-container__button" data-key="TRANSLATE000032">Créer mon compte</a>
     </div>
 
     <div class="cp-layout-container__media">
-      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/IllustrationWebViewneo.svg" alt="Illustration" class="cp-layout-container__image">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/browsershowdefibeo.svg" alt="Illustration" class="cp-layout-container__image">
     </div>
     
   </div>
@@ -3120,9 +3845,9 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="cp-layout-container__grid">
     
     <div class="cp-layout-container__content">
-      <h2 class="cp-layout-container__title">Signalements</h2>
-      <p class="cp-layout-container__subtitle">Commandez vos stickers vinyles personnalisés haute performance (résistants aux UV et aux intempéries) directement depuis votre logiciel Défibeo, à partir de 200 unités. Chaque sticker intègre un QR code permettant à un passant ou à votre client de signaler instantanément une information (incident technique, dégradation, utilisation, etc.). Vous centralisez ainsi, directement dans votre CRM Défibeo, toutes les remontées de terrain. Cet outil vous permet d'optimiser vos opérations en déterminant rapidement si une intervention sur place est requise ou si une résolution à distance est possible.</p>
-      <a href="mailto:fr@defibeo.com" class="cp-layout-container__button">J'ai une question!</a>
+      <h2 class="cp-layout-container__title" data-key="TRANSLATE000033">Signalements</h2>
+      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000034">Commandez vos stickers vinyles personnalisés haute performance (résistants aux UV et aux intempéries) directement depuis votre logiciel Défibeo, à partir de 200 unités. Chaque sticker intègre un QR code permettant à un passant ou à votre client de signaler instantanément une information (incident technique, dégradation, utilisation, etc.). Vous centralisez ainsi, directement dans votre CRM Défibeo, toutes les remontées de terrain. Cet outil vous permet d'optimiser vos opérations en déterminant rapidement si une intervention sur place est requise ou si une résolution à distance est possible.</p>
+      <a href="mailto:fr@defibeo.com" class="cp-layout-container__button" data-key="TRANSLATE000035">J'ai une question!</a>
     </div>
 
     <div class="cp-layout-container__media">
@@ -3138,31 +3863,136 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="cp-layout-container__grid position">
     
     <div class="cp-layout-container__content">
-      <h2 class="cp-layout-container__title dada">Trajet rationalisé</h2>
-      <p class="cp-layout-container__subtitle dada">Appuyez-vous sur Google Maps pour l’optimisation des tournées, laissez le logiciel attribuer un ordre de passage pour chaque maintenance. Le technicien peut autoriser la localisation en direct de sa position avec l’app Google Maps, donnant ainsi la capacité, par exemple, aux contrôleurs de gestion de savoir où en est le technicien, sans avoir besoin de solution coûteuse. L’organisateur de tournée comprend la gestion des points de départs et arrivés quotidiens si la tournée se réalise sur plusieurs jours.</p>
-      <a href="mailto:fr@defibeo.com" class="cp-layout-container__button buttonforGPS">J'ai une question!</a>
+      <h2 class="cp-layout-container__title dada" data-key="TRANSLATE000036">Trajet rationalisé</h2>
+      <p class="cp-layout-container__subtitle dada" data-key="TRANSLATE000037">Appuyez-vous sur Google Maps pour l’optimisation des tournées, laissez le logiciel attribuer un ordre de passage pour chaque maintenance. Le technicien peut autoriser la localisation en direct de sa position avec l’app Google Maps, donnant ainsi la capacité, par exemple, aux contrôleurs de gestion de savoir où en est le technicien, sans avoir besoin de solution coûteuse. L’organisateur de tournée comprend la gestion des points de départs et arrivés quotidiens si la tournée se réalise sur plusieurs jours.</p>
+      <a href="mailto:fr@defibeo.com" class="cp-layout-container__button buttonforGPS" data-key="TRANSLATE000038">J'ai une question!</a>
     </div>
 
     <div class="cp-layout-container__media">
-      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/googlemaps_defibeogeu.svg" alt="Illustration" class="cp-layout-container__image mimimage">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/googlemapsshowdefibeo.svg" alt="Illustration" class="cp-layout-container__image mimimage">
     </div>
     
   </div>
 </div>
 
+<style>
+  /* Conteneur principal avec la police spécifique */
+  .db-stats-wrapper {
+display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: "DefibeoFont", sans-serif;
+    font-size: 18px;
+    width: 100%;
+    margin: 2rem 0;
+    max-width: 1100px;
+    margin-top: -60px !important;
+    margin-bottom: 85px !important;
+    margin: auto;
+  }
 
+  /* Style de chaque bloc individuel */
+  .db-stats-item {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8e8e8;
+    border-radius: 20px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: default;
+
+  }
+
+  /* Conteneur du chiffre et du suffixe */
+  .db-stats-number-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Style du chiffre principal */
+  .db-stats-value {
+font-size: 69px;
+    color: #000;
+    font-weight: bold;
+    line-height: 1;
+    font-family: 'DefibeoTAZ', sans-serif !important;
+    letter-spacing: -2px;
+  }
+
+  /* Style du suffixe (ex: %) plus petit */
+  .db-stats-suffix {
+    font-size: 28px;
+    margin-left: 2px;
+        color: #000;
+  }
+
+  /* Style du paragraphe */
+  .db-stats-description {
+    margin: 0;
+    line-height: 1.5;
+    color: #000;
+    font-size: 18px;
+  }
+
+  /* Responsive : Empilement sur écrans < 768px */
+  @media (max-width: 767px) {
+    .db-stats-wrapper {
+          gap: 10px;
+      flex-direction: column;
+    
+    }
+    .db-stats-item {
+max-width: 85%;
+        margin: auto;
+    }
+  }
+</style>
+
+<div class="db-stats-wrapper">
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">0.2</span>
+      <span class="db-stats-suffix">%</span>
+    </div>
+    <p class="db-stats-description" data-key="TRANSLATE000039">Coût moyen répercuté la première année pour l'achat du logiciel par maintenance, évalué sur la base d'un volume de 3,500 interventions.</p>
+  </div>
+
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">65</span>
+      <span class="db-stats-suffix">k€</span>
+    </div>
+    <p class="db-stats-description" data-key="TRANSLATE000040">Gain annuel ROI en productivité (administratif et terrain) valorisé en coûts salariaux, évalué pour un volume de 3,500 interventions.</p>
+  </div>
+
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">+99</span>
+      <span class="db-stats-suffix">%</span>
+    </div>
+    <p class="db-stats-description" data-key="TRANSLATE000041">Taux de disponibilité garanti par notre infrastructure cloud en double redondance, hébergée dans notre datacenter Cieldata à Pau (64).</p>
+  </div>
+</div>
 
 <div class="cp-layout-container__wrapper alphaomega">
-  <div class="cp-layout-container__grid solutionfm">
+  <div class="reblack cp-layout-container__grid solutionfm">
     
     <div class="cp-layout-container__content">
-      <h2 class="cp-layout-container__title">Solution FM</h2>
-      <p class="cp-layout-container__subtitle">Défibeo accompagne aussi les acteurs de l'hôtellerie, de l'immobilier, des services publiques, du sport, etc. avec Défibeo Facilities ; un service clé en main incluant l'achat, la gestion et la supervision de leur parc de défibrillateurs. En recrutant directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de notre solution logicielle, nous garantissons ainsi une maîtrise d'œuvre totale. Ce dispositif permet au client final de déléguer 100% de la gestion de ses équipements de secours en toute sérénité.</p>
-      <a href="mailto:fr@defibeo.com" class="cp-layout-container__button">J'ai une question!</a>
+      <h2 class="reblack cp-layout-container__title" data-key="TRANSLATE000042">Solution FM</h2>
+      <p class="reblack cp-layout-container__subtitle" data-key="TRANSLATE000043">Défibeo accompagne aussi les acteurs de l'hôtellerie, de l'immobilier, des services publiques, du sport, etc. avec Défibeo Facilities ; un service clé en main incluant l'achat, la gestion et la supervision de leur parc de défibrillateurs. En recrutant directement les meilleurs distributeurs et mainteneurs locaux utilisateurs de notre solution logicielle, nous garantissons ainsi une maîtrise d'œuvre totale. Ce dispositif permet au client final de déléguer 100% de la gestion de ses équipements de secours en toute sérénité.</p>
+      <a href="mailto:fr@defibeo.com" class="cp-layout-container__button" data-key="TRANSLATE000044">J'ai une question!</a>
     </div>
 
     <div class="cp-layout-container__media">
-      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/solutionfm_defibeo.svg" alt="Illustration" class="cp-layout-container__image">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/fmsystemdefibeo.svg" alt="Illustration" class="cp-layout-container__image">
     </div>
     
   </div>
@@ -3365,7 +4195,7 @@ font-family: 'DefibeoTAZ', sans-serif;
   <section>
 
     <div class="container">
-    <h2 class="okazu4" >Achetez le cerveau de votre entreprise</h2>
+    <h2 class="okazu4" data-key="TRANSLATE000050">Achetez le cerveau de votre entreprise</h2>
 
 
 
@@ -3528,7 +4358,7 @@ display: inline-block;
 </style>
 
 <div class="tpx-eval-wrapper">
-    <div class="tpx-eval-main-title">
+    <div class="tpx-eval-main-title" data-key="TRANSLATE000051">
 Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré prêt à l’usage et personnalisé à votre effigie. Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique (aide, ajustements, etc.). Chez Défibeo notre support est disponible 24/7 via WhatsApp en français. L’achat du logiciel n’est pas soumis à la TVA (0%).
     </div>
 
@@ -3540,15 +4370,15 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
         </div>
         
         <div class="tpx-eval-collapsible">
-            <p class="tpx-eval-desc">
+            <p class="tpx-eval-desc" data-key="TRANSLATE000052">
 Éligible jusqu’à 5,000 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation et l’activation du logiciel.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">800€</span>
-                <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation.</span>
+                <span class="tpx-eval-big-p" data-key="TRANSLATE000053">800€</span>
+                <span class="tpx-eval-small-p" data-key="TRANSLATE000054">(TTC) Une fois pour l'activation.</span>
             </div>
-            <div class="tpx-eval-label-host">Puis 250€ TTC par mois.</div>
-            <br><a href="/register" class="grazioli">Souscrire</a><br><br>
+            <div class="tpx-eval-label-host" data-key="TRANSLATE000055">Puis 250€ TTC par mois.</div>
+            <br><a href="/register" class="grazioli" data-key="TRANSLATE000056">Souscrire</a><br><br>
         </div>
     </label>
 
@@ -3560,15 +4390,15 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
         </div>
         
         <div class="tpx-eval-collapsible">
-            <p class="tpx-eval-desc">
-Éligible à partir de 5,000 défibrillateurs (volume illimité), incluant jusqu'à 15 sessions administrateurs et utilisateurs (pour d'autres volumes avec sous accès pour les clients et les techniciens, veuillez demander un devis). Accès livré sous 4 à 7 jours ouvrés après l’achat du logiciel (1 mois d'hébergement offert pour la prise en main). Interface personnalisée avec votre charte graphique et la possibilité de modifier les compositions et logiques du logiciel.
+            <p class="tpx-eval-desc" data-key="TRANSLATE000057">
+Éligible à partir de 5,000 défibrillateurs (volume illimité), incluant jusqu'à 25 sessions administrateurs (pour d'autres volumes, veuillez demander un devis). Accès livré sous 4 à 7 jours ouvrés après l’achat du logiciel (1 mois d'hébergement offert pour la prise en main). Interface personnalisée avec votre charte graphique et la possibilité de modifier les compositions et logiques du logiciel.
             </p>
             <div class="tpx-eval-price-box">
-                <span class="tpx-eval-big-p">6,900€</span>
-                <span class="tpx-eval-small-p">(TTC) Une fois pour l'activation.</span>
+                <span class="tpx-eval-big-p" data-key="TRANSLATE000058">6,900€</span>
+                <span class="tpx-eval-small-p" data-key="TRANSLATE000059">(TTC) Une fois pour l'activation.</span>
             </div>
-            <div class="tpx-eval-label-host">Puis 500€ TTC par mois.</div>
-            <br><a href="#" class="open-defibeo-contact grazioli">Contactez-nous</a><br><br>
+            <div class="tpx-eval-label-host" data-key="TRANSLATE000060">Puis 500€ TTC par mois.</div>
+            <br><a href="#" class="open-defibeo-contact grazioli" data-key="TRANSLATE000061">Contactez-nous</a><br><br>
         </div>
     </label>
 </div>
@@ -3903,66 +4733,93 @@ width: 100%;
   </script>
   <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
-      <div class="dfb-acc-title">Formation Défibeo</div>
-      <div class="dfb-acc-price-cell">250.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-title" data-key="TRANSLATE000070">Formation</div>
+      <div class="dfb-acc-price-cell">200.00€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Obtenir</a>
       </div>
     </summary>
-    <div class="dfb-acc-content">
+    <div class="dfb-acc-content" data-key="TRANSLATE000071">
      Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes. Pour d'autres formats ou volumes, veuillez solliciter un devis.
     </div>
   </details>
 
   <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
-      <div class="dfb-acc-title">Mise à jour Défibeo</div>
+      <div class="dfb-acc-title" data-key="TRANSLATE000072">Mise à jour</div>
       <div class="dfb-acc-price-cell">500.00€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS" data-key="TRANSLATE000073">Obtenir</a>
       </div>
     </summary>
-    <div class="dfb-acc-content">
-      Large actualisation Février 2026 (optionnelle). Nouvelle interface UI, amélioration de l'intégration de Google Maps, amélioration des signalements avec QR code, options avancées pour le planificateur de tournées, fonctionnalité de réponse dans le CRM, système de notation post-maintenance, amélioration du suivi comptable avec la génération de proforma, etc.
+    <div class="dfb-acc-content" data-key="TRANSLATE000074">
+Publiée en Mars 2026. Nouvelle interface UI, amélioration de l'intégration de Google Maps, amélioration des signalements avec QR code et d'impression des stickers, options avancées pour le planificateur de tournées, fonctionnalité de réponse de l'agent dans le CRM, système de notation post-maintenance, amélioration du suivi comptable, etc.
+    </div>
+  </details>
+
+
+    <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title" data-key="TRANSLATE000075">Portail Clients</div>
+      <div class="dfb-acc-price-cell">500.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS" data-key="TRANSLATE000076">Obtenir</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content" data-key="TRANSLATE000077">
+Offrez à vos clients un accès à leurs informations et données avec une interface personnalisée. Des frais d'hébergements supplémentaires seront peut-être nécessaires selon le volume souhaité.
+    </div>
+  </details>
+
+      <details class="dfb-acc-item">
+    <summary class="dfb-acc-header">
+      <div class="dfb-acc-title" data-key="TRANSLATE000078">Portail Techniciens</div>
+      <div class="dfb-acc-price-cell">900.00€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-action">
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS" data-key="TRANSLATE000079">Obtenir</a>
+      </div>
+    </summary>
+    <div class="dfb-acc-content" data-key="TRANSLATE000080">
+Offrez à vos techniciens un accès à leurs informations et données avec une interface personnalisée, pour traiter les défibrillateurs, organiser les tournées, vérifier les reçus PDF générés, etc.
     </div>
   </details>
 
   <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
-      <div class="dfb-acc-title">Extension Extincteo</div>
+      <div class="dfb-acc-title" data-key="TRANSLATE000081">Extension Extincteo</div>
       <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS" data-key="TRANSLATE000082">Obtenir</a>
       </div>
     </summary>
-    <div class="dfb-acc-content">
-      Module intégré Extincteo pour la maintenance GMAO et la traçabilité des extincteurs.
+    <div class="dfb-acc-content" data-key="TRANSLATE000083">
+Module intégré Extincteo pour la maintenance GMAO et la traçabilité des extincteurs. Outre des informations techniques différentes, le module est similaire à celui de Défibeo, avec des fiches d'équipements, des signalements, des planifications de tournées, etc.
     </div>
   </details>
 
   <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
-      <div class="dfb-acc-title">Extension Eduxeo</div>
+      <div class="dfb-acc-title" data-key="TRANSLATE000084">Extension Eduxeo</div>
       <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS" data-key="TRANSLATE000085">Obtenir</a>
       </div>
     </summary>
-    <div class="dfb-acc-content">
-      Module intégré Eduxeo pour les formations, feuilles de présences, certificats et stagiaires.
+    <div class="dfb-acc-content" data-key="TRANSLATE000086">
+Module intégré Eduxeo pour les formations, feuilles de présences, certificats et stagiaires. L'allié pour les organismes de formations et les entreprises qui gèrent des formations en interne.
     </div>
   </details>
 
   <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
-      <div class="dfb-acc-title">Extension Compta</div>
+      <div class="dfb-acc-title" data-key="TRANSLATE000087">Extension Compta</div>
       <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
-        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS">Contactez-nous</a>
+        <a href="#" class="open-defibeo-contactX open-defibeo-contactWS" data-key="TRANSLATE000088">Obtenir</a>
       </div>
     </summary>
-    <div class="dfb-acc-content">
-      Module intégré pour la comptabilité. Éditez des devis, des factures et des bons de livraisons.
+    <div class="dfb-acc-content" data-key="TRANSLATE000089">
+      Module intégré pour la comptabilité. Éditez des devis, des factures et des bons de livraisons directement depuis le logiciel, conforme à la législation en vigueur. Exportez vos données comptables pour les intégrer à votre logiciel de comptabilité (ex: Quickbooks, Sage, etc.).
     </div>
   </details>
 
@@ -3975,23 +4832,23 @@ width: 100%;
 
   <!-- Champ 1 -->
   <div class="defibeo-roi-field-block-9x8k3" id="f1" style="display:block">
-    <span class="defibeo-roi-field-label-9x8k3">Volume des défibrillateurs?</span>
+    <span class="defibeo-roi-field-label-9x8k3" data-key="TRANSLATE000090">Volume des défibrillateurs?</span>
     <div class="defibeo-roi-radio-group-9x8k3">
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f1a" name="field1" value="500">
-        <label for="f1a">Moins de 500</label>
+        <label for="f1a" data-key="TRANSLATE000091">Moins de 500</label>
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f1b" name="field1" value="1000">
-        <label for="f1b">Moins de 1000</label>
+        <label for="f1b" data-key="TRANSLATE000092">Moins de 1000</label>
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f1c" name="field1" value="2000">
-        <label for="f1c">Moins de 2000</label>
+        <label for="f1c" data-key="TRANSLATE000093">Moins de 2000</label>
       </div>
       <div class="defibeo-roi-radio-item-9x8k3">
         <input type="radio" id="f1d" name="field1" value="5000">
-        <label for="f1d">2000 et plus</label>
+        <label for="f1d" data-key="TRANSLATE000094">2000 et plus</label>
       </div>
 
 
@@ -4121,7 +4978,7 @@ document.getElementById('reset').onclick=()=>{
 <div class="rideauABC">
 
 <br><br>
-    <h2 class="okazu4 sixtynine" >Facilitez vos usages et processus du quotidien</h2>
+    <h2 class="okazu4 sixtynine" data-key="TRANSLATE000100">Facilitez vos usages et processus du quotidien</h2>
 
 <div class="infoplus-grid">
 
@@ -4130,7 +4987,7 @@ document.getElementById('reset').onclick=()=>{
 
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO1.svg" alt="Personnalisé" >
-   <p class="infoplusTXT">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise. Avec Défibeo Standard, la personnalisation est limitée au logo et aux couleurs.</p>
+   <p class="infoplusTXT" data-key="TRANSLATE000101">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise. Avec Défibeo Standard, la personnalisation est limitée au logo et aux couleurs.</p>
    </div>
 </div>
 
@@ -4138,14 +4995,14 @@ document.getElementById('reset').onclick=()=>{
 
     <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/GIGS2.svg" alt="Clients" >
-<p class="infoplusTXT">Défibeo est utilisé par +130k défibrillateurs en Europe depuis 6 ans. Chaque jour, c'est environ 900 maintenances réalisées par nos utilisateurs. Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs & distributeurs de défibrillateurs exerçant dans ces pays ; Royaume-Uni (~55%), Allemagne (~15%), France (~10%), Belgique (~10%), Suisse (~5%) et Luxembourg (~5%).</p>
+<p class="infoplusTXT" data-key="TRANSLATE000102">Défibeo est utilisé par +130k défibrillateurs en Europe depuis 6 ans. Chaque jour, c'est environ 900 maintenances réalisées par nos utilisateurs. Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs & distributeurs de défibrillateurs exerçant dans ces pays ; Royaume-Uni (~55%), Allemagne (~15%), France (~10%), Belgique (~10%), Suisse (~5%) et Luxembourg (~5%).</p>
   </div>
 </div>
 
 <div class="infoplus">
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO6.svg" alt="Éditeur No-Code" >
-<p class="infoplusTXT">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.</p>
+<p class="infoplusTXT" data-key="TRANSLATE000103">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.</p>
   </div>
 </div>
 
@@ -4153,7 +5010,7 @@ document.getElementById('reset').onclick=()=>{
 
     <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO3.svg" alt="Hébergement Robuste" >
-<p class="infoplusTXT">Un hébergement puissant, flexible et fiable avec une redondance optimale. Défibeo s'appuie sur un serveur en ligne couplé à une sauvegarde physique gérée par notre branche Cieldata. Ces infrastructures sont réparties sur deux sites distincts et bénéficient des assurances et garanties les plus étendues. Vos données sont intégralement hébergées en France, à Pau (64).</p>
+<p class="infoplusTXT" data-key="TRANSLATE000104">Un hébergement puissant, flexible et fiable avec une redondance optimale. Défibeo s'appuie sur un serveur en ligne couplé à une sauvegarde physique gérée par notre branche Cieldata. Ces infrastructures sont réparties sur deux sites distincts et bénéficient des assurances et garanties les plus étendues. Vos données sont intégralement hébergées en France, à Pau (64).</p>
   </div>
 </div>
 
@@ -4162,7 +5019,7 @@ document.getElementById('reset').onclick=()=>{
   
   <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/V2DEFIBEO5.svg" alt="Modèles Défibrillateurs" >
-<p class="infoplusTXT">Défibeo intègre les propriétés de tous les modèles de défibrillateurs tels que Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.</p>
+<p class="infoplusTXT" data-key="TRANSLATE000105">Défibeo intègre les propriétés de tous les modèles de défibrillateurs tels que Cardiac Science Powerheart G5, Heartsine Samaritan PAD 500P, Schiller Fred PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline View, Philips HeartStart HS1, Physio-Control Lifepak CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100, Schiller Fred Easy, etc.</p>
   </div>
 </div>
 
@@ -4171,7 +5028,7 @@ document.getElementById('reset').onclick=()=>{
 
       <div class="lang-options-uniY">
 <img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/XXXXLM.svg" alt="GEODAE" >
-<p class="infoplusTXT">Défibeo vous facilite la publication de vos défibrillateurs sur la plateforme gouvernementale française GEO DAE grâce à un export en lot conforme à ses exigences. Par exemple, un technicien peut signaler qu’un défibrillateur sur lequel il intervient est absent de GEO DAE, permettant ainsi à l’administrateur de suivre l’avancement de son ajout sur la plateforme.</p>
+<p class="infoplusTXT" data-key="TRANSLATE000106">Défibeo vous facilite la publication de vos défibrillateurs sur la plateforme gouvernementale française GEO DAE grâce à un export en lot conforme à ses exigences. Par exemple, un technicien peut signaler qu’un défibrillateur sur lequel il intervient est absent de GEO DAE, permettant ainsi à l’administrateur de suivre l'avancement de son ajout sur la plateforme.</p>
   </div>
 </div>
 
@@ -5375,7 +6232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   <footer>
-    <p class="footertxt">&copy; 2026 Defibeo France — Tous droits réservés.<br><br>Logiciel édité par <a class="faj2 civilprom" href="https://cieldata.com/">Cieldata</a>. Identité graphique par <a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a>.<br><br> ↗<a class="civilprom faj" href="http://eula.defibeo.com/">EULA (Agreement)</a>↗<a class="civilprom faj" href="https://defibeo.com/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/uk/">United Kingdom</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca/">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Germany</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgium</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a> ↗<a class="faj civilprom" href="https://defibeo.com/es/">Spain</a> ↗<a class="faj civilprom" href="https://defibeo.com/pt/">Portugal</a></p>
+    <p class="footertxt">&copy; 2026 Defibeo France — Tous droits réservés.<br><br>Logiciel édité par <a class="faj2 civilprom" href="https://cieldata.com/">Cieldata</a>. Identité graphique par <a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a>.<br><br> ↗<a class="civilprom faj" href="https://www.linkedin.com/company/civilprom-cieldata/">LinkedIn</a> ↗<a class="civilprom faj" href="https://wa.me/447723501018">Support 24/7 WhatsApp</a> ↗<a class="civilprom faj" href="http://eula.defibeo.com/">EULA (Agreement)</a>↗<a class="civilprom faj" href="https://defibeo.com/fr/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/uk/">United Kingdom</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca/">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/de/">Germany</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgium</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a> ↗<a class="faj civilprom" href="https://defibeo.com/es/">Spain</a> ↗<a class="faj civilprom" href="https://defibeo.com/pt/">Portugal</a></p>
   </footer>
 
   <!-- Footer SEO Links -->
@@ -5824,6 +6681,7 @@ margin-top: 20px;
 
 
 .footer-seo-links {
+  display: none !important;
 background: black;
     padding: 45px;
     font-size: 14px;
