@@ -68,11 +68,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overscroll-behavior: none;
 }
 
     body {
-      min-height: 100vh;
       margin: 0;
       padding: 0;
       font-family: 'DefibeoMain', sans-serif;
@@ -1233,35 +1231,6 @@ background-color: #ffffff;
     }
 </style>
 
-<script>// Configuration du "Luxe"
-const scrollSpeed = 0.8; // Entre 0.05 (très lent) et 0.1 (plus réactif)
-let targetY = window.scrollY;
-let currentY = window.scrollY;
-
-// 1. On intercepte la molette sans bloquer le scroll naturel pour l'accessibilité
-window.addEventListener('wheel', (e) => {
-    e.preventDefault(); // Désactive le scroll saccadé par défaut
-    targetY += e.deltaY; // On accumule la distance voulue
-    
-    // Limites de la page pour éviter de scroller dans le vide
-    targetY = Math.max(0, Math.min(targetY, document.documentElement.scrollHeight - window.innerHeight));
-}, { passive: false });
-
-// 2. Boucle d'animation fluide
-function updateScroll() {
-    // Calcul de l'interpolation (Lerp)
-    // On se rapproche de la cible de X% à chaque frame
-    currentY += (targetY - currentY) * scrollSpeed;
-
-    // On déplace la fenêtre
-    window.scrollTo(0, currentY);
-
-    // On boucle à l'infini pour une fluidité 60fps
-    requestAnimationFrame(updateScroll);
-}
-
-updateScroll();
-</script>
 
 <script>
     (function() {
@@ -4793,7 +4762,7 @@ Publiée en Mars 2026. Nouvelle interface UI, amélioration de l'intégration de
     <details class="dfb-acc-item">
     <summary class="dfb-acc-header">
       <div class="dfb-acc-title" data-key="TRANSLATE000075">Portail Clients</div>
-      <div class="dfb-acc-price-cell">500€ <small>TVA Incl.</small></div>
+      <div class="dfb-acc-price-cell">900€ <small>TVA Incl.</small></div>
       <div class="dfb-acc-action">
         <a href="#" class="open-defibeo-contactX open-defibeo-contactWS" data-key="TRANSLATE000076">Obtenir</a>
       </div>
@@ -6264,7 +6233,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   <footer>
-    <p class="footertxt">&copy; 2026 Defibeo France — Tous droits réservés.<br><br>Logiciel édité par <a class="faj2 civilprom" href="https://cieldata.com/">Cieldata</a>. Identité graphique par <a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a>.<br><br> ↗<a class="civilprom faj" href="https://www.linkedin.com/company/civilprom-cieldata/">LinkedIn</a> ↗<a class="civilprom faj" href="https://wa.me/447723501018">Support 24/7 WhatsApp</a> ↗<a class="civilprom faj" href="http://eula.defibeo.com/">EULA (Agreement)</a>↗<a class="civilprom faj" href="https://defibeo.com/fr/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/uk/">United Kingdom</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca/">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/de/">Germany</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgium</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a> ↗<a class="faj civilprom" href="https://defibeo.com/es/">Spain</a> ↗<a class="faj civilprom" href="https://defibeo.com/pt/">Portugal</a></p>
+    <p class="footertxt">&copy; 2026 Defibeo France — Tous droits réservés.<br><br>Logiciel édité par <a class="faj2 civilprom" href="https://cieldata.com/">Cieldata</a>. Identité graphique par <a class="faj2 civilprom" href="https://civilprom.com/">Civilprom</a>.<br><br> ↗<a class="civilprom faj" href="https://www.linkedin.com/company/civilprom-cieldata/">LinkedIn</a> ↗<a class="civilprom faj" href="https://wa.me/447723501018">Support 24/7 WhatsApp</a> ↗<a class="civilprom faj" href="http://eula.defibeo.com/">EULA (Accord)</a>↗<a class="civilprom faj" href="https://defibeo.com/fr/">France</a> ↗<a class="civilprom faj" href="https://defibeo.com/uk/">United Kingdom</a> ↗<a class="civilprom faj" href="https://defibeo.com/ca/">Canada</a> ↗<a class="faj civilprom" href="https://defibeo.com/de/">Germany</a> ↗<a class="faj civilprom" href="https://defibeo.com/be/">Belgium</a> ↗<a class="faj civilprom" href="https://defibeo.com/ch/">Swiss</a> ↗<a class="faj civilprom" href="https://defibeo.com/lux/">Luxembourg</a> ↗<a class="faj civilprom" href="https://defibeo.com/es/">Spain</a> ↗<a class="faj civilprom" href="https://defibeo.com/pt/">Portugal</a></p>
   </footer>
 
   <!-- Footer SEO Links -->
