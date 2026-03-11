@@ -3490,7 +3490,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="dfb-feature-content-body">
                 <h3 class="dfb-feature-content-title" data-key="TRANSLATE000023">Facturation</h3>
-                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE000024x">Générez ou créez des factures, devis, avoirs et exports CSV personnalisés directement depuis le logiciel conforme à la législation en vigueur. Suivez également le pointage des paiements et ne manquez aucun consommable à facturer.</p>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE000024x">Éditez vos factures, devis, avoirs et exports CSV personnalisés directement depuis le logiciel conforme à la législation en vigueur. Suivez également le pointage des paiements et ne manquez aucun consommable à facturer.</p>
             </div>
         </div>
 
@@ -4975,6 +4975,130 @@ document.getElementById('reset').onclick=()=>{
 
 </div>
 
+
+<style>
+  /* Conteneur principal avec isolation des styles */
+  .dfb-faq-wrapper {
+    font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100;
+    font-size: 19px;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .dfb-faq-item-container {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+  }
+
+  /* Style de la question (Toggle) */
+  .dfb-faq-trigger-input {
+    display: none; /* On cache la checkbox réelle */
+  }
+
+  .dfb-faq-question-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    font-weight: 100; /* Forçage du poids demandé */
+  }
+
+  .dfb-faq-question-label:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Icône d'état */
+  .dfb-faq-icon-indicator::after {
+    content: '+';
+    font-size: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Gestion de l'affichage de la réponse via la checkbox */
+  .dfb-faq-answer-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+    background-color: #fff;
+  }
+
+  .dfb-faq-answer-inner-text {
+    padding: 0 20px 20px 20px;
+  }
+
+  /* État ouvert */
+  .dfb-faq-trigger-input:checked + .dfb-faq-question-label + .dfb-faq-answer-content {
+    max-height: 1000px; /* Valeur haute pour permettre l'expansion */
+    transition: max-height 1s ease-in-out;
+  }
+
+  .dfb-faq-trigger-input:checked + .dfb-faq-question-label .dfb-faq-icon-indicator::after {
+    content: '−';
+    transform: rotate(180deg);
+  }
+
+  /* Responsive : ajustement des marges et texte sur petits écrans */
+  @media (max-width: 600px) {
+    .dfb-faq-wrapper {
+      width: 95%;
+      font-size: 17px; /* Légère réduction pour la lisibilité mobile */
+    }
+    
+    .dfb-faq-question-label {
+      padding: 12px 15px;
+    }
+  }
+</style>
+
+<div class="dfb-faq-wrapper">
+  
+  <div class="dfb-faq-item-container">
+    <input type="checkbox" id="dfb-faq-q1" class="dfb-faq-trigger-input">
+    <label for="dfb-faq-q1" class="dfb-faq-question-label">
+      Comment fonctionne l'intégration de ce module ?
+      <span class="dfb-faq-icon-indicator"></span>
+    </label>
+    <div class="dfb-faq-answer-content">
+      <div class="dfb-faq-answer-inner-text">
+        L'intégration est simplifiée grâce à l'utilisation de classes préfixées qui évitent tout conflit avec vos feuilles de style existantes. Il suffit de copier ce bloc dans votre section de contenu.
+      </div>
+    </div>
+  </div>
+
+  <div class="dfb-faq-item-container">
+    <input type="checkbox" id="dfb-faq-q2" class="dfb-faq-trigger-input">
+    <label for="dfb-faq-q2" class="dfb-faq-question-label">
+      Le design est-il vraiment responsive ?
+      <span class="dfb-faq-icon-indicator"></span>
+    </label>
+    <div class="dfb-faq-answer-content">
+      <div class="dfb-faq-answer-inner-text">
+        Absolument. La mise en page s'adapte automatiquement à la largeur de l'écran, garantissant une lecture fluide sur smartphone, tablette et ordinateur.
+      </div>
+    </div>
+  </div>
+
+  <div class="dfb-faq-item-container">
+    <input type="checkbox" id="dfb-faq-q3" class="dfb-faq-trigger-input">
+    <label for="dfb-faq-q3" class="dfb-faq-question-label">
+      Puis-je modifier la police de caractères facilement ?
+      <span class="dfb-faq-icon-indicator"></span>
+    </label>
+    <div class="dfb-faq-answer-content">
+      <div class="dfb-faq-answer-inner-text">
+        Oui, bien que nous ayons configuré 'DefibeoMain' comme demandé, vous pouvez changer la propriété font-family dans la classe principale pour appliquer n'importe quelle autre police.
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <div class="rideauABC">
 
