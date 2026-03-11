@@ -1265,7 +1265,7 @@ background-color: #ffffff;
                 "TRANSLATE000024x": "Générez ou créez des factures, devis, avoirs et exports CSV personnalisés directement depuis le logiciel conforme à la législation en vigueur. Suivez également le pointage des paiements et ne manquez aucun consommable à facturer.",
                 "TRANSLATE000023": "Facturation",
                 "TRANSLATE0000021": "Système de tournées",
-                "TRANSLATE0000022": "Gérez vos ordres de mission de A à Z : proposez à vos techniciens un trajet optimisé avec Google Maps, le contrôle de leur stock embarqué et une gestion simplifiée de leurs feuilles de temps / relevé d'heures.",
+                "TRANSLATE0000022": "Gérez vos ordres de mission de A à Z : proposez à vos techniciens un trajet optimisé et un partage de localisation en temps réel avec Google Maps. Un PDF de mission incluant la liste de toutes les maintenances à traiter et leurs liens pour la complétion.",
                 "TRANSLATE0000024": "Modération",
                 "TRANSLATE0000025": "Vérifiez les informations saisies par les techniciens grâce à la modération avant d'envoyer le rapport PDF par email automatique au client et de mettre à jour la base de données.",
                 "TRANSLATE000026": "Qualité de service",
@@ -3480,7 +3480,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="dfb-feature-content-body">
                 <h3 class="dfb-feature-content-title" data-key="TRANSLATE0000021">Système de tournées</h3>
-                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE0000022">Gérez vos ordres de mission de A à Z : proposez à vos techniciens un trajet optimisé avec Google Maps, le contrôle de leur stock embarqué et une gestion simplifiée de leurs feuilles de temps / relevé d'heures.</p>
+                <p class="dfb-feature-content-subtitle" data-key="TRANSLATE0000022">Gérez vos ordres de mission de A à Z : proposez à vos techniciens un trajet optimisé et un partage de localisation en temps réel avec Google Maps. Un PDF de mission incluant la liste de toutes les maintenances à traiter et leurs liens pour la complétion.</p>
             </div>
         </div>
 
@@ -3835,7 +3835,7 @@ margin-top: 10px;
     </div>
 
     <div class="cp-layout-container__media">
-      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/browsershowdefibeo.svg" alt="Illustration" class="cp-layout-container__image">
+      <img src="https://civilpromaws.s3.eu-north-1.amazonaws.com/navigatordefibeo.svg" alt="Illustration" class="cp-layout-container__image">
     </div>
     
   </div>
@@ -4985,6 +4985,7 @@ document.getElementById('reset').onclick=()=>{
     max-width: 1000px;
     margin: 20px auto;
     color: #000;
+    margin-top: -15px;
   }
 
   .dfb-faq-item-container {
@@ -5012,6 +5013,7 @@ document.getElementById('reset').onclick=()=>{
   .dfb-faq-question-label:hover {
     background-color: #fff;
         text-decoration: underline;
+            color: #225cff;
   }
 
   /* Icône d'état */
@@ -5058,22 +5060,29 @@ document.getElementById('reset').onclick=()=>{
       padding: 12px 15px;
     }
   }
+
+  /* Masquer la FAQ sur les appareils mobiles */
+@media (max-width: 767px) {
+  .dfb-faq-wrapper {
+    display: none !important;
+  }
+}
 </style>
 
-<br><br><br>
-    <h2 class="okazu4 sixtynine" data-key="TRANSLATE000100iso">FAQ</h2>
+<br><br><br><br><br>
+    <h2 class="okazu4 sixtynine" data-key="TRANSLATE000100iso" data-key="TRANSLATEGAY11">FAQ</h2>
 
 <div class="dfb-faq-wrapper">
 
   
   <div class="dfb-faq-item-container">
     <input type="checkbox" id="dfb-faq-q1" class="dfb-faq-trigger-input">
-    <label for="dfb-faq-q1" class="dfb-faq-question-label">
-      Qu'est-ce que la GMAO ?
+    <label for="dfb-faq-q1" class="dfb-faq-question-label" data-key="TRANSLATEGAY10">
+      Qu'est-ce que la GMAO?
       <span class="dfb-faq-icon-indicator"></span>
     </label>
     <div class="dfb-faq-answer-content">
-      <div class="dfb-faq-answer-inner-text">
+      <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEGAY9">
 La GMAO, ou Gestion de Maintenance Assistée par Ordinateur, est le centre de pilotage de vos défibrillateurs. Elle permet de répertorier l'ensemble de vos matériels, d'en suivre l'historique et de planifier les opérations de maintenance. Plutôt que de subir les urgences, la GMAO vous donne une vision claire. Défibeo s'inscrit au cœur de cette démarche en centralisant toutes vos données techniques au même endroit, vous permettant de transformer votre maintenance en un levier de performance plutôt qu'en un centre de coûts.
       </div>
     </div>
@@ -5081,25 +5090,38 @@ La GMAO, ou Gestion de Maintenance Assistée par Ordinateur, est le centre de pi
 
   <div class="dfb-faq-item-container">
     <input type="checkbox" id="dfb-faq-q2" class="dfb-faq-trigger-input">
-    <label for="dfb-faq-q2" class="dfb-faq-question-label">
-      Qu'est-ce que le FSM ?
+    <label for="dfb-faq-q2" class="dfb-faq-question-label" data-key="TRANSLATEGAY8">
+      Qu'est-ce que le FSM?
       <span class="dfb-faq-icon-indicator"></span>
     </label>
     <div class="dfb-faq-answer-content">
-      <div class="dfb-faq-answer-inner-text">
+      <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEGAY7">
 Le FSM (Field Service Management), ou Gestion des Services de Terrain, désigne l'ensemble des outils destinés à optimiser le travail des équipes en déplacement. Son rôle est de faciliter la coordination entre le bureau et le terrain : gestion des plannings, optimisation des trajets et saisie des rapports d'intervention en temps réel sur mobile. Le FSM se concentre sur l'efficacité humaine et la réactivité face aux demandes clients. Avec Défibeo, cette dimension prend tout son sens grâce à une interface mobile intuitive qui accompagne vos techniciens partout, garantissant que l'information circule et remonte en direct sans perte de temps ni erreur de saisie.
+      </div>
+    </div>
+  </div>
+
+    <div class="dfb-faq-item-container">
+    <input type="checkbox" id="dfb-faq-q6" class="dfb-faq-trigger-input">
+    <label for="dfb-faq-q6" class="dfb-faq-question-label" data-key="TRANSLATEGAY6">
+      Qu’est-ce que l’infogérance ?
+      <span class="dfb-faq-icon-indicator"></span>
+    </label>
+    <div class="dfb-faq-answer-content">
+      <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEGAY5">
+L’infogérance consiste à confier la gestion, l’optimisation et la sécurisation de votre système informatique (ou d'un logiciel spécifique comme Défibeo) à un prestataire extérieur spécialisé. Au lieu de gérer vous-même les serveurs, les mises à jour de sécurité ou les sauvegardes, vous déléguez ces tâches techniques à des experts dont c'est le métier. C’est un service qui garantit que vos outils numériques sont toujours opérationnels, performants et protégés contre les menaces. Votre sérénité numérique!
       </div>
     </div>
   </div>
 
   <div class="dfb-faq-item-container">
     <input type="checkbox" id="dfb-faq-q3" class="dfb-faq-trigger-input">
-    <label for="dfb-faq-q3" class="dfb-faq-question-label">
-      Si j’opte pour la version Standard et que je dépasse le seuil des 3 500 défibrillateurs, que se passe-t-il ?
+    <label for="dfb-faq-q3" class="dfb-faq-question-label" data-key="TRANSLATEGAY4">
+      Si j’opte pour la version Standard et que je dépasse le seuil des 3 500 défibrillateurs, que se passe-t-il?
       <span class="dfb-faq-icon-indicator"></span>
     </label>
     <div class="dfb-faq-answer-content">
-      <div class="dfb-faq-answer-inner-text">
+      <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEGAY3">
 Votre volume augmente et votre activité se développe? Félicitations! Chez Défibeo, nous voyons votre croissance comme une étape à célébrer et non comme une contrainte technique. Si vous franchissez ce seuil, nos équipes prendront directement contact avec vous pour faire le point sur vos nouveaux besoins. Plutôt que d'appliquer une simple tarification automatique, nous préférons ajuster votre hébergement de manière personnalisée, en étudiant l'intégration de modules supplémentaires et des dernières mises à jour pour soutenir votre expansion. L’objectif de cette transition est de maximiser votre rentabilité. Nous calculons le "delta" entre les versions Standard et Large pour vous proposer un coût de passage juste, tout en y intégrant gratuitement de nombreux avantages exclusifs pour votre entreprise. Nous privilégions une approche individuelle : chaque situation est unique, et nous adaptons nos conditions.
       </div>
     </div>
@@ -5107,12 +5129,12 @@ Votre volume augmente et votre activité se développe? Félicitations! Chez Dé
 
     <div class="dfb-faq-item-container">
     <input type="checkbox" id="dfb-faq-q4" class="dfb-faq-trigger-input">
-    <label for="dfb-faq-q4" class="dfb-faq-question-label">
-      Qu’est-ce que l’identifiant généré par le logiciel Défibeo pour chaque défibrillateur ?
+    <label for="dfb-faq-q4" class="dfb-faq-question-label" data-key="TRANSLATEGAY2">
+      Qu’est-ce que l’identifiant généré par le logiciel Défibeo pour chaque défibrillateur?
       <span class="dfb-faq-icon-indicator"></span>
     </label>
     <div class="dfb-faq-answer-content">
-      <div class="dfb-faq-answer-inner-text">
+      <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEGAY1">
 Pour simplifier la gestion de votre parc, nous appliquons aux défibrillateurs le même principe qu’à un véhicule : celui-ci possède un numéro de série constructeur (le châssis) et une plaque d’immatriculation (l'identifiant Défibeo). Cet identifiant est un code court, unique et personnalisé au nom de votre entreprise (ex: ABC-123). Conçu pour être facilement partageable, il permet de retrouver instantanément toutes les informations liées à un appareil sans avoir à saisir de longs numéros de série complexes. Nous recommandons d'inscrire cette référence directement sur le sticker QR Code à coller sur le coffret du défibrillateur. Ainsi, lors d'un contrôle ou d'une maintenance, une simple lecture visuelle suffit pour identifier l'équipement avec une précision absolue.
       </div>
     </div>
