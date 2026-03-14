@@ -1835,6 +1835,35 @@ background-color: #ffffff;
             });
         });
     })();
+
+    (() => {
+    const select = document.getElementById('lang-select');
+    if (!select) return;
+
+    // On récupère le chemin de l'URL (ex: "/es/index.html" ou "/")
+    const path = window.location.pathname;
+    
+    // Liste des langues supportées
+    const supportedLangs = ['en', 'es', 'pt', 'de', 'nl'];
+    let targetLang = 'fr'; // Langue par défaut pour la racine "/"
+
+    // On cherche si le path contient l'un des codes langue (ex: /es/)
+    supportedLangs.forEach(lang => {
+        if (path.includes(`/${lang}`)) {
+            targetLang = lang;
+        }
+    });
+
+    // CONDITION : On ne trigger le changement que si on n'est PAS sur la racine
+    // ou si la langue détectée est différente de la langue par défaut (fr)
+    if (path !== "/" && path !== "/index.html") {
+        select.value = targetLang;
+        
+        // On déclenche l'événement pour mettre à jour les [data-key]
+        const event = new Event('change', { bubbles: true });
+        select.dispatchEvent(event);
+    }
+})();
 </script>
 
 <!-- ================= BARRE INITIALE ================= -->

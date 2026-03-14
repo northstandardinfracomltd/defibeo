@@ -1835,6 +1835,37 @@ background-color: #ffffff;
             });
         });
     })();
+
+
+
+    (() => {
+    const select = document.getElementById('lang-select');
+    if (!select) return;
+
+    // On récupère le chemin de l'URL (ex: "/es/index.html" ou "/")
+    const path = window.location.pathname;
+    
+    // Liste des langues supportées
+    const supportedLangs = ['en', 'es', 'pt', 'de', 'nl'];
+    let targetLang = 'fr'; // Langue par défaut pour la racine "/"
+
+    // On cherche si le path contient l'un des codes langue (ex: /es/)
+    supportedLangs.forEach(lang => {
+        if (path.includes(`/${lang}`)) {
+            targetLang = lang;
+        }
+    });
+
+    // CONDITION : On ne trigger le changement que si on n'est PAS sur la racine
+    // ou si la langue détectée est différente de la langue par défaut (fr)
+    if (path !== "/" && path !== "/index.html") {
+        select.value = targetLang;
+        
+        // On déclenche l'événement pour mettre à jour les [data-key]
+        const event = new Event('change', { bubbles: true });
+        select.dispatchEvent(event);
+    }
+})();
 </script>
 
 <!-- ================= BARRE INITIALE ================= -->
@@ -5164,6 +5195,55 @@ document.getElementById('reset').onclick=()=>{
 </style>
 
 <br><br><br><br><br>
+
+<div class="rideauABC">
+
+<br><br>
+    <h2 class="okazu4 sixtynine" data-key="TRANSLATE000100">Facilitez vos usages et processus du quotidien</h2>
+
+<div class="infoplus-grid">
+
+
+<div class="infoplus ICC1">
+
+  <div class="lang-options-uniY">
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono38.svg" alt="Personnalisé" >
+<p class="infoplusTXT2" data-key="TRANSLATE000101T">Personnalisé</p>
+   <p class="infoplusTXT" data-key="TRANSLATE000101">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise. Avec Défibeo Standard, la personnalisation est limitée au logo et aux couleurs. Nos utilisateurs apprécient particulièrement la possibilité de personnaliser l'identité visuelle de la plateforme : des reçus PDF à l'interface de gestion, en passant par les pages publiques et les e-mails transactionnels.</p>
+   </div>
+</div>
+
+<div class="infoplus ICC2">
+
+    <div class="lang-options-uniY">
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono39.svg" alt="Clients" >
+<p class="infoplusTXT2" data-key="TRANSLATE000102T">Verticalisé</p>
+<p class="infoplusTXT" data-key="TRANSLATE000102">Solution verticale par excellence, Défibeo est un logiciel métier conçu pour répondre aux standards rigoureux du secteur. Loin des outils généralistes, il privilégie l'expertise technique pour offrir une maîtrise totale de vos processus. Défibeo est utilisé par +130k défibrillateurs en Europe depuis 6 ans. Chaque jour, c'est environ 900 maintenances réalisées par nos utilisateurs. Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs & distributeurs de défibrillateurs exerçant dans ces pays ; Royaume-Uni (~55%), Allemagne (~15%), France (~10%), Belgique (~10%), Suisse (~5%) et Luxembourg (~5%).</p>
+  </div>
+</div>
+
+<div class="infoplus ICC3">
+  <div class="lang-options-uniY">
+<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono40.svg" alt="Éditeur No-Code" >
+<p class="infoplusTXT2" data-key="TRANSLATE000103T">Zero Installation</p>
+<p class="infoplusTXT" data-key="TRANSLATE000103">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div>
+
+<br><br><br><br>
     <h2 class="okazu4 sixtynine BOEZ" data-key="TRANSLATE000100iso" data-key="TRANSLATEGAY11">FAQ</h2>
 
 <div class="dfb-faq-wrapper">
@@ -5307,53 +5387,6 @@ Oui. Dans la fiche du défibrillateur, vous pouvez configurer des rappels automa
 
 
 </div>
-
-<div class="rideauABC">
-
-<br><br>
-    <h2 class="okazu4 sixtynine" data-key="TRANSLATE000100">Facilitez vos usages et processus du quotidien</h2>
-
-<div class="infoplus-grid">
-
-
-<div class="infoplus ICC1">
-
-  <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono38.svg" alt="Personnalisé" >
-<p class="infoplusTXT2" data-key="TRANSLATE000101T">Personnalisé</p>
-   <p class="infoplusTXT" data-key="TRANSLATE000101">Adoptez le logiciel et il s'adapte à vous! Personnalisez-le avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise. Avec Défibeo Standard, la personnalisation est limitée au logo et aux couleurs.</p>
-   </div>
-</div>
-
-<div class="infoplus ICC2">
-
-    <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono39.svg" alt="Clients" >
-<p class="infoplusTXT2" data-key="TRANSLATE000102T">Verticalisé</p>
-<p class="infoplusTXT" data-key="TRANSLATE000102">Défibeo est utilisé par +130k défibrillateurs en Europe depuis 6 ans. Chaque jour, c'est environ 900 maintenances réalisées par nos utilisateurs. Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective réunissant des dizaines de mainteneurs & distributeurs de défibrillateurs exerçant dans ces pays ; Royaume-Uni (~55%), Allemagne (~15%), France (~10%), Belgique (~10%), Suisse (~5%) et Luxembourg (~5%).</p>
-  </div>
-</div>
-
-<div class="infoplus ICC3">
-  <div class="lang-options-uniY">
-<img class="davis" src="https://civilpromaws.s3.eu-north-1.amazonaws.com/icono40.svg" alt="Éditeur No-Code" >
-<p class="infoplusTXT2" data-key="TRANSLATE000103T">Zero Installation</p>
-<p class="infoplusTXT" data-key="TRANSLATE000103">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.</p>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div></div>
 
 <style>
 
