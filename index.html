@@ -1145,36 +1145,10 @@ width: 100%;
 </script>
 
 
-<script>
-  window.addEventListener('scroll', function() {
-    const floatWrapper = document.querySelector('.db-float-wrapper');
-    const langSelector = document.querySelector('.lang-selector-container');
-    const scrollPos = window.scrollY;
-
-    // 1. Gestion de l'apparition de tes nouveaux boutons (100px)
-    if (scrollPos > 100) {
-        floatWrapper.classList.add('db-is-visible');
-    } else {
-        floatWrapper.classList.remove('db-is-visible');
-    }
-
-    // 2. Gestion de la disparition du sélecteur de langue (200px)
-    if (langSelector) { // Sécurité : on vérifie si l'élément existe
-        if (scrollPos > 200) {
-            langSelector.classList.add('lang-hidden');
-        } else {
-            langSelector.classList.remove('lang-hidden');
-        }
-    }
-});
-
-</script>
 
 <style>
     .lang-selector-container {
-        position: fixed;
-    bottom: 15px;
-    left: 15px;
+        position: block;
         z-index: 9999;
     }
 
@@ -2683,6 +2657,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col left-column">
       
     <img class="krako" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Defibeo Logo">
+
+    <div class="lang-selector-container">
     <div class="lang-button">
         <label for="lang-select">Select Language:</label>
         <select id="lang-select">
@@ -2694,6 +2670,33 @@ document.addEventListener('DOMContentLoaded', function () {
             <option value="nl">Nederlands</option>
         </select>
     </div>
+</div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const floatWrapper = document.querySelector('.db-float-wrapper');
+    const langSelector = document.querySelector('.lang-selector-container');
+    const scrollPos = window.scrollY;
+
+    // 1. Gestion de l'apparition de tes nouveaux boutons (100px)
+    if (scrollPos > 100) {
+        floatWrapper.classList.add('db-is-visible');
+    } else {
+        floatWrapper.classList.remove('db-is-visible');
+    }
+
+    // 2. Gestion de la disparition du sélecteur de langue (200px)
+    if (langSelector) { // Sécurité : on vérifie si l'élément existe
+        if (scrollPos > 200) {
+            langSelector.classList.add('lang-hidden');
+        } else {
+            langSelector.classList.remove('lang-hidden');
+        }
+    }
+});
+
+</script>
+
     <h1>
 Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 </h1>
