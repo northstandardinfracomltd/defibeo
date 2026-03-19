@@ -1144,19 +1144,6 @@ width: 100%;
   });
 </script>
 
-<div class="lang-selector-container">
-    <div class="lang-button">
-        <label for="lang-select">Select Language:</label>
-        <select id="lang-select">
-            <option value="fr" selected>Français</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="pt">Português</option>
-            <option value="de">Deutsch</option>
-            <option value="nl">Nederlands</option>
-        </select>
-    </div>
-</div>
 
 <script>
   window.addEventListener('scroll', function() {
@@ -2696,7 +2683,18 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="col left-column">
       
     <img class="krako" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Defibeo Logo">
-<h1>
+    <div class="lang-button">
+        <label for="lang-select">Select Language:</label>
+        <select id="lang-select">
+            <option value="fr" selected>Français</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="de">Deutsch</option>
+            <option value="nl">Nederlands</option>
+        </select>
+    </div>
+    <h1>
 Logiciel métier leader pour<span id="typing"></span> défibrillateurs
 </h1>
 <script>
@@ -6740,7 +6738,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <div id="dfb-success-msg" class="dfb-hidden">
                 <div class="dfb-offline-status">● Hors ligne</div>
-                <p  class="dfb-TXTEND">Les membres de l'assistance Défibeo sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais. En cas d'urgence, vous écrire sur WhatsApp avec le numéro : +44 7723 501018.</p>
+                <p  class="dfb-TXTEND">Les membres de l'assistance Défibeo sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais. En cas d'urgence, écrivez-nous via WhatsApp avec le numéro : +44 7723 501018.</p>
             </div>
         </div>
     </div>
@@ -6858,8 +6856,20 @@ position: fixed;
   outline-offset: 2px;
 }
     /* Design Form (Inchangé) */
-    .dfb-chat-header {  padding-top: 4px;
-    font-size: 18px; font-weight: 100; border-bottom: 1px solid #cbcbcb;  border-radius: 14px 14px 0px 0px; background: transparent; color: #000; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+    .dfb-chat-header { 
+          font-size: 18px;
+    font-weight: 100;
+    border-bottom: 1px solid #cbcbcb;
+    border-radius: 14px 14px 0px 0px;
+    background: transparent;
+    color: #000;
+    padding: 15px;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
     .dfb-close-btn { padding-top: 4px;
     font-size: 18px;
     background: transparent;
@@ -6897,7 +6907,7 @@ position: fixed;
     .dfb-hidden { display: none !important; }
     
     /* Loading Bar (Material) */
-    #dfb-loading-bar { position: relative; width: 100%; height: 4px; overflow: hidden; background-color: #dbeafe; }
+    #dfb-loading-bar { position: relative; width: 100%; height: 5.5px; overflow: hidden; background-color: #dbeafe; }
     .dfb-progress-inc, .dfb-progress-dec { position: absolute; background-color: #674fff; height: 100%; }
     .dfb-progress-inc { animation: dfb-wave-inc 2s infinite ease-in; }
     .dfb-progress-dec { animation: dfb-wave-dec 2s infinite ease-out; }
@@ -6936,10 +6946,17 @@ position: fixed;
 
     .PIXA {
     color: #000;
+    font-family: 'DefibeoTAZ', sans-serif;
+    letter-spacing: -0.5px;
+    font-weight: 100;
+        font-size: 16px;
     }
 
         .DELXTA {
-    color: #000;
+color: #000;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 100;
     }
 </style>
 
