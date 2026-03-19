@@ -6678,6 +6678,212 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </div>
 
+<div id="dfb-main-container">
+    <button id="dfb-floating-btn" onclick="dfbToggleChat()">
+        <span class="dfb-icon">💬</span>
+        Dialoguer avec Défibeo
+    </button>
+
+    <div id="dfb-chat-window" class="dfb-hidden">
+        <div id="dfb-loading-bar" class="dfb-hidden">
+            <div class="dfb-progress-bar">
+                <div class="dfb-progress-inc"></div>
+                <div class="dfb-progress-dec"></div>
+            </div>
+        </div>
+
+        <div class="dfb-chat-header">
+            <span>Assistance Défibeo</span>
+            <button class="dfb-close-btn" onclick="dfbToggleChat()">Réduire</button>
+        </div>
+
+        <div class="dfb-chat-body" id="dfb-chat-content">
+            <p class="dfb-intro-text">Ajoutez vos informations pour démarrer la session avec l'assistance Défibeo</p>
+            
+            <form id="dfb-contact-form" onsubmit="dfbHandleSubmit(event)">
+                <input type="hidden" id="dfb-ticket-id">
+
+                <div class="dfb-input-group">
+                    <label>Nom</label>
+                    <input type="text" id="dfb-form-name" required placeholder="Votre nom complet">
+                </div>
+
+                <div class="dfb-input-group">
+                    <label>Email</label>
+                    <input type="email" id="dfb-form-email" required placeholder="exemple@mail.com">
+                </div>
+
+                <div class="dfb-input-group">
+                    <label>Tel</label>
+                    <input type="tel" id="dfb-form-tel" required placeholder="06 00 00 00 00">
+                </div>
+
+                <div class="dfb-radio-container">
+                    <span>Je suis déjà client ?</span>
+                    <label class="dfb-switch">
+                        <input type="checkbox" id="dfb-is-client" onchange="dfbToggleClientField()">
+                        <span class="dfb-slider"></span>
+                    </label>
+                </div>
+
+                <div id="dfb-client-field" class="dfb-input-group dfb-hidden">
+                    <label>Identifiant Client</label>
+                    <input type="text" id="dfb-form-client-id" placeholder="Ex: DFB-1234">
+                </div>
+
+                <div class="dfb-input-group">
+                    <label>Message</label>
+                    <textarea id="dfb-form-msg" rows="3" required placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                </div>
+
+                <button type="submit" id="dfb-submit-btn">Envoyer la demande</button>
+            </form>
+
+            <div id="dfb-success-msg" class="dfb-hidden">
+                <div class="dfb-offline-status">● Hors ligne</div>
+                <p>Les membres de l'assistance Défibeo sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais par email ou par téléphone.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    :root {
+        --dfb-primary: #2563eb;
+        --dfb-dark: #1e293b;
+    }
+
+    #dfb-main-container {
+        font-family: 'DefibeoMain', sans-serif;
+        cursor: default;
+    }
+
+    #dfb-main-container * { box-sizing: border-box; }
+
+    #dfb-floating-btn {
+        position: fixed; bottom: 20px; right: 20px;
+        background: var(--dfb-primary); color: white;
+        border: none; padding: 15px 25px; border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        cursor: pointer; display: flex; align-items: center; gap: 10px;
+        font-weight: 600; z-index: 9999; transition: transform 0.2s;
+        font-family: 'DefibeoMain', sans-serif;
+    }
+
+    #dfb-floating-btn:hover { transform: scale(1.05); }
+
+    #dfb-chat-window {
+        position: fixed; bottom: 85px; right: 20px;
+        width: 350px; max-height: 85vh; background: white;
+        border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        overflow: hidden; display: flex; flex-direction: column; z-index: 9999;
+    }
+
+    .dfb-chat-header {
+        background: var(--dfb-dark); color: white;
+        padding: 15px; display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .dfb-close-btn {
+        background: transparent; border: none; color: white;
+        cursor: pointer; font-family: 'DefibeoMain', sans-serif;
+        font-size: 13px; opacity: 0.8;
+    }
+
+    .dfb-chat-body { padding: 20px; overflow-y: auto; }
+
+    .dfb-intro-text { font-size: 14px; color: #64748b; margin-bottom: 20px; }
+
+    .dfb-input-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+    .dfb-input-group label { font-size: 12px; font-weight: 700; margin-bottom: 5px; }
+    .dfb-input-group input, .dfb-input-group textarea {
+        padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px;
+        font-family: 'DefibeoMain', sans-serif; cursor: text;
+    }
+
+    #dfb-submit-btn {
+        width: 100%; background: var(--dfb-primary); color: white;
+        border: none; padding: 12px; border-radius: 6px; font-weight: 600;
+        cursor: pointer; font-family: 'DefibeoMain', sans-serif;
+    }
+
+    #dfb-submit-btn:disabled { background: #cbd5e1; cursor: not-allowed; }
+
+    /* Switch stylisé */
+    .dfb-radio-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 14px; }
+    .dfb-switch { position: relative; display: inline-block; width: 40px; height: 20px; cursor: pointer; }
+    .dfb-switch input { opacity: 0; width: 0; height: 0; }
+    .dfb-slider { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+    .dfb-slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .dfb-slider { background-color: var(--dfb-primary); }
+    input:checked + .dfb-slider:before { transform: translateX(20px); }
+
+    /* Wave Loading Material */
+    #dfb-loading-bar { position: relative; width: 100%; height: 5px; overflow: hidden; background-color: #dbeafe; }
+    .dfb-progress-inc, .dfb-progress-dec { position: absolute; background-color: var(--dfb-primary); height: 100%; }
+    .dfb-progress-inc { animation: dfb-wave-inc 2s infinite ease-in; }
+    .dfb-progress-dec { animation: dfb-wave-dec 2s infinite ease-out; }
+
+    @keyframes dfb-wave-inc { 0% { left: -35%; right: 100%; } 60% { left: 100%; right: -90%; } 100% { left: 100%; right: -90%; } }
+    @keyframes dfb-wave-dec { 0% { left: -200%; right: 100%; } 60% { left: 107%; right: -8%; } 100% { left: 107%; right: -8%; } }
+
+    .dfb-offline-status { color: #ef4444; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+    .dfb-hidden { display: none !important; }
+</style>
+
+<script>
+    const dfbTicketNumber = "#" + Math.floor(1000 + Math.random() * 9000);
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby0H2rfZ9Kzu37LpeMjvhKvSue4d23BZvMazsiJIa0N05eZz0A_p1u7OwchbsrtXf68/exec";
+
+    function dfbToggleChat() {
+        document.getElementById('dfb-chat-window').classList.toggle('dfb-hidden');
+    }
+
+    function dfbToggleClientField() {
+        const isClient = document.getElementById('dfb-is-client').checked;
+        document.getElementById('dfb-client-field').classList.toggle('dfb-hidden', !isClient);
+    }
+
+    async function dfbHandleSubmit(event) {
+        event.preventDefault();
+        const submitBtn = document.getElementById('dfb-submit-btn');
+        const loadingBar = document.getElementById('dfb-loading-bar');
+        
+        submitBtn.disabled = true;
+        loadingBar.classList.remove('dfb-hidden');
+
+        const payload = {
+            ticket: dfbTicketNumber,
+            nom: document.getElementById('dfb-form-name').value,
+            email: document.getElementById('dfb-form-email').value,
+            tel: document.getElementById('dfb-form-tel').value,
+            isClient: document.getElementById('dfb-is-client').checked,
+            clientId: document.getElementById('dfb-form-client-id').value,
+            message: document.getElementById('dfb-form-msg').value
+        };
+
+        try {
+            await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(payload)
+            });
+
+            setTimeout(() => {
+                loadingBar.classList.add('dfb-hidden');
+                document.getElementById('dfb-contact-form').classList.add('dfb-hidden');
+                document.querySelector('.dfb-intro-text').classList.add('dfb-hidden');
+                document.getElementById('dfb-display-ticket').innerText = dfbTicketNumber;
+                document.getElementById('dfb-success-msg').classList.remove('dfb-hidden');
+            }, 4000);
+
+        } catch (e) {
+            console.error(e);
+            submitBtn.disabled = false;
+            loadingBar.classList.add('dfb-hidden');
+        }
+    }
+</script>
 
 
   <footer>
