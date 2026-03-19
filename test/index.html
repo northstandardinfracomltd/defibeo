@@ -6709,7 +6709,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <div class="dfb-chat-body">
             <div id="dfb-history-section" class="dfb-hidden">
-                <p class="dfb-section-title">Vos tickets précédents</p>
+                <p class="dfb-section-title">Tickets Précédents</p>
                 <div id="dfb-tickets-list"></div>
                 <hr class="dfb-separator">
             </div>
@@ -6740,7 +6740,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             <div id="dfb-success-msg" class="dfb-hidden">
                 <div class="dfb-offline-status">● Hors ligne</div>
-                <p  class="dfb-TXTEND">Les membres de l'assistance Défibeo sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais.</p>
+                <p  class="dfb-TXTEND">Les membres de l'assistance Défibeo sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais. En cas d'urgence, vous écrire sur WhatsApp avec le numéro : +44 7723 501018.</p>
             </div>
         </div>
     </div>
@@ -6825,8 +6825,7 @@ position: fixed;
     /* Historique Tickets */
     .dfb-section-title {     font-size: 16px;
     font-weight: 100;
-    text-transform: uppercase;
-    font-family: 'DefibeoTAZ', sans-serif;
+    font-family: 'DefibeoMain', sans-serif;
     color: #000000;
     margin-bottom: 10px; }
     .dfb-ticket-item { 
@@ -6834,7 +6833,8 @@ position: fixed;
     justify-content: space-between;
     align-items: center;
     padding: 11px 13px;
-    background: #e7e7e7;
+    border: 1px solid #e3e3e3;
+    background: #ffffff;
     border-radius: 13px;
     margin-bottom: 6px;
     font-size: 16px;
@@ -6854,17 +6854,19 @@ position: fixed;
 
 /* Optionnel : Personnalise le contour au clavier pour qu'il soit plus joli */
 :focus-visible {
-  outline: 2px solid #3498db; 
+  outline: 2.5px solid #674eff; 
   outline-offset: 2px;
 }
     /* Design Form (Inchangé) */
-    .dfb-chat-header {  font-size: 16px; font-weight: 100; border-bottom: 1px solid #cbcbcb;  border-radius: 14px 14px 0px 0px; background: transparent; color: #000; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
-    .dfb-close-btn { background: transparent;
+    .dfb-chat-header {  padding-top: 4px;
+    font-size: 18px; font-weight: 100; border-bottom: 1px solid #cbcbcb;  border-radius: 14px 14px 0px 0px; background: transparent; color: #000; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+    .dfb-close-btn { padding-top: 4px;
+    font-size: 18px;
+    background: transparent;
     border: none;
     color: #155fff;
     cursor: pointer;
     font-weight: 100;
-    font-size: 16px;
     font-family: 'DefibeoMain', sans-serif; }
     .dfb-chat-body { padding: 20px; overflow-y: auto; }
     .dfb-input-group { margin-bottom: 12px; display: flex; flex-direction: column; }
@@ -6931,6 +6933,14 @@ position: fixed;
     font-weight:100;
     text-align: left;
     }
+
+    .PIXA {
+    color: #000;
+    }
+
+        .DELXTA {
+    color: #000;
+    }
 </style>
 
 <script>
@@ -6976,7 +6986,7 @@ position: fixed;
             historySection.classList.remove('dfb-hidden');
             listContainer.innerHTML = history.slice(-3).reverse().map(t => `
                 <div class="dfb-ticket-item">
-                    <span><strong>${t.id}</strong> <small>${t.date}</small></span>
+                    <span><strong class="PIXA">${t.id}</strong> <small class="DELXTA">${t.date}</small></span>
                     <span class="dfb-status-badge">En cours</span>
                 </div>
             `).join('');

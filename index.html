@@ -61,7 +61,7 @@
         @font-face {
       font-family: 'DefibeoTAZ';
          font-weight: 100 !important;
-      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold.otf') format('opentype');
+      src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/De%CC%81fibeoBold+(1).otf') format('opentype');
     }
 
     body, html, #root {
@@ -3920,7 +3920,7 @@ opacity: 0;
 position: fixed;
     top: 15px;
     left: 15px;
-    display: flex;
+    display: none !important;
     flex-direction: column;
     gap: 12px;
     z-index: 9999;
@@ -3931,7 +3931,7 @@ position: fixed;
 }
 
 .db-float-wrapper.db-is-visible {
-    opacity: 1;
+    opacity: 0;
     visibility: visible;
     transform: translateX(0);
 }
@@ -6677,6 +6677,364 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </div>
+
+
+<div id="dfb-main-container">
+    <div id="dfb-welcome-bubble" class="dfb-hidden" onclick="dfbToggleChat()">
+        <div class="dfb-bubble-content">
+            <div class="dfb-bubble-text">Bonjour, comment puis-je vous aider aujourd'hui?</div>
+            <div class="dfb-agent-info">
+                <span class="dfb-agent-name">Noah</span>
+                <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Noah.jpg" alt="Noah" class="dfb-agent-img">
+            </div>
+        </div>
+    </div>
+
+    <button id="dfb-floating-btn" onclick="dfbToggleChat()">
+        Dialoguez avec Défibeo
+    </button>
+
+    <div id="dfb-chat-window" class="dfb-hidden">
+        <div id="dfb-loading-bar" class="dfb-hidden">
+            <div class="dfb-progress-bar">
+                <div class="dfb-progress-inc"></div>
+                <div class="dfb-progress-dec"></div>
+            </div>
+        </div>
+
+        <div class="dfb-chat-header">
+            <span>Assistance Défibeo</span>
+            <button class="dfb-close-btn" onclick="dfbToggleChat()">Réduire</button>
+        </div>
+
+        <div class="dfb-chat-body">
+            <div id="dfb-history-section" class="dfb-hidden">
+                <p class="dfb-section-title">Tickets Précédents</p>
+                <div id="dfb-tickets-list"></div>
+                <hr class="dfb-separator">
+            </div>
+
+            <p class="dfb-intro-text">Ajoutez vos informations pour démarrer la session avec l'assistance Défibeo</p>
+            
+            <form id="dfb-contact-form" onsubmit="dfbHandleSubmit(event)">
+                <div class="dfb-input-group"><label>Votre Nom</label><input type="text" id="dfb-form-name" required></div>
+                <div class="dfb-input-group"><label>Votre Email</label><input type="email" id="dfb-form-email" required></div>
+                <div class="dfb-input-group"><label>Votre Téléphone</label><input type="tel" id="dfb-form-tel" required></div>
+
+                <div class="dfb-radio-container">
+                    <span>Déjà Client?</span>
+                    <label class="dfb-switch">
+                        <input type="checkbox" id="dfb-is-client" onchange="dfbToggleClientField()">
+                        <span class="dfb-slider"></span>
+                    </label>
+                </div>
+
+                <div id="dfb-client-field" class="dfb-input-group dfb-hidden">
+                    <label>Votre Identifiant Logiciel</label>
+                    <input type="text" id="dfb-form-client-id">
+                </div>
+
+                <div class="dfb-input-group"><label>Votre Message</label><textarea id="dfb-form-msg" rows="3" required></textarea></div>
+                <button type="submit" id="dfb-submit-btn">Envoyer</button>
+            </form>
+
+            <div id="dfb-success-msg" class="dfb-hidden">
+                <div class="dfb-offline-status">● Hors ligne</div>
+                <p  class="dfb-TXTEND">Les membres de l'assistance Défibeo sont actuellement hors ligne, nous avons bien reçu votre demande <strong id="dfb-display-ticket"></strong> et nous y répondrons dans les plus brefs délais. En cas d'urgence, vous écrire sur WhatsApp avec le numéro : +44 7723 501018.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    :root { --dfb-primary: #2563eb; --dfb-dark: #1e293b; }
+    #dfb-main-container { font-family: 'DefibeoMain', sans-serif; cursor: default; }
+    
+    /* Bulle Noah */
+    #dfb-welcome-bubble {
+        position: fixed; bottom: 85px; right: 25px;
+        z-index: 9998; cursor: pointer;
+        /* Animation de flottement supprimée */
+    }
+    .dfb-bubble-content { display: flex; align-items: flex-end; gap: 10px; }
+    .dfb-bubble-text {
+    padding: 12px 18px;
+    border-radius: 15px 15px 0px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    border: 1px solid #e8e8e8;
+    color: #000000;
+    max-width: 200px;
+    background: #ffffff;
+    margin-right: 4px;
+    margin-bottom: -4px;
+    }
+    .dfb-agent-info { display: flex; flex-direction: column; align-items: center; }
+    .dfb-agent-img { width: 40px;
+    outline: #16f3bc solid 3px;
+    outline-offset: 3px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;}
+    .dfb-agent-name { font-size: 13px;
+    font-weight: bold;
+    color: #898989;
+    margin-top: 4px;
+    margin-bottom: 6px; }
+
+    /* Bouton Flottant Principal */
+    #dfb-floating-btn {
+position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #674eff !important;
+    color: white;
+    border: none;
+    padding: 13px 21px;
+    border-radius: 13px;
+    font-weight: 100 !important;
+    cursor: pointer;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    gap: 10px;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    z-index: 9999;
+    transition: transform 0.2s;
+    font-family: 'DefibeoMain', sans-serif;
+    }
+    
+    /* Fenêtre de Chat */
+    #dfb-chat-window {
+      border: 1px solid #cccccc;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 360px;
+    max-height: 85vh;
+    background: #f5f5f5;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 10000;
+    overflow: hidden;
+    }
+
+    .dfb-intro-text { font-size: 17px; color:#000; }
+    /* Historique Tickets */
+    .dfb-section-title {     font-size: 16px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif;
+    color: #000000;
+    margin-bottom: 10px; }
+    .dfb-ticket-item { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 13px;
+    border: 1px solid #e3e3e3;
+    background: #ffffff;
+    border-radius: 13px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    }
+    .dfb-status-badge {    background: #090909;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif !important;}
+    .dfb-separator { border: 0; border-top: 1px solid transparent; margin: 15px 0; }
+/* Supprime le contour au clic de souris */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Optionnel : Personnalise le contour au clavier pour qu'il soit plus joli */
+:focus-visible {
+  outline: 2.5px solid #674eff; 
+  outline-offset: 2px;
+}
+    /* Design Form (Inchangé) */
+    .dfb-chat-header {  padding-top: 4px;
+    font-size: 18px; font-weight: 100; border-bottom: 1px solid #cbcbcb;  border-radius: 14px 14px 0px 0px; background: transparent; color: #000; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+    .dfb-close-btn { padding-top: 4px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: #155fff;
+    cursor: pointer;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif; }
+    .dfb-chat-body { padding: 20px; overflow-y: auto; }
+    .dfb-input-group { margin-bottom: 12px; display: flex; flex-direction: column; }
+    .dfb-input-group label { font-size: 16px;
+    font-weight: 100;
+    color: #000;
+    margin-bottom: 4px; }
+    .dfb-input-group input, .dfb-input-group textarea { padding: 12px;
+      font-size: 16px;
+    border: 1px solid #cbcbcb;
+    border-radius: 13px;
+    font-weight: 100;
+    font-family: 'DefibeoMain', sans-serif; }
+    #dfb-submit-btn { width: 100%;
+    background: #674eff !important;
+    color: white;
+    border: none;
+    padding: 13px 21px;
+    font-size: 17px;
+    border-radius: 13px;
+    cursor: pointer;
+    font-family: 'DefibeoMain', sans-serif;
+    font-weight: 100;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;}
+    #dfb-submit-btn:disabled { background: #cbd5e1; }
+
+    /* Animations & Helpers */
+    .dfb-hidden { display: none !important; }
+    
+    /* Loading Bar (Material) */
+    #dfb-loading-bar { position: relative; width: 100%; height: 4px; overflow: hidden; background-color: #dbeafe; }
+    .dfb-progress-inc, .dfb-progress-dec { position: absolute; background-color: #674fff; height: 100%; }
+    .dfb-progress-inc { animation: dfb-wave-inc 2s infinite ease-in; }
+    .dfb-progress-dec { animation: dfb-wave-dec 2s infinite ease-out; }
+    @keyframes dfb-wave-inc { 0% { left: -35%; right: 100%; } 60% { left: 100%; right: -90%; } 100% { left: 100%; right: -90%; } }
+    @keyframes dfb-wave-dec { 0% { left: -200%; right: 100%; } 60% { left: 107%; right: -8%; } 100% { left: 107%; right: -8%; } }
+
+    /* Radio Switch */
+    .dfb-radio-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 16px; font-weight: 100; color: #000; }
+    .dfb-switch { position: relative;
+    width: 37px;
+    height: 21px;
+    cursor: pointer; }
+    .dfb-switch input { opacity: 0; width: 0; height: 0; }
+    .dfb-slider { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbcbcb; transition: .4s; border-radius: 34px; }
+    .dfb-slider:before {     position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; }
+    input:checked + .dfb-slider { background-color: #674eff; }
+    input:checked + .dfb-slider:before { transform: translateX(16px); }
+    .dfb-offline-status {     color: #ff5d5f;
+    font-size: 16px;
+    font-weight: 100;
+    margin-bottom: 0px;}
+
+    .dfb-TXTEND { font-size: 16px;
+    color: #000;
+    font-weight:100;
+    text-align: left;
+    }
+
+    .PIXA {
+    color: #000;
+    }
+
+        .DELXTA {
+    color: #000;
+    }
+</style>
+
+<script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby0H2rfZ9Kzu37LpeMjvhKvSue4d23BZvMazsiJIa0N05eZz0A_p1u7OwchbsrtXf68/exec";
+    let currentTicket = "#" + Math.floor(1000 + Math.random() * 9000);
+
+    // Charger l'historique au démarrage
+    window.onload = function() {
+        dfbRenderHistory();
+        
+        // Apparition temporisée de la bulle Noah après 10 secondes
+        setTimeout(() => {
+            const chatWindow = document.getElementById('dfb-chat-window');
+            // On ne l'affiche que si le chat n'est pas déjà ouvert
+            if(chatWindow.classList.contains('dfb-hidden')) {
+                const bubble = document.getElementById('dfb-welcome-bubble');
+                bubble.classList.remove('dfb-hidden');
+            }
+        }, 10000); // 10 000 millisecondes = 10 secondes
+    };
+
+    function dfbToggleChat() {
+        const chatWindow = document.getElementById('dfb-chat-window');
+        const bubble = document.getElementById('dfb-welcome-bubble');
+        const isHidden = chatWindow.classList.contains('dfb-hidden');
+        
+        chatWindow.classList.toggle('dfb-hidden');
+        bubble.classList.add('dfb-hidden'); // On cache toujours la bulle quand le chat s'ouvre/se ferme
+        if(isHidden) dfbRenderHistory();
+    }
+
+    function dfbToggleClientField() {
+        const isClient = document.getElementById('dfb-is-client').checked;
+        document.getElementById('dfb-client-field').classList.toggle('dfb-hidden', !isClient);
+    }
+
+    function dfbRenderHistory() {
+        const history = JSON.parse(localStorage.getItem('dfb_tickets') || "[]");
+        const historySection = document.getElementById('dfb-history-section');
+        const listContainer = document.getElementById('dfb-tickets-list');
+        
+        if(history.length > 0) {
+            historySection.classList.remove('dfb-hidden');
+            listContainer.innerHTML = history.slice(-3).reverse().map(t => `
+                <div class="dfb-ticket-item">
+                    <span><strong class="PIXA">${t.id}</strong> <small class="DELXTA">${t.date}</small></span>
+                    <span class="dfb-status-badge">En cours</span>
+                </div>
+            `).join('');
+        }
+    }
+
+    async function dfbHandleSubmit(event) {
+        event.preventDefault();
+        const submitBtn = document.getElementById('dfb-submit-btn');
+        const loadingBar = document.getElementById('dfb-loading-bar');
+        
+        submitBtn.disabled = true;
+        loadingBar.classList.remove('dfb-hidden');
+
+        const payload = {
+            ticket: currentTicket,
+            nom: document.getElementById('dfb-form-name').value,
+            email: document.getElementById('dfb-form-email').value,
+            tel: document.getElementById('dfb-form-tel').value,
+            isClient: document.getElementById('dfb-is-client').checked,
+            clientId: document.getElementById('dfb-form-client-id').value,
+            message: document.getElementById('dfb-form-msg').value
+        };
+
+        try {
+            await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) });
+
+            // Sauvegarde en cache
+            const history = JSON.parse(localStorage.getItem('dfb_tickets') || "[]");
+            history.push({ id: currentTicket, date: new Date().toLocaleDateString('fr-FR') });
+            localStorage.setItem('dfb_tickets', JSON.stringify(history));
+
+            setTimeout(() => {
+                loadingBar.classList.add('dfb-hidden');
+                document.getElementById('dfb-contact-form').classList.add('dfb-hidden');
+                document.getElementById('dfb-history-section').classList.add('dfb-hidden');
+                document.querySelector('.dfb-intro-text').classList.add('dfb-hidden');
+                document.getElementById('dfb-display-ticket').innerText = currentTicket;
+                document.getElementById('dfb-success-msg').classList.remove('dfb-hidden');
+            }, 4000);
+
+        } catch (e) {
+            console.error(e);
+            submitBtn.disabled = false;
+            loadingBar.classList.add('dfb-hidden');
+        }
+    }
+</script>
 
 
 
