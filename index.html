@@ -2658,44 +2658,8 @@ document.addEventListener('DOMContentLoaded', function () {
       
     <img class="krako" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Defibeo Logo">
 
-    <div class="lang-selector-container">
-    <div class="lang-button">
-        <label for="lang-select">Select Language</label>
-        <select id="lang-select">
-            <option value="fr" selected>Français</option>
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="pt">Português</option>
-            <option value="de">Deutsch</option>
-            <option value="nl">Nederlands</option>
-        </select>
-    </div>
-</div>
 
-<script>
-  window.addEventListener('scroll', function() {
-    const floatWrapper = document.querySelector('.db-float-wrapper');
-    const langSelector = document.querySelector('.lang-selector-container');
-    const scrollPos = window.scrollY;
 
-    // 1. Gestion de l'apparition de tes nouveaux boutons (100px)
-    if (scrollPos > 100) {
-        floatWrapper.classList.add('db-is-visible');
-    } else {
-        floatWrapper.classList.remove('db-is-visible');
-    }
-
-    // 2. Gestion de la disparition du sélecteur de langue (200px)
-    if (langSelector) { // Sécurité : on vérifie si l'élément existe
-        if (scrollPos > 200) {
-            langSelector.classList.add('lang-hidden');
-        } else {
-            langSelector.classList.remove('lang-hidden');
-        }
-    }
-});
-
-</script>
 
     <h1>
 Logiciel métier leader pour<span id="typing"></span> défibrillateurs
