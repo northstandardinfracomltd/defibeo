@@ -5555,7 +5555,7 @@ Oui. Dans la fiche du défibrillateur, vous pouvez configurer des rappels automa
     </label>
     <div class="dfb-faq-answer-content">
       <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEFAQ00004XX">
-    Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à un outil d'export en lot conforme aux exigences nationales. Le logiciel optimise également votre suivi terrain : un technicien peut, par exemple, signaler l’absence d’un DAE sur la plateforme lors d'une intervention. L’administrateur peut alors piloter l’avancement de l’intégration sur Géo'DAE directement depuis son tableau de bord, assurant ainsi une mise en conformité totale et rapide.
+Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à l’API de la plateforme Atlasanté. Toutefois, l’API n’est pas activée par défaut lors de la livraison du logiciel et des frais de connexion sont facturés sur demande. L’unique prérequis est de disposer d’un compte "distributeur-mainteneur" sur Géo’DAE ainsi que d’une autorisation d’API. Pour obtenir cette dernière, veuillez contacter la plateforme à l'adresse : contact@geodae.sante.gouv.fr.
       </div>
     </div>
   </div>
@@ -5569,7 +5569,7 @@ Oui. Dans la fiche du défibrillateur, vous pouvez configurer des rappels automa
     </label>
     <div class="dfb-faq-answer-content">
       <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEFAQ00004XX">
-    Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à un outil d'export en lot conforme aux exigences nationales. Le logiciel optimise également votre suivi terrain : un technicien peut, par exemple, signaler l’absence d’un DAE sur la plateforme lors d'une intervention. L’administrateur peut alors piloter l’avancement de l’intégration sur Géo'DAE directement depuis son tableau de bord, assurant ainsi une mise en conformité totale et rapide.
+Oui, Défibeo peut être connecté à Sage 100, logiciel de comptabilité et de gestion de trésorerie. Toutefois, cette connexion n’est pas incluse par défaut ; un coût supplémentaire, étudié sur demande selon vos besoins spécifiques, est à prévoir. L’unique prérequis est de disposer d’un compte Sage 100cloud.
       </div>
     </div>
   </div>
@@ -5584,7 +5584,7 @@ Oui. Dans la fiche du défibrillateur, vous pouvez configurer des rappels automa
     </label>
     <div class="dfb-faq-answer-content">
       <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEFAQ00004XX">
-    Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à un outil d'export en lot conforme aux exigences nationales. Le logiciel optimise également votre suivi terrain : un technicien peut, par exemple, signaler l’absence d’un DAE sur la plateforme lors d'une intervention. L’administrateur peut alors piloter l’avancement de l’intégration sur Géo'DAE directement depuis son tableau de bord, assurant ainsi une mise en conformité totale et rapide.
+Oui, Défibeo peut être connecté à EBP, logiciel de comptabilité et de gestion de trésorerie. Cependant, l’intégration n’est pas configurée par défaut à la livraison du logiciel. Un coût supplémentaire sera étudié sur demande, en fonction de vos besoins et de vos attentes. L’unique prérequis est de disposer d’un compte EBP.
       </div>
     </div>
   </div>
@@ -6934,6 +6934,13 @@ position: fixed;
     font-family: 'DefibeoMain', sans-serif;
     }
     
+
+    @media screen and (max-width: 768px) {
+    #dfb-chat-window {
+    right: 7px !important;
+    }
+  }
+
     /* Fenêtre de Chat */
     #dfb-chat-window {
       border: 1px solid #cccccc;
@@ -6977,10 +6984,6 @@ position: fixed;
     font-weight: 100;
     font-family: 'DefibeoMain', sans-serif !important;}
     .dfb-separator { border: 0; border-top: 1px solid transparent; margin: 15px 0; }
-/* Supprime le contour au clic de souris */
-:focus:not(:focus-visible) {
-  outline: none;
-}
 
 /* Optionnel : Personnalise le contour au clavier pour qu'il soit plus joli */
 :focus-visible {
