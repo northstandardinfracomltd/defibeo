@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Défibeo - Connexion | Logiciel Infogérance GMAO FSM CRM Maintenance Défibrillateurs.</title>
+  <meta name="description" content="Connectez-vous à votre interface Défibeo.">
+
+  <link rel="icon" href="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/favicondefibeo2026.png" type="image/png">
+
+    <style>
+        @font-face {
+            font-family: 'DefibeoMain';
+            font-weight: 900 !important;
+            src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
+        }
+
+        :root {
+            --db-primary: #281698;
+            --db-bg-gradient: radial-gradient(#281698, #020248);
+            --db-black: #000000;
+            --db-gray: #f2f2f2;
+            --db-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'DefibeoMain', sans-serif; }
+
+        body, html { height: 100%; width: 100%; background-color: #fff; color: var(--db-black); }
+
+        /* Fix Desktop / Scroll Mobile */
+        @media (min-width: 993px) { body { overflow: hidden; } }
+        @media (max-width: 992px) { body { overflow-y: auto; height: auto; } }
+
+        .db-fs-main-wrapper { display: flex; height: 100vh; width: 100vw; }
+
+        /* --- Sidebar --- */
+        .db-fs-sidebar {
+            flex: 0 0 45%;
+            background: var(--db-bg-gradient) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .db-fs-logo { max-height: 140px; margin-bottom: -15px; }
+        .db-fs-sidebar p { 
+            max-width: 400px;
+            line-height: 1.6;
+            font-size: 18px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            font-weight: 100;
+        }
+        
+        .db-fs-btn-more {
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: 100;
+            background: #674eff;
+            color: #fff;
+            outline: #674eff solid 3px;
+            outline-offset: 4px;
+            font-size: 18px !important;
+            border-radius: 13px !important;
+            border: none !important;
+        }
+
+        /* --- Formulaire --- */
+        .db-fs-content {
+            background: #e7f1ff;
+            flex: 0 0 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .db-fs-container { width: 100%; max-width: 400px; }
+
+        .db-fs-group {
+            margin-bottom: 18px;
+            transition: var(--db-transition);
+        }
+
+        label { 
+            display: block; 
+            color: #000;
+            font-weight: 100; 
+            font-size: 18px; 
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #dedede;
+            border-radius: 13px;
+            font-size: 18px;
+            font-weight: 100;
+            outline: none;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        input::placeholder { color: #747474; font-size: 18px; text-align: center; font-weight: 100; }
+
+        /* Bouton */
+        .db-fs-submit {
+            display: block;
+            width: 100%;
+            background: #674eff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 100 !important;
+            font-size: 18px;
+            margin-top: 30px;
+            border-radius: 13px;
+            outline: #674eff solid 3px;
+            outline-offset: 3px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #lang-switcher {
+            appearance: none;
+            background: transparent;
+            border: none;
+            font-weight: 900;
+            text-decoration: underline;
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: #1164ff;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .error-msg {
+            color: #d93025;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .db-fs-main-wrapper { flex-direction: column; height: auto; }
+            .db-fs-sidebar { flex: 0 0 auto; padding: 60px 20px; }
+            .db-fs-content { flex: 0 0 auto; padding: 60px 20px 100px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="db-fs-main-wrapper">
+    <div class="db-fs-sidebar">
+        <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Logo" class="db-fs-logo">
+        <p>Ravi de vous revoir! Connectez-vous à votre logiciel Défibeo Standard ou Large.</p>
+        <a href="/" class="db-fs-btn-more">Retour à l'accueil</a>
+    </div>
+
+    <div class="db-fs-content">
+        <div class="db-fs-container">
+            
+            <select id="lang-switcher">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+
+            <div class="db-fs-group">
+                <label id="lbl-login">Identifiant Client</label>
+                <input type="text" id="input-id" placeholder="Ex: medical360" autocomplete="off">
+            </div>
+
+            <button class="db-fs-submit" id="btn-login">Connexion</button>
+            <p id="error-text" class="error-msg">Identifiant invalide ou compte non activé.</p>
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    const btn = document.getElementById('btn-login');
+    const input = document.getElementById('input-id');
+    const error = document.getElementById('error-text');
+
+    btn.addEventListener('click', () => {
+        // Affiche le message d'erreur au clic
+        error.style.display = 'block';
+        
+        // Optionnel : secouer l'input pour l'effet visuel
+        input.style.border = '1px solid #d93025';
+    });
+
+    // Masquer l'erreur si l'utilisateur recommence à taper
+    input.addEventListener('input', () => {
+        error.style.display = 'none';
+        input.style.border = '1px solid #dedede';
+    });
+
+    // Traduction simple pour la page de login
+    const langSwitcher = document.getElementById('lang-switcher');
+    langSwitcher.addEventListener('change', (e) => {
+        const l = e.target.value;
+        if(l === 'en') {
+            document.getElementById('lbl-login').innerText = "Client ID";
+            btn.innerText = "LOGIN";
+            error.innerText = "Invalid ID or account not activated.";
+        } else if(l === 'es') {
+            document.getElementById('lbl-login').innerText = "Identificación de cliente";
+            btn.innerText = "CONEXIÓN";
+            error.innerText = "Identificación inválida o cuenta no activada.";
+        } else {
+            document.getElementById('lbl-login').innerText = "Identifiant Client";
+            btn.innerText = "CONNEXION";
+            error.innerText = "Identifiant invalide ou compte non activé.";
+        }
+    });
+</script>
+</body>
+</html>
