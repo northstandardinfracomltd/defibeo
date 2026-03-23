@@ -3036,60 +3036,74 @@ padding: 8px 12px !important;
 <h1>
   <span data-key="H1_START">Logiciel métier leader pour</span><span id="typing"></span> <span data-key="H1_END">défibrillateurs</span>
 </h1>
+
 <script>
-  const typingTranslations = {
-    "FR": [" les maintenances des", " les techniciens des", " la traçabilité des", " l'infogérance des", " la veille des", " les rappels des"],
-    "EN": [" maintenance for", " technicians for", " traceability for", " managed services for", " monitoring of", " reminders for"],
-    "ES": [" el mantenimiento de", " los técnicos de", " la trazabilidad de", " la infogestión de", " la vigilancia de", " los recordatorios de"],
-    "PT": [" a manutenção de", " os técnicos de", " a rastreabilidade de", " a infogestão de", " a vigilância de", " os lembretes de"],
-    "DE": [" die Wartung von", " die Techniker von", " die Rückverfolgbarkeit von", " die Managed Services von", " die Überwachung von", " die Erinnerungen für"],
-    "NL": [" het onderhoud van", " de technici van", " de traceerbaarheid van", " de managed services van", " de bewaking van", " de herinneringen voor"]
-  };
+  (function() {
+    const typingTranslations = {
+      "fr": [" les maintenances des", " les techniciens des", " la traçabilité des", " l'infogérance des", " la veille des", " les rappels des"],
+      "en": [" maintenance for", " technicians for", " traceability for", " managed services for", " monitoring of", " reminders for"],
+      "es": [" el mantenimiento de", " los técnicos de", " la trazabilidad de", " la infogestión de", " la vigilancia de", " los recordatorios de"],
+      "pt": [" a manutenção de", " os técnicos de", " a rastreabilidade de", " a infogestão de", " a vigilância de", " os lembretes de"],
+      "de": [" die Wartung von", " die Techniker von", " die Rückverfolgbarkeit von", " die Managed Services von", " die Überwachung von", " die Erinnerungen für"],
+      "nl": [" het onderhoud van", " de technici van", " de traceerbaarheid van", " de managed services van", " de bewaking van", " de herinneringen voor"]
+    };
 
-  const typingElement = document.getElementById("typing");
-  let textIndex = 0;
-  let charIndex = 0;
-  let texts = [];
+    const typingElement = document.getElementById("typing");
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let currentTexts = [];
+    let typingTimer = null;
 
-  function initTyping() {
-    // 1. On détecte la langue via l'attribut lang de la page
-    let lang = document.documentElement.lang.substring(0, 2).toUpperCase() || "FR";
-    
-    // 2. Sécurité : Si vous utilisez un sélecteur de langue qui change le contenu sans recharger la page,
-    // on peut aussi vérifier un mot clé dans le titre traduit (ex: "Leading" = EN)
-    const headerStart = document.querySelector('[data-key="H1_START"]').textContent.toLowerCase();
-    if (headerStart.includes("leading")) lang = "EN";
-    else if (headerStart.includes("software de gestión")) lang = "ES";
-    else if (headerStart.includes("führende")) lang = "DE";
-    else if (headerStart.includes("toonaangevende")) lang = "NL";
-
-    texts = typingTranslations[lang] || typingTranslations["FR"];
-    type();
-  }
-
-  function type() {
-    if (texts.length === 0) return;
-    
-    const currentText = texts[textIndex];
-    typingElement.textContent = currentText.slice(0, charIndex);
-
-    if (charIndex < currentText.length) {
-      charIndex++;
-      setTimeout(type, 80);
-    } else {
-      setTimeout(() => {
-        textIndex = (textIndex + 1) % texts.length;
+    function startTyping(lang) {
+        // Arrêter le timer précédent pour éviter les conflits de langues
+        if (typingTimer) clearTimeout(typingTimer);
+        
+        // Charger la nouvelle bibliothèque de mots
+        currentTexts = typingTranslations[lang] || typingTranslations["fr"];
+        
+        // Réinitialiser les index pour repartir proprement sur la nouvelle langue
+        textIndex = 0;
         charIndex = 0;
+        
         type();
-      }, 1200);
     }
-  }
 
-  // On attend 500ms pour être sûr que votre script de traduction a fini de traduire "H1_START"
-  window.addEventListener("load", () => {
-    setTimeout(initTyping, 500);
-  });
+    function type() {
+        const currentFullText = currentTexts[textIndex];
+        
+        // Affichage progressif
+        typingElement.textContent = currentFullText.slice(0, charIndex);
+
+        if (charIndex < currentFullText.length) {
+            charIndex++;
+            typingTimer = setTimeout(type, 80);
+        } else {
+            // Pause une fois le mot fini
+            typingTimer = setTimeout(() => {
+                textIndex = (textIndex + 1) % currentTexts.length;
+                charIndex = 0;
+                type();
+            }, 1200);
+        }
+    }
+
+    // 1. Initialisation au chargement (on regarde le localStorage comme votre script)
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('DFB_V3_LANGUAGE_KEY') || 'fr'; // Ajustez 'DFB_V3_LANGUAGE_KEY' si votre clé storage est différente
+        startTyping(savedLang);
+    });
+
+    // 2. ÉCOUTEUR MAGIQUE : Se déclenche quand vous changez de langue via votre bouton
+    window.addEventListener('dfbV3_LangChanged', function(event) {
+        const newLang = event.detail.language;
+        startTyping(newLang);
+    });
+
+  })();
 </script>
+
+
 <p class="tertraktoz" data-key="TRANSLATE000007CHAST">Votre nouveau maillon dans la chaîne de survie. En tant que logiciel métier spécialisé, Défibeo est votre copilote pour la maintenance, l’infogérance et la traçabilité de vos défibrillateurs. Fini le chaos du travail décentralisé et hors ligne.
         </p>
 <br>
