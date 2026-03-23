@@ -3116,9 +3116,21 @@ padding: 8px 12px !important;
   });
 </script>
 <p class="codechef" data-key="LTX00042">Vous êtes déjà utilisateur du logiciel?</p>
-<button href="/login" class="logingo" data-key="TRANSLATE000008second">
+<button id="dfb-login-trigger" class="logingo" data-key="TRANSLATE000008second">
   Connexion
 </button>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginBtn = document.getElementById('dfb-login-trigger');
+    
+    if (loginBtn) {
+      loginBtn.addEventListener('click', function() {
+        // Redirection forcée vers la page de connexion
+        window.location.href = '/login';
+      });
+    }
+  });
+</script>
 
 
 <!-- ================= CSS ================= -->
