@@ -48,7 +48,8 @@
             font-family: 'Lato', sans-serif;
             font-size: 15px;
             padding: 14px;
-            border: 2px solid #e0e0e0;
+            text-align: center;
+    border: 1px solid #e0e0e0;
             border-radius: 8px;
             outline: none;
             box-sizing: border-box;
@@ -62,18 +63,19 @@
         /* Design du bouton "Compléter" */
         .btn-complete {
             display: none; /* Masqué par défaut */
-            text-decoration: none;
-            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-            color: white;
-            padding: 14px 20px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 16px;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            width: 100%;
+    text-decoration: none !important;
+    background: #0a8058;
+    color: white;
+    font-family: 'Lato';
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 200;
+    font-size: 16px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    width: 100%;
         }
 
         .btn-complete:hover {
@@ -96,7 +98,7 @@
 <body>
 
     <div class="login-card">
-        <h2>Accès au formulaire</h2>
+        <h2>Accès Technicien</h2>
         
         <div class="input-group">
             <input type="password" id="access-code" placeholder="Entrez votre code..." autocomplete="off">
