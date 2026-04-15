@@ -5317,13 +5317,15 @@ width: 100%;
 <div id="store"></div>
 
 <div style="text-align: center; padding: 0px 0;">
-    <button class="btn-open-store" onclick="toggleStore(true)">Accéder au store Défibeo</button>
+  <p class="codechef22">Pour les extensions, formations et autres produits, consultez le Store (magasin).</p>
+
+    <button class="btn-open-store" onclick="toggleStore(true)">Accéder au Store Défibeo</button>
 </div>
 
 <div id="store-popup" class="store-overlay">
     <div class="store-content">
         <div class="store-header">
-            <h2 class="text-default">Le Magasin Défibeo</h2>
+            <h2 class="text-default craigdavis">Défibeo Store</h2>
             <span class="secure-tag text-default">Paiement Sécurisé avec Paypal ou Carte Bancaire</span>
             <button class="close-store-btn" onclick="toggleStore(false)">Fermer</button>
         </div>
@@ -5438,7 +5440,7 @@ width: 100%;
                         <h3 class="text-default">Certification Défibeo 2026</h3>
                         <span class="price-pill text-default">590€</span>
                     </div>
-                    <p class="text-default">Valorisez votre expertise en obtenant le Label Défibeo 2026. Après votre inscription, nous réalisons un audit complet de votre activité basé sur 73 points de contrôle. En cas de validation, vous recevrez une attestation d’excellence ainsi qu'un kit de communication (label) à afficher sur votre site internet.</p>
+                    <p class="text-default">Valorisez votre expertise en obtenant le Label Défibeo 2026. Après votre inscription, nous réalisons un audit complet de votre activité basé sur 73 points de contrôle (résultant un score). En cas de validation, vous recevrez une attestation d’excellence ainsi qu'un kit de communication (label) à afficher sur votre site internet.</p>
                     <a href="#" class="buy-button">Acheter</a>
                 </div>
             </div>
@@ -5475,6 +5477,14 @@ width: 100%;
     .store-content span {
         cursor: default !important;
     }
+
+    .codechef22 {
+    font-size: 16px !important;
+    text-align: center;
+    color: #ffffff5c !important;
+    font-weight: 100 !important;
+    font-family: 'DefibeoMain', sans-serif;
+}
 
     /* Bouton d'ouverture */
     .btn-open-store {
@@ -5529,6 +5539,14 @@ display: flex;
     .secure-tag {     color: #000000;
     font-weight: 100;
     font-size: 18px; }
+
+
+    .craigdavis {   
+          color: #000000;
+    font-weight: 100;
+    font-size: 18px !important;
+
+    }
 
     .close-store-btn {
     background: #000000;
@@ -5588,15 +5606,16 @@ display: flex;
     }
 
     .price-pill {
-        background: #e9ecef;
-        padding: 4px 10px;
-        border-radius: 15px;
-        font-weight: bold;
+    background: #16f2bb;
+    padding: 6px 12px;
+    color: #000;
+    border-radius: 20px;
+    font-weight: bold;
     }
 
     .product-info p {
-        font-size: 0.9rem;
-        color: #555;
+    font-size: 14px;
+    color: #000;
         margin-bottom: 15px;
     }
 
