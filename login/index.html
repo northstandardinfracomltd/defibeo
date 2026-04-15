@@ -163,7 +163,6 @@
     </style>
 </head>
 <body>
-
 <div class="db-fs-main-wrapper">
     <div class="db-fs-sidebar">
         <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Logo" class="db-fs-logo">
@@ -186,23 +185,37 @@
             </div>
 
             <button class="db-fs-submit" id="btn-login">Connexion</button>
-            <p id="error-text" class="error-msg">Identifiant invalide ou compte non activé.</p>
+            <p id="error-text" class="error-msg" style="display:none; color: #d93025; margin-top: 10px; font-size: 0.9em;">
+                Identifiant invalide ou compte non activé.
+            </p>
             
         </div>
     </div>
 </div>
 
 <script>
+    // 1. "Base de données" des comptes et leurs URLs de destination
+    const REDIRECTION_MAP = {
+        "X93128739283": "http://jpm973.defibeo.com/",
+        "DIEZ": "https://client.defibeo.fr/demo"
+    };
+
     const btn = document.getElementById('btn-login');
     const input = document.getElementById('input-id');
     const error = document.getElementById('error-text');
 
+    // 2. Logique de connexion / redirection
     btn.addEventListener('click', () => {
-        // Affiche le message d'erreur au clic
-        error.style.display = 'block';
-        
-        // Optionnel : secouer l'input pour l'effet visuel
-        input.style.border = '1px solid #d93025';
+        const userCode = input.value.trim().toUpperCase(); // Nettoie les espaces et force la majuscule
+
+        if (REDIRECTION_MAP.hasOwnProperty(userCode)) {
+            // Si le code existe, on redirige vers l'URL associée
+            window.location.href = REDIRECTION_MAP[userCode];
+        } else {
+            // Sinon, on affiche l'erreur
+            error.style.display = 'block';
+            input.style.border = '1px solid #d93025';
+        }
     });
 
     // Masquer l'erreur si l'utilisateur recommence à taper
@@ -211,23 +224,24 @@
         input.style.border = '1px solid #dedede';
     });
 
-    // Traduction simple pour la page de login
+    // Permettre la validation avec la touche "Entrée"
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') btn.click();
+    });
+
+    // 3. Gestion des langues (Ta logique existante améliorée)
     const langSwitcher = document.getElementById('lang-switcher');
+    const translations = {
+        en: { lbl: "Client ID", btn: "LOGIN", err: "Invalid ID or account not activated." },
+        es: { lbl: "Identificación de cliente", btn: "CONEXIÓN", err: "Identificación inválida o cuenta no activada." },
+        fr: { lbl: "Identifiant Client", btn: "CONNEXION", err: "Identifiant invalide ou compte non activé." }
+    };
+
     langSwitcher.addEventListener('change', (e) => {
-        const l = e.target.value;
-        if(l === 'en') {
-            document.getElementById('lbl-login').innerText = "Client ID";
-            btn.innerText = "LOGIN";
-            error.innerText = "Invalid ID or account not activated.";
-        } else if(l === 'es') {
-            document.getElementById('lbl-login').innerText = "Identificación de cliente";
-            btn.innerText = "CONEXIÓN";
-            error.innerText = "Identificación inválida o cuenta no activada.";
-        } else {
-            document.getElementById('lbl-login').innerText = "Identifiant Client";
-            btn.innerText = "CONNEXION";
-            error.innerText = "Identifiant invalide ou compte non activé.";
-        }
+        const lang = e.target.value;
+        document.getElementById('lbl-login').innerText = translations[lang].lbl;
+        btn.innerText = translations[lang].btn;
+        error.innerText = translations[lang].err;
     });
 </script>
 </body>
