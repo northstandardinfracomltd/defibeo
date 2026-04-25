@@ -3026,16 +3026,15 @@ padding: 8px 12px !important;
             }
         });
 
-        // Gestion de la visibilité pour .notforfr2
-        const notForFr2Elements = document.querySelectorAll('.notforfr2');
-        notForFr2Elements.forEach(el => {
+// Gestion de la visibilité forcée
+        document.querySelectorAll('.notforfr2').forEach(el => {
             if (lang === 'fr') {
-                el.style.display = ''; // Affiche si c'est 'fr'
+                el.style.setProperty('display', 'block', 'important'); 
             } else {
-                el.style.display = 'none'; // Cache pour tous les autres (fr2, en, es, etc.)
+                el.style.setProperty('display', 'none', 'important');
             }
         });
-        
+
         // Dispatch d'un événement personnalisé (utile si d'autres scripts doivent savoir que la langue a changé)
         window.dispatchEvent(new CustomEvent('dfbV3_LangChanged', { detail: { language: lang } }));
     }
