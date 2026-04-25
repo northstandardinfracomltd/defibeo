@@ -2983,7 +2983,7 @@ padding: 8px 12px !important;
     };
 
     const dfbV3_LangNames = {
-        'fr': 'Français', 'en': 'English', 'es': 'Español', 
+        'fr': 'Français', 'en': 'English', 'es': 'Español', 'fr2': 'Français',
         'pt': 'Português', 'de': 'Deutsch', 'nl': 'Nederlands'
     };
 
@@ -3026,6 +3026,16 @@ padding: 8px 12px !important;
             }
         });
 
+        // Gestion de la visibilité pour .notforfr2
+        const notForFr2Elements = document.querySelectorAll('.notforfr2');
+        notForFr2Elements.forEach(el => {
+            if (lang === 'fr') {
+                el.style.display = ''; // Affiche si c'est 'fr'
+            } else {
+                el.style.display = 'none'; // Cache pour tous les autres (fr2, en, es, etc.)
+            }
+        });
+        
         // Dispatch d'un événement personnalisé (utile si d'autres scripts doivent savoir que la langue a changé)
         window.dispatchEvent(new CustomEvent('dfbV3_LangChanged', { detail: { language: lang } }));
     }
@@ -4519,7 +4529,7 @@ margin-top: 10px;
 </div>
 
 
-<div class="cp-layout-container__wrapper alphaomega">
+<div class="cp-layout-container__wrapper alphaomega notforfr2">
   <div class="cp-layout-container__grid">
     
     <div class="cp-layout-container__content">
