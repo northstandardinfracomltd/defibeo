@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>Confirmation de command #29391 | Defibeo</title>
+    <style>
+        /* Importation de la police personnalisée */
+        @font-face {
+            font-family: 'DefibeoMain';
+            src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DefibeoMain', sans-serif;
+            background: radial-gradient(#281698, #020248) !important;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Container Principal */
+        .confirmation-container {
+            text-align: center;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .logo {
+            width: 100%;
+            max-width:300px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+        }
+
+        /* Icône de succès animée */
+        .success-icon {
+            font-size: 60px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+
+        /* Style de bouton spécifique */
+        .btn-home {
+            background: #674eff !important;
+            color: white;
+            border: none;
+            padding: 13px 21px;
+            border-radius: 13px;
+            font-weight: 100 !important;
+            cursor: pointer;
+            display: inline-flex; /* Centrage bouton */
+            font-size: 17px;
+            align-items: center;
+            gap: 10px;
+            box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+            font-family: 'DefibeoMain', sans-serif;
+            text-decoration: none;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            margin: 0 auto;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .btn-home:active {
+            transform: translateY(1px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            p { font-size: 1rem; }
+            .logo { width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="confirmation-container">
+        <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Logo Defibeo" class="logo">
+
+        <p>Paiement confirmé pour la commande #29391. Vous recevrez un email de Défibeo sous 24h à 48h.</p>
+
+        <a href="/" class="btn-home">
+            Quitter
+        </a>
+    </div>
+
+    <script>
+        // Optionnel : Ajout d'un petit effet visuel au chargement
+        window.addEventListener('load', () => {
+            console.log("Confirmation d'achat Defibeo affichée.");
+            // Tu peux ajouter ici des scripts de tracking de conversion si besoin
+        });
+    </script>
+</body>
+</html>
