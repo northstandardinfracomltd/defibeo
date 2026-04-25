@@ -1985,7 +1985,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         <ul id="dfb-v3-options-list-container" class="dfb-v3-options-panel dfb-v3-is-hidden">
             <li class="dfb-v3-option-item" data-lang-code="fr" onclick="DfbV3_SelectLang('fr')">Français, France</li>
-            <li class="dfb-v3-option-item" data-lang-code="fr2" onclick="DfbV3_SelectLang('fr2')">Français BE,</li>
+            <li class="dfb-v3-option-item" data-lang-code="fr2" onclick="DfbV3_SelectLang('fr2')">Français, BE/CH/LX/MC/</li>
             <li class="dfb-v3-option-item" data-lang-code="en" onclick="DfbV3_SelectLang('en')">English</li>
             <li class="dfb-v3-option-item" data-lang-code="es" onclick="DfbV3_SelectLang('es')">Español</li>
             <li class="dfb-v3-option-item" data-lang-code="pt" onclick="DfbV3_SelectLang('pt')">Português</li>
@@ -2137,7 +2137,7 @@ padding: 8px 12px !important;
 "LTX00037": "Comment se déroule l'importation, intégration ou migration de mes données?",
 "LTX00038": "Plusieurs options sont envisageables selon votre situation. Généralement, lorsque vous possédez un fichier Excel/CSV, nous nous chargeons de la vérification et de l'importation initiale (gratuitement). À défaut, nous pouvons mettre à votre disposition un modèle de tableau prêt à l'emploi et vous pouvez procéder en autonomie à l'importation.",
 "LTX00039": "Comment se déroule la prise en main ou la formation au logiciel?",
-"LTX00040": "L'assistance et l'accompagnement individuel sont disponibles en continu et gratuitement via WhatsApp, téléphone ou e-mail. Pour une formation collective, n'hésitez pas à nous solliciter : nous vous établirons un devis personnalisé selon votre version du logiciel et le nombre de stagiaires.",
+"LTX00040": "L'assistance et l'accompagnement individuel sont disponibles en continu et gratuitement via WhatsApp, téléphone ou e-mail (uniquement pour les abonnés, à partir de la version de Mars 2026). Il est possible de mettre en place une formation collective ou une formation vidéo enregistrée, consultez le Store Défibeo.",
 "LTX00042": "Vous êtes déjà utilisateur du logiciel?",
 "TRANSLATEGAY5": "L’infogérance consiste à confier la gestion, l’optimisation et la sécurisation de votre système informatique (ou d'un logiciel spécifique comme Défibeo) à un prestataire extérieur spécialisé. Au lieu de gérer vous-même les serveurs, les mises à jour de sécurité ou les sauvegardes, vous déléguez ces tâches techniques à des experts dont c'est le métier. C’est un service qui garantit que vos outils numériques sont toujours opérationnels, performants et protégés contre les menaces. Votre sérénité numérique!",
 "TRANSLATEGAY4": "Si j’opte pour la version Standard et que je dépasse le seuil des 3 500 défibrillateurs, que se passe-t-il?",
@@ -2150,7 +2150,7 @@ padding: 8px 12px !important;
 "TRANSLATEFAQ00001": "Quels modèles de défibrillateurs sont supportés par Défibeo?",
 "TRANSLATEFAQ00002": "Défibeo intègre nativement les propriétés techniques de tous les modèles du marché, notamment : Cardiac Science Powerheart G5, HeartSine Samaritan PAD 500P, Schiller FRED PA1, ZOLL AED 3, Mindray BeneHeart C2, Defibtech Lifeline VIEW, Philips HeartStart HS1, Physio-Control LIFEPAK CR Plus, Primedic DefiMonitor XD, Bexen Medical Reanibex 100 ou encore Schiller FRED Easy. Notre base de données exhaustive garantit une gestion précise, quel que soit votre parc matériel.",
 "TRANSLATEFAQ00003": "Puis-je effectuer un export CSV spécifique pour Géo'DAE?",
-"TRANSLATEFAQ00004": "Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à un outil d'export en lot conforme aux exigences nationales. Le logiciel optimise également votre suivi terrain : un technicien peut, par exemple, signaler l’absence d’un DAE sur la plateforme lors d'une intervention. L’administrateur peut alors piloter l’avancement de l’intégration sur Géo'DAE directement depuis son tableau de bord, assurant ainsi une mise en conformité totale et rapide.",
+"TRANSLATEFAQ00004": "Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à un outil d'export en lot conforme aux exigences nationales, attention manuellement certains ajustements seront nécessaires dans votre Excel ou Google Sheets. Le logiciel optimise également votre suivi terrain : un technicien peut, par exemple, signaler l’absence d’un DAE sur la plateforme lors d'une intervention. L’administrateur peut alors piloter l’avancement de l’intégration sur Géo'DAE directement depuis son tableau de bord, assurant ainsi une mise en conformité totale et rapide.",
 "TRANSLATEA4": "Écran Partagé",
 "TRANSLATEA5": "Réserver une démo",
 "TRANSLATEGAY2FLAT06": "Comment Défibeo gère-t-il les contrats clients?",
@@ -4511,7 +4511,7 @@ margin-top: 10px;
 
 
 
-<div class="cp-layout-container__wrapper alphaomega">
+<div class="cp-layout-container__wrapper alphaomega notforfr2">
   <div class="cp-layout-container__grid">
     
     <div class="cp-layout-container__content">
@@ -4528,7 +4528,7 @@ margin-top: 10px;
 </div>
 
 
-<div class="cp-layout-container__wrapper alphaomega notforfr2">
+<div class="cp-layout-container__wrapper alphaomega">
   <div class="cp-layout-container__grid">
     
     <div class="cp-layout-container__content">
@@ -6319,6 +6319,36 @@ Oui. Dans la fiche du défibrillateur, vous pouvez configurer des rappels automa
 
 
           <div class="dfb-faq-item-container">
+    <input type="checkbox" id="dfb-faq-q1111" class="dfb-faq-trigger-input">
+    <label for="dfb-faq-q1111" class="dfb-faq-question-label" data-key="TRANSLATEGAY2FLAT02FLAGADA">
+ Défibeo permet-il d'assurer un suivi des statistiques et des conditions d'utilisation des défibrillateurs?
+      <span class="dfb-faq-icon-indicator"></span>
+    </label>
+    <div class="dfb-faq-answer-content">
+      <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEGAY1FLAT01FLAGADA">
+Oui. Sur chaque fiche de défibrillateur, une section vous permet d’indiquer si le défibrillateur a été utilisé sur une victime, son âge ainsi que l’issue de l’intervention (survie). Ces données sont dépersonnalisées afin de garantir l'anonymat.
+      </div>
+    </div>
+  </div>
+
+
+            <div class="dfb-faq-item-container">
+    <input type="checkbox" id="dfb-faq-q1111" class="dfb-faq-trigger-input">
+    <label for="dfb-faq-q1111" class="dfb-faq-question-label" data-key="TRANSLATEGAY2FLAT02FLAGADA2">
+Est-il possible d'ouvrir un accès à un "Grand Compte" sans acheter l'extension Portail Clients?
+      <span class="dfb-faq-icon-indicator"></span>
+    </label>
+    <div class="dfb-faq-answer-content">
+      <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEGAY1FLAT01FLAGADA2">
+Oui. Nous pouvons créer, à la demande, un accès spécifique pour votre client. Celui-ci bénéficiera d'un lien court personnalisé et d'une interface en marque blanche (aux couleurs et logos de votre choix). Cet accès permet de consulter les données en temps réel et donne la possibilité au client de compléter un formulaire de demande directement depuis la plateforme. Service facturé 300€ une seule fois.
+      </div>
+    </div>
+  </div>
+
+
+
+
+          <div class="dfb-faq-item-container">
     <input type="checkbox" id="dfb-faq-q11111" class="dfb-faq-trigger-input">
     <label for="dfb-faq-q11111" class="dfb-faq-question-label" data-key="TRANSLATEFAQ00001">
       Quels modèles de défibrillateurs sont supportés par Défibeo?
@@ -6339,7 +6369,7 @@ Oui. Dans la fiche du défibrillateur, vous pouvez configurer des rappels automa
     </label>
     <div class="dfb-faq-answer-content">
       <div class="dfb-faq-answer-inner-text" data-key="TRANSLATEFAQ00004">
-    Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à un outil d'export en lot conforme aux exigences nationales. Le logiciel optimise également votre suivi terrain : un technicien peut, par exemple, signaler l’absence d’un DAE sur la plateforme lors d'une intervention. L’administrateur peut alors piloter l’avancement de l’intégration sur Géo'DAE directement depuis son tableau de bord, assurant ainsi une mise en conformité totale et rapide.
+Oui, Défibeo facilite la déclaration de vos dispositifs sur la plateforme gouvernementale française Géo'DAE grâce à un outil d'export en lot conforme aux exigences nationales, attention manuellement certains ajustements seront nécessaires dans votre Excel ou Google Sheets. Le logiciel optimise également votre suivi terrain : un technicien peut, par exemple, signaler l’absence d’un DAE sur la plateforme lors d'une intervention. L’administrateur peut alors piloter l’avancement de l’intégration sur Géo'DAE directement depuis son tableau de bord, assurant ainsi une mise en conformité totale et rapide.
       </div>
     </div>
   </div>
@@ -6425,7 +6455,7 @@ Plusieurs options sont envisageables selon votre situation. Généralement, lors
     </label>
     <div class="dfb-faq-answer-content">
       <div class="dfb-faq-answer-inner-text" data-key="LTX00040">
-L'assistance et l'accompagnement individuel sont disponibles en continu et gratuitement via WhatsApp, téléphone ou e-mail. Pour une formation collective, n'hésitez pas à nous solliciter : nous vous établirons un devis personnalisé selon votre version du logiciel et le nombre de stagiaires.
+L'assistance et l'accompagnement individuel sont disponibles en continu et gratuitement via WhatsApp, téléphone ou e-mail (uniquement pour les abonnés, à partir de la version de Mars 2026). Il est possible de mettre en place une formation collective ou une formation vidéo enregistrée, consultez le Store Défibeo.
       </div>
     </div>
   </div>
