@@ -2211,11 +2211,11 @@ padding: 8px 12px !important;
                 "TRANSLATE000051": "Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré prêt à l’usage et personnalisé à votre effigie. Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique (aide, ajustements, etc.). Chez Défibeo notre support est disponible 24/7 via WhatsApp en français. L’achat du logiciel n’est pas soumis à la TVA (0%).",
                 "TRANSLATE000052": "Éligible jusqu’à 3,500 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation du logiciel.",
                 "TRANSLATE000054": "(TTC) Une fois pour l'activation.",
-                "TRANSLATE000055": "Puis 170€ TTC par mois (DéfibeoGo)",
+                "TRANSLATE000055": "Puis DéfibeoGo 170€ TTC par mois",
                 "TRANSLATE000056": "Souscrire",
                 "TRANSLATE000057": "Éligible à partir de 3,500 défibrillateurs (volume illimité), incluant jusqu'à 25 sessions administrateurs (pour d'autres volumes, veuillez demander un devis). Accès livré sous 4 à 7 jours ouvrés après l’achat du logiciel (1 mois d'hébergement offert pour la prise en main). Interface personnalisée avec votre charte graphique et la possibilité de modifier les compositions et logiques du logiciel.",
                 "TRANSLATE000059": "(TTC) Une fois pour l'activation.",
-                "TRANSLATE000060": "Puis à partir de 390€ TTC par mois (DéfibeoGo)",
+                "TRANSLATE000060": "Puis DéfibeoGo à partir de 390€ TTC par mois",
                 "TRANSLATE000061": "Contactez-nous",
                 "TRANSLATE000070": "Formation",
                 "TRANSLATE000071": "Il s'agit d'une formation (optionnelle) de 1h30 à 2h30 en distanciel pour 1 à 3 personnes. Pour d'autres formats ou volumes, veuillez solliciter un devis.",
@@ -5076,7 +5076,7 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
                 <span class="tpx-eval-big-p" data-key="TRANSLATE000053">1,890€</span>
                 <span class="tpx-eval-small-p" data-key="TRANSLATE000054">(TTC) Une fois pour l'activation.</span>
             </div>
-            <div class="tpx-eval-label-host" data-key="TRANSLATE000055">Puis 170€ TTC par mois (DéfibeoGo)</div>
+            <div class="tpx-eval-label-host" data-key="TRANSLATE000055">Puis DéfibeoGo 170€ TTC par mois</div>
             <br><a href="/register" class="grazioli" data-key="TRANSLATE000056">Souscrire</a><br><br>
         </div>
     </label>
@@ -5096,7 +5096,7 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
                 <span class="tpx-eval-big-p" data-key="TRANSLATE000058">6,900€</span>
                 <span class="tpx-eval-small-p" data-key="TRANSLATE000059">(TTC) Une fois pour l'activation.</span>
             </div>
-            <div class="tpx-eval-label-host" data-key="TRANSLATE000060">Puis à partir de 390€ TTC par mois (DéfibeoGo)</div>
+            <div class="tpx-eval-label-host" data-key="TRANSLATE000060">Puis DéfibeoGo à partir de 390€ TTC par mois</div>
             <br><a href="#" class="open-defibeo-contact grazioli" data-key="TRANSLATE000061">Contactez-nous</a><br><br>
         </div>
     </label>
@@ -5397,6 +5397,71 @@ background: #e4dfff;
 <div id="store"></div>
 
 <div style="text-align: center; padding: 0px 0;">
+  <style>
+    /* Conteneur principal avec isolation par préfixe */
+    .dfb-go-infobox-container {
+        font-family: 'DefibeoMain', sans-serif;
+        background-color: #f9fbff;
+        border: 1px solid #2d5cf7;
+        border-radius: 8px;
+        padding: 24px;
+        margin: 20px 0;
+        max-width: 650px;
+        box-shadow: 0 4px 12px rgba(45, 92, 247, 0.08);
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* Titre stylisé */
+    .dfb-go-infobox-title {
+        color: #2d5cf7;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Petit indicateur visuel (optionnel) avant le titre */
+    .dfb-go-infobox-title::before {
+        content: "💡";
+        margin-right: 10px;
+        font-size: 1.1rem;
+    }
+
+    /* Paragraphe de définition */
+    .dfb-go-infobox-description {
+        margin: 0;
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    /* Mise en avant de la date charnière */
+    .dfb-go-infobox-highlight-date {
+        font-weight: bold;
+        color: #e63946;
+    }
+
+    /* Mise en avant du dernier message positif */
+    .dfb-go-infobox-footer-note {
+        display: block;
+        margin-top: 15px;
+        font-size: 0.95rem;
+        font-style: italic;
+        color: #555;
+        border-top: 1px solid #e0e6ed;
+        padding-top: 10px;
+    }
+</style>
+
+    <div class="dfb-go-infobox-container">
+        <h3 class="dfb-go-infobox-title">C’est quoi DéfibeoGo ?</h3>
+        <p class="dfb-go-infobox-description">
+Pour mieux vous accompagner au quotidien et répondre à vos besoins en continu et sans friction, nous avons créé DéfibeoGo. Cet abonnement regroupe l’hébergement, l’assistance, le support et les évolutions logicielles courantes, en plus des éléments gratuits du Store Défibeo. DéfibeoGo devient la norme dès le 1er janvier 2026. L’aide, quant à elle, reste toujours gratuite ! 
+        </p>
+    </div>
+
   <p class="codechef22">Pour les extensions, formations et autres produits, consultez le store (magasin):</p>
 
     <button class="btn-open-store" onclick="toggleStore(true)">Accéder au Store Défibeo</button>
@@ -5601,7 +5666,7 @@ background: #e4dfff;
                         <span class="price-pill text-default">300€</span>
                     </div>
                     <span class="defibeogopill">Gratuit avec DéfibeoGo</span>
-                    <p class="text-default">Description indisponible.</p>
+                    <p class="text-default">Le portail GC est une solution permettant à un client spécifique d'ouvrir un accès dédié sans devoir opter pour le Portail Clients global. L’idée : fournir une consultation sécurisée du parc de défibrillateurs via une interface personnalisée à l’effigie de votre client et de votre entreprise, augmentant ainsi la valeur ajoutée de votre offre. Cet accès peut également bénéficier d’un nom de domaine personnalisé (ex: dupont.defibeo.com) ou utiliser le nom de domaine de votre choix préalablement acquis.</p>
                     <a href="https://www.paypal.com/ncp/payment/BBN45S5Z5N4T2" class="buy-button">Acheter</a>
                 </div>
             </div>
@@ -5615,7 +5680,7 @@ background: #e4dfff;
                         <h3 class="text-default">Abonnement DéfibeoGo Standard</h3>
                         <span class="price-pill text-default">170€</span>
                     </div>
-                    <p class="text-default">Description indisponible.</p>
+                    <p class="text-default">DéfibeoGo est l’abonnement lié à l’acquisition du logiciel. Il inclut l’hébergement, l’assistance, le support technique, les mises à jour classiques, ainsi que tous les modules marqués « Gratuit avec DéfibeoGo » dans le Store Défibeo. Cet abonnement est requis pour l'ensemble des clients à partir du 1er janvier 2026. Engagement minimum de 6 mois.</p>
                     <a href="https://www.paypal.com/ncp/payment/BBN45S5Z5N4T2" class="buy-button">Souscrire</a>
                 </div>
             </div>
@@ -5630,7 +5695,7 @@ background: #e4dfff;
                         <h3 class="text-default">Abonnement DéfibeoGo Large</h3>
                         <span class="price-pill text-default">390€</span>
                     </div>
-                    <p class="text-default">Description indisponible.</p>
+                    <p class="text-default">DéfibeoGo est l’abonnement lié à l’acquisition du logiciel. Il inclut l’hébergement, l’assistance, le support technique, les mises à jour classiques, ainsi que tous les modules marqués « Gratuit avec DéfibeoGo » dans le Store Défibeo. Cet abonnement est requis pour l'ensemble des clients à partir du 1er janvier 2026. Engagement minimum de 6 mois.</p>
                     <a href="https://www.paypal.com/ncp/payment/BBN45S5Z5N4T2" class="buy-button">Souscrire</a>
                 </div>
             </div>
