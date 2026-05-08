@@ -297,30 +297,31 @@ iframe{
 
 .topbar{
     position:relative;
+    overflow:hidden; /* important pour couper proprement */
 }
 
-/* OVERLAY GAUCHE */
+/* LEFT FADE FIXE */
 .fade-left{
     position:absolute;
     top:0;
     left:0;
     height:100%;
-    width:40px;
+    width:50px;
+    z-index:999;
     pointer-events:none;
-    background:linear-gradient(to right, rgba(0,0,0,0.35), transparent);
-    z-index:10;
+    background:linear-gradient(to right, rgba(103,78,255,1), rgba(103,78,255,0));
 }
 
-/* OVERLAY DROITE */
+/* RIGHT FADE FIXE */
 .fade-right{
     position:absolute;
     top:0;
     right:0;
     height:100%;
-    width:40px;
+    width:50px;
+    z-index:999;
     pointer-events:none;
-    background:linear-gradient(to left, rgba(0,0,0,0.35), transparent);
-    z-index:10;
+    background:linear-gradient(to left, rgba(83,60,217,1), rgba(83,60,217,0));
 }
 
 </style>
@@ -390,6 +391,9 @@ iframe{
 
     <div class="topbar">
 
+                <div class="fade-left"></div>
+<div class="fade-right"></div>
+
         <div class="topbar-inner">
             
 
@@ -455,8 +459,6 @@ iframe{
 
         </div>
 
-        <div class="fade-left"></div>
-<div class="fade-right"></div>
 
     </div>
 
