@@ -275,6 +275,10 @@ iframe{
     }
 
 }
+
+
+
+
 .topbar{
     position:relative;
     width:100%;
@@ -283,10 +287,14 @@ iframe{
     overflow:hidden;
 }
 
-/* ⭐ WRAPPER SCROLL (IMPORTANT) */
+/* SCROLL CONTAINER (IMPORTANT: DOIT ÊTRE FLEX + NO WRAP + OVERFLOW) */
 .topbar-scroll{
+    width:100%;
     overflow-x:auto;
     overflow-y:hidden;
+
+    display:block;
+
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
 }
@@ -295,17 +303,20 @@ iframe{
     display:none;
 }
 
-/* CONTENT */
+/* CONTENT ROW */
 .topbar-inner{
     display:flex;
     flex-wrap:nowrap;
     gap:12px;
-    width:max-content;
+
+    width:max-content;   /* CRITIQUE */
+    min-width:100%;      /* CRITIQUE 2 (force dépassement si besoin) */
+
     padding:10px 15px;
     align-items:center;
 }
 
-/* FADE OVERLAY */
+/* FADE */
 .fade-left,
 .fade-right{
     position:absolute;
@@ -395,6 +406,8 @@ iframe{
                 <div class="fade-left"></div>
 <div class="fade-right"></div>
 
+    <div class="topbar-scroll">
+
         <div class="topbar-inner">
             
 
@@ -460,7 +473,7 @@ iframe{
 
         </div>
 
-
+     </div>
     </div>
 
     <div class="iframe-wrapper">
