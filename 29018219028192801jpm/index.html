@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+  <link rel="icon" href="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/favicondefibeo2026.png" type="image/png">
+<title>Accès Technicien JPM 973</title>
+
+<style>
+
+@font-face {
+    font-family: 'DefibeoMain';
+    font-weight: 100 !important;
+    src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#fff;
+    font-family:'DefibeoMain', Arial, sans-serif;
+}
+
+/* LOGIN */
+
+.login-screen{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.login-box{
+    width:100%;
+    max-width:390px;
+    text-align:center;
+}
+
+.brand-block{
+    margin-bottom:30px;
+}
+
+.brand-title{
+    font-size:42px;
+    line-height:1;
+    color:#111827;
+    margin-bottom:8px;
+    cursor: default;
+}
+
+.brand-subtitle{
+    font-size:16px;
+    color:#674eff;
+    cursor: default;
+}
+
+.login-text{
+    font-size:18px;
+    line-height:1.4;
+    color:#111827;
+    margin-bottom:22px;
+    cursor: default;
+}
+
+/* PIN */
+
+.pin-wrapper{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.pin-box{
+        padding-top: 5px;
+    width:62px;
+    height:62px;
+    border-radius:15px;
+    border:1px solid #dbe3ee;
+    text-align:center;
+    font-size:28px;
+    font-family:'DefibeoMain', Arial, sans-serif;
+    outline:none;
+    transition:0.2s;
+}
+
+.pin-box:focus{
+    border-color:#674eff;
+    box-shadow:0 0 0 6px rgb(103 78 255 / 9%);
+}
+
+/* BUTTON */
+
+.login-btn{
+    width:100%;
+        max-width: 285px;
+    height:58px;
+    border:none;
+    border-radius:18px;
+    background:#674eff;
+    color:#fff;
+    font-size:18px;
+    font-family:'DefibeoMain', Arial, sans-serif;
+    cursor:pointer;
+    position:relative;
+
+    box-shadow:
+    inset 0 1px 1px #fff3,
+    0 1px 2px #08080833,
+    0 4px 4px #08080814,
+    0 7px 0 -12px #077ac7,
+    inset 0 6px 12px #ffffff1f;
+}
+
+.loader{
+    width:22px;
+    height:22px;
+    border:1px solid rgba(255,255,255,0.3);
+    border-top:1px solid #fff;
+    border-radius:50%;
+    animation:spin 0.8s linear infinite;
+    margin:auto;
+    display:none;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.error-text{
+    color:#ff3b30;
+    margin-top:14px;
+    font-size:14px;
+    display:none;
+}
+
+/* APP */
+
+#app{
+    display:none;
+    width:100%;
+    height:100%;
+}
+
+/* TOPBAR */
+
+
+
+
+
+/* BRAND */
+
+.nav-brand{
+    margin-right:18px;
+    flex-shrink:0;
+        margin-left: 25px;
+}
+
+.nav-brand-title{
+    font-size:18px;
+    line-height:1;
+    color:#fff;
+    margin-bottom:2px;
+    cursor: default;
+}
+
+.nav-brand-subtitle{
+    cursor: default;
+    font-size: 13px;
+    color: #ffffff5c;
+}
+
+/* NAV BUTTONS */
+
+.nav-btn{
+    border:none;
+    outline:none;
+    background:#674eff;
+    color:#fff;
+    padding:13px 20px;
+    border-radius:15px;
+    font-size:18px;
+    font-family:'DefibeoMain', Arial, sans-serif;
+    cursor:pointer;
+    white-space:nowrap;
+    flex-shrink:0;
+
+    box-shadow:
+    inset 0 1px 1px #fff3,
+    0 1px 2px #08080833,
+    0 4px 4px #08080800,
+    0 7px 0 -12px #6148f2,
+    inset 0 6px 12px #ffffff1f;
+}
+
+.nav-btn.active{
+    background:#000 !important;
+}
+
+/* IFRAME */
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* APP WRAPPER */
+#app{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+/* TOPBAR FIXED HEIGHT */
+.topbar{
+    flex:0 0 auto;
+}      
+
+.narvar {
+    color: #1e33ff !important;
+}
+
+/* IFRAME CONTAINER */
+.iframe-wrapper{
+        padding-bottom: 67px;
+            padding-top: 0px;
+    height: 100%;
+    flex:1;
+    width:100%;
+    min-height:0; /* IMPORTANT BUG FIX FLEX */
+}
+
+/* IFRAME FULL FIT */
+iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+
+    .login-btn {
+    max-width: 270px !important;
+}
+
+    .pin-box{
+        width:58px;
+        height:58px;
+        font-size:24px;
+    }
+
+    .nav-brand-title{
+        font-size:22px;
+    }
+
+    .iframe-wrapper{
+        height:calc(var(--vh, 1vh) * 100 - 5px);
+    }
+
+}
+
+
+
+
+.topbar{
+    position:relative;
+    width:100%;
+    background:linear-gradient(45deg,#674eff,#523cd9);
+    border-radius:0px ;
+    overflow:hidden;
+}
+
+/* SCROLL CONTAINER (IMPORTANT: DOIT ÊTRE FLEX + NO WRAP + OVERFLOW) */
+.topbar-scroll{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    display:block;
+
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+}
+
+.topbar-scroll::-webkit-scrollbar{
+    display:none;
+}
+
+/* CONTENT ROW */
+.topbar-inner{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:12px;
+
+    width:max-content;   /* CRITIQUE */
+    min-width:100%;      /* CRITIQUE 2 (force dépassement si besoin) */
+
+    padding:10px 15px;
+    align-items:center;
+}
+
+/* FADE */
+.fade-left,
+.fade-right{
+    position:absolute;
+    top:0;
+    height:100%;
+    width:60px;
+    pointer-events:none;
+    z-index:10;
+}
+
+.fade-left{
+    left:0;
+    background:linear-gradient(to right, rgba(103,78,255,1), rgba(103,78,255,0));
+}
+
+.fade-right{
+    right:0;
+    background:linear-gradient(to left, rgba(83,60,217,1), rgba(83,60,217,0));
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+
+<div class="login-screen" id="loginScreen">
+
+    <div class="login-box">
+
+        <div class="brand-block">
+
+            <div class="brand-title">
+                JPM 973
+            </div>
+
+            <div class="brand-subtitle">
+                Accès Technicien
+            </div>
+
+        </div>
+
+        <div class="login-text">
+            Entrez votre PIN utilisateur pour accéder au module technicien.
+        </div>
+
+        <!-- PIN -->
+
+<div class="pin-wrapper">
+
+    <input type="text" maxlength="1" class="pin-box" inputmode="numeric" pattern="[0-9]*">
+    <input type="text" maxlength="1" class="pin-box" inputmode="numeric" pattern="[0-9]*">
+    <input type="text" maxlength="1" class="pin-box" inputmode="numeric" pattern="[0-9]*">
+    <input type="text" maxlength="1" class="pin-box" inputmode="numeric" pattern="[0-9]*">
+
+</div>
+
+        <!-- BUTTON -->
+
+        <button class="login-btn" id="loginBtn">
+
+            <span class="glovo" id="loginText">
+                Connexion
+            </span>
+
+            <div class="loader" id="loader"></div>
+
+        </button>
+
+
+        <br> <br>
+        <a class="narvar" href="https://29018219028192801.defibeo.com/">Accès au logiciel principal</a>
+
+        <div class="error-text" id="errorText">
+            Le PIN est invalide.
+        </div>
+
+    </div>
+
+</div>
+
+<!-- APP -->
+
+<div id="app">
+
+    <div class="topbar">
+
+                <div class="fade-left"></div>
+<div class="fade-right"></div>
+
+    <div class="topbar-scroll">
+
+        <div class="topbar-inner">
+            
+
+            <div class="nav-brand">
+
+                <div class="nav-brand-title">
+                    JPM 973
+                </div>
+
+                <div class="nav-brand-subtitle">
+                    Accès Technicien
+                </div>
+
+            </div>
+
+
+
+            <button 
+                class="nav-btn active"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/report-embed/Tourn_e_Vue_Technicien_Report/G4gun2UX7sTPzhx5KTOKxa1kmeECbGMw4eWn8KCMzea5QPZK00ZgvwXPnwe3jevHvxJY9TkaSb8fwXvOFfnGzFeapAPmg9WqRZaJ">
+                Ordres d'interventions
+            </button>
+
+            <button 
+                class="nav-btn"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/report-embed/oprationreport/xQktBkt5yn0y5JWHE8KSh0SaxwBgd89qKeDVMQZudGgDQeOea4KeQKKhK8wD8DUbjJT2XQpP6Vk9b4HV1yXwfm3y5O581aPZuVsu">
+                Interventions enregistrées
+            </button>
+
+            <button 
+                class="nav-btn"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/form-embed/Op_ration/ZMaFXWtZtPUFgU7K4uJ7CSdzTm8xfwVBWk6GsNPdj4WZdDMwJFmnqd9EwkqzpK0GDT9HB6qH5rgNJrPFFnEg7jGbCkjHMmDPUgh8">
+                Enregistrer une intervention
+            </button>
+
+                        <button 
+                class="nav-btn"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/report-embed/Map_view/0CTGpvg4ZEKFhVR2VEbRwkRqWBRPJf9S8md2R1HTsUfQ0a3jB8JnnBCfHgUeXPF4GxQp7JuTA1zMkRDyjhzJBRZrdyHnqJM1k88O">
+                Cartographie
+            </button>
+
+                          <button 
+                class="nav-btn"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/report-embed/Pi_ces_Report/451H6zSTw1dxS92njMUyAEVFdhOsBB1bskOYYkWgWrTw0gZPjdtPHagNn8gFqtsQftQRqfSRNFGkZnzYphe68h6S12MXUXOu1d7v">
+                Inventaire embarqué
+            </button>
+
+            <button 
+                class="nav-btn"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/form-embed/Tickers_Caisse/0Sem2ePXGvC18kCgqEfXRpXFq4bFACTAAYPdzfKGHPAT81h9SEqdsFCD5aEKmMuCdG6TDXBhHq7zAJteygPXsAuURCmvpjdw66gG">
+                Remonter un ticket de caisse
+            </button>
+
+        
+
+                        <button 
+                class="nav-btn"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/form-embed/CRM_Ticket/4mUFRdQ6YbPZBz6kH0XnYjE3BXHPGJCFj0PKXs7ZgXvKAbtQC9rqkARbOdN6xWk9sJFDnwxXV31T5TmtNPZ4DeS8b1QFV0ajRjNy">
+                Remonter un ticket CRM
+            </button>
+
+             <button 
+                class="nav-btn"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/form-embed/Partager_Localisation/OggytXyVfJBZ7TsfaAFeNSFKfqwyK82mrJt5O9e0VW4sKbH7j9OJBMkJAUmueXqK34b3T61YYN1gRKGgaFQKmDEWAjMDBSUUxRpR">
+                Partager ma localisation
+            </button>
+
+
+        </div>
+
+     </div>
+    </div>
+
+    <div class="iframe-wrapper">
+
+        <iframe
+            id="mainFrame"
+            allowfullscreen
+            frameborder="0"
+            allowTransparency="true"
+            scrolling="auto"
+            src="https://creatorapp.zohopublic.eu/temp_civilprom/jpm973/report-embed/Tourn_e_Vue_Technicien_Report/G4gun2UX7sTPzhx5KTOKxa1kmeECbGMw4eWn8KCMzea5QPZK00ZgvwXPnwe3jevHvxJY9TkaSb8fwXvOFfnGzFeapAPmg9WqRZaJ">
+        </iframe>
+
+    </div>
+
+</div>
+
+<script>
+
+/* REAL MOBILE HEIGHT */
+
+function setRealViewportHeight() {
+
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+}
+
+setRealViewportHeight();
+
+window.addEventListener('resize', setRealViewportHeight);
+window.addEventListener('orientationchange', setRealViewportHeight);
+
+/* PIN INPUTS */
+
+const pinBoxes = document.querySelectorAll('.pin-box');
+
+pinBoxes.forEach((input, index) => {
+
+    input.addEventListener('input', () => {
+
+        if(input.value.length === 1 && index < pinBoxes.length - 1){
+            pinBoxes[index + 1].focus();
+        }
+
+    });
+
+    input.addEventListener('keydown', (e) => {
+
+        if(e.key === 'Backspace' && input.value === '' && index > 0){
+            pinBoxes[index - 1].focus();
+        }
+
+    });
+
+});
+
+/* LOGIN */
+
+document.getElementById('loginBtn').addEventListener('click', checkPin);
+
+function checkPin(){
+
+    let pin = '';
+
+    pinBoxes.forEach(input => {
+        pin += input.value;
+    });
+
+    if(pin === '9737'){
+
+        document.getElementById('loginText').style.display = 'none';
+        document.getElementById('loader').style.display = 'block';
+
+        setTimeout(() => {
+
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('app').style.display = 'block';
+
+        }, 3000);
+
+    }else{
+
+        document.getElementById('errorText').style.display = 'block';
+
+    }
+
+}
+
+/* IFRAME NAVIGATION */
+
+const navButtons = document.querySelectorAll('.nav-btn');
+const iframe = document.getElementById('mainFrame');
+
+navButtons.forEach(button => {
+
+    button.addEventListener('click', function(){
+
+        navButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+        iframe.src = this.getAttribute('data-iframe');
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
