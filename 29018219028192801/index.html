@@ -1,255 +1,288 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
-    <meta name="googlebot" content="noindex, nofollow">
-    
-    <title>Form 29018219028192801</title>
-    
-    <style>
-        @font-face {
-            font-family: 'DefibeoMain';
-            font-weight: 100 !important;
-            src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        * {
-            box-sizing: border-box;
-        }
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #ffffff;
-            overflow: hidden;
-            font-family: 'DefibeoMain', Arial, sans-serif;
-        }
+<title>Accès Technicien</title>
 
-        /* LOGIN SCREEN */
-        .login-screen {
-            position: fixed;
-            inset: 0;
-            background: #fff;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-        }
+<style>
 
-        .login-box {
-            width: 100%;
-            max-width: 380px;
-            text-align: center;
-        }
+@font-face {
+    font-family: 'DefibeoMain';
+    font-weight: 100 !important;
+    src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
+}
 
-        .brand-block {
-            margin-bottom: 25px;
-        }
+*{
+    box-sizing:border-box;
+}
 
-        .brand-title {
-            font-size: 42px;
-            font-weight: 100;
-            line-height: 1;
-            color: #111827;
-            margin-bottom: 6px;
-            cursor: default;
-        }
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#fff;
+    font-family:'DefibeoMain', Arial, sans-serif;
+}
 
-        .brand-subtitle {
-            font-size: 16px;
-            color: #674eff;
-            cursor: default;
-        }
+/* LOGIN */
 
-        .login-text {
-            font-size: 18px;
-            color: #111827;
-            margin-bottom: 20px;
-            line-height: 1.4;
-            cursor: default;
-        }
+.login-screen{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
 
-        .pin-input {
-            
-            width: 100%;
-            height: 56px;
-            border: 1px solid #dbe3ee;
-            border-radius: 16px;
-            padding: 0 18px;
-            font-size: 20px;
-            font-family: 'DefibeoMain', Arial, sans-serif;
-            outline: none;
-            margin-bottom: 14px;
-            text-align: center;
-        }
+.login-box{
+    width:100%;
+    max-width:390px;
+    text-align:center;
+}
 
-        .login-btn {
-                background: #674eff;
-                box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
-            width: 100%;
-            border: none;
-            color: white;
-            height: 56px;
-            border-radius: 16px;
-            font-size: 18px;
-            font-family: 'DefibeoMain', Arial, sans-serif;
-            cursor: pointer;
-        }
-        
-        
-        
-        .croq {
-           width: 100%;
-            border: none;
-            background: #fff;
-            text-decoration: none;
-            margin-top:35px;
+.brand-block{
+    margin-bottom:30px;
+}
 
-            color: #674eff;
-            height: 56px;
-            border-radius: 16px;
-            font-size: 18px;
-            font-family: 'DefibeoMain', Arial, sans-serif;
-            cursor: pointer;
-        }
+.brand-title{
+    font-size:42px;
+    line-height:1;
+    color:#111827;
+    margin-bottom:8px;
+}
 
-        .error-text {
-            color: #ff3b30;
-            font-size: 14px;
-            margin-top: 12px;
-            display: none;
-        }
+.brand-subtitle{
+    font-size:16px;
+    color:#6b7280;
+}
 
-        /* APP */
-        #app {
-            display: none;
-            height: 100%;
-        }
+.login-text{
+    font-size:18px;
+    line-height:1.4;
+    color:#111827;
+    margin-bottom:22px;
+}
 
-        /* HEADER */
-        .topbar {
-            
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            white-space: nowrap;
-            background: linear-gradient(45deg, #674eff, #523cd9);
-            border-bottom: 1px solid #e9eef5;
-            padding: 10px 15px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
+/* PIN BOXES */
 
-        .topbar::-webkit-scrollbar {
-            display: none;
-        }
+.pin-wrapper{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:18px;
+}
 
-        .topbar-inner {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            min-width: max-content;
-        }
+.pin-box{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    border:1px solid #dbe3ee;
+    text-align:center;
+    font-size:28px;
+    font-family:'DefibeoMain', Arial, sans-serif;
+    outline:none;
+    transition:0.2s;
+}
 
-        /* BRAND */
-        .nav-brand {
-            margin-right: 18px;
-            flex-shrink: 0;
-        }
+.pin-box:focus{
+    border-color:#674eff;
+    box-shadow:0 0 0 4px rgba(103,78,255,0.08);
+}
 
-        .nav-brand-title {
-            font-size: 26px;
-            line-height: 1;
-            color: #fff;
-            margin-bottom: 2px;
-             cursor: default; 
-        }
+/* LOGIN BUTTON */
 
-        .nav-brand-subtitle {
-            font-size: 12px;
-            color: #fff;
-            opacity: 0.6;
-            cursor: default; 
-        }
+.login-btn{
+    width:100%;
+    height:58px;
+    border:none;
+    border-radius:18px;
+    background:#674eff;
+    color:#fff;
+    font-size:18px;
+    font-family:'DefibeoMain', Arial, sans-serif;
+    cursor:pointer;
+    position:relative;
 
-        /* BUTTONS */
-        .nav-btn {
-                background: #674eff;
-                box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080800, 0 7px 0 -12px #6148f2, inset 0 6px 12px #ffffff1f;
-            
-            border: none;
-            outline: none;
-            color: white;
-            padding: 13px 20px;
-            border-radius: 15px;
-            font-size: 16px;
-            font-family: 'DefibeoMain', Arial, sans-serif;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
+    box-shadow:
+    inset 0 1px 1px #fff3,
+    0 1px 2px #08080833,
+    0 4px 4px #08080814,
+    0 7px 0 -12px #077ac7,
+    inset 0 6px 12px #ffffff1f;
+}
 
-        /* IFRAME */
-        iframe {
-            width: 100%;
-            height: calc(100vh - 92px);
-            border: none;
-            display: block;
-        }
+.loader{
+    width:22px;
+    height:22px;
+    border:3px solid rgba(255,255,255,0.3);
+    border-top:3px solid #fff;
+    border-radius:50%;
+    animation:spin 0.8s linear infinite;
+    margin:auto;
+    display:none;
+}
 
-        /* MOBILE */
-        @media (max-width: 768px) {
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
 
-            .topbar {
-                padding: 12px 14px;
-            }
+.error-text{
+    color:#ff3b30;
+    margin-top:14px;
+    font-size:14px;
+    display:none;
+}
 
-            .nav-brand-title {
-                font-size: 22px;
-            }
+/* APP */
 
-            .nav-brand-subtitle {
-                font-size: 11px;
-            }
+#app{
+    display:none;
+    width:100%;
+    height:100%;
+}
 
-            .brand-title {
-                font-size: 36px;
-            }
+/* TOPBAR */
 
-            .brand-subtitle {
-                font-size: 14px;
-            }
+.topbar{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    background:linear-gradient(45deg,#674eff,#523cd9);
+    padding:10px 15px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+}
 
-            .nav-btn {
-                padding: 12px 16px;
-                font-size: 13px;
-            }
+.topbar::-webkit-scrollbar{
+    display:none;
+}
 
-            iframe {
-                height: calc(100vh - 84px);
-            }
-        }
-    </style>
+.topbar-inner{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    min-width:max-content;
+}
+
+/* BRAND */
+
+.nav-brand{
+    margin-right:18px;
+    flex-shrink:0;
+}
+
+.nav-brand-title{
+    font-size:26px;
+    line-height:1;
+    color:#fff;
+    margin-bottom:2px;
+}
+
+.nav-brand-subtitle{
+    font-size:12px;
+    color:#ffffff90;
+}
+
+/* NAV BUTTONS */
+
+.nav-btn{
+    border:none;
+    outline:none;
+    background:#674eff;
+    color:#fff;
+    padding:13px 20px;
+    border-radius:15px;
+    font-size:16px;
+    font-family:'DefibeoMain', Arial, sans-serif;
+    cursor:pointer;
+    white-space:nowrap;
+    flex-shrink:0;
+
+    box-shadow:
+    inset 0 1px 1px #fff3,
+    0 1px 2px #08080833,
+    0 4px 4px #08080800,
+    0 7px 0 -12px #6148f2,
+    inset 0 6px 12px #ffffff1f;
+}
+
+.nav-btn.active{
+    background:#000 !important;
+}
+
+/* IFRAME */
+
+.iframe-wrapper{
+    width:100vw;
+    height:calc(100vh - 82px);
+    overflow:hidden;
+}
+
+iframe{
+    width:100vw !important;
+    min-width:100vw !important;
+    max-width:100vw !important;
+    height:100% !important;
+    border:none;
+    display:block;
+    background:#fff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .brand-title{
+        font-size:36px;
+    }
+
+    .pin-box{
+        width:58px;
+        height:58px;
+        font-size:24px;
+    }
+
+    .nav-brand-title{
+        font-size:22px;
+    }
+
+    .nav-btn{
+        padding:12px 16px;
+        font-size:13px;
+    }
+
+    .iframe-wrapper{
+        height:calc(100vh - 84px);
+    }
+
+}
+
+</style>
 </head>
 <body>
 
 <!-- LOGIN -->
+
 <div class="login-screen" id="loginScreen">
 
     <div class="login-box">
 
         <div class="brand-block">
+
             <div class="brand-title">
                 DemoTest
             </div>
@@ -257,26 +290,33 @@
             <div class="brand-subtitle">
                 Accès Technicien
             </div>
+
         </div>
 
         <div class="login-text">
             Entrez votre PIN utilisateur pour accéder à votre compte technicien.
         </div>
 
-        <input 
-            type="password"
-            class="pin-input"
-            id="pinInput"
-            placeholder="Entrez votre PIN"
-        >
+        <!-- PIN -->
+        <div class="pin-wrapper">
 
-        <button class="login-btn" onclick="checkPin()">
-            Connexion
+            <input type="password" maxlength="1" class="pin-box">
+            <input type="password" maxlength="1" class="pin-box">
+            <input type="password" maxlength="1" class="pin-box">
+            <input type="password" maxlength="1" class="pin-box">
+
+        </div>
+
+        <!-- BUTTON -->
+        <button class="login-btn" id="loginBtn">
+
+            <span id="loginText">
+                Connexion
+            </span>
+
+            <div class="loader" id="loader"></div>
+
         </button>
-        <br><br>
-             <a class="croq" href="https://demotest.defibeo.com/">
-                Accès Logiciel
-            </a>
 
         <div class="error-text" id="errorText">
             PIN incorrect
@@ -287,9 +327,11 @@
 </div>
 
 <!-- APP -->
+
 <div id="app">
 
     <div class="topbar">
+
         <div class="topbar-inner">
 
             <div class="nav-brand">
@@ -304,67 +346,139 @@
 
             </div>
 
-            <a class="nav-btn" href="https://example.com/interventions">
+            <button 
+                class="nav-btn active"
+                data-iframe="https://creatorapp.zohopublic.eu/temp_civilprom/demoavril/form-embed/Op_ration/EFW4Xmqkfkwtr1aVkOkJXaPe8EBPOCh35k0sWb1MDjHM4P64bgaU747pPSqRPS05U5PhdfsWB9gDbyDdqCsCxPjw3Jue5YQePFpw">
                 Interventions
-            </a>
+            </button>
 
-                      <a class="nav-btn" href="https://example.com/interventions">
+            <button 
+                class="nav-btn"
+                data-iframe="https://example.com">
                 Reçus
-            </a>
-          
-            <a class="nav-btn" href="https://example.com/recu-pdf">
-                Enregistrer Reçu Spontanné
-            </a>
+            </button>
 
-            <a class="nav-btn" href="https://example.com/ticket-caisse">
-                Enregistrer Ticket Caisse
-            </a>
+            <button 
+                class="nav-btn"
+                data-iframe="https://example.com">
+                Reçu Spontanné
+            </button>
 
-            <a class="nav-btn" href="https://example.com/position-gps">
-                Partager Localisation
-            </a>
+            <button 
+                class="nav-btn"
+                data-iframe="https://example.com">
+                Ticket Caisse
+            </button>
 
-                      <a class="nav-btn" href="https://example.com/position-gps">
+            <button 
+                class="nav-btn"
+                data-iframe="https://example.com">
+                Partager Position GPS
+            </button>
+
+            <button 
+                class="nav-btn"
+                data-iframe="https://demotest.defibeo.com/">
                 Accès Logiciel
-            </a>
-            
+            </button>
+
         </div>
+
     </div>
 
-    <iframe 
-    height='100%' width='100%'
-        frameborder="0" 
-        allowTransparency="true" 
-        scrolling="auto" 
-        src="https://creatorapp.zohopublic.eu/temp_civilprom/demoavril/form-embed/Op_ration/EFW4Xmqkfkwtr1aVkOkJXaPe8EBPOCh35k0sWb1MDjHM4P64bgaU747pPSqRPS05U5PhdfsWB9gDbyDdqCsCxPjw3Jue5YQePFpw">
-    </iframe>
+    <div class="iframe-wrapper">
+
+        <iframe
+            id="mainFrame"
+            frameborder="0"
+            allowTransparency="true"
+            scrolling="auto"
+            src="https://creatorapp.zohopublic.eu/temp_civilprom/demoavril/form-embed/Op_ration/EFW4Xmqkfkwtr1aVkOkJXaPe8EBPOCh35k0sWb1MDjHM4P64bgaU747pPSqRPS05U5PhdfsWB9gDbyDdqCsCxPjw3Jue5YQePFpw">
+        </iframe>
+
+    </div>
 
 </div>
 
 <script>
-    function checkPin() {
 
-        const pin = document.getElementById('pinInput').value;
+/* PIN INPUTS */
 
-        if(pin === '9737') {
+const pinBoxes = document.querySelectorAll('.pin-box');
+
+pinBoxes.forEach((input, index) => {
+
+    input.addEventListener('input', () => {
+
+        if(input.value.length === 1 && index < pinBoxes.length - 1){
+            pinBoxes[index + 1].focus();
+        }
+
+    });
+
+    input.addEventListener('keydown', (e) => {
+
+        if(e.key === 'Backspace' && input.value === '' && index > 0){
+            pinBoxes[index - 1].focus();
+        }
+
+    });
+
+});
+
+/* LOGIN */
+
+document.getElementById('loginBtn').addEventListener('click', checkPin);
+
+function checkPin(){
+
+    let pin = '';
+
+    pinBoxes.forEach(input => {
+        pin += input.value;
+    });
+
+    if(pin === '9737'){
+
+        document.getElementById('loginText').style.display = 'none';
+        document.getElementById('loader').style.display = 'block';
+
+        setTimeout(() => {
 
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('app').style.display = 'block';
 
-        } else {
+        }, 3000);
 
-            document.getElementById('errorText').style.display = 'block';
+    }else{
 
-        }
+        document.getElementById('errorText').style.display = 'block';
+
     }
 
-    document.getElementById('pinInput').addEventListener('keypress', function(e) {
+}
 
-        if(e.key === 'Enter') {
-            checkPin();
-        }
+/* IFRAME NAVIGATION */
+
+const navButtons = document.querySelectorAll('.nav-btn');
+const iframe = document.getElementById('mainFrame');
+
+navButtons.forEach(button => {
+
+    button.addEventListener('click', function(){
+
+        navButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+        iframe.src = this.getAttribute('data-iframe');
 
     });
+
+});
+
 </script>
 
 </body>
