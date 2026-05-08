@@ -295,6 +295,34 @@ iframe{
 
 }
 
+.topbar{
+    position:relative;
+}
+
+/* OVERLAY GAUCHE */
+.fade-left{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:40px;
+    pointer-events:none;
+    background:linear-gradient(to right, rgba(0,0,0,0.35), transparent);
+    z-index:10;
+}
+
+/* OVERLAY DROITE */
+.fade-right{
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:40px;
+    pointer-events:none;
+    background:linear-gradient(to left, rgba(0,0,0,0.35), transparent);
+    z-index:10;
+}
+
 </style>
 </head>
 <body>
@@ -344,6 +372,8 @@ iframe{
 
         </button>
 
+
+        <br> <br>
         <a class="narvar" href="https://defibeo.com/demotest">Accès Logiciel</a>
 
         <div class="error-text" id="errorText">
@@ -361,6 +391,7 @@ iframe{
     <div class="topbar">
 
         <div class="topbar-inner">
+            
 
             <div class="nav-brand">
 
@@ -423,6 +454,9 @@ iframe{
             </button>
 
         </div>
+
+        <div class="fade-left"></div>
+<div class="fade-right"></div>
 
     </div>
 
