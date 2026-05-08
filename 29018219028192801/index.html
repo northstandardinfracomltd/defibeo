@@ -275,43 +275,37 @@ iframe{
     }
 
 }
-
-
 .topbar{
     position:relative;
     width:100%;
     background:linear-gradient(45deg,#674eff,#523cd9);
     border-radius:0px 0px 17px 17px;
-    overflow:hidden; /* coupe seulement les fades */
+    overflow:hidden;
 }
 
-/* ZONE SCROLL REELLE */
-
-
-
-.topbar-inner{
-        align-items:center;
-
-    display:flex;
-    flex-wrap:nowrap;
-    gap:12px;
-
-    width:max-content; /* ⭐ CRITIQUE : force contenu scrollable */
-
+/* ⭐ WRAPPER SCROLL (IMPORTANT) */
+.topbar-scroll{
     overflow-x:auto;
     overflow-y:hidden;
-
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
-
-    padding:10px 15px;
 }
 
-.topbar-inner::-webkit-scrollbar{
+.topbar-scroll::-webkit-scrollbar{
     display:none;
 }
 
-/* FADE LEFT */
+/* CONTENT */
+.topbar-inner{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:12px;
+    width:max-content;
+    padding:10px 15px;
+    align-items:center;
+}
+
+/* FADE OVERLAY */
 .fade-left,
 .fade-right{
     position:absolute;
@@ -322,18 +316,15 @@ iframe{
     z-index:10;
 }
 
-/* LEFT */
 .fade-left{
     left:0;
     background:linear-gradient(to right, rgba(103,78,255,1), rgba(103,78,255,0));
 }
 
-/* RIGHT */
 .fade-right{
     right:0;
     background:linear-gradient(to left, rgba(83,60,217,1), rgba(83,60,217,0));
 }
-
 </style>
 </head>
 <body>
