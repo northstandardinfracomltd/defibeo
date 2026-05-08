@@ -280,34 +280,25 @@ iframe{
     }
 
 }
-
-/* LEFT FADE FIXE */
-.fade-left{
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:50px;
-    z-index:999;
-    pointer-events:none;
-    background:linear-gradient(to right, rgba(103,78,255,1), rgba(103,78,255,0));
-}
-
 .topbar{
     position:relative;
     width:100%;
-    overflow:hidden; /* IMPORTANT: empêche les fades de bouger */
-    border-radius:0px 0px 17px 17px;
     background:linear-gradient(45deg,#674eff,#523cd9);
+    border-radius:0px 0px 17px 17px;
+    overflow:hidden; /* IMPORTANT: only clips fades */
 }
 
-/* ZONE SCROLL UNIQUEMENT */
+/* SCROLL CONTAINER */
 .topbar-inner{
     display:flex;
+    flex-wrap:nowrap;
     gap:12px;
+
     overflow-x:auto;
     overflow-y:hidden;
+
     white-space:nowrap;
+
     padding:10px 15px;
 
     -webkit-overflow-scrolling:touch;
@@ -321,15 +312,15 @@ iframe{
     display:none;
 }
 
-/* FADE LAYER (FIXE PAR RAPPORT À LA TOPBAR) */
+/* FADE OVERLAYS (FIXES) */
 .fade-left,
 .fade-right{
     position:absolute;
     top:0;
     height:100%;
-    width:55px;
-    z-index:10;
+    width:60px;
     pointer-events:none;
+    z-index:10;
 }
 
 /* LEFT */
@@ -337,8 +328,8 @@ iframe{
     left:0;
     background:linear-gradient(
         to right,
-        rgba(103,78,255,1) 0%,
-        rgba(103,78,255,0) 100%
+        rgba(103,78,255,1),
+        rgba(103,78,255,0)
     );
 }
 
@@ -347,10 +338,11 @@ iframe{
     right:0;
     background:linear-gradient(
         to left,
-        rgba(83,60,217,1) 0%,
-        rgba(83,60,217,0) 100%
+        rgba(83,60,217,1),
+        rgba(83,60,217,0)
     );
 }
+
 </style>
 </head>
 <body>
