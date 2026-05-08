@@ -173,6 +173,39 @@ body{
     scrollbar-width:none;
 }
 
+.fade-left,
+.fade-right{
+    position:absolute;
+    top:0;
+    height:100%;
+    width:50px;
+    z-index:999;
+    pointer-events:none;
+}
+
+.fade-left{
+    left:0;
+    background:linear-gradient(to right, rgba(103,78,255,1), rgba(103,78,255,0));
+}
+
+.fade-right{
+    right:0;
+    background:linear-gradient(to left, rgba(83,60,217,1), rgba(83,60,217,0));
+}
+
+.topbar{
+    position:relative;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+}
+
+.topbar::-webkit-scrollbar{
+    display:none;
+}
+
 .topbar::-webkit-scrollbar{
     display:none;
 }
@@ -293,11 +326,6 @@ iframe{
         height:calc(var(--vh, 1vh) * 100 - 84px);
     }
 
-}
-
-.topbar{
-    position:relative;
-    overflow:hidden; /* important pour couper proprement */
 }
 
 /* LEFT FADE FIXE */
