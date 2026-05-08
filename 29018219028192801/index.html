@@ -161,54 +161,7 @@ body{
 
 /* TOPBAR */
 
-.topbar{
-        border-radius: 0px 0px 17px 17px;
-    width:100%;
-    overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
-    background:linear-gradient(45deg,#674eff,#523cd9);
-    padding:10px 15px;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-}
 
-.fade-left,
-.fade-right{
-    position:absolute;
-    top:0;
-    height:100%;
-    width:50px;
-    z-index:999;
-    pointer-events:none;
-}
-
-.fade-left{
-    left:0;
-    background:linear-gradient(to right, rgba(103,78,255,1), rgba(103,78,255,0));
-}
-
-.fade-right{
-    right:0;
-    background:linear-gradient(to left, rgba(83,60,217,1), rgba(83,60,217,0));
-}
-
-.topbar{
-    position:relative;
-    overflow-x:auto;
-    overflow-y:hidden;
-    white-space:nowrap;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-}
-
-.topbar::-webkit-scrollbar{
-    display:none;
-}
-
-.topbar::-webkit-scrollbar{
-    display:none;
-}
 
 .topbar-inner{
     display:inline-flex;
@@ -340,18 +293,64 @@ iframe{
     background:linear-gradient(to right, rgba(103,78,255,1), rgba(103,78,255,0));
 }
 
-/* RIGHT FADE FIXE */
+.topbar{
+    position:relative;
+    width:100%;
+    overflow:hidden; /* IMPORTANT: empêche les fades de bouger */
+    border-radius:0px 0px 17px 17px;
+    background:linear-gradient(45deg,#674eff,#523cd9);
+}
+
+/* ZONE SCROLL UNIQUEMENT */
+.topbar-inner{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    padding:10px 15px;
+
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+
+    position:relative;
+    z-index:1;
+}
+
+.topbar-inner::-webkit-scrollbar{
+    display:none;
+}
+
+/* FADE LAYER (FIXE PAR RAPPORT À LA TOPBAR) */
+.fade-left,
 .fade-right{
     position:absolute;
     top:0;
-    right:0;
     height:100%;
-    width:50px;
-    z-index:999;
+    width:55px;
+    z-index:10;
     pointer-events:none;
-    background:linear-gradient(to left, rgba(83,60,217,1), rgba(83,60,217,0));
 }
 
+/* LEFT */
+.fade-left{
+    left:0;
+    background:linear-gradient(
+        to right,
+        rgba(103,78,255,1) 0%,
+        rgba(103,78,255,0) 100%
+    );
+}
+
+/* RIGHT */
+.fade-right{
+    right:0;
+    background:linear-gradient(
+        to left,
+        rgba(83,60,217,1) 0%,
+        rgba(83,60,217,0) 100%
+    );
+}
 </style>
 </head>
 <body>
