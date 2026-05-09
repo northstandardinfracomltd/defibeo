@@ -2209,7 +2209,7 @@ padding: 8px 12px !important;
                 "TRANSLATE000044": "J'ai une question!",
                 "TRANSLATE000050": "Achetez le cerveau de votre entreprise",
                 "TRANSLATE000051": "Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré prêt à l’usage et personnalisé à votre effigie. Forfait incluant la prise en main, l’hébergement cloud et l’assistance technique (aide, ajustements, etc.). Chez Défibeo notre support est disponible 24/7 via WhatsApp en français. L’achat du logiciel n’est pas soumis à la TVA (0%).",
-                "TRANSLATE000052": "Éligible jusqu’à 3,500 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation du logiciel.",
+                "TRANSLATE000052": "Éligible jusqu’à 3,500 défibrillateurs, incluant 3 sessions administrateurs, sessions techniciens illimitées (webapp). Accès immédiat après l’achat de l’activation du logiciel.",
                 "TRANSLATE000054": "(TTC) Une fois pour l'activation.",
                 "TRANSLATE000055": "Puis DéfibeoGo 170€ TTC par mois",
                 "TRANSLATE000056": "Souscrire",
@@ -4483,7 +4483,7 @@ margin-top: 10px;
     
     <div class="cp-layout-container__content">
       <h2 class="cp-layout-container__title" data-key="TRANSLATE000033tist2">Webapp technicien</h2>
-      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000034tist2">Défibeo génère un lien personnalisé du type votreentreprise.defibeo.com ainsi qu'un QR code personnalisé (voir sticker signalement comme exemple). Une fois connecté, le technicien depuis un smartphone ou tablette accède à ces quatre options, dont la principale : l'enregistrement d'un nouveau compte rendu PDF pour mettre à jour la base de données (maintenance, mise en service, réparation, etc.).</p>
+      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000034tist2">Naturellement, par ses taches, l’accès technicien est différent de celui d’un administrateur. L’interface est optimisée pour les tablettes et smartphones, et les actions disponibles vont à l’essentiel pour simplifier les interventions sur le terrain. L’accès est sécurisé et le technicien y retrouve ses interventions à réaliser ou effectuées, une cartographie, ainsi que la possibilité de remonter des tickets de caisse de dépenses et de créer des tickets CRM pour les administrateurs.</p>
       <a href="mailto:fr@defibeo.com" class="cp-layout-container__button" data-key="TRANSLATE000035tist2">Nous contacter</a>
     </div>
 
@@ -4535,7 +4535,7 @@ margin-top: 10px;
     
     <div class="cp-layout-container__content">
       <h2 class="cp-layout-container__title" data-key="TRANSLATE000033">Signalements</h2>
-      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000034">Chaque sticker intègre un QR code permettant à un passant ou à votre client de signaler instantanément une information (incident technique, dégradation, utilisation, etc.). Vous centralisez ainsi, directement dans votre CRM Défibeo, toutes les remontées de terrain. Autre usage : le technicien peut aussi scanner ce QR Code pour enregistrer une maintenance sans forcément devoir la planifier. L'accès est sécurisé par un mot de passe.</p>
+      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000034">Obtenez un sticker unique et personnalisé à votre effigie, permettant à un passant ou à votre client de signaler instantanément une information (incident technique, dégradation, utilisation, etc.). Vous centralisez ainsi, directement dans votre CRM Défibeo, toutes les remontées de terrain.</p>
       <a href="mailto:fr@defibeo.com" class="cp-layout-container__button" data-key="TRANSLATE000035">J'ai une question!</a>
     </div>
 
@@ -4553,7 +4553,7 @@ margin-top: 10px;
     
     <div class="cp-layout-container__content">
       <h2 class="cp-layout-container__title" data-key="TRANSLATE000033tist">Outils agréés</h2>
-      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000034tist">Avec Défibeo, vous pouvez générer vos factures proforma, devis, bons de livraison (BL) et bons de commande (BC). Toutefois, conformément à la réglementation sur la facturation électronique, toutes les entreprises devront utiliser une plateforme de dématérialisation partenaire (PDP). Défibeo se connecte désormais à ces solutions tierces (telles que Pennylane, Sage, SAP ou Cegid).</p>
+      <p class="cp-layout-container__subtitle" data-key="TRANSLATE000034tist">Avec Défibeo, vous pouvez générer vos factures proforma, devis, bons de livraison (BL) et bons de commande (BC). Conformément à la réglementation sur la facturation électronique, toutes les entreprises devront utiliser une plateforme de dématérialisation partenaire (PDP). Défibeo se connecte désormais à ces solutions tierces (telles que Pennylane, Sage, SAP ou Cegid).</p>
       <a href="mailto:fr@defibeo.com" class="cp-layout-container__button" data-key="TRANSLATE000035tist">Nous contacter</a>
     </div>
 
@@ -5073,7 +5073,7 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
         
         <div class="tpx-eval-collapsible">
             <p class="tpx-eval-desc" data-key="TRANSLATE000052">
-Éligible jusqu’à 3,500 défibrillateurs, incluant 3 sessions administrateurs. Accès immédiat après l’achat de l’activation du logiciel.
+Éligible jusqu’à 3,500 défibrillateurs, incluant 3 sessions administrateurs, sessions techniciens illimitées (webapp). Accès immédiat après l’achat de l’activation du logiciel.
             </p>
             <div class="tpx-eval-price-box">
                 <span class="tpx-eval-big-p" data-key="TRANSLATE000053">1,890€</span>
@@ -5403,22 +5403,22 @@ background: #e4dfff;
   <style>
     /* Conteneur principal avec isolation par préfixe */
     .dfb-go-infobox-container {
-font-family: 'DefibeoMain', sans-serif;
-    background-color: #ffffff;
-    border: none;
+    font-family: 'DefibeoMain', sans-serif;
+    background-color: #ffffff0d;
+    border: 1px solid #ffffff2e;
     border-radius: 18px;
     padding: 24px;
-        margin: auto;
-        margin-bottom: 45px !important;
-        max-width: 550px;
-        box-shadow: 0 4px 12px rgba(45, 92, 247, 0.08);
-        line-height: 1.6;
-        color: #333;
+    margin: auto;
+    margin-bottom: 45px !important;
+    max-width: 550px;
+    box-shadow: 0 4px 12px rgba(45, 92, 247, 0.08);
+    line-height: 1.6;
+    color: #ffffff;
     }
 
     /* Titre stylisé */
     .dfb-go-infobox-title {
-    color: #000000;
+    color: #fff;
     font-size: 1.25rem;
     font-family: 'DefibeoTAZ', sans-serif !important;
     letter-spacing: -0.4px;
@@ -5431,7 +5431,7 @@ font-family: 'DefibeoMain', sans-serif;
     }
     /* Paragraphe de définition */
     .dfb-go-infobox-description {
-             color: #000;
+             color: #fff;
              cursor: default;
         margin: 0;
         font-size: 1rem;
