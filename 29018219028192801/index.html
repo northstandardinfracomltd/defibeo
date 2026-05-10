@@ -358,18 +358,18 @@ iframe{
 <style>
   /* Encapsulation stricte pour éviter les conflits de styles */
   #defibeo-top-banner {
-    width: 100%;
-    background-color: #fff9db; /* Jaune très clair, doux pour l'œil */
-    border-bottom: 1px solid #ffe066;
+width: 100%;
+    background-color: #010101;
+    border-bottom: none;
     box-sizing: border-box;
-    padding: 12px 24px;
+    padding: 19px 24px 17px 24px;
     font-family: 'DefibeoMain', Arial, sans-serif;
-    font-size: 14px;
-    color: #856404; /* Texte contrasté pour l'accessibilité */
+    font-size: 18px;
+    color: white;
   }
 
   .dfb-banner-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -383,21 +383,21 @@ iframe{
   }
 
   .dfb-banner-close {
-    background-color: #856404;
+background-color: #ffffff0d;
     color: #ffffff;
-    border: none;
-    padding: 6px 16px;
-    border-radius: 4px;
+    border: 1px solid #ffffff30;
+    padding: 8px 16px;
+    border-radius: 9px;
     cursor: pointer;
     font-family: 'DefibeoMain', Arial, sans-serif;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: bold;
     transition: background-color 0.2s ease;
     white-space: nowrap;
   }
 
   .dfb-banner-close:hover {
-    background-color: #533f03;
+    background-color: #ffffff21;
   }
 
   /* Détection ordinateur : Affiché uniquement sur les écrans de plus de 1024px */
@@ -411,7 +411,7 @@ iframe{
   (function() {
     // Vérification et affichage immédiat sans attendre d'événement
     var banner = document.getElementById('defibeo-top-banner');
-    var isDesktop = window.innerWidth > 1024; // Ajustez à 768 si besoin
+    var isDesktop = window.innerWidth > 768; // Ajustez à 768 si besoin
     
     if (banner && isDesktop) {
       banner.classList.add('dfb-device-desktop');
