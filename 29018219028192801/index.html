@@ -343,6 +343,89 @@ iframe{
 </head>
 <body>
 
+
+    <div id="defibeo-top-banner" style="display: none;">
+  <div class="dfb-banner-content">
+    <span class="dfb-banner-text">
+      Il semble que vous utilisez un ordinateur, nous vous recommandons d'utiliser un appareil mobile.
+    </span>
+    <button type="button" class="dfb-banner-close" onclick="dismissDefibeoBanner()">
+      Masquer
+    </button>
+  </div>
+</div>
+
+<style>
+  /* Encapsulation stricte pour éviter les conflits de styles */
+  #defibeo-top-banner {
+    width: 100%;
+    background-color: #fff9db; /* Jaune très clair, doux pour l'œil */
+    border-bottom: 1px solid #ffe066;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    font-family: 'DefibeoMain', Arial, sans-serif;
+    font-size: 14px;
+    color: #856404; /* Texte contrasté pour l'accessibilité */
+  }
+
+  .dfb-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .dfb-banner-text {
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .dfb-banner-close {
+    background-color: #856404;
+    color: #ffffff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DefibeoMain', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .dfb-banner-close:hover {
+    background-color: #533f03;
+  }
+
+  /* Détection ordinateur : Affiché uniquement sur les écrans de plus de 1024px */
+  @media (min-width: 1025px) {
+    #defibeo-top-banner.dfb-device-desktop {
+      display: block !important;
+    }
+  }
+</style>
+<script>
+  (function() {
+    // Vérification et affichage immédiat sans attendre d'événement
+    var banner = document.getElementById('defibeo-top-banner');
+    var isDesktop = window.innerWidth > 1024; // Ajustez à 768 si besoin
+    
+    if (banner && isDesktop) {
+      banner.classList.add('dfb-device-desktop');
+    }
+  })();
+
+  // Fonction pour masquer
+  function dismissDefibeoBanner() {
+    var banner = document.getElementById('defibeo-top-banner');
+    if (banner) {
+      banner.style.setProperty('display', 'none', 'important');
+    }
+  }
+</script>
 <!-- LOGIN -->
 
 <div class="login-screen" id="loginScreen">
