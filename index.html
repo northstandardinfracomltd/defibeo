@@ -1212,17 +1212,30 @@ background-color: #ffffff;
 <div class="dfbgo-bar-wrapper">
   <div class="dfbgo-bar-inner">
     <div class="dfbgo-bar-text" data-key="TRANSLATE000002">
-Une présentation personnalisée et détaillée du logiciel en écran partagé.
+Déjà client? Se connecter en tant qu'utilisateur.
     </div>
 <button
   type="button"
-  id="openBtn-defibeo-contact"
+  id="dfb-login-trigger"
   class="dfbgo-bar-action-btn"
   href="#"
-  data-key="TRANSLATE000003"
+  data-key="TRANSLATE000003TOTRANS"
 >
-  Contactez votre interlocuteur
+Connexion
 </button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginBtn = document.getElementById('dfb-login-trigger');
+    
+    if (loginBtn) {
+      loginBtn.addEventListener('click', function() {
+        // Redirection forcée vers la page de connexion
+        window.location.href = '/login';
+      });
+    }
+  });
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -3139,22 +3152,8 @@ Créer mon compte pour 310€
     window.location.href = '/register';
   });
 </script>
-<p class="codechef" data-key="LTX00042">Vous êtes déjà utilisateur du logiciel?</p>
-<button id="dfb-login-trigger" class="logingo" data-key="TRANSLATE000008second">
-  Connexion
-</button>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const loginBtn = document.getElementById('dfb-login-trigger');
-    
-    if (loginBtn) {
-      loginBtn.addEventListener('click', function() {
-        // Redirection forcée vers la page de connexion
-        window.location.href = '/login';
-      });
-    }
-  });
-</script>
+<p class="codechef" data-key="LTX00042TOTRANS">Votre satisfaction est importante. La résiliation et le remboursement sont disponibles le premier mois.</p>
+
 
 
 <!-- ================= CSS ================= -->
@@ -5050,7 +5049,7 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
         
         <div class="tpx-eval-collapsible">
             <p class="tpx-eval-desc" data-key="TRANSLATE000052TOTRANS">
-Éligible jusqu’à 5,000 défibrillateurs, incluant 3 sessions utilisateurs, jusqu'à 50 sessions techniciens (webapp). Personnalisation à vos couleurs et avec votre logo, disponible immédiatement après la souscription. Engagement minimum de 6 mois, assistance via WhatsApp 24/7.
+Éligible jusqu’à 5,000 défibrillateurs, incluant 3 sessions utilisateurs et jusqu'à 50 sessions techniciens (webapp). Personnalisation à vos couleurs et avec votre logo, disponible immédiatement après la souscription. Engagement minimum de 6 mois, assistance via WhatsApp 24/7.
             </p>
             <div class="tpx-eval-price-box">
                 <span class="tpx-eval-big-p" data-key="TRANSLATE000053TOTRANS">310€</span>
@@ -5069,13 +5068,13 @@ Nous proposons deux offres selon la dimension de vos besoins. Logiciel livré pr
         
 <div class="tpx-eval-collapsible">
 <p class="tpx-eval-desc" data-key="TRANSLATE000057TOTRANS">
-Volume illimité de défibrillateurs, incluant jusqu'à 100 sessions utilisateurs, volume illimité de sessions techniciens (WebApp). Accès livré sous 5 à 8 jours ouvrés après l’achat du logiciel. Interface personnalisée avec votre charte graphique et la possibilité de modifier les compositions et logiques du logiciel. Sans engagement minimum, assistance 24/7.
+Volume illimité de défibrillateurs, de sessions utilisateurs et de sessions techniciens (WebApp). Accès livré sous 5 à 8 jours ouvrés après l’achat du logiciel. Interface personnalisée avec votre charte graphique et la possibilité de modifier les compositions et logiques du logiciel. Sans engagement minimum, assistance 24/7, et serveur indépendant.
             </p>
             <div class="tpx-eval-price-box">
                 <span class="tpx-eval-big-p" data-key="TRANSLATE000058TOTRANS">490€</span>
                 <span class="tpx-eval-small-p" data-key="TRANSLATE000059TOTRANS">(TTC) par mois, tout inclus.</span>
             </div>
-            <div class="tpx-eval-label-host" data-key="TRANSLATE000060TOTRANS">+Frais de mise en place: 5,000€ (TTC & une fois)</div>
+            <div class="tpx-eval-label-host" data-key="TRANSLATE000060TOTRANS">+Frais de déploiement: 5,000€ (TTC & une fois)</div>
             <br><a href="#" class="open-defibeo-contact grazioli" data-key="TRANSLATE000061">Contactez-nous</a><br><br>
         </div>
     </label>
