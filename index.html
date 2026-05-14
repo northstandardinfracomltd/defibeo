@@ -4069,29 +4069,7 @@ width: 40px;
           <p class="okazu2" data-key="TRANSLATE0000010">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
           
 
-          <a href="javascript:void(0);" onclick="dfbToggleChat()" class="open-defibeo-contactWS idgo okazu3" data-key="TRANSLATE0000011">Contactez-nous</a>
-<script>
-document.addEventListener('click', function(event) {
-    // On vérifie si l'élément cliqué (ou l'un de ses parents) a la bonne classe
-    const targetLink = event.target.closest('.open-defibeo-contactWS');
-    
-    if (targetLink) {
-        // Bloque le comportement par défaut du lien (#)
-        event.preventDefault(); 
-        
-        // On cherche le vrai bouton de chat dans la page pour simuler un vrai clic dessus
-        const realChatBtn = document.getElementById('dfb-floating-btn');
-        
-        if (realChatBtn) {
-            realChatBtn.click(); // On simule le clic physique
-        } else if (typeof dfbToggleChat === 'function') {
-            dfbToggleChat(); // Solution de secours si le bouton n'est pas trouvé mais la fonction existe
-        } else {
-            console.error("Le widget Défibeo ne semble pas encore chargé sur la page.");
-        }
-    }
-});
-</script>
+<a href="mailto:fr@defibeo.com" class="open-defibeo-contactWS idgo okazu3" data-key="TRANSLATE0000011">Contactez-nous</a>
           
 <script>
 document.addEventListener('DOMContentLoaded', function () {
