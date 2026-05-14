@@ -185,12 +185,13 @@
     opacity: 1; /* Nécessaire pour Firefox qui baisse l'opacité par défaut */
 }
 input:disabled {
-    background: #ffffff;
-    border: 2.5px solid #674eff;
+background: #ffffff;
+    border-radius: 16px;
+    border: none;
     color: #674eff;
     text-decoration: none;
-    text-align: center;
-    padding: 17px;
+    text-align: left;
+    padding: 0px;
     box-shadow: none !important;
     cursor: not-allowed;
 }
@@ -320,7 +321,7 @@ Complétez la création de votre compte Défibeo pour accéder à votre environn
             </div>
 
             <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-0D6289220H5341747NIBTUYI" class="db-fs-submit" id="btn-submit">Payer & Accéder</a>
-            <p id="txt-pay-info" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;"></p> <p id="txt-pay-infoDOS" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;">CGU, CGV et termes.</p>
+            <p id="txt-pay-info" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;"></p> <p id="txt-pay-infoDOS" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default; margin-top: 20px;">En continuant, vous acceptez nos <a href="https://civilprom.s3.eu-north-1.amazonaws.com/De%CC%81fibeo++Accord+Client+EULA+Logiciel+De%CC%81fibeo+FR+(Franc%CC%A7ais)+CUPIDONeula.pdf" style="color: inherit; text-decoration: underline; cursor: pointer;">conditions EULA</a>.</p>
             
         </div>
     </div>
@@ -378,7 +379,6 @@ es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo elect
         document.getElementById('txt-pass-info').innerText = l.passI;
         document.getElementById('btn-submit').innerText = l.btn;
         document.getElementById('txt-pay-info').innerText = l.pay;
-        document.getElementById('txt-pay-infoDOS').innerText = l.pay;
         document.getElementById('txt-copy').innerText = l.copy;
         document.getElementById('link-cgu').innerText = l.cgu;
         document.getElementById('btn-more').innerText = l.more;
