@@ -83,10 +83,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 30px;
+            align-items: flex-start;
+            padding: 40px;
             color: white;
-            text-align: center;
+            text-align: left;
                 margin: 10px;
     border-radius: 22px;
         }
@@ -320,7 +320,7 @@ Complétez la création de votre compte Défibeo pour accéder à votre environn
             </div>
 
             <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-0D6289220H5341747NIBTUYI" class="db-fs-submit" id="btn-submit">Payer & Accéder</a>
-            <p id="txt-pay-info" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;"></p> <p id="txt-pay-info" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;">CGU, CGV et termes.</p>
+            <p id="txt-pay-info" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;"></p> <p id="txt-pay-infoDOS" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;">CGU, CGV et termes.</p>
             
         </div>
     </div>
@@ -363,6 +363,7 @@ es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo elect
         if(v.length >= 6 && /[A-Z]/.test(v) && /[a-z]/.test(v) && /[0-9]/.test(v)) {
             document.getElementById('btn-submit').classList.add('visible');
             document.getElementById('txt-pay-info').style.display = 'block';
+            document.getElementById('txt-pay-infoDOS').style.display = 'block';
         }
     });
 
@@ -377,6 +378,7 @@ es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo elect
         document.getElementById('txt-pass-info').innerText = l.passI;
         document.getElementById('btn-submit').innerText = l.btn;
         document.getElementById('txt-pay-info').innerText = l.pay;
+        document.getElementById('txt-pay-infoDOS').innerText = l.pay;
         document.getElementById('txt-copy').innerText = l.copy;
         document.getElementById('link-cgu').innerText = l.cgu;
         document.getElementById('btn-more').innerText = l.more;
@@ -472,7 +474,7 @@ es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo elect
     font-size: 16px;
     border: 1px solid #e8e8e8;
     color: #000000;
-    max-width: 200px;
+    max-width: 235px;
     background: #ffffff;
     margin-right: 4px;
     margin-bottom: -4px;
