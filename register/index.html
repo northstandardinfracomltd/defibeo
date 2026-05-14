@@ -78,7 +78,7 @@
 
         /* --- Sidebar --- */
         .db-fs-sidebar {
-            flex: 0 0 45%;
+            flex: 0 0 35%;
             background: var(--db-bg-gradient) !important;
             display: flex;
             flex-direction: column;
@@ -98,7 +98,7 @@
     line-height: 1.6;
     font-size: 18px;
     opacity: 1;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     cursor: default;
     margin-top: 10px;
     font-weight: 100;
@@ -122,7 +122,7 @@
         /* --- Formulaire --- */
 .db-fs-content {
     background: white;
-    flex: 0 0 55%;
+    flex: 0 0 65%;
     display: flex;
     flex-direction: column;
     /* justify-content: center; <- Optionnel : Supprime-le ou change-le si le contenu reste masqué en haut au scroll */
@@ -252,7 +252,7 @@ position: absolute;
         /* --- Responsive --- */
         @media (max-width: 992px) {
             .db-fs-main-wrapper { flex-direction: column; height: auto; }
-            .db-fs-sidebar { flex: 0 0 auto; padding: 60px 20px; }
+            .db-fs-sidebar { flex: 0 0 auto; padding: 30px 40px; }
             .db-fs-content { flex: 0 0 auto; padding: 40px 20px 100px 20px; }
             .db-fs-footer { position: relative; margin-top: 40px; bottom: 0; }
         }
@@ -321,7 +321,7 @@ Complétez la création de votre compte Défibeo pour accéder à votre environn
             </div>
 
             <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-0D6289220H5341747NIBTUYI" class="db-fs-submit" id="btn-submit">Payer & Accéder</a>
-            <p id="txt-pay-info" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;"></p> <p id="txt-pay-infoDOS" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default; margin-top: 20px;">En continuant, vous acceptez nos <a href="https://civilprom.s3.eu-north-1.amazonaws.com/De%CC%81fibeo++Accord+Client+EULA+Logiciel+De%CC%81fibeo+FR+(Franc%CC%A7ais)+CUPIDONeula.pdf" style="color: inherit; text-decoration: underline; cursor: pointer;">conditions EULA</a>.</p>
+            <p id="txt-pay-info" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default;    margin-top: 20px;"></p> <p id="txt-pay-infoDOS" style="display: none; text-align: center; margin-top: 15px; font-size: 12px; font-weight: 100; line-height: 1.5; cursor: default; margin-top:0px;">En continuant, vous acceptez nos <a href="https://civilprom.s3.eu-north-1.amazonaws.com/De%CC%81fibeo++Accord+Client+EULA+Logiciel+De%CC%81fibeo+FR+(Franc%CC%A7ais)+CUPIDONeula.pdf" style="color: #674eff; text-decoration: underline; cursor: pointer;">conditions EULA</a>.</p>
             
         </div>
     </div>
@@ -329,12 +329,12 @@ Complétez la création de votre compte Défibeo pour accéder à votre environn
 
 <script>
     const trans = {
-        fr: { ent:"Dénomination de l'entreprise:", url:"Votre lien d'accès sera:", email:"Votre email administrateur:", tel:"Votre téléphone portable:", pass:"Votre mot de passe:", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€).", copy:"Défibeo 2026", cgu:"Conditions Générales de Vente et d'Utilisation", more:"En savoir plus" },
-nl: { ent:"Bedrijfsnaam", url:"Toegangslink", email:"Uw e-mail", tel:"Uw telefoonnummer", pass:"Maak een wachtwoord aan", passI:"Ten minste één hoofdletter, één kleine letter en cijfers.", btn:"Abonnement activeren", pay:"Beveiligde betaling via creditcard of PayPal. Voor betaling op factuur via bankoverschrijving, neem contact met ons op. U betaalt vandaag de activatie (1,890€) en de eerste maand van het abonnement (€ 170).", copy:"Défibeo 2026", cgu:"Algemene Verkoop- en Gebruiksvoorwaarden", more:"Meer informatie" },
-de: { ent:"Unternehmensname", url:"Zugangslink", email:"Ihre E-Mail", tel:"Ihre Telefonnummer", pass:"Passwort erstellen", passI:"Mindestens ein Großbuchstabe, ein Kleinbuchstabe und Zahlen.", btn:"Abonnement aktivieren", pay:"Sichere Zahlung per Kreditkarte oder PayPal. Für Zahlungen auf Rechnung per Banküberweisung kontaktieren Sie uns bitte. Sie zahlen heute die Aktivierung (1,890 €) sowie den ersten Monat des Abonnements (170 €).", copy:"Défibeo 2026", cgu:"Allgemeine Geschäfts- und Nutzungsbedingungen", more:"Mehr erfahren" },
-en: { ent:"Company Name", url:"Access link", email:"Your email", tel:"Your phone number", pass:"Create a password", passI:"At least one uppercase letter, one lowercase letter, and numbers.", btn:"Activate subscription", pay:"Secure payment by credit card or PayPal. For payment by invoice via bank transfer, please contact us. You will pay the activation fee (€1,890) today, as well as the first month of the subscription (170 €).", copy:"Défibeo 2026", cgu:"General Terms and Conditions of Sale and Use", more:"Learn more" },
-pt: { ent:"Nome da empresa", url:"Link de acesso", email:"Seu e-mail", tel:"Seu telefone", pass:"Crie uma senha", passI:"Pelo menos uma letra maiúscula, uma minúscula e números.", btn:"Ativar assinatura", pay:"Pagamento seguro por cartão de crédito ou PayPal. Para pagamento mediante fatura por transferência bancária, entre em contacto connosco. Pagará hoje a ativação (1,890 €) e o primeiro mês da assinatura (170 €).", copy:"Défibeo 2026", cgu:"Termos e Condições Gerais de Venda e Utilização", more:"Saber mais" },
-es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo electrónico", tel:"Su teléfono", pass:"Cree una contraseña", passI:"Al menos una letra mayúscula, una minúscula y números.", btn:"Activar suscripción", pay:"Pago seguro con tarjeta bancaria o PayPal. Para pagos mediante factura con transferencia bancaria, póngase en contacto con nosotros. Pagará hoy la activación (1,890 €) y el primer mes de suscripción (170 €).", copy:"Défibeo 2026", cgu:"Condiciones Generales de Venta y Uso", more:"Saber más" },
+        fr: { ent:"Dénomination de l'entreprise:", url:"Votre lien d'accès sera:", email:"Votre email administrateur:", tel:"Votre téléphone portable:", pass:"Votre mot de passe:", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€ TTC).", copy:"Défibeo 2026", cgu:"Conditions Générales de Vente et d'Utilisation", more:"En savoir plus" },
+nl: { ent:"Bedrijfsnaam", url:"Toegangslink", email:"Uw e-mail", tel:"Uw telefoonnummer", pass:"Maak een wachtwoord aan", passI:"Ten minste één hoofdletter, één kleine letter en cijfers.", btn:"Abonnement activeren", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€ TTC).", copy:"Défibeo 2026", cgu:"Algemene Verkoop- en Gebruiksvoorwaarden", more:"Meer informatie" },
+de: { ent:"Unternehmensname", url:"Zugangslink", email:"Ihre E-Mail", tel:"Ihre Telefonnummer", pass:"Passwort erstellen", passI:"Mindestens ein Großbuchstabe, ein Kleinbuchstabe und Zahlen.", btn:"Abonnement aktivieren",pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€ TTC).", copy:"Défibeo 2026", cgu:"Allgemeine Geschäfts- und Nutzungsbedingungen", more:"Mehr erfahren" },
+en: { ent:"Company Name", url:"Access link", email:"Your email", tel:"Your phone number", pass:"Create a password", passI:"At least one uppercase letter, one lowercase letter, and numbers.", btn:"Activate subscription", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€ TTC).", copy:"Défibeo 2026", cgu:"General Terms and Conditions of Sale and Use", more:"Learn more" },
+pt: { ent:"Nome da empresa", url:"Link de acesso", email:"Seu e-mail", tel:"Seu telefone", pass:"Crie uma senha", passI:"Pelo menos uma letra maiúscula, uma minúscula e números.", btn:"Ativar assinatura", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€ TTC).", copy:"Défibeo 2026", cgu:"Termos e Condições Gerais de Venda e Utilização", more:"Saber mais" },
+es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo electrónico", tel:"Su teléfono", pass:"Cree una contraseña", passI:"Al menos una letra mayúscula, una minúscula y números.", btn:"Activar suscripción", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€ TTC).", copy:"Défibeo 2026", cgu:"Condiciones Generales de Venta y Uso", more:"Saber más" },
     };
 
     const show = id => document.getElementById(id).classList.add('active');
