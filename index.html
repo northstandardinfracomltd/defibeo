@@ -3402,6 +3402,10 @@ color: #f23047 !important;
    .closerback:hover {
 text-decoration: underline !important;    cursor: pointer !important;
 }
+
+#dfb-history-section {
+display: none !important;
+}
   
   .kirikou {
 font-family: 'DefibeoMain', sans-serif;
@@ -4063,7 +4067,27 @@ width: 40px;
           <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/echoecho1.svg" alt="Mobilité"><br><br>
           <h3 class="okazu" data-key="TRANSLATE000009">Infogérance</h3>
           <p class="okazu2" data-key="TRANSLATE0000010">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
-          <a href="#" class="open-defibeo-contactWS idgo okazu3" data-key="TRANSLATE0000011">Contactez-nous</a>
+          
+
+          <a href="javascript:void(0);" onclick="dfbToggleChat()" class="open-defibeo-contactWS idgo okazu3" data-key="TRANSLATE0000011">Contactez-nous</a>
+          <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. On cible votre lien "Contactez-nous" via sa classe
+    const contactLink = document.querySelector('.open-defibeo-contactWS');
+    
+    if (contactLink) {
+        contactLink.addEventListener('click', function(event) {
+            // 2. On empêche le comportement par défaut du lien (le '#' qui fait remonter la page)
+            event.preventDefault(); 
+            
+            // 3. On déclenche la fonction d'ouverture du chat
+            if (typeof dfbToggleChat === 'function') {
+                dfbToggleChat();
+            }
+        });
+    }
+});
+</script>
           
 <script>
 document.addEventListener('DOMContentLoaded', function () {
