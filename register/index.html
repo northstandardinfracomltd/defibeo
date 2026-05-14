@@ -87,6 +87,8 @@
             padding: 40px;
             color: white;
             text-align: center;
+                margin: 10px;
+    border-radius: 18px;
         }
 
         .db-fs-logo { max-height: 140px; margin-bottom: -15px; }
@@ -118,17 +120,22 @@
         }
 
         /* --- Formulaire --- */
-        .db-fs-content {
-            background: #e7f1ff;
-            flex: 0 0 55%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-            height: auto;
-        }
+.db-fs-content {
+    background: white;
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; <- Optionnel : Supprime-le ou change-le si le contenu reste masqué en haut au scroll */
+    align-items: center;
+    position: relative;
+    
+    /* Changements requis : */
+    height: 100vh;                  /* Force la box à prendre la hauteur de l'écran */
+    max-height: 100vh;              /* Empêche de dépasser le body figé */
+    overflow-y: auto;               /* Active le scroll vertical interne si ça dépasse */
+    padding: 200px 20px;            /* 200px haut/bas et 20px gauche/droite */
+    box-sizing: border-box;         /* Évite que le padding n'agrandisse la structure de la boîte */
+}
 
         .db-fs-container { width: 100%; max-width: 400px; }
 
@@ -138,6 +145,7 @@
             transform: translateY(10px);
             transition: var(--db-transition);
             height: 0;
+            padding: 10px;
             overflow: hidden;
         }
 
@@ -165,6 +173,7 @@
     font-weight: 100;
     outline: none;
     background: #ffffff;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 6%);
     text-align: center;
         }
 
@@ -176,14 +185,15 @@
     opacity: 1; /* Nécessaire pour Firefox qui baisse l'opacité par défaut */
 }
 
-        input:disabled {
-    background: #d5e2f3;
+input:disabled {
+    background: #16f2bb;
     border: none;
-    color: #7d92b0;
+    color: #000;
     text-align: center;
     padding: 17px;
+    box-shadow: none !important;
     cursor: not-allowed;
-        }
+}
 
         .db-fs-info { font-size: 0.7rem; margin-top: 5px; color: #000; font-weight: 100; }
 
@@ -267,8 +277,10 @@ display: none !important;
 <div class="db-fs-main-wrapper">
     <div class="db-fs-sidebar">
         <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Logo" class="db-fs-logo">
-<p>Bienvenue à bord ! Complétez votre inscription à Défibeo pour accéder à votre logiciel personnalisé. Inscription pour la version Standard uniquement, pour la version Large : veuillez nous contacter à <a href="mailto:contact@defibeo.com" class="tahlelink">contact@defibeo.com</a>.</p>
-        <a href="/" class="db-fs-btn-more" id="btn-more">En savoir plus</a>
+<p>
+Complétez la création de votre compte Défibeo pour accéder à votre environnement logiciel personnalisé. Vous recevrez vos accès de première connexion par email. Essayez-nous sans risque! Parce que votre satisfaction est importante, la résiliation et le remboursement sont disponibles durant le premier mois. Vous serez contacté(e) sous 1 à 3 jours ouvrés par votre interlocuteur dédié pour vous assister dans la prise en main, et vous recevrez également une vidéo de formation.
+</p>
+        <a href="/" class="db-fs-btn-more" id="btn-more">Retour au site</a>
 
     </div>
 
@@ -280,27 +292,27 @@ display: none !important;
             </select>
 
             <div class="db-fs-group active">
-                <label id="lbl-ent">Nom Entreprise</label>
+                <label id="lbl-ent">Dénomination de l'entreprise:</label>
                 <input type="text" id="input-ent" placeholder="Ex: Medical360" autocomplete="off">
             </div>
 
             <div class="db-fs-group" id="group-url">
-                <label id="lbl-url">Lien d'accès</label>
+                <label id="lbl-url">Votre lien d'accès sera:</label>
                 <input type="text" id="input-domain" disabled placeholder=".defibeo.com">
             </div>
 
             <div class="db-fs-group" id="group-email">
-                <label id="lbl-email">Votre Email</label>
+                <label id="lbl-email">Votre email administrateur:</label>
                 <input type="email" id="input-email" placeholder="Ex: contact@medical360.com">
             </div>
 
             <div class="db-fs-group" id="group-tel">
-                <label id="lbl-tel">Votre Téléphone</label>
+                <label id="lbl-tel">Votre téléphone portable:</label>
                 <input type="tel" id="input-tel" placeholder="06 12 34 56 78">
             </div>
 
             <div class="db-fs-group" id="group-pass">
-                <label id="lbl-pass">Mot de passe</label>
+                <label id="lbl-pass">Votre mot de passe:</label>
                 <input type="text" id="input-pass" maxlength="20">
                 <p class="db-fs-info" id="txt-pass-info">A-z, 0-9 (Max 20 chars).</p>
             </div>
@@ -314,7 +326,7 @@ display: none !important;
 
 <script>
     const trans = {
-        fr: { ent:"Nom de l'entreprise", url:"Lien d'accès", email:"Votre email", tel:"Votre téléphone", pass:"Créez un mot de passe", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€).", copy:"Défibeo 2026", cgu:"Conditions Générales de Vente et d'Utilisation", more:"En savoir plus" },
+        fr: { ent:"Dénomination de l'entreprise:", url:"Votre lien d'accès sera:", email:"Votre email administrateur:", tel:"Votre téléphone portable:", pass:"Votre mot de passe:", passI:"Au moins une lettre majuscule, minuscule et chiffres.", btn:"Activer l'abonnement", pay:"Paiement sécurisé par carte bancaire ou Paypal, pour un paiement sur présentation facture avec virement bancaire, veuillez nous contacter. Vous payerez aujourd'hui le premier mois (310€).", copy:"Défibeo 2026", cgu:"Conditions Générales de Vente et d'Utilisation", more:"En savoir plus" },
 nl: { ent:"Bedrijfsnaam", url:"Toegangslink", email:"Uw e-mail", tel:"Uw telefoonnummer", pass:"Maak een wachtwoord aan", passI:"Ten minste één hoofdletter, één kleine letter en cijfers.", btn:"Abonnement activeren", pay:"Beveiligde betaling via creditcard of PayPal. Voor betaling op factuur via bankoverschrijving, neem contact met ons op. U betaalt vandaag de activatie (1,890€) en de eerste maand van het abonnement (€ 170).", copy:"Défibeo 2026", cgu:"Algemene Verkoop- en Gebruiksvoorwaarden", more:"Meer informatie" },
 de: { ent:"Unternehmensname", url:"Zugangslink", email:"Ihre E-Mail", tel:"Ihre Telefonnummer", pass:"Passwort erstellen", passI:"Mindestens ein Großbuchstabe, ein Kleinbuchstabe und Zahlen.", btn:"Abonnement aktivieren", pay:"Sichere Zahlung per Kreditkarte oder PayPal. Für Zahlungen auf Rechnung per Banküberweisung kontaktieren Sie uns bitte. Sie zahlen heute die Aktivierung (1,890 €) sowie den ersten Monat des Abonnements (170 €).", copy:"Défibeo 2026", cgu:"Allgemeine Geschäfts- und Nutzungsbedingungen", more:"Mehr erfahren" },
 en: { ent:"Company Name", url:"Access link", email:"Your email", tel:"Your phone number", pass:"Create a password", passI:"At least one uppercase letter, one lowercase letter, and numbers.", btn:"Activate subscription", pay:"Secure payment by credit card or PayPal. For payment by invoice via bank transfer, please contact us. You will pay the activation fee (€1,890) today, as well as the first month of the subscription (170 €).", copy:"Défibeo 2026", cgu:"General Terms and Conditions of Sale and Use", more:"Learn more" },
@@ -476,6 +488,9 @@ es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo elect
     margin-top: 4px;
     margin-bottom: 6px; }
 
+    #dfb-history-section { 
+        display: none !important;
+     }
     /* Bouton Flottant Principal */
     #dfb-floating-btn {
 position: fixed;
