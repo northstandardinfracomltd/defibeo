@@ -408,6 +408,49 @@ es: { ent:"Nombre de la empresa", url:"Enlace de acceso", email:"Su correo elect
         Dialoguez avec Défibeo
     </button>
 
+    <style>
+  /* 1. On applique l'animation au bouton */
+#dfb-floating-btn {
+    animation: shake-animation 5s infinite;
+    /* Optionnel : assure une transition fluide si vous avez déjà d'autres effets */
+    transition: transform 0.1s ease-in-out; 
+}
+
+/* 2. Définition de l'animation */
+@keyframes shake-animation {
+    /* Le bouton ne bouge pas pendant les 4 premières secondes (80% du temps) */
+    0%, 80%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    /* Le "shake" léger se produit pendant la dernière seconde (entre 80% et 100%) */
+    82% {
+        transform: rotate(1deg) translate(1px, 1px);
+    }
+    84% {
+        transform: rotate(-1deg) translate(-1px, -2px);
+    }
+    86% {
+        transform: rotate(1deg) translate(-1px, 0px);
+    }
+    88% {
+        transform: rotate(-1deg) translate(1px, 1px);
+    }
+    90% {
+        transform: rotate(0deg) translate(-1px, -1px);
+    }
+    92% {
+        transform: rotate(1deg) translate(1px, 0px);
+    }
+    94% {
+        transform: rotate(-1deg) translate(-1px, 1px);
+    }
+    96% {
+        transform: rotate(0deg) translate(1px, -1px);
+    }
+}
+</style>
+
+
     <div id="dfb-chat-window" class="dfb-hidden">
         <div id="dfb-loading-bar" class="dfb-hidden">
             <div class="dfb-progress-bar">
