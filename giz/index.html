@@ -1118,8 +1118,24 @@ width: 100%;
     .two-columns {
         flex-direction: column !important;
         padding: 0px !important;
+        display: block !important;
     } 
+
+    .left-column {
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.rightXXX-column {
+    align-items: center !important;
+    text-align: center !important;
+}
   
+.nomanomaney {
+margin: auto !important;
+        margin-top: -55px !important;
+        margin-bottom: 15px !important;
+}
 
 }
 
@@ -2130,8 +2146,7 @@ padding: 8px 12px !important;
 "TYPING_02": " les techniciens des",
 "TYPING_03": " la traçabilité des",
 "TYPING_04": " l'infogérance des",
-"TYPING_05": " la veille des",
-"TYPING_06": " les rappels des",
+"TYPING_05": " la GMAO & FSM des",
 "LTX0005": "Ajoutez vos informations pour démarrer la session avec l'aide Défibeo",
 "LTX0006": "Votre Nom",
 "LTX0007": "Votre Email",
@@ -3085,7 +3100,7 @@ padding: 8px 12px !important;
 <script>
   (function() {
     const typingTranslations = {
-      "fr": [" les maintenances des", " les techniciens des", " la traçabilité des", " l'infogérance des", " la veille des", " les rappels des"],
+      "fr": [" les maintenances des", " les techniciens des", " la traçabilité des", " l'infogérance des", " la GMAO & FSM des"],
       "en": [" maintenance for", " technicians for", " traceability for", " managed services for", " monitoring of", " reminders for"],
       "es": [" el mantenimiento de", " los técnicos de", " la trazabilidad de", " la infogestión de", " la vigilancia de", " los recordatorios de"],
       "pt": [" a manutenção de", " os técnicos de", " a rastreabilidade de", " a infogestão de", " a vigilância de", " os lembretes de"],
@@ -4326,6 +4341,7 @@ background: #ffffff !important;
 
 .cp-layout-container__title {
     font-size: 50px !important;
+        font-weight: 100;
     margin-bottom: -5px;
     line-height: 1.2;
     font-family: 'DefibeoTAZ', sans-serif !important;
@@ -4743,7 +4759,24 @@ border: 1px solid #e8e8e8 !important;
     </div>
 
     <div class="cp-layout-container__media">
-      <img src="https://civilprom.s3.eu-north-1.amazonaws.com/defibeoillustrationfad2.svg" alt="Illustration" class="cp-layout-container__image mimimage">
+      <img src="https://civilprom.s3.eu-north-1.amazonaws.com/IllustrationSVGdefibeo2.svg" alt="Illustration" class="cp-layout-container__image mimimage">
+    </div>
+    
+  </div>
+</div>
+<br><br><br><br>
+
+<div class="cp-layout-container__wrapper">
+  <div class="cp-layout-container__grid position">
+    
+    <div class="cp-layout-container__content">
+      <h2 class="cp-layout-container__title dada" data-key="TRANSLATE000036">Trajet rationalisé</h2>
+      <p class="cp-layout-container__subtitle dada" data-key="TRANSLATE000037">Appuyez-vous sur Google Maps pour l’optimisation des tournées, laissez le logiciel attribuer un ordre de passage pour chaque maintenance. Le technicien peut autoriser la localisation en direct de sa position avec l’app Google Maps, donnant ainsi la capacité, par exemple, aux contrôleurs de gestion de savoir où en est le technicien, sans avoir besoin de solution coûteuse.</p>
+      <a href="/register" class="cp-layout-container__button" data-key="TRANSLATE000032TOTRAPPKZZ">Inscription</a>
+    </div>
+
+    <div class="cp-layout-container__media">
+      <img src="https://civilprom.s3.eu-north-1.amazonaws.com/ILLUSTRATION+DEFIBEO+29MAP29TR82832.svg" alt="Illustration" class="cp-layout-container__image mimimage">
     </div>
     
   </div>
@@ -4759,24 +4792,6 @@ border: 1px solid #e8e8e8 !important;
 
     <div class="cp-layout-container__media">
       <img src="https://civilprom.s3.eu-north-1.amazonaws.com/ILLUSTRATION+DEFIBEO+9927272+Google.svg" alt="Illustration" class="cp-layout-container__image mimimage">
-    </div>
-    
-  </div>
-</div>
-<br><br><br><br><br>
-
-
-<div class="cp-layout-container__wrapper">
-  <div class="cp-layout-container__grid position">
-    
-    <div class="cp-layout-container__content">
-      <h2 class="cp-layout-container__title dada" data-key="TRANSLATE000036">Trajet rationalisé</h2>
-      <p class="cp-layout-container__subtitle dada" data-key="TRANSLATE000037">Appuyez-vous sur Google Maps pour l’optimisation des tournées, laissez le logiciel attribuer un ordre de passage pour chaque maintenance. Le technicien peut autoriser la localisation en direct de sa position avec l’app Google Maps, donnant ainsi la capacité, par exemple, aux contrôleurs de gestion de savoir où en est le technicien, sans avoir besoin de solution coûteuse.</p>
-      <a href="/register" class="cp-layout-container__button" data-key="TRANSLATE000032TOTRAPPKZZ">Inscription</a>
-    </div>
-
-    <div class="cp-layout-container__media">
-      <img src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/googlemapsshowdefibeo.svg" alt="Illustration" class="cp-layout-container__image mimimage">
     </div>
     
   </div>
@@ -6292,27 +6307,36 @@ document.getElementById('reset').onclick=()=>{
 <div class="infoplus-grid">
 
 
-<div class="infoplus PURPLE365">
+<div class="infoplus">
 
   <div class="lang-options-uniY">
-<img class="davis" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/icono38.svg" alt="Personnalisé" >
+<img class="davis" src="https://civilprom.s3.eu-north-1.amazonaws.com/personnalise.svg" alt="Personnalisé" >
 <p class="infoplusTXT2" data-key="TRANSLAX0001">Personnalisé</p>
    <p class="infoplusTXT" data-key="TRANSLAX0002">Personnalisez le logiciel avec votre charte, vos règles, vos fonctions et vos processus. Entièrement en marque blanche, vous générez une véritable valeur ajoutée pour votre entreprise. Avec Défibeo Standard, la personnalisation est limitée au logo et aux couleurs. Nos utilisateurs apprécient particulièrement la possibilité de personnaliser l'identité visuelle de la plateforme : des reçus PDF à l'interface de gestion, en passant par les pages publiques et les e-mails transactionnels.</p>
    </div>
 </div>
 
-<div class="infoplus BLUE365">
+<div class="infoplus">
 
     <div class="lang-options-uniY">
-<img class="davis" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/icono39.svg" alt="Clients" >
+<img class="davis" src="https://civilprom.s3.eu-north-1.amazonaws.com/fsmdefibeo.svg" alt="Clients" >
 <p class="infoplusTXT2" data-key="TRANSLAX0003">Verticalisé</p>
 <p class="infoplusTXT" data-key="TRANSLAX0004">Solution verticale par excellence, Défibeo est un logiciel métier conçu pour répondre aux standards rigoureux du secteur. Loin des outils généralistes, il privilégie l'expertise technique pour offrir une maîtrise totale de vos processus. Défibeo est utilisé par +130k défibrillateurs en Europe depuis 6 ans. Chaque jour, c'est environ 900 maintenances réalisées par nos utilisateurs. Forgé par ses utilisateurs depuis 2019, Défibeo est le fruit d’une intelligence collective.</p>
   </div>
 </div>
 
-<div class="infoplus BLACK365">
+<div class="infoplus">
   <div class="lang-options-uniY">
-<img class="davis" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/icono40.svg" alt="Éditeur No-Code" >
+<img class="davis" src="https://civilprom.s3.eu-north-1.amazonaws.com/automatismesflow.svg" alt="Éditeur No-Code" >
+<p class="infoplusTXT2" data-key="TRANSLAX0005">Zero Installation</p>
+<p class="infoplusTXT" data-key="TRANSLAX0006">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.</p>
+  </div>
+</div>
+
+
+<div class="infoplus">
+  <div class="lang-options-uniY">
+<img class="davis" src="https://civilprom.s3.eu-north-1.amazonaws.com/formaitionvideo.svg" alt="Éditeur No-Code" >
 <p class="infoplusTXT2" data-key="TRANSLAX0005">Zero Installation</p>
 <p class="infoplusTXT" data-key="TRANSLAX0006">Le logiciel Défibeo, y compris les fonctionnalités pour l'organisation et la complétion des maintenances par les techniciens, est accessible directement depuis un navigateur web. Aucun téléchargement complexe n’est nécessaire, et il est pratique et agréable à utiliser aussi bien sur ordinateur, tablette que smartphone. L'architecture intégralement web assure une grande réactivité dans le déploiement des mises à jour ainsi que l'accès à des solutions économiques.</p>
   </div>
@@ -6457,9 +6481,7 @@ margin-top: 15px;
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Urgence Secours Équipements</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Cardiac Safe</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Medicalia Franchises</div>
-      <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Restenvie</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Santé Synergies Pyrénées</div>
-      <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">CardiaPulse</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Volt Defibrillators</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">CardioPro</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">DefibrillatorsNinja</div>
@@ -6474,9 +6496,7 @@ margin-top: 15px;
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Urgence Secours Équipements</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Cardiac Safe</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Medicalia Franchises</div>
-      <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Restenvie</div>
        <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Santé Synergies Pyrénées</div>
-      <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">CardiaPulse</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">Volt Defibrillators</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">CardioPro</div>
       <div class="capsule-item-customerskases bg-dark-charcoal-customerskases">DefibrillatorsNinja</div>
@@ -7056,19 +7076,24 @@ L'assistance et l'accompagnement individuel sont disponibles en continu et gratu
 <a href="https://civilprom.s3.eu-north-1.amazonaws.com/De%CC%81fibeo++%5BInformation%5D+Comment+nous+prote%CC%81geons+vos+donne%CC%81es..pdf" class="btn-open-store brako">
   Information gestion des données
 </a>
-<br><br><br>
+<br><br>  <br>
+  <p class="codechef22AXLXS">Certifications Défibeo ISO/IEC: 27001 (Information Security Management), 27701 (Privacy Information Mangement), 27017 (Cloud Security Management), 27018 (Personal Data in the Cloud), 9001 (Quality Management Systems).</p>
+  <img class="BFI1XX" src="https://civilprom.s3.eu-north-1.amazonaws.com/bsi-group-logo.svg" alt="Certificates Providers">
+  <br>
   <p class="codechef22AXL">Moyens de paiement acceptés sur Défibeo.</p>
   <img class="paymentmethodsXX" src="https://civilprom.s3.eu-north-1.amazonaws.com/PaymentMethods.svg" alt="Payment Providers">
-<br><br><br>
-  <p class="codechef22AXL">Choisissez la confidentialité, choisissez Défibeo.</p>
-  <img class="paymentmethodsXX" src="https://civilprom.s3.eu-north-1.amazonaws.com/PaymentMethods.svg" alt="Payment Providers">
-
 </div>
 
 <style>
 
+.BFI1XX {
+    max-width: 55px;
+    margin: auto;
+    margin-top: -20px;
+}
+
   .paymentmethodsXX {
-    max-width: 270px;
+    max-width: 300px;
     margin: auto;
     margin-top: -20px; 
 }
@@ -7381,7 +7406,7 @@ margin: auto;
 
 .infoplus-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px 0;
 margin-bottom: -50px;
@@ -8280,6 +8305,20 @@ document.addEventListener('DOMContentLoaded', function() {
     color: #000000 !important;
     font-weight: 100 !important;
     cursor: default;
+    font-family: 'DefibeoMain', sans-serif;
+}
+
+  .codechef22AXLXS {
+        padding-right: 10px !important;
+    padding-left: 10px !important;
+    font-size: 16px !important;
+    text-align: center;
+    color: #000000 !important;
+    font-weight: 100 !important;
+    margin: auto;
+    margin-bottom: 25px;
+    cursor: default;
+    max-width: 700px;
     font-family: 'DefibeoMain', sans-serif;
 }
 
@@ -9270,6 +9309,11 @@ color: #fff;
 .dfbgo-popup-subtitle {
     max-width: 85% !important;
 }
+
+.two-columns {
+    display: block !important;
+}
+
 
 section {
     padding: 4rem 10px !important;
