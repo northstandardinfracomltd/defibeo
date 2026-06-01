@@ -4159,15 +4159,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<br><br><br>
+<br><br>
 
 
 
 
 
 <div class="rideauABC">
-
-<br><br>
 
 
 
@@ -4228,7 +4226,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </div></div>
 
 <br><br>
-<h2 class="kijhguijhuij" data-key="TRANSLATE0000018">Un outil structurant personnalisé avec votre marque, compréhensif du métier de distributeur et mainteneur de défibrillateurs</h2>
+
+<h2 class="kijhguijhuij" data-key="TRANSLATE0000018ZZZAAAAA">Un outil structurant compréhensif du métier de distributeur et mainteneur de défibrillateurs</h2>
+
 <br><br><br><br><br>
 
 
@@ -4303,12 +4303,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
 </div>
-
-
-
-<br><br>
-<h2 class="kijhguijhuij" data-key="TRANSLATE0000018XXXXXXXXX">Des fonctionnalités à gogo</h2>
-<br><br><br><br><br>
 
 
     <div class="dfb-main-feature-grid-container">
@@ -4778,37 +4772,6 @@ max-width: 85%;
   }
 </style>
 
-<br><br>
-<h2 class="kijhguijhuij" data-key="TRANSLATE0000018XXXXXXXDDSSSXX">Indicateurs clés</h2>
-<br><br><br><br><br>
-
-
-<div class="db-stats-wrapper">
-  <div class="db-stats-item">
-    <div class="db-stats-number-container">
-      <span class="db-stats-value">0.05</span>
-      <span class="db-stats-suffix">%</span>
-    </div>
-    <p class="db-stats-description" data-key="TRANSLATE000039">Coût moyen répercuté la première année pour l'achat du logiciel par maintenance, évalué sur la base d'un volume de 3,500 interventions.</p>
-  </div>
-
-  <div class="db-stats-item">
-    <div class="db-stats-number-container">
-      <span class="db-stats-value">65</span>
-      <span class="db-stats-suffix">k€</span>
-    </div>
-    <p class="db-stats-description" data-key="TRANSLATE000040">Gain annuel ROI en productivité (administratif et terrain) valorisé en coûts salariaux, évalué pour un volume de 3,500 interventions.</p>
-  </div>
-
-  <div class="db-stats-item">
-    <div class="db-stats-number-container">
-      <span class="db-stats-value">99.8</span>
-      <span class="db-stats-suffix">%</span>
-    </div>
-    <p class="db-stats-description" data-key="TRANSLATE000041">Taux de disponibilité garanti par notre infrastructure cloud en double redondance, hébergée dans notre datacenter à Pau (64).</p>
-  </div>
-</div>
-
 
 
 
@@ -4933,9 +4896,10 @@ padding: 0px;
 
 
         .kijhguijhuij {
-font-family: 'DefibeoTAZ', sans-serif;
+    font-family: 'Alternative', sans-serif;
     font-weight: 100 !important;
     font-size: 70px;
+    max-width: 1200px;
     letter-spacing: -3px;
     cursor: default !important;
     line-height: 70px;
@@ -4943,12 +4907,12 @@ font-family: 'DefibeoTAZ', sans-serif;
     padding-left: 20px;
     padding-right: 20px;
     color: #000000;
-    padding-bottom: 50px;
+    padding-bottom: 110px;
     background: none !important;
-    padding-top: 70px;
+    padding-top: 0px;
     text-align: center !important;
     margin: auto;
-    border-top: 1px solid #c0f3e8;
+    border-top: none;
 }
 
 
@@ -5226,6 +5190,35 @@ Volume illimité de défibrillateurs, de sessions utilisateurs et de sessions te
             <br><a href="mailto:fr@defibeo.com" class="open-defibeo-contact grazioli" data-key="TRANSLATE000061">Contactez-nous</a><br><br>
         </div>
     </label>
+</div>
+
+
+<br>
+
+<div class="db-stats-wrapper">
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">0.05</span>
+      <span class="db-stats-suffix">%</span>
+    </div>
+    <p class="db-stats-description" data-key="TRANSLATE000039">Coût moyen répercuté la première année pour l'achat du logiciel par maintenance, évalué sur la base d'un volume de 3,500 interventions.</p>
+  </div>
+
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">65</span>
+      <span class="db-stats-suffix">k€</span>
+    </div>
+    <p class="db-stats-description" data-key="TRANSLATE000040">Gain annuel ROI en productivité (administratif et terrain) valorisé en coûts salariaux, évalué pour un volume de 3,500 interventions.</p>
+  </div>
+
+  <div class="db-stats-item">
+    <div class="db-stats-number-container">
+      <span class="db-stats-value">99.8</span>
+      <span class="db-stats-suffix">%</span>
+    </div>
+    <p class="db-stats-description" data-key="TRANSLATE000041">Taux de disponibilité garanti par notre infrastructure cloud en double redondance, hébergée dans notre datacenter à Pau (64).</p>
+  </div>
 </div>
 
 <script>
@@ -6082,14 +6075,14 @@ document.getElementById('reset').onclick=()=>{
     align-items: center;
     padding: 15px 20px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: transparent;
     transition: background-color 0s ease;
     user-select: none;
     font-weight: 100; /* Forçage du poids demandé */
   }
 
   .dfb-faq-question-label:hover {
-    background-color: #fff;
+    background-color: transparent;
         text-decoration: underline;
             color: #225cff;
   }
@@ -6107,7 +6100,7 @@ document.getElementById('reset').onclick=()=>{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-    background-color: #fff;
+    background-color: transparent;
     cursor: default;
   }
 
@@ -6191,7 +6184,7 @@ color: #684fff !important;
 <style>
     .defibeoclientsextractparent {
     width: 100%;
-    max-width: 900px;
+    max-width: 700px;
     text-align: center;
     display: block;
     background: white;
@@ -6498,6 +6491,38 @@ margin-top: 15px;
     }
 </style>
 
+<style>
+  .gana {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 20px 0;
+    margin-bottom: -50px;
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.colgana {
+    min-height: 400px;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 22px;
+    border: 1px solid #e7e7e7;
+    text-align: left;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    font-weight: 100 !important;
+    padding: 35px 10px;
+}
+
+</style>
+<div class="gana">
+
+  <div class="colgana">
+  <h2 class="okazu4 sixtynine777 BOEZ" data-key="TRANSLATE000100iso" data-key="TRANSLATEGAY11JJZZ">Faciliter vos enjeux</h2>
+  
+
 <div class="dbf-sec-trig-container" id="dbf-sec-trig-root-node">
     <div class="dbf-sec-trig-wrapper">
         <div class="dbf-sec-trig-track">
@@ -6554,8 +6579,9 @@ margin-top: 15px;
     }
 </script>
 
+</div>
 
-
+  <div class="colgana">
 <div class="defibeoclientsextractparent">
   <p class="noctra" data-key="NOTTRRA2299292929">Des utilisateurs qui vous ressemblent</p>
   <p class="defibeocustomersextract" data-key="TRANSLATE000020TOTRANSUNKNOW9911">Défibeo héberge plus de 130 000 défibrillateurs gérés par 70 entreprises de toutes tailles, réparties dans 6 pays. Ainsi, environ 900 maintenances sont réalisées chaque jour. Rejoignez le mouvement pour la continuité de la chaîne de survie avec Défibeo. Nous offrons un service adapté et personnalisé à chaque dimension d'entreprise, de l'indépendant aux grands groupes. La satisfaction client est un indicateur clé pour notre service.</p><br>
@@ -6940,6 +6966,13 @@ font-size: 18px;
 </script> <br>
    <a href="/register" class="ctawithclients">Ouvrir un compte</a>
 </div>
+  
+</div>
+
+</div>
+
+
+
 <p class="seoterms">Un défi Pour la vie, un defi pour la vie, AED360 ProCardio, Pulse4All, Défibrillateur ERP, AVF Biomédical, DL France Défib, JPM Maintenance Incendie, Restenvie, Urgence Secours Angers, Cardiac Safe, CardioPro, Sauvie, Cardiop, ElectroCoeur, Le coeur d'un sam, florent colin, denis yves expert medical, prevtinter, sp enseignement, d+ services, dsecurite groupe, france défibrillateur, desautel, matecir defibril, daexal, daela, aquicardia, cardiolife, defme, alterdokeo, cardiosecours, safelife, safe life, serenicoeur, core prev, star aid, geodae, geo dae, atlasanté, longlife defibrillateur, france dae, defibrillateur france, medisafe, tatondef, siplan, lifeaz, coeurgence, acoeurvaillant, a coeur vaillant</p> 
 
 
@@ -7545,10 +7578,10 @@ max-width: 1000px !important;
 
 
 .sixtynine777 {
-    color: #000 !important;
+color: #000 !important;
     max-width: 100% !important;
-    background: linear-gradient(180deg, #defff7, transparent);
-    border-top: 1px solid #c0f3e8;
+    background: none;
+    border-top: none;
     padding-top: 50px;
   }
 
@@ -7762,7 +7795,7 @@ min-height: 400px;
     margin: auto;
     font-family: Arial, sans-serif;
     font-weight: 100 !important;
-    padding: 0px;
+    padding: 35px 10px;
 }
 
 .infoplusTXT {
