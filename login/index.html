@@ -13,12 +13,12 @@
         @font-face {
             font-family: 'DefibeoMain';
             font-weight: 900 !important;
-            src: url('https://datacenter64000pau.s3.eu-north-1.amazonaws.com/defibeoMAIN.otf') format('opentype');
+            src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
         }
 
         :root {
-            --db-primary: #281698;
-            --db-bg-gradient: radial-gradient(#281698, #020248);
+            --db-primary: #3556ec;
+            --db-bg-gradient: linear-gradient(150deg, #7e2e86, #36093a);
             --db-black: #000000;
             --db-gray: #f2f2f2;
             --db-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -62,17 +62,17 @@
         }
         
         .db-fs-btn-more {
-            padding: 10px 25px;
-            text-decoration: none;
-            font-weight: 100;
-            box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
-            background: #674eff;
-            color: #fff;
-            outline: #674eff solid 3px;
-            outline-offset: 4px;
-            font-size: 18px !important;
-            border-radius: 13px !important;
-            border: none !important;
+    padding: 13px 19px;
+    text-decoration: none;
+    font-weight: 100;
+    background: #3556ec;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    color: #fff;
+    outline: none;
+    outline-offset: 4px;
+    font-size: 18px !important;
+    border-radius: 13px !important;
+    border: none !important;
         }
 
         /* --- Formulaire --- */
@@ -389,14 +389,14 @@
     }
     .dfb-agent-info { display: flex; flex-direction: column; align-items: center; }
     .dfb-agent-img { width: 40px;
-    outline: #16f3bc solid 3px;
+    outline: #fa53d5 solid 3px;
     outline-offset: 3px;
     height: 40px;
     border-radius: 50%;
     border: none;}
     .dfb-agent-name { font-size: 13px;
     font-weight: bold;
-    color: #898989;
+    color: #000;
     margin-top: 4px;
     margin-bottom: 6px; }
 
@@ -405,10 +405,10 @@
      }
     /* Bouton Flottant Principal */
     #dfb-floating-btn {
-position: fixed;
+    position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #674eff !important;
+    background: #3556ec !important;
     color: white;
     border: none;
     padding: 13px 21px;
@@ -419,7 +419,7 @@ position: fixed;
     font-size: 17px;
     align-items: center;
     gap: 10px;
-    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #3656ed, inset 0 6px 12px #3453e512;
     z-index: 9999;
     transition: transform 0.2s;
     font-family: 'DefibeoMain', sans-serif;
@@ -478,7 +478,7 @@ position: fixed;
 
 /* Optionnel : Personnalise le contour au clavier pour qu'il soit plus joli */
 :focus-visible {
-  outline: 2.5px solid #674eff; 
+  outline: 2.5px solid #fa53d5; 
   outline-offset: 2px;
 }
     /* Design Form (Inchangé) */
