@@ -49,7 +49,7 @@
             left: 0;
             right: 0;
             height: 70px;
-            background: radial-gradient(#7e2e86, #36093a) !important;
+            background: linear-gradient(90deg, #7e2e86, #36093a) !important;
             padding: 0 1.5rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -68,18 +68,19 @@
         }
 
         .logo {
-            height: 40px;
+            height: 75px;
             display: block;
         }
 
         .brand-title {
-            display: inline-block;
-            vertical-align: middle;
-            font-family: 'Alternative', sans-serif;
-            font-weight: 100 !important;
-            color: #ffffff;
-            font-size: 1.75rem;
-            margin-left: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Alternative', sans-serif;
+    font-weight: 100 !important;
+    color: #ffffff;
+    font-size: 26px;
+    margin-left: 1rem;
+    margin-top: 5px;
         }
 
         /* Conteneur principal */
@@ -100,19 +101,29 @@
         }
 
         .search-input {
-            width: 100%;
-            padding: 1rem 1.25rem;
-            font-family: inherit;
-            font-size: 1.1rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            background-color: var(--bg-card);
-            outline: none;
-            transition: border-color 0.2s;
+width: 100%;
+    padding: 1rem 1.25rem;
+    font-family: inherit;
+    color: black;
+    font-size: 1.1rem;
+    border: 1px solid #dedede;
+    border-radius: 13px;
+    background-color: var(--bg-card);
+    outline: none;
+    transition: border-color 0s;
         }
 
-        .search-input:focus {
-            border-color: var(--primary-color);
+
+        .search-input:hover {
+            outline: 2.5px solid #fa53d5 !important;
+outline-offset: 2px !important;
+transition: all 0s !important;
+        }
+
+             .search-input:focus {
+            outline: 2.5px solid #fa53d5 !important;
+outline-offset: 2px !important;
+transition: all 0s !important;
         }
 
         /* Section Actions (Bouton de contact) */
@@ -122,18 +133,18 @@
         }
 
         .btn-contact {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            font-family: inherit;
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: #ffffff;
-            background-color: var(--primary-color);
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-            cursor: pointer;
+display: inline-block;
+    padding: 12px 22px 13px 22px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    background-color: #3556ec;
+    box-shadow: inset 0 1px 1px #fff3, 0 1px 2px #08080833, 0 4px 4px #08080814, 0 7px 0 -12px #077ac7, inset 0 6px 12px #ffffff1f;
+    border-radius: 13px;
+    text-decoration: none;
+    cursor: pointer;
         }
 
         .btn-contact:hover {
@@ -148,31 +159,39 @@
         }
 
         .article-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
+    background-color: white;
+    border: 1px solid #dedede;
+    border-radius: 13px;
+    padding: 25px;
         }
 
         .article-ref {
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
+font-size: 13px !important;
+    background: #000000;
+    width: 70px;
+    border-radius: 100px;
+    padding: 6px 6px;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
         }
 
         .article-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
+font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 11px;
+        cursor: default;
         }
 
         .article-description {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 1.25rem;
-            white-space: pre-line;
+cursor: default;
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 20px;
+    white-space: pre-line;
         }
 
         .article-links {
@@ -182,24 +201,24 @@
         }
 
         .btn-link {
-            display: inline-block;
-            padding: 0.6rem 1rem;
-            font-family: inherit;
-            font-size: 0.9rem;
-            color: var(--primary-color);
-            background-color: transparent;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            text-decoration: none;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
-            transition: background-color 0.2s;
+    display: inline-block;
+    padding: 0px;
+    font-family: inherit;
+    font-size: 16px;
+    color: #3656ed;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    transition: background-color 0s;
         }
 
         .btn-link:hover {
-            background-color: #f3f4f6;
+            background-color: transparent;
         }
 
         .no-results, .loading {
@@ -217,7 +236,7 @@
             <div class="brand-box">
                 <img class="logo" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Logo Defibeo">
             </div>
-            <span class="brand-title">Centre d'aide.</span>
+            <span class="brand-title">Centre d'aide</span>
         </div>
     </nav>
 
@@ -232,7 +251,7 @@
             <a href="mailto:support@defibeo.com" class="btn-contact">Envoyer un message</a>
         </div>
 
-        <div id="loading" class="loading">Chargement du centre d'aide...</div>
+        <div id="loading" class="loading">Chargement des contenus.</div>
 
         <main id="articlesContainer" class="articles-list"></main>
 
@@ -282,7 +301,7 @@
                 if (item.link3) linksHTML += `<a href="${item.link3}" target="_blank" class="btn-link">${item.link3}</a>`;
 
                 card.innerHTML = `
-                    <div class="article-ref">Réf : ${item.id}</div>
+                    <div class="article-ref">${item.id}</div>
                     <h2 class="article-title">${item.title}</h2>
                     <p class="article-description">${item.description}</p>
                     ${linksHTML ? `<div class="article-links">${linksHTML}</div>` : ''}
