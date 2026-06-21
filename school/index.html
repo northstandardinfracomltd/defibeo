@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Connaissances</title>
+    <style>
+        /* Intégration de votre police personnalisée */
+        @font-face {
+            font-family: 'Civilprom';
+            src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
+            font-display: swap;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Civilprom', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Barre de recherche */
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-card);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* Liste des articles */
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .article-ref {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            white-space: pre-line; /* Permet de conserver les retours à la ligne saisis dans la cellule description */
+        }
+
+        /* Conteneur des boutons / liens */
+        .article-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Bouton affichant l'URL brute (raw link) */
+        .btn-link {
+            display: inline-block;
+            padding: 0.6rem 1rem;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /* Empêche de casser le responsive si l'URL est extrêmement longue */
+            max-width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        .btn-link:hover {
+            background-color: #f3f4f6;
+        }
+
+        .no-results, .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Base de Connaissance</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un article..." disabled>
+            </div>
+        </header>
+
+        <div id="loading" class="loading">Chargement de la base de connaissances...</div>
+
+        <main id="articlesContainer" class="articles-list"></main>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            Aucun article trouvé.
+        </div>
+    </div>
+
+    <script>
+        // Lien fourni vers votre Google Apps Script
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbwRPjbJq3Cn5Z6v3lNPimPxJUWp2b-iAwlC0TzjjdSXjK4kEV4qA8tTqnFmwZzFcGftvw/exec";
+
+        let allArticles = [];
+
+        // Récupération des données en temps réel depuis le script
+        async function fetchKnowledgeBase() {
+            try {
+                const response = await fetch(scriptUrl);
+                allArticles = await response.json();
+
+                // On cache l'indicateur de chargement et on active la barre de recherche
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('searchInput').disabled = false;
+                
+                renderArticles(allArticles);
+            } catch (error) {
+                document.getElementById('loading').innerText = "Erreur lors de la récupération des données. Vérifiez le déploiement de votre script.";
+                console.error(error);
+            }
+        }
+
+        // Rendu HTML des articles
+        function renderArticles(articles) {
+            const container = document.getElementById('articlesContainer');
+            const noResults = document.getElementById('noResults');
+            container.innerHTML = '';
+            
+            let hasVisible = false;
+
+            articles.forEach(item => {
+                // Filtre obligatoire : uniquement si visible vaut 1
+                if (item.visible !== 1) return;
+                hasVisible = true;
+
+                const card = document.createElement('article');
+                card.className = 'article-card';
+
+                // Génération dynamique des boutons avec les liens bruts (raw links)
+                let linksHTML = '';
+                if (item.link1) linksHTML += `<a href="${item.link1}" target="_blank" class="btn-link">${item.link1}</a>`;
+                if (item.link2) linksHTML += `<a href="${item.link2}" target="_blank" class="btn-link">${item.link2}</a>`;
+                if (item.link3) linksHTML += `<a href="${item.link3}" target="_blank" class="btn-link">${item.link3}</a>`;
+
+                card.innerHTML = `
+                    <div class="article-ref">Réf : ${item.id}</div>
+                    <h2 class="article-title">${item.title}</h2>
+                    <p class="article-description">${item.description}</p>
+                    ${linksHTML ? `<div class="article-links">${linksHTML}</div>` : ''}
+                `;
+                container.appendChild(card);
+            });
+
+            // Gère le cas où aucun article n'est trouvé ou visible
+            noResults.style.display = hasVisible ? 'none' : 'block';
+        }
+
+        // Filtrage instantané via la barre de recherche
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase().trim();
+            const filtered = allArticles.filter(item => {
+                if (item.visible !== 1) return false;
+                return (
+                    item.title.toLowerCase().includes(term) ||
+                    item.description.toLowerCase().includes(term) ||
+                    item.id.toLowerCase().includes(term)
+                );
+            });
+            renderArticles(filtered);
+        });
+
+        // Lancement au chargement de la page
+        fetchKnowledgeBase();
+    </script>
+</body>
+</html>
