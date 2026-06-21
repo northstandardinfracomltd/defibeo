@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de Connaissances</title>
+    <title>Centre d'aide</title>
     <style>
-        /* Intégration de votre police personnalisée */
+        /* Intégration des polices personnalisées */
         @font-face {
             font-family: 'Civilprom';
             src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
             font-display: swap;
         }
 
+        @font-face {
+            font-family: 'Alternative';
+            font-weight: 100 !important;
+            src: url('https://civilprom.s3.eu-north-1.amazonaws.com/gochi.otf') format('opentype');
+            font-display: swap;
+        }
+
         :root {
-            --primary-color: #2563eb;
+            --primary-color: #7e2e86;
             --text-main: #1f2937;
             --text-muted: #4b5563;
             --bg-body: #f9fafb;
@@ -32,23 +39,58 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.5;
-            padding: 2rem 1rem;
+            padding-top: 80px; /* Espace pour éviter que la nav barre fixe ne cache le contenu */
         }
 
+        /* Barre de navigation Sticky */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: radial-gradient(#7e2e86, #36093a) !important;
+            padding: 0 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: table;
+            width: 100%;
+        }
+
+        .navbar-container {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .brand-box {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .logo {
+            height: 40px;
+            display: block;
+        }
+
+        .brand-title {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: 'Alternative', sans-serif;
+            font-weight: 100 !important;
+            color: #ffffff;
+            font-size: 1.75rem;
+            margin-left: 1rem;
+        }
+
+        /* Conteneur principal */
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 2rem 1rem;
         }
 
         header {
-            margin-bottom: 2.5rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         /* Barre de recherche */
@@ -71,6 +113,31 @@
 
         .search-input:focus {
             border-color: var(--primary-color);
+        }
+
+        /* Section Actions (Bouton de contact) */
+        .actions-bar {
+            margin-bottom: 1.5rem;
+            text-align: right;
+        }
+
+        .btn-contact {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-contact:hover {
+            opacity: 0.9;
         }
 
         /* Liste des articles */
@@ -105,17 +172,15 @@
             color: var(--text-muted);
             font-size: 1rem;
             margin-bottom: 1.25rem;
-            white-space: pre-line; /* Permet de conserver les retours à la ligne saisis dans la cellule description */
+            white-space: pre-line;
         }
 
-        /* Conteneur des boutons / liens */
         .article-links {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
 
-        /* Bouton affichant l'URL brute (raw link) */
         .btn-link {
             display: inline-block;
             padding: 0.6rem 1rem;
@@ -128,7 +193,7 @@
             text-decoration: none;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis; /* Empêche de casser le responsive si l'URL est extrêmement longue */
+            text-overflow: ellipsis;
             max-width: 100%;
             transition: background-color 0.2s;
         }
@@ -147,15 +212,27 @@
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="brand-box">
+                <img class="logo" src="https://datacenter64000pau.s3.eu-north-1.amazonaws.com/Defibeo_2026_Logo2.svg" alt="Logo Defibeo">
+            </div>
+            <span class="brand-title">Centre d'aide.</span>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
-            <h1>Base de Connaissance</h1>
             <div class="search-container">
                 <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un article..." disabled>
             </div>
         </header>
 
-        <div id="loading" class="loading">Chargement de la base de connaissances...</div>
+        <div class="actions-bar">
+            <a href="mailto:support@defibeo.com" class="btn-contact">Envoyer un message</a>
+        </div>
+
+        <div id="loading" class="loading">Chargement du centre d'aide...</div>
 
         <main id="articlesContainer" class="articles-list"></main>
 
@@ -165,29 +242,26 @@
     </div>
 
     <script>
-        // Lien fourni vers votre Google Apps Script
+        // URL de votre Google Apps Script
         const scriptUrl = "https://script.google.com/macros/s/AKfycbwRPjbJq3Cn5Z6v3lNPimPxJUWp2b-iAwlC0TzjjdSXjK4kEV4qA8tTqnFmwZzFcGftvw/exec";
 
         let allArticles = [];
 
-        // Récupération des données en temps réel depuis le script
         async function fetchKnowledgeBase() {
             try {
                 const response = await fetch(scriptUrl);
                 allArticles = await response.json();
 
-                // On cache l'indicateur de chargement et on active la barre de recherche
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('searchInput').disabled = false;
                 
                 renderArticles(allArticles);
             } catch (error) {
-                document.getElementById('loading').innerText = "Erreur lors de la récupération des données. Vérifiez le déploiement de votre script.";
+                document.getElementById('loading').innerText = "Erreur lors de la récupération des données.";
                 console.error(error);
             }
         }
 
-        // Rendu HTML des articles
         function renderArticles(articles) {
             const container = document.getElementById('articlesContainer');
             const noResults = document.getElementById('noResults');
@@ -196,14 +270,12 @@
             let hasVisible = false;
 
             articles.forEach(item => {
-                // Filtre obligatoire : uniquement si visible vaut 1
                 if (item.visible !== 1) return;
                 hasVisible = true;
 
                 const card = document.createElement('article');
                 card.className = 'article-card';
 
-                // Génération dynamique des boutons avec les liens bruts (raw links)
                 let linksHTML = '';
                 if (item.link1) linksHTML += `<a href="${item.link1}" target="_blank" class="btn-link">${item.link1}</a>`;
                 if (item.link2) linksHTML += `<a href="${item.link2}" target="_blank" class="btn-link">${item.link2}</a>`;
@@ -218,11 +290,9 @@
                 container.appendChild(card);
             });
 
-            // Gère le cas où aucun article n'est trouvé ou visible
             noResults.style.display = hasVisible ? 'none' : 'block';
         }
 
-        // Filtrage instantané via la barre de recherche
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase().trim();
             const filtered = allArticles.filter(item => {
@@ -236,7 +306,6 @@
             renderArticles(filtered);
         });
 
-        // Lancement au chargement de la page
         fetchKnowledgeBase();
     </script>
 </body>
