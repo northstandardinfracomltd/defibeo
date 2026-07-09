@@ -6085,6 +6085,11 @@ color: black !important;
       <img src="https://civilprom.s3.eu-north-1.amazonaws.com/Laptop_view_defibeo.jpeg" alt="Vue Laptop Defibeo" class="dfb-media-showcase__img-fluid">
     </div>
     <div class="dfb-media-showcase__content-box">
+
+            <p class="dfb-media-showcase__text-paragraphT">
+Robuste, moderne et agréable!
+      </p>
+
       <p class="dfb-media-showcase__text-paragraph">
 Oubliez les logiciels obsolètes à télécharger — souvent complexes, instables et peu sécurisés. Défibeo s’appuie sur une architecture cloud performante de nouvelle génération. Son interface moderne et son expérience utilisateur (UX) intuitive rendent chaque tâche simple, évidente et rapide.
       </p>
@@ -6095,26 +6100,8 @@ Oubliez les logiciels obsolètes à télécharger — souvent complexes, instabl
 
 <style>
   /* Container principal */
-
-  .dfb-media-showcase__img-fluid {
-  border-radius: 13px; /* Ajustez la valeur selon vos besoins */
-  /* Assurez-vous aussi que l'image se comporte bien en bloc si nécessaire */
-  display: block; 
-}
-
-.dfb-media-showcase__image-holder {
-  border-radius: 13px; /* On arrondit le conteneur */
-  overflow: hidden;    /* On force l'image à rester "géo-bloquée" à l'intérieur */
-}
-
-.dfb-media-showcase__img-fluid {
-  display: block;
-  width: 100%;        /* Pour que l'image remplisse bien le conteneur */
-  height: auto;
-}
-
   .dfb-media-showcase__container {
-    display: block; /* Utilisation de blocs standards pour éviter les conflits */
+    display: block;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -6124,45 +6111,36 @@ Oubliez les logiciels obsolètes à télécharger — souvent complexes, instabl
 
   /* Structure d'une ligne (Desktop : côte à côte) */
   .dfb-media-showcase__item-wrapper {
-    display: table; /* Layout robuste et compatible */
+    display: table;
     width: 100%;
-    margin-bottom: 40px; /* Espace entre les deux blocs */
+    margin-bottom: 40px;
     box-sizing: border-box;
   }
 
-img.dfb-media-showcase__img-fluid {
-border-radius: 13px; 
-  }
-
-
-  .dfb-media-showcase__img-fluid img {
-border-radius: 13px; 
-  }
-
-  /* Conteneur de l'image (40% de la largeur) */
+  /* Conteneur de l'image (55% de la largeur) */
   .dfb-media-showcase__image-holder {
     display: table-cell;
     vertical-align: middle;
     width: 55%;
-    height: 600px; /* Force l'élargissement vertical */
-    overflow: hidden;
+    height: 600px;
+    /* ⚠️ Pas de border-radius ou d'overflow ici, car le table-cell bloque l'effet */
   }
 
-  /* Style de l'image pour remplir l'espace vertical sans déformer */
+  /* Style de l'image (C'est elle qui reçoit l'arrondi et le masque) */
   .dfb-media-showcase__img-fluid {
     width: 100%;
-    height: 600px; /* Aligné sur le parent */
-    object-fit: contain; /* Recadre proprement l'image */
-    border-radius: 8px;
+    height: 600px;
+    object-fit: cover; /* 💡 "cover" est recommandé avec un border-radius pour remplir l'espace. Si vous préférez "contain", gardez-le. */
+    border-radius: 13px; /* Votre arrondi est appliqué directement ici */
     display: block;
   }
 
-  /* Zone de texte (60% de la largeur restante) */
+  /* Zone de texte (45% restants pour faire 100% au total avec le 55% de l'image) */
   .dfb-media-showcase__content-box {
     display: table-cell;
     vertical-align: middle;
-    width: 60%;
-    padding-left: 30px; /* Espace à droite de l'image */
+    width: 45%; 
+    padding-left: 30px;
     box-sizing: border-box;
   }
 
@@ -6173,19 +6151,33 @@ border-radius: 13px;
     line-height: 40px;
     color: #000000;
     margin: 0;
+    cursor: default;
   }
+
+
+    /* Style du paragraphe */
+  .dfb-media-showcase__text-paragraph {
+    font-family: 'Alternative';
+    font-size: 70px;
+    line-height: 40px;
+    text-align: left; 
+    color: #000000;
+    margin: 0;
+    cursor: default;
+  }
+
 
   /* --- RESPONSIVE (Tablettes et Mobiles) --- */
   @media (max-width: 768px) {
     .dfb-media-showcase__item-wrapper {
-      display: block; /* Passe en mode empilé verticalement */
+      display: block;
       margin-bottom: 50px;
     }
 
     .dfb-media-showcase__image-holder {
       display: block;
       width: 100%;
-      height: 350px; /* Légèrement réduit sur mobile */
+      height: 350px;
     }
 
     .dfb-media-showcase__img-fluid {
@@ -6196,7 +6188,7 @@ border-radius: 13px;
       display: block;
       width: 100%;
       padding-left: 0;
-      padding-top: 20px; /* Espace au-dessus du texte sur mobile */
+      padding-top: 20px;
     }
   }
 </style>
