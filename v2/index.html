@@ -67,7 +67,7 @@
       right: 0;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle at 100% 0%, rgba(66, 133, 244, 0.18) 0%, rgba(52, 168, 83, 0.1) 45%, rgba(255, 255, 255, 0) 75%);
+      background: radial-gradient(circle at 100% 0%, rgb(119 142 255 / 61%) 0%, rgb(62 221 133 / 29%) 45%, rgb(255 255 255 / 0%) 75%);
       pointer-events: none;
       z-index: 0;
     }
@@ -103,20 +103,20 @@
     }
 
     .lang-selector-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 20px;
-      font-family: var(--font-family-base);
-      font-size: 15px;
-      font-weight: var(--font-weight-regular);
-      color: var(--color-text-muted);
-      background-color: #FFFFFF;
-      border: 1px solid var(--color-card-border);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 4px rgba(60,64,67,0.06);
+display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-family: var(--font-family-base);
+    font-size: 18px;
+    font-weight: 200;
+    color: #000;
+    background-color: #ffffff7a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: none;
     }
 
     .lang-selector-btn:hover {
@@ -604,17 +604,125 @@ background-color: #000000;
     <div class="container hero-container">
       <h1 class="hero-title" data-i18n="hero_title">Logiciel pour l’infogérance des défibrillateurs.</h1>
 
-      <div class="hero-actions-container">
+<div class="hero-actions-container">
+        <!-- Bloc 1 : Connexion avec lien direct (nouvel onglet) -->
         <div class="action-card">
           <span class="action-card-text" data-i18n="auth_block_label">Accès Admin, Client ou Technicien</span>
-          <a href="#" class="action-btn btn-primary" data-i18n="auth_btn">Connexion</a>
+          <a href="https://consoledefibeo.deroesch.com/y26m8v105DRSHdatacenter/" target="_blank" rel="noopener noreferrer" class="action-btn btn-primary" data-i18n="auth_btn">Connexion</a>
         </div>
 
-        <div class="action-card">
+        <!-- Bloc 2 : Contact avec menu déroulant système -->
+        <div class="action-card contact-card-relative">
           <span class="action-card-text" data-i18n="register_block_label">Devenir utilisateur du logiciel</span>
-          <a href="#" class="action-btn btn-dark" data-i18n="contact_btn">Contact</a>
+          
+          <div class="contact-dropdown-wrapper">
+            <button type="button" class="action-btn btn-dark" id="contactToggleBtn" aria-haspopup="true" aria-expanded="false" data-i18n="contact_btn">
+              Contact
+            </button>
+
+            <!-- Menu dropdown Contact -->
+            <ul class="contact-dropdown-menu" id="contactDropdownMenu" role="menu">
+              <li role="none">
+                <a href="mailto:contact@defibeo.com" target="_blank" rel="noopener noreferrer" role="menuitem" class="contact-dropdown-item">
+                  <span class="contact-type">Email :</span> contact@defibeo.com
+                </a>
+              </li>
+              <li role="none">
+                <a href="tel:+33651517065" target="_blank" rel="noopener noreferrer" role="menuitem" class="contact-dropdown-item">
+                  <span class="contact-type">Tel :</span> +33 6 51 51 70 65
+                </a>
+              </li>
+              <li role="none">
+                <a href="https://wa.me/447723501018" target="_blank" rel="noopener noreferrer" role="menuitem" class="contact-dropdown-item">
+                  <span class="contact-type">WhatsApp :</span> +44 7723 501018
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <style>
+
+        /* Wrapper du dropdown Contact */
+    .contact-dropdown-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Menu déroulant Contact */
+    .contact-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 270px;
+      background-color: #FFFFFF;
+      border: 1px solid var(--color-card-border);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      list-style: none;
+      padding: 8px 0;
+      z-index: 100;
+      text-align: left;
+    }
+
+    .contact-dropdown-menu.show {
+      display: block;
+      animation: fadeInDropdown 0.15s ease-out;
+    }
+
+    @keyframes fadeInDropdown {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Éléments liens du dropdown */
+    .contact-dropdown-item {
+      display: block;
+      padding: 10px 18px;
+      font-size: 14.5px;
+      color: #1E293B;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .contact-dropdown-item:hover {
+      background-color: #F1F5F9;
+      color: var(--color-blue-card);
+    }
+
+    .contact-dropdown-item .contact-type {
+      font-weight: var(--font-weight-bold);
+      margin-right: 4px;
+    }
+
+      </style>
+
+      <script> 
+
+        // Gestion du menu déroulant Contact
+    const contactToggleBtn = document.getElementById("contactToggleBtn");
+    const contactDropdownMenu = document.getElementById("contactDropdownMenu");
+
+    if (contactToggleBtn && contactDropdownMenu) {
+      contactToggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = contactDropdownMenu.classList.toggle("show");
+        contactToggleBtn.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Fermeture au clic n'importe où en dehors
+      document.addEventListener("click", (e) => {
+        if (!contactDropdownMenu.contains(e.target) && e.target !== contactToggleBtn) {
+          contactDropdownMenu.classList.remove("show");
+          contactToggleBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+    
+      </script>
 
       <!-- 3 GRANDS BLOCS PILIERS -->
       <div class="cards-grid-three">
@@ -622,7 +730,7 @@ background-color: #000000;
           <div class="pillar-icon">
             <img src="https://civilprom.s3.eu-north-1.amazonaws.com/defibeowebsite-illustrationgreen.svg" alt="Illustration Infogérance">
           </div>
-          <h2 class="pillar-title" data-i18n="pillar1_title">Infogérance</h2>
+          <h2 class="pillar-title txtgreen" data-i18n="pillar1_title">Infogérance</h2>
           <p class="pillar-desc" data-i18n="pillar1_desc">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
         </article>
 
@@ -630,7 +738,7 @@ background-color: #000000;
           <div class="pillar-icon">
             <img src="https://civilprom.s3.eu-north-1.amazonaws.com/defibeowebsite-illustrationblue.svg" alt="Illustration GMAO & FSM">
           </div>
-          <h2 class="pillar-title" data-i18n="pillar2_title">GMAO &amp; FSM</h2>
+          <h2 class="pillar-title txtwhite" data-i18n="pillar2_title">GMAO &amp; FSM</h2>
           <p class="pillar-desc" data-i18n="pillar2_desc">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
         </article>
 
@@ -638,13 +746,31 @@ background-color: #000000;
           <div class="pillar-icon">
             <img src="https://civilprom.s3.eu-north-1.amazonaws.com/defibeowebsite-illustrationdarkblue.svg" alt="Illustration Mobilité">
           </div>
-          <h2 class="pillar-title" data-i18n="pillar3_title">Mobilité</h2>
+          <h2 class="pillar-title txtblue" data-i18n="pillar3_title">Mobilité</h2>
           <p class="pillar-desc" data-i18n="pillar3_desc">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <style>
+
+.txtgreen {
+color: #156337 !important;
+cursor: default;
+}
+
+.txtwhite {
+color: #fff !important;
+cursor: default;
+}
+
+.txtblue {
+color: #05f0ff !important;
+cursor: default;
+}
+
+  </style>
   <!-- SUJETS & FONCTIONNALITÉS -->
   <section class="features-topics-section">
     <div class="container section-container">
