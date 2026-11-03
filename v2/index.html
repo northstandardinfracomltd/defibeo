@@ -14,11 +14,9 @@
 
   <style>
     @font-face {
-      font-family: 'Civilprom';
+      font-family: 'DefibeoMain';
+          font-weight: 100 !important;
       src: url('https://civilprom.s3.eu-north-1.amazonaws.com/Civilprom1.otf') format('opentype');
-      font-weight: 100 900;
-      font-style: normal;
-      font-display: swap;
     }
 
     :root {
@@ -32,9 +30,7 @@
       --color-text-main: #202124;
       --color-text-muted: #5F6368;
 
-      --font-family-base: 'Civilprom', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-weight-regular: 100;
-      --font-weight-bold: 800;
+      --font-family-base: 'Civilprom', sans-serif;
 
       --container-width: 1400px;
     }
@@ -67,7 +63,7 @@
       right: 0;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle at 100% 0%, rgb(119 142 255 / 61%) 0%, rgb(62 221 133 / 29%) 45%, rgb(255 255 255 / 0%) 75%);
+      background: radial-gradient(circle at 100% 0%, rgb(119 142 255 / 61%) 0%, rgb(62 221 133 / 12%) 45%, rgb(255 255 255) 75%);
       pointer-events: none;
       z-index: 0;
     }
@@ -106,16 +102,16 @@
 display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 12px 18px;
     font-family: var(--font-family-base);
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 200;
-    color: #000;
-    background-color: #ffffff7a;
+    color: #000000;
+    background-color: #ffffff;
     border: none;
-    border-radius: 8px;
+    border-radius: 100px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: 0s;
     box-shadow: none;
     }
 
@@ -185,31 +181,32 @@ display: inline-flex;
     }
 
     .action-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #FFFFFF;
-      border: 1px solid #ECEFF1;
-      border-radius: 10px;
-      padding: 8px 10px 8px 22px;
-      gap: 24px;
-      min-width: 360px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dce2ff;
+    border: none;
+    border-radius: 15px;
+    padding: 11px 11px 10px 20px;
+    gap: 24px;
+    min-width: 360px;
+    box-shadow: none;
     }
 
     .action-card-text {
-      font-size: 16px;
-      color: var(--color-text-muted);
+    font-size: 19px;
+    padding-bottom: 2px;
+    color: #2749ed;
     }
 
     .action-btn {
-      text-decoration: none;
-      font-size: 15px;
-      padding: 10px 24px;
-      border-radius: 8px;
-      font-weight: var(--font-weight-regular);
-      transition: opacity 0.2s, transform 0.15s;
-      display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 24px;
+    border-radius: 13px;
+    font-weight: var(--font-weight-regular);
+    transition: opacity 0.2s, transform 0.15s;
+    display: inline-block;
     }
 
     .btn-primary {
@@ -218,14 +215,16 @@ display: inline-flex;
     }
 
     .btn-dark {
-      background-color: #111827;
-      color: #FFFFFF;
+padding: 13px 24px;
+    border-radius: 13px;
+    background-color: #2749ed;
+    color: #FFFFFF;
+    border: none;
+    font-size: 18px;
+    font-family: var(--font-family-base);
+        cursor: pointer;
     }
 
-    .action-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-    }
 
     /* 3 BLOCS PILIERS */
     .cards-grid-three {
@@ -584,9 +583,6 @@ background-color: #000000;
       <div class="language-dropdown-wrapper">
         <button type="button" class="lang-selector-btn" id="langToggleBtn" aria-haspopup="listbox" aria-expanded="false">
           <span id="currentLangLabel">FR, Français</span>
-          <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-            <path d="M1 1.5L6 6.5L11 1.5" stroke="#5f6368" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
         </button>
         <ul class="lang-dropdown-menu" id="langDropdownMenu" role="listbox" tabindex="-1">
           <li role="option" data-lang="fr" data-label="FR, Français" class="active">FR, Français</li>
@@ -721,7 +717,7 @@ background-color: #000000;
         }
       });
     }
-    
+
       </script>
 
       <!-- 3 GRANDS BLOCS PILIERS -->
@@ -731,7 +727,7 @@ background-color: #000000;
             <img src="https://civilprom.s3.eu-north-1.amazonaws.com/defibeowebsite-illustrationgreen.svg" alt="Illustration Infogérance">
           </div>
           <h2 class="pillar-title txtgreen" data-i18n="pillar1_title">Infogérance</h2>
-          <p class="pillar-desc" data-i18n="pillar1_desc">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
+          <p class="pillar-desc txtgreen" data-i18n="pillar1_desc">Centralisez et garantissez la traçabilité de toutes les informations, activités et données des défibrillateurs et clients.</p>
         </article>
 
         <article class="pillar-card card-blue">
@@ -739,7 +735,7 @@ background-color: #000000;
             <img src="https://civilprom.s3.eu-north-1.amazonaws.com/defibeowebsite-illustrationblue.svg" alt="Illustration GMAO & FSM">
           </div>
           <h2 class="pillar-title txtwhite" data-i18n="pillar2_title">GMAO &amp; FSM</h2>
-          <p class="pillar-desc" data-i18n="pillar2_desc">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
+          <p class="pillar-desc txtwhite" data-i18n="pillar2_desc">Logiciel composé de fonctionnalités spécifiques pour le métier de distributeur et mainteneur de défibrillateurs.</p>
         </article>
 
         <article class="pillar-card card-dark-blue">
@@ -747,7 +743,7 @@ background-color: #000000;
             <img src="https://civilprom.s3.eu-north-1.amazonaws.com/defibeowebsite-illustrationdarkblue.svg" alt="Illustration Mobilité">
           </div>
           <h2 class="pillar-title txtblue" data-i18n="pillar3_title">Mobilité</h2>
-          <p class="pillar-desc" data-i18n="pillar3_desc">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
+          <p class="pillar-desc txtblue" data-i18n="pillar3_desc">Parce que la maintenance se vit sur le terrain, le logiciel vous accompagne partout sur ordinateur et smartphone.</p>
         </article>
       </div>
     </div>
