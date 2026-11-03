@@ -99,13 +99,13 @@
     }
 
     .lang-selector-btn {
+          font-weight: 600;
 display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 12px 18px;
     font-family: var(--font-family-base);
     font-size: 21px;
-    font-weight: 200;
     color: #000000;
     background-color: #ffffff;
     border: none;
@@ -121,6 +121,7 @@ display: inline-flex;
     }
 
     .lang-dropdown-menu {
+
       display: none;
       position: absolute;
       top: calc(100% + 8px);
@@ -170,6 +171,8 @@ display: inline-flex;
       color: #111827;
       margin-bottom: 40px;
       letter-spacing: -0.5px;
+      font-weight: 600;
+      cursor: default;
     }
 
     .hero-actions-container {
@@ -197,6 +200,7 @@ display: inline-flex;
     font-size: 19px;
     padding-bottom: 2px;
     color: #2749ed;
+        font-weight: 600;
     }
 
     .action-btn {
@@ -204,14 +208,15 @@ display: inline-flex;
     font-size: 18px;
     padding: 10px 24px;
     border-radius: 13px;
-    font-weight: var(--font-weight-regular);
     transition: opacity 0.2s, transform 0.15s;
     display: inline-block;
+        font-weight: 600;
     }
 
     .btn-primary {
-      background-color: #3b82f6;
+      background-color: #2749ed;
       color: #FFFFFF;
+          font-weight: 600;
     }
 
     .btn-dark {
@@ -266,14 +271,14 @@ padding: 13px 24px;
 
     .pillar-title {
       font-size: 30px;
-      font-weight: var(--font-weight-bold);
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
     .pillar-desc {
-      font-size: 18px;
-      line-height: 1.55;
-      opacity: 0.95;
+font-size: 20px;
+    line-height: 1.6;
+    opacity: 1;
     }
 
     /* SECTION NUAGES & GÉLULES */
@@ -297,13 +302,13 @@ padding: 13px 24px;
     }
 
     .features-gradient-text {
-      font-size: 50px;
-      cursor: default;
-      line-height: 1.5;
-      font-weight: var(--font-weight-regular);
-      background: linear-gradient(90deg, #1ba262 0%, #1e6bf2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+font-size: 50px;
+    cursor: default;
+    line-height: 1.5;
+    font-weight: 600;
+    background: linear-gradient(137deg, #3edd85 0%, #2749ed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
 
     .interactive-topics-card {
@@ -316,15 +321,15 @@ padding: 13px 24px;
     }
 
     .typing-output-box {
-      min-height: 190px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 50px;
-      padding: 30px 40px;
-      border-radius: 18px;
-      background-color: #F8F9FA;
-      border: 1px dashed #DCE1E7;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 30px 40px;
+    border-radius: 18px;
+    background-color: #fff;
+    border: none;
     }
 
     #typingTarget {
@@ -336,8 +341,7 @@ padding: 13px 24px;
     }
 
     #typingTarget.placeholder-text {
-      color: #9AA0A6;
-      font-style: italic;
+      color: #000;
     }
 
     .topics-pills-cloud {
@@ -407,9 +411,13 @@ background-color: #000000;
     }
 
     .blue-carousel-heading {
-      font-size: 34px;
-      font-weight: var(--font-weight-regular);
-      letter-spacing: -0.2px;
+    text-align: center;
+    font-size: 42px;
+    max-width: 800px;
+    margin: auto;
+    cursor: default;
+    font-weight: 200;
+    letter-spacing: 0px;
     }
 
     /* Le track occupe 100% de la largeur écran et traverse jusqu'au bord droit */
@@ -451,33 +459,33 @@ background-color: #000000;
     }
 
     .carousel-card-illustration {
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      background-color: #F8F9FA;
-      border-radius: 14px;
-      border: 1px solid #F1F3F4;
+height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    background: transparent;
+    border: none;
     }
 
     .carousel-card-illustration img {
-      max-height: 135px;
+      max-height: 180px;
       max-width: 90%;
       object-fit: contain;
     }
 
     .carousel-card-title {
-      font-size: 24px;
-      font-weight: var(--font-weight-bold);
-      margin-bottom: 12px;
-      color: #1E293B;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #000000;
     }
 
     .carousel-card-desc {
-      font-size: 17px;
-      line-height: 1.5;
-      color: #475569;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #50617A;
     }
 
     /* FOOTER */
@@ -498,21 +506,23 @@ background-color: #000000;
     }
 
     .gdp-logo {
-      height: 60px;
+      height: 180px;
       width: auto;
     }
 
     .footer-partner-description {
-      max-width: 860px;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #4B5563;
-      margin-bottom: 38px;
+    max-width: 650px;
+    font-size: 22px;
+    line-height: 1.6;
+    cursor: default;
+    color: #000;
+    margin-bottom: 60px;
     }
 
     .footer-copyright {
-      font-size: 14px;
-      color: #9CA3AF;
+    font-size: 16px;
+    cursor: default;
+    color: #50617A;
     }
 
     /* RESPONSIVE */
